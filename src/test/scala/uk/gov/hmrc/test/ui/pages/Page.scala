@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 HM Revenue & Customs
+ * Copyright 2020 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.{By, WebDriver}
+import uk.gov.hmrc.test.ui.utils.{URLS, BrowserDriver}
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}")
+object Page extends URLS {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  implicit val driver: WebDriver = BrowserDriver.webDriver
+
+
 }
