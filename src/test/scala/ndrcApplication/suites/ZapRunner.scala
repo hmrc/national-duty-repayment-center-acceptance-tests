@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.gov.hmrc.test.ui.utils
+package ndrcApplication.suites
 
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import io.cucumber.junit.Cucumber
+import io.cucumber.junit.CucumberOptions
+import org.junit.runner.RunWith
 
-
-object BrowserDriver {
-
-  implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance()
-
-    sys addShutdownHook {
-      SingletonDriver.closeInstance()
-    }
-
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array ("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@ZAP"
+)
+class ZapRunner {
 }
