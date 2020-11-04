@@ -29,7 +29,7 @@ The `run_tests.sh` script defaults to the `local` environment with the locally i
 The script `./run-browser-with-docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
 The script requires `remote-chrome` or `remote-firefox` as an argument.
 
-Read more about the script's functionality [here](run-browser-with-docker.sh).
+Read more about the script's functionality [here](run-acceptance-tests-qa-jenkins.sh).
 
 To run against a containerised Chrome browser:
 
