@@ -22,9 +22,9 @@ import org.junit.runner.RunWith
 @RunWith(classOf[Cucumber])
 @CucumberOptions(
   features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  glue = Array("ndrcApplication.stepdefs"),
   plugin = Array ("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@ZAP"
+  tags = Array("@ZAP")
 )
-class ZapRunner {
+class RunZAP {
 }
