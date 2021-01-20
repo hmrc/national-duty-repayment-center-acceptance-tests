@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-import org.scalatest.Matchers
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import io.cucumber.scala.{EN, ScalaDsl}
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.{By, WebDriver}
 
-import scala.util.Try
+object commonPage extends commonMethods with WebDriverInstance {
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers{
 
-  sys.addShutdownHook {
-    Try(SingletonDriver.closeInstance)
-  }
+
+  def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
+
+
+
 }

@@ -5,9 +5,8 @@
 
 package ndrcApplication.driver
 
-
+import ndrcApplication.driver.Browser._
 import org.openqa.selenium.WebDriver
-
 import scala.util.Try
 
 object Driver extends Driver
