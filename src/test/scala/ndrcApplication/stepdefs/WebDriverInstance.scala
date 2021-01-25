@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package ndrcApplication.stepdefs
 
 import ndrcApplication.driver.Driver
 import org.openqa.selenium.support.ui.WebDriverWait

@@ -16,6 +16,7 @@ import ndrcApplication.driver.Driver
 import ndrcApplication.stepdefs.WebDriverInstance
 import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
 
+
 abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
 
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)

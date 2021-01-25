@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.gov.hmrc.test.ui.pages
+package ndrcApplication.pages
 
+import ndrcApplication.pages.commonMethods
 import org.openqa.selenium.{By, WebDriver}
+import ndrcApplication.stepdefs.WebDriverInstance
 
 object commonPage extends commonMethods with WebDriverInstance {
 
