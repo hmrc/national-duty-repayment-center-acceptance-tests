@@ -6,10 +6,9 @@
 package ndrcApplication.utils
 
 import java.time.LocalDate
-
 import scala.util.Try
 
-case class Configuration(baseUrl: String, authLogin:String, ndrcApplicationFileUploadLandingUrl:String, timeout: Int)
+case class Configuration(baseUrl: String, authLogin:String, ndrcApplicationLandingUrl:String, timeout: Int)
 
 object Configuration {
 
@@ -33,24 +32,28 @@ val local_date: LocalDate = Try(LocalDate.parse(System.getProperty("local-date",
         new Configuration(
           baseUrl = "www.development.tax.service.gov.uk",
           authLogin = "https://www.development.tax.service.gov.uk/auth-login-stub/gg-sign-in",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/claimantType",
           timeout = 10
         )
       case Environment.local =>
         new Configuration(
-        baseUrl = "",
-         authLogin = "",
+          baseUrl = "",
+          authLogin = "",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/claimantType",
           timeout = 10
         )
       case Environment.qa =>
         new Configuration(
           baseUrl = "https://www.qa.tax.service.gov.uk",
           authLogin = "https://www.qa.tax.service.gov.uk/auth-login-stub/gg-sign-in",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/claimantType",
           timeout = 10
         )
       case Environment.staging =>
         new Configuration(
           baseUrl = "https://www.staging.tax.service.gov.uk",
           authLogin = "https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/claimantType",
           timeout = 10
         )
       case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")
