@@ -14,24 +14,26 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.stepdefs
 
-import java.util.Properties
+import cucumber.api.scala.{EN, ScalaDsl}
+import ndrcApplication.pages.{commonPage,importerorRepPage}
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+class ImporterorRepSteps extends importerorRepPage with ScalaDsl with EN {
 
-object Browser {
+  Then("""^I am on "([^"]*)" page$""") { pageTitle:String =>
+    assert(commonPage.isPageTitleDisplayed(pageTitle))
 
-  lazy val systemProperties: Properties = System.getProperties
-
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
   }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
+  And("^I choose Importer claimant type$") {
+    selectImporter
   }
+
+  When("""^I click on the "([^"]*)" button$""") {
+    commonPage.clickOnContinueBtn()
+
+  }
+
+
 }

@@ -14,24 +14,17 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.pages
 
-import java.util.Properties
+import org.openqa.selenium.By
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+object reclaimPage extends reclaimPage
 
-object Browser {
+class reclaimPage extends commonMethods {
 
-  lazy val systemProperties: Properties = System.getProperties
+  def selectCustDuty: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '01']]")).click()
+  def selectImpVat: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '02']]")).click()
+  def selectOtherDuty: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '03']]")).click()
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
 }

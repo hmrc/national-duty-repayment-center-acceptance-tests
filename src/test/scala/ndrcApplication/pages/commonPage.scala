@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.pages
 
 import ndrcApplication.pages.commonMethods
+import ndrcApplication.utils.Configuration
+
 import org.openqa.selenium.{By, WebDriver}
 import ndrcApplication.stepdefs.WebDriverInstance
 
 object commonPage extends commonMethods with WebDriverInstance {
 
+  private val redirectUrl = By.name("redirectionUrl")
+  private val submitButtonOnAuthLoginPage = By.xpath("//*[@id='inputForm']/div[1]/p/input")
+  private val continueBtnOnAllPages = By.className("//*[contains(@class, 'govuk-button')] ")
 
+
+
+  def loginNDRCViaAuthStub(): Unit = {
+    navigateToPage(s"${Configuration.settings.authLogin}")
+    authLogin()
+  }
+
+  def authLogin(): Unit = {
+    enterValInTextField(redirectUrl,s"${Configuration.settings.baseUrl}" + s"${Configuration.settings.ndrcApplicationLandingUrl}")
+    clickOnButton(submitButtonOnAuthLoginPage)
+  }
 
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
+
+  def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)
 
 
 

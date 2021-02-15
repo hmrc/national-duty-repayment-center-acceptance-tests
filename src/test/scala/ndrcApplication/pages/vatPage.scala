@@ -14,24 +14,20 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.pages
 
-import java.util.Properties
+import org.openqa.selenium.By
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+object vatPage extends vatPage
 
-object Browser {
+class vatPage extends commonMethods {
 
-  lazy val systemProperties: Properties = System.getProperties
+  private val vatPaidIdentifier = By.id("value")
+  private val vatBeenPaidIdentifier = By.id("value")
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
+
+  def enterVatPaid(vatPaidValue : String): Unit = enterValInTextField(vatPaidIdentifier, vatPaidValue)
+  def enterVatBeenPaid(vatBeenPaidValue : String): Unit = enterValInTextField(vatBeenPaidIdentifier, vatBeenPaidValue)
+
 }
