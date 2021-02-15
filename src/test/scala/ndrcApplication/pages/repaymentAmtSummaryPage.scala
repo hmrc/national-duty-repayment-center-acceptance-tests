@@ -14,24 +14,14 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.pages
 
-import java.util.Properties
+import org.openqa.selenium.By
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+object repaymentAmtSummaryPage extends repaymentAmtSummaryPage
 
-object Browser {
+class repaymentAmtSummaryPage extends commonMethods {
 
-  lazy val systemProperties: Properties = System.getProperties
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
 }

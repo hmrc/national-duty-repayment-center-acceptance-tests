@@ -14,24 +14,17 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.pages
 
-import java.util.Properties
+import org.openqa.selenium.By
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+object articlePage extends articlePage
 
-object Browser {
+class articlePage extends commonMethods {
 
-  lazy val systemProperties: Properties = System.getProperties
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
+  def selectVatArticle: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '117']]")).click()
+  def selectErrorOfCustoms: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '119']]")).click()
+  def selectExceptionalCircum: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '120']]")).click()
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
 }

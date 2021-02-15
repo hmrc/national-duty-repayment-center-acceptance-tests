@@ -13,25 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package ndrcApplication.stepdefs
 
-package ndrcApplication.driver
+import cucumber.api.scala.{EN, ScalaDsl}
+import ndrcApplication.pages.{commonPage,confirmationPage }
 
-import java.util.Properties
+class ConfirmationSteps extends confirmationPage with ScalaDsl with EN {
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
-
-object Browser {
-
-  lazy val systemProperties: Properties = System.getProperties
-
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
+  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
+    assert(commonPage.isPageTitleDisplayed(pageTitle))
   }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
 }

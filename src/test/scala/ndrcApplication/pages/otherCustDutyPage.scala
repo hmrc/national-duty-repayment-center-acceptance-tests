@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.pages
 
-import java.util.Properties
+import org.openqa.selenium.By
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+object otherCustDutyPage extends otherCustDutyPage
 
-object Browser {
+class otherCustDutyPage extends commonMethods {
 
-  lazy val systemProperties: Properties = System.getProperties
+  private val otherCustDutyPaidIdentifier = By.id("value")
+  private val otherCustDutyBeenPaidIdentifier = By.id("value")
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
+  def enterOtherCustDutyPaid(otherCustDutyPaidValue : String): Unit = enterValInTextField(otherCustDutyPaidIdentifier, otherCustDutyPaidValue)
+  def enterOtherCustDutyBeenPaid(otherCustDutyBeenPaidValue : String): Unit = enterValInTextField(otherCustDutyBeenPaidIdentifier, otherCustDutyBeenPaidValue)
+
 }

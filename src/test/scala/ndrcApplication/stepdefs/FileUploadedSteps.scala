@@ -14,24 +14,14 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.stepdefs
 
-import java.util.Properties
+import cucumber.api.scala.{EN, ScalaDsl}
+import ndrcApplication.pages.{commonPage, fileUploadedPage }
 
-import org.apache.commons.lang3.StringUtils
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
-object Browser {
 
-  lazy val systemProperties: Properties = System.getProperties
 
-  def javascriptEnabled: Boolean = {
-    if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
-    else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
-    SingletonDriver.getInstance()
-  }
 }
