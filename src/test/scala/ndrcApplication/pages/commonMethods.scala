@@ -19,7 +19,7 @@ package ndrcApplication.pages
 import java.util.concurrent.TimeUnit
 
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, Wait}
-import org.openqa.selenium.{By, NoSuchElementException, WebDriver}
+import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
 import org.scalatest.selenium._
@@ -33,6 +33,9 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(30, TimeUnit.SECONDS)
     .pollingEvery(100, TimeUnit.MILLISECONDS)
+
+  val usrDir = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
+  var filePath = ""
 
   def navigateToPage(url: String) {
     driver.navigate().to(url)
@@ -62,5 +65,27 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe(false)
 
   def isElementVisible(css: String): Boolean = driver.findElement(By.cssSelector(css)).isDisplayed
+
+  def findElementByCss(css: String): WebElement = {
+    fluentWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(css))))
+    driver.findElement(By.cssSelector(css))
+  }
+
+  def clickHref(href: String): Unit = driver.findElement(By.cssSelector(href)).click()
+
+  def clickByCSS(css: String): Unit = driver.findElement(By.cssSelector(css)).click()
+
+  def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
+    fileSeq match {
+      case "first" => filePath = usrDir + "JPEGImage.jpeg"
+      case "next"  => filePath = usrDir + "JPEGImage.jpeg"
+      case "last"  => filePath = usrDir + "PDF.pdf"
+    }
+
+    if(Driver.targetBrowser.startsWith("remote")) {
+      Driver.webDriver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
+    }
+    driver.findElement(By.id(elementID)).sendKeys(filePath)
+  }
 
 }
