@@ -54,10 +54,11 @@ Feature: Importers Journey
       Then I am on "supporting documents" page
       When I click on the "Continue" button
       Then I am on "Upload a file" page
-#      When I click the button to upload and select "first" file
-#      Then I should be on the new file upload confirmation page after uploading 1 document/s
-#      Then I should see first uploaded doc test.jpg on upload review page
-#      Then I select No to to uploading another file
+      When I click on Choose file button and add the "first" file
+      When I click on the "Continue" button
+      Then I should be "You have uploaded 1 file" page after uploading one document
+      Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
+      Then I select "<YorNuploadFile>" to uploading another file
       When I click on the "Continue" button
       Then I am on "EORI no" page
       And I choose "<YorNeori>" option
@@ -93,8 +94,8 @@ Feature: Importers Journey
       Then I am on "application confirmation" page
 
     Examples:
-      | YorNeori | eoriNo               | YorNvat   | fName     | lName       | postCode  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
-      |   yes    | GB123456789123       | yes       | test      | tester      | Bd1 3LY   | 09876543212  |  yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
+      | YorNeori | eoriNo               | YorNvat   | fName     | lName       | postCode  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |YorNuploadFile |
+      |   yes    | GB123456789123       | yes       | test      | tester      | Bd1 3LY   | 09876543212  |  yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |  No           |
 
 
   Scenario Outline: A user wants to complete a New Multi entry Importers journey

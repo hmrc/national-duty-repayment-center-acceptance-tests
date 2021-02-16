@@ -22,9 +22,8 @@ object uploadFilePage extends uploadFilePage
 
 class uploadFilePage extends commonMethods {
 
+  val chooseFileId = "upload-file"
 
-
-
-
+  def uploadFile(fileSeq: String): Unit = uploadFilesToBrowser(fileSeq, chooseFileId)
 
 }
