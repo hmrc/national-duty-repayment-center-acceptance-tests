@@ -22,9 +22,9 @@ object reclaimPage extends reclaimPage
 
 class reclaimPage extends commonMethods {
 
-  def selectCustDuty: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '01']]")).click()
-  def selectImpVat: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '02']]")).click()
-  def selectOtherDuty: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-checkboxes') and input[@value = '03']]")).click()
+  def selectCustDuty: Unit = driver.findElement(By.cssSelector("#\\30 1")).click()
+  def selectImpVat: Unit = driver.findElement(By.cssSelector("#\\30 2")).click()
+  def selectOtherDuty: Unit = driver.findElement(By.cssSelector("#\\30 3")).click()
 
 
 }

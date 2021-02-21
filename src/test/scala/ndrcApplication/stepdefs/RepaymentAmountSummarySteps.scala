@@ -21,12 +21,5 @@ import ndrcApplication.pages.{commonPage, repaymentAmtSummaryPage }
 
 class RepaymentAmountSummarySteps extends repaymentAmtSummaryPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
 
 }

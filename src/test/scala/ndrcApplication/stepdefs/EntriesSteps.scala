@@ -21,17 +21,17 @@ import ndrcApplication.pages.{commonPage, entriesPage}
 
 class EntriesSteps extends entriesPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-
-  }
-
   And("^I choose one entry$") {
     entriesPage.selectOneEntry
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
+  And("^I choose multi entry$") {
+    entriesPage.selectMultiEntry
+  }
+
+  And("^I enter \"([^\"]*)\" value$"){ (noOfEntries: String) =>
+    entriesPage.enterNoOfEntries(noOfEntries)
 
   }
+
 }

@@ -21,11 +21,6 @@ import ndrcApplication.pages.{commonPage, fileUploadedPage }
 
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
-  Then("""^I should be "([^"]*)" page after uploading one document$""") { (pageTitle: String) =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-
-  }
-
   Then("""^I should see first uploaded doc "([^"]*)" on upload review page$""") { (fileName: String) =>
     findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(1)").isDisplayed
    // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
@@ -39,10 +34,5 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
     }
   }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
 
 }

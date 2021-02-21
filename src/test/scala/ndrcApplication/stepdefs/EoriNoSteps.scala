@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
@@ -20,35 +21,16 @@ import ndrcApplication.pages.{commonPage, eoriNoPage}
 
 class EoriNoSteps extends eoriNoPage with ScalaDsl with EN {
 
-    Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-      assert(commonPage.isPageTitleDisplayed(pageTitle))
-    }
-
-    And("""^I choose "([^"]*)" option$""") { (yOrNEori: String) =>
-
+    And("""^I choose eori "([^"]*)" option$""") { (yOrNEori: String) =>
       yOrNEori match {
-        case "Yes" => optionSelected("##value")
-        case "No" => optionSelected("##value-no")
+        case "Yes" => clickByCSS("#value")
+        case "No" => clickByCSS("#value-no")
       }
     }
 
-    When("""^I click on the "([^"]*)" button$""") {
-      commonPage.clickOnContinueBtn()
+    And("^I enter \"([^\"]*)\" in correct format GB$") { (eoriNO: String) =>
+      eoriNoPage.enterEoriNo(eoriNO)
     }
-
-    Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-      assert(commonPage.isPageTitleDisplayed(pageTitle))
-    }
-
-  And("^I enter \"([^\"]*)\" in correct format GB$") { (eoriNO: String) =>
-
-    eoriNoPage.enterEoriNo(eoriNO)
-
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
 
 }
 

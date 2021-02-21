@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package ndrcApplication.stepdefs
+package ndrcApplication.suites
 
-import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, entryDatePage }
+import cucumber.api.CucumberOptions
+import cucumber.api.junit.Cucumber
+import org.junit.runner.RunWith
 
-class EntryDateSteps extends entryDatePage with ScalaDsl with EN {
 
-  And("^I choose a date Range on or before Dec$") {
-    selectOnORBeforeDecDate
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("ndrcApplication.stepdefs"),
+  plugin = Array ("pretty",
+    "html:target/cucumber",
+    "json:target/cucumber.json"),
 
-  }
+  tags = Array("@accessibility")
+)
+class RunAccessibility {
 
 }

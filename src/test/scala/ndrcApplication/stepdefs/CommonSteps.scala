@@ -22,6 +22,12 @@ import ndrcApplication.pages.commonPage
 
 class CommonSteps extends ScalaDsl with EN {
 
+  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
+    assert(commonPage.isPageTitleDisplayed(pageTitle))
+  }
 
+  When("""^I click on the "([^"]*)" button$"""){ (continue: String) =>
+    commonPage.clickOnContinueBtn()
+  }
 
 }

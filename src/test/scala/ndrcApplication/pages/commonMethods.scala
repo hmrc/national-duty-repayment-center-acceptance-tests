@@ -18,7 +18,7 @@ package ndrcApplication.pages
 
 import java.util.concurrent.TimeUnit
 
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, Wait}
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
@@ -78,6 +78,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
     fileSeq match {
       case "first" => filePath = usrDir + "JPEGImage.jpeg"
+      case "second" => filePath = usrDir + "VA Plan v0.3.xlsx"
       case "next"  => filePath = usrDir + "JPEGImage.jpeg"
       case "last"  => filePath = usrDir + "PDF.pdf"
     }

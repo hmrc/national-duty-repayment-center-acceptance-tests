@@ -21,10 +21,6 @@ import ndrcApplication.pages.{commonPage, entryDetailsPage}
 
   class EntryDetailsSteps extends entryDetailsPage with ScalaDsl with EN {
 
-    Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-      assert(commonPage.isPageTitleDisplayed(pageTitle))
-    }
-
     And("""^I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"$""") { (epu: String, entryNo: String) =>
       entryDetailsPage.enterEPU(epu)
       entryDetailsPage.enterEntryNo(entryNo)
@@ -36,10 +32,6 @@ import ndrcApplication.pages.{commonPage, entryDetailsPage}
       entryDetailsPage.enterMonth(month)
       entryDetailsPage.enterYear(year)
 
-    }
-
-    When("""^I click on the "([^"]*)" button$""") {
-      commonPage.clickOnContinueBtn()
     }
 
 }

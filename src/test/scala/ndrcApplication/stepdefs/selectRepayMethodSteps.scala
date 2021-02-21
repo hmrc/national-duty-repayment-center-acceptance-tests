@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
@@ -20,34 +21,18 @@ import ndrcApplication.pages.{commonPage, selectRepayMethodPage}
 
 class selectRepayMethodSteps extends selectRepayMethodPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
-  And("^I choose \"([^\"]*)\" option$") { (repayment: String) =>
+  And("^I chooose \"([^\"]*)\" option$") { (repayment: String) =>
 
     repayment match {
-      case "Bank transfer (Bacs)" => optionSelected("#value")
-      case "Current month amendment (CMA)" => optionSelected("#value-2")
+      case "Bank transfer (Bacs)" => clickByCSS("#value")
+      case "Current month amendment (CMA)" => clickByCSS("#value-2")
     }
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
   }
 
   And("^I enter account \"([^\"]*)\" and sortcode \"([^\"]*)\" and account number \"([^\"]*)\"$") { (accName: String, sortCode: String, accNo: String) =>
     selectRepayMethodPage.enterAccName(accName)
     selectRepayMethodPage.enterSortCode(sortCode)
     selectRepayMethodPage.enterAccNo(accNo)
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
   }
 
 }

@@ -26,7 +26,7 @@ object commonPage extends commonMethods with WebDriverInstance {
 
   private val redirectUrl = By.name("redirectionUrl")
   private val submitButtonOnAuthLoginPage = By.xpath("//*[@id='inputForm']/div[1]/p/input")
-  private val continueBtnOnAllPages = By.className("//*[contains(@class, 'govuk-button')] ")
+  private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
 
 
 
@@ -36,14 +36,12 @@ object commonPage extends commonMethods with WebDriverInstance {
   }
 
   def authLogin(): Unit = {
-    enterValInTextField(redirectUrl,s"${Configuration.settings.baseUrl}" + s"${Configuration.settings.ndrcApplicationLandingUrl}")
+    enterValInTextField(redirectUrl, s"${Configuration.settings.ndrcApplicationLandingUrl}")
     clickOnButton(submitButtonOnAuthLoginPage)
   }
 
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
 
   def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)
-
-
 
 }

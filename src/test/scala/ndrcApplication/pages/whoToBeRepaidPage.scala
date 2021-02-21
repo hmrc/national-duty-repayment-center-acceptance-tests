@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package ndrcApplication.stepdefs
+package ndrcApplication.pages
 
-import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, entryDatePage }
+import org.openqa.selenium.By
 
-class EntryDateSteps extends entryDatePage with ScalaDsl with EN {
+object whoToBeRepaidPage extends whoToBeRepaidPage
 
-  And("^I choose a date Range on or before Dec$") {
-    selectOnORBeforeDecDate
+class whoToBeRepaidPage extends commonMethods {
 
-  }
+
 
 }

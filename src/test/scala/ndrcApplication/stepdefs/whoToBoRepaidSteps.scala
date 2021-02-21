@@ -17,12 +17,20 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, entryDatePage }
+import ndrcApplication.pages.{commonPage, importerorRepPage}
 
-class EntryDateSteps extends entryDatePage with ScalaDsl with EN {
+class whoToBoRepaidSteps extends importerorRepPage with ScalaDsl with EN {
 
-  And("^I choose a date Range on or before Dec$") {
-    selectOnORBeforeDecDate
+  And("^I choose Representative option$") {
+    selectRepresentative
+  }
+
+  And("^I choose \"([^\"]*)\" indirect representative option$") { (yORNIndirectRep : String) =>
+
+    yORNIndirectRep match {
+      case "Yes" => clickByCSS("#value")
+      case "No" => clickByCSS("#value-no")
+    }
 
   }
 
