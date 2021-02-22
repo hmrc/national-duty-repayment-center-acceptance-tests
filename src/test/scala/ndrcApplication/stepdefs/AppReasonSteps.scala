@@ -22,19 +22,10 @@ import ndrcApplication.pages.{commonPage, appReasonPage}
 
 class AppReasonSteps extends appReasonPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-
-  }
-
   And("^I choose an application Reason$") {
     appReasonPage.selectCommCode
 
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-
-  }
 
 }

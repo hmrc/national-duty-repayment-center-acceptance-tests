@@ -23,16 +23,16 @@ object appReasonPage extends appReasonPage
 class appReasonPage extends commonMethods {
 
 
-  def selectCommCode: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '04']]")).click()
-  def selectCurrChange: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '03']]")).click()
-  def selectCustProCode: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '02']]")).click()
-  def selectCustSplPro: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '05']]")).click()
-  def selectPreference: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '06']]")).click()
-  def selectRetroQuota: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '01']]")).click()
-  def selectRetUnwantGoods: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '08']]")).click()
-  def selectRetGoodsRelief: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '07']]")).click()
-  def selectValue: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '09']]")).click()
-  def selectOther: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '10']]")).click()
+  def selectCommCode: Unit = driver.findElement(By.cssSelector("#\\30 4")).click()
+  def selectCurrChange: Unit = driver.findElement(By.cssSelector("#\\30 3")).click()
+  def selectCustProCode: Unit = driver.findElement(By.cssSelector("#\\30 2")).click()
+  def selectCustSplPro: Unit = driver.findElement(By.cssSelector("#\\30 5")).click()
+  def selectPreference: Unit = driver.findElement(By.cssSelector("#\\30 6")).click()
+  def selectRetroQuota: Unit = driver.findElement(By.cssSelector("#\\30 1")).click()
+  def selectRetUnwantGoods: Unit = driver.findElement(By.cssSelector("#\\30 8")).click()
+  def selectRetGoodsRelief: Unit = driver.findElement(By.cssSelector("#\\30 7")).click()
+  def selectValue: Unit = driver.findElement(By.cssSelector("#\\30 9")).click()
+  def selectOther: Unit = driver.findElement(By.cssSelector("#\\31 0")).click()
 
 
 }

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
@@ -20,8 +21,5 @@ import ndrcApplication.pages.{commonPage,confirmationPage }
 
 class ConfirmationSteps extends confirmationPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
 
 }

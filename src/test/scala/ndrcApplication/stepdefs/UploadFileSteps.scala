@@ -21,17 +21,8 @@ import ndrcApplication.pages.{commonPage, uploadFilePage }
 
 class UploadFileSteps extends uploadFilePage with ScalaDsl with EN {
 
-
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   When("""^I click on Choose file button and add the "([^"]*)" file$""") { (fileSeq: String) =>
     uploadFilePage.uploadFile(fileSeq)
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
   }
 
 }

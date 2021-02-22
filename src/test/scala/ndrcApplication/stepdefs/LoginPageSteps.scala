@@ -25,5 +25,4 @@ class LoginPageSteps extends ScalaDsl with EN {
     commonPage.loginNDRCViaAuthStub()
   }
 
-
 }

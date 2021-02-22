@@ -22,8 +22,8 @@ object importerorRepPage extends importerorRepPage
 class importerorRepPage extends commonMethods {
 
 
-  def selectImporter: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '01']]")).click()
-  def selectRepresentative: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '02']]")).click()
+  def selectImporter: Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectRepresentative: Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 
 }

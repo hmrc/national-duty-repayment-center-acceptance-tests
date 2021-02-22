@@ -22,8 +22,12 @@ object entriesPage extends entriesPage
 
 class entriesPage extends commonMethods {
 
+  private val noOfEntriesIdentifier = By.id("value")
 
-  def selectOneEntry: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '01']]")).click()
-  def selectMultiEntry: Unit = driver.findElement(By.className("//*[contains(@class, 'govuk-radios') and input[@value = '02']]")).click()
+
+
+  def enterNoOfEntries(noOfEntriesValue: String): Unit = enterValInTextField(noOfEntriesIdentifier, noOfEntriesValue)
+  def selectOneEntry: Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectMultiEntry: Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 }

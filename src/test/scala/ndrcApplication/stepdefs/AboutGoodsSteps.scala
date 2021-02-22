@@ -21,31 +21,14 @@ import ndrcApplication.pages.{commonPage, aboutGoodsPage }
 
 class AboutGoodsSteps extends aboutGoodsPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
-  And("""^I enter Reason for overpayment- Reason: "([^"]*)"$\""") { (reason: String) =>
+  And("""^I enter Reason for overpayment- Reason: "([^"]*)"$""") { (reason: String) =>
     aboutGoodsPage.enterReason(reason)
 
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
-  And("""^I enter goods details- Details: "([^"]*)"$\""") { (goodsDetails: String) =>
+  And("""^I enter goods details- Details: "([^"]*)"$""") { (goodsDetails: String) =>
     aboutGoodsPage.enterGoodsDetails(goodsDetails)
 
   }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
 
 }

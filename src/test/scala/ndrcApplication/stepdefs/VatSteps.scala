@@ -21,32 +21,12 @@ import ndrcApplication.pages.{commonPage, vatPage }
 
 class VatSteps extends vatPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   And("""^I enter import vat paid- VatPaid: "([^"]*)"$""") { (vatPaid: String) =>
     vatPage.enterVatPaid(vatPaid)
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
-  And("""^I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"$""") { (vatBeenPaid: String) => {
+  And("""^I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"$""") { (vatBeenPaid: String) =>
     vatPage.enterVatBeenPaid(vatBeenPaid)
   }
-
-    When("""^I click on the "([^"]*)" button$""") {
-      commonPage.clickOnContinueBtn()
-    }
-
-  }
-
-
 
 }

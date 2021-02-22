@@ -21,19 +21,12 @@ import ndrcApplication.pages.{commonPage,importerorRepPage}
 
 class ImporterorRepSteps extends importerorRepPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle:String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-
-  }
-
   And("^I choose Importer claimant type$") {
     selectImporter
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-
+  And("^I choose Representative claimant type$") {
+    selectRepresentative
   }
-
 
 }

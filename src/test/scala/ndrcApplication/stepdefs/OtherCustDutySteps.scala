@@ -21,28 +21,12 @@ import ndrcApplication.pages.{commonPage, otherCustDutyPage }
 
 class OtherCustDutySteps extends otherCustDutyPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   And("""^I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"$"""){  (otherCustDutyPaid: String) =>
     otherCustDutyPage.enterOtherCustDutyPaid(otherCustDutyPaid)
   }
 
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   And("""^I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"$""") { (otherCustDutyBeenPaid: String) =>
     otherCustDutyPage.enterOtherCustDutyBeenPaid(otherCustDutyBeenPaid)
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
   }
 
 }

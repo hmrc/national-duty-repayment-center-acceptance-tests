@@ -21,18 +21,8 @@ import ndrcApplication.pages.{commonPage, articlePage}
 
   class ArticleSteps extends articlePage with ScalaDsl with EN {
 
-    Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-      assert(commonPage.isPageTitleDisplayed(pageTitle))
-    }
-
     And("^I choose a repayment Type$") {
       selectVatArticle
     }
-
-    When("""^I click on the "([^"]*)" button$""") {
-      commonPage.clickOnContinueBtn()
-    }
-
-
 
 }

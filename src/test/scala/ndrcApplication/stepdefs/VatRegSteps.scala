@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
@@ -20,20 +21,12 @@ import ndrcApplication.pages.{commonPage,vatRegPage }
 
 class VatRegSteps extends vatRegPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   And("""^I choose "([^"]*)" option$""") { (yOrNVat: String) =>
 
     yOrNVat match {
-      case "Yes" => optionSelected("#value")
-      case "No" => optionSelected("#value-2")
+      case "Yes" => clickByCSS("#value")
+      case "No" => clickByCSS("#value-2")
     }
-  }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
   }
 
 }

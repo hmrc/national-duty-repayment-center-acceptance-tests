@@ -21,21 +21,11 @@ import ndrcApplication.pages.{commonPage, reclaimPage }
 
 class ReclaimSteps extends reclaimPage with ScalaDsl with EN {
 
-  Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
-    assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
-
   And("^I choose customsDuty importVAT anotherTypeofDuty options$") {
     reclaimPage.selectCustDuty
     reclaimPage.selectImpVat
     reclaimPage.selectOtherDuty
 
   }
-
-  When("""^I click on the "([^"]*)" button$""") {
-    commonPage.clickOnContinueBtn()
-  }
-
-
 
 }

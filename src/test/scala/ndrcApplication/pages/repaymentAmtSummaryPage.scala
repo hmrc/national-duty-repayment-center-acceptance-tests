@@ -16,12 +16,11 @@
 
 package ndrcApplication.pages
 
-import org.openqa.selenium.By
+//import org.openqa.selenium.By
 
 object repaymentAmtSummaryPage extends repaymentAmtSummaryPage
 
 class repaymentAmtSummaryPage extends commonMethods {
-
 
 
 }
