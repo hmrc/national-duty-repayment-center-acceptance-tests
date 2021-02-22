@@ -17,16 +17,12 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, entryDatePage }
+import ndrcApplication.pages.{commonPage, regulationsPage }
 
-class EntryDateSteps extends entryDatePage with ScalaDsl with EN {
+class RegulationsSteps extends regulationsPage with ScalaDsl with EN {
 
-  And("^I choose a date Range on or before Dec$") {
-    selectOnORBeforeDecDate
-  }
-
-  And("^I choose a date Range from Jan this year$") {
-    selectJanDate
+  And("^I choose a regulation repayment Type$") {
+    selectErrorByCust
   }
 
 }
