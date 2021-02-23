@@ -81,7 +81,7 @@ Feature: Importers Journey
       Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
       And I enter "<phoneNo>" importers
       When I click on the "Continue" button
-      Then I am on "What is your email address? - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
       And I choose "<YorNemail>" option and enter "<emailAddress>"
       When I click on the "Continue" button
       Then I am on "Select repayment method - National Duty Repayment Centre - GOV.UK" page
@@ -92,13 +92,13 @@ Feature: Importers Journey
       When I click on the "Continue" button
       Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
       When I click on the "Continue" button
-      Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+   #   Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
       |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  |  Yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
 
-  #@suite
+  @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
@@ -184,7 +184,7 @@ Feature: Importers Journey
     Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
     And I enter "<phoneNo>" importers
     When I click on the "Continue" button
-    Then I am on "What is your email address? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
     And I choose "<YorNemail>" option and enter "<emailAddress>"
     When I click on the "Continue" button
     Then I am on "Enter UK bank details - National Duty Repayment Centre - GOV.UK" page
@@ -192,7 +192,7 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+  #  Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
      | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country        | phoneNo      | YorNemail | emailAddress       |  aName   | sCode  | accNo      |

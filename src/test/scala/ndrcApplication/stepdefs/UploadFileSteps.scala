@@ -17,12 +17,17 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, uploadFilePage }
+import ndrcApplication.pages.uploadFilePage
 
 class UploadFileSteps extends uploadFilePage with ScalaDsl with EN {
 
   When("""^I click on Choose file button and add the "([^"]*)" file$""") { (fileSeq: String) =>
     uploadFilePage.uploadFile(fileSeq)
+  }
+
+  Then("^I see an error message \"([^\"]*)\"$") { (errorMsg: String) =>
+    findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > div.govuk-error-summary > div > ul > li > a").isDisplayed
+
   }
 
 }

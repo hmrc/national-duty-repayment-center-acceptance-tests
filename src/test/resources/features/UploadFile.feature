@@ -1,6 +1,6 @@
-Feature: UK Regulations scenarios
+Feature: Upload supporting files
   @suite
-  Scenario Outline: A user wants to complete a New Importers journey with UK regulations
+  Scenario Outline: A user wants to upload supporting files
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
     And I choose Importer claimant type
@@ -9,10 +9,10 @@ Feature: UK Regulations scenarios
     And I choose one entry
     When I click on the "Continue" button
     Then I am on "What was the entry acceptance date? - National Duty Repayment Centre - GOV.UK" page
-    And I choose a date Range from Jan this year
+    And I choose a date Range on or before Dec
     When I click on the "Continue" button
     Then I am on "Why are you applying for this repayment? - National Duty Repayment Centre - GOV.UK" page
-    And I choose a regulation repayment Type
+    And I choose a repayment Type
     When I click on the "Continue" button
     Then I am on "Entry details - National Duty Repayment Centre - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
@@ -59,39 +59,18 @@ Feature: UK Regulations scenarios
     Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
     Then I select "<YorNuploadFile>" to uploading another file
     When I click on the "Continue" button
-    Then I am on "Do you have an EORI number? - National Duty Repayment Centre - GOV.UK" page
-    And I choose eori "<YorNeori>" option
+    #file error duplicate file upload
+    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    When I click on Choose file button and add the "first" file
     When I click on the "Continue" button
-    Then I am on "What is your EORI number? - National Duty Repayment Centre - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
+    Then I see an error message "The selected file has already been uploaded"
+    #upload mutliple files
+    When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
-    Then I am on "Are you VAT registered? - National Duty Repayment Centre - GOV.UK" page
-    And I choose "<YorNvat>" option
-    When I click on the "Continue" button
-    Then I am on "What is your name - National Duty Repayment Centre - GOV.UK" page
-    And I enter first "<fName>" and last "<lName>"
-    When I click on the "Continue" button
-    Then I am on "What is your address? - National Duty Repayment Centre - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - National Duty Repayment Centre - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
-    And I enter "<phoneNo>" importers
-    When I click on the "Continue" button
-    Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
-    And I choose "<YorNemail>" option and enter "<emailAddress>"
-    When I click on the "Continue" button
-    Then I am on "Select repayment method - National Duty Repayment Centre - GOV.UK" page
-    And I chooose "<repayment>" option
-    When I click on the "Continue" button
-    Then I am on "Enter UK bank details - National Duty Repayment Centre - GOV.UK" page
-    And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
-    When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
-    When I click on the "Continue" button
-   # Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "You have uploaded 2 files - National Duty Repayment Centre - GOV.UK" page
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
+    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
 
     Examples:
-      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  |  Yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
+      |YorNuploadFile |
+      |Yes             |

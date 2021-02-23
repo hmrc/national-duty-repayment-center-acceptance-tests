@@ -1,5 +1,5 @@
 Feature: Representatives Journey
-  #@suite
+  @suite
     @ZAP
   Scenario Outline: A user wants to complete a New Representatives journey
       Given I am on the start page for trader service and select Apply Now
@@ -86,7 +86,7 @@ Feature: Representatives Journey
       Then I am on "What is your name - National Duty Repayment Centre - GOV.UK" page
       And I enter first "<agentFName>" and last "<agentLName>"
       When I click on the "Continue" button
-      Then I am on "What is your business address?- National Duty Repayment Centre - GOV.UK" page
+      Then I am on "What is your business address? - National Duty Repayment Centre - GOV.UK" page
       And I select "Enter address Manually" option
       Then I am on "Enter your business address - National Duty Repayment Centre - GOV.UK" page
       And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
@@ -94,7 +94,7 @@ Feature: Representatives Journey
       Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
       And I enter "<phoneNo>" importers
       When I click on the "Continue" button
-      Then I am on "What is your email address? - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
       And I choose "<YorNemail>" option and enter "<emailAddress>"
       When I click on the "Continue" button
       Then I am on "Select repayment method - National Duty Repayment Centre - GOV.UK" page
@@ -114,13 +114,13 @@ Feature: Representatives Journey
       When I click on the "Continue" button
       Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
       When I click on the "Continue" button
-      Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+  #    Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       | emailAddress     | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      | No            |    Yes      | GB123456789123   | Yes     | test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   | test@gmail.com   |       No         | test     | 987890      | 98712356      |
+      |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       | YorNemail |emailAddress     | repayment              | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      | No            |    Yes      | GB123456789123   | Yes     | test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |     Yes   |test@gmail.com   | Bank transfer (Bacs)   |     No         | test     | 987890      | 98712356      |
 
- # @suite @accessibility
+  @suite @accessibility
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
@@ -212,7 +212,7 @@ Feature: Representatives Journey
     Then I am on "What is your name - National Duty Repayment Centre - GOV.UK" page
     And I enter first "<agentFName>" and last "<agentLName>"
     When I click on the "Continue" button
-    Then I am on "What is your business address?- National Duty Repayment Centre - GOV.UK" page
+    Then I am on "What is your business address? - National Duty Repayment Centre - GOV.UK" page
     And I select "Enter address Manually" option
     Then I am on "Enter your business address - National Duty Repayment Centre - GOV.UK" page
     And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
@@ -220,7 +220,7 @@ Feature: Representatives Journey
     Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
     And I enter "<phoneNo>" importers
     When I click on the "Continue" button
-    Then I am on "What is your email address? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
     And I choose "<YorNemail>" option and enter "<emailAddress>"
     When I click on the "Continue" button
     Then I am on "Who is to be repaid? - National Duty Repayment Centre - GOV.UK" page
@@ -237,8 +237,8 @@ Feature: Representatives Journey
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+  #  Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       | emailAddress     | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |9            | No            |    Yes      | GB123456789123   | Yes     |test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   | test@gmail.com   |       No         | test     | 987890      | 98712356      |
+      | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |YorNemail    | emailAddress     | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      |9            | No            |    Yes      | GB123456789123   | Yes     |test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212    |    Yes      |test@gmail.com   |       No         | test     | 987890      | 98712356      |
