@@ -16,13 +16,14 @@
 
 package ndrcApplication.pages
 
-//import org.openqa.selenium.By
+import org.openqa.selenium.By
 
 object uploadFilePage extends uploadFilePage
 
 class uploadFilePage extends commonMethods {
 
   val chooseFileId = "file"
+
 
   def uploadFile(fileSeq: String): Unit = uploadFilesToBrowser(fileSeq, chooseFileId)
 

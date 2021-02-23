@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, fileUploadedPage }
+import ndrcApplication.pages.fileUploadedPage
 
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
@@ -33,6 +33,10 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
       case "No" => clickByCSS("#uploadAnotherFile-2")
 
     }
+  }
+
+  Then("""^I should see second uploaded doc "([^"]*)" on upload review page$"""){ (secondFileName: String) =>
+    findElementByCss("div.govuk-summary-list__row:nth-child(2) > dd:nth-child(1)").isDisplayed
   }
 
 }
