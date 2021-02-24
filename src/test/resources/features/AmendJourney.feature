@@ -1,7 +1,7 @@
 Feature: Amend case Journey
-  @suite
-    @accessibility
-    @ZAP
+ # @suite
+  #  @accessibility
+  #  @ZAP
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
