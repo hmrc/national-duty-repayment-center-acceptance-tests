@@ -16,7 +16,6 @@
 
 package ndrcApplication.stepdefs
 
-import org.openqa.selenium.By
 import cucumber.api.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.commonPage
 

@@ -13,27 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.eoriNoPage
+import ndrcApplication.pages.amendCaseRefNoPage
 
-class EoriNoSteps extends eoriNoPage with ScalaDsl with EN {
+class AmendCaseRefNoSteps extends amendCaseRefNoPage with ScalaDsl with EN {
 
-    And("""^I choose eori "([^"]*)" option$""") { (yOrNEori: String) =>
-      yOrNEori match {
-        case "Yes" => clickByCSS("#value")
-        case "No" => clickByCSS("#value-no")
-      }
-    }
-
-    And("^I enter \"([^\"]*)\" in correct format GB$") { (eoriNO: String) =>
-      eoriNoPage.enterEoriNo(eoriNO)
-    }
+  And("^I enter valid Application \"([^\"]*)\"$") { (refNo : String) =>
+    amendCaseRefNoPage.enterRefNo(refNo)
+  }
 
 }
-
-
-
-

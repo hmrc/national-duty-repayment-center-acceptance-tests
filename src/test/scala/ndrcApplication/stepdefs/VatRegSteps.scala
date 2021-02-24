@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage,vatRegPage }
+import ndrcApplication.pages.vatRegPage
 
 class VatRegSteps extends vatRegPage with ScalaDsl with EN {
 

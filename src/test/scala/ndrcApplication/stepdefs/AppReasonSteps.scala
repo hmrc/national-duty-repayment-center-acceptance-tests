@@ -18,7 +18,7 @@ package ndrcApplication.stepdefs
 
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, appReasonPage}
+import ndrcApplication.pages.appReasonPage
 
 class AppReasonSteps extends appReasonPage with ScalaDsl with EN {
 

@@ -17,10 +17,9 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, importerPersonalDetailsPage}
+import ndrcApplication.pages.importerPersonalDetailsPage
 
 class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with ScalaDsl with EN {
-
 
   And("^I enter first \"([^\"]*)\" and last \"([^\"]*)\"$"){ (fName: String, lName: String) =>
     importerPersonalDetailsPage.enterFName(fName)

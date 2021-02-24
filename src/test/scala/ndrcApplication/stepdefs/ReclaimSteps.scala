@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, reclaimPage }
+import ndrcApplication.pages.reclaimPage
 
 class ReclaimSteps extends reclaimPage with ScalaDsl with EN {
 

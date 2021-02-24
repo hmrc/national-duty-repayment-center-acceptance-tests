@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, checkYourAnswersPage }
+import ndrcApplication.pages.checkYourAnswersPage
 
 class CheckYourAnswersSteps extends checkYourAnswersPage with ScalaDsl with EN {
 

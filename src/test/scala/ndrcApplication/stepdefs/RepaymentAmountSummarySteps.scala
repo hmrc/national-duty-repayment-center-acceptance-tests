@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, repaymentAmtSummaryPage }
+import ndrcApplication.pages.repaymentAmtSummaryPage
 
 class RepaymentAmountSummarySteps extends repaymentAmtSummaryPage with ScalaDsl with EN {
 
