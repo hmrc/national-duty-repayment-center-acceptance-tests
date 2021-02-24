@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, customsDutyPage }
+import ndrcApplication.pages.customsDutyPage
 
 class CustomsDutySteps extends customsDutyPage with ScalaDsl with EN {
 

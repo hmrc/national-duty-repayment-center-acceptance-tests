@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, otherCustDutyPage }
+import ndrcApplication.pages.otherCustDutyPage
 
 class OtherCustDutySteps extends otherCustDutyPage with ScalaDsl with EN {
 

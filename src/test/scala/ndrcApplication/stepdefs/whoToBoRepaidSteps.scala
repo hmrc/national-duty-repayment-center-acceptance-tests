@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{commonPage, importerorRepPage}
+import ndrcApplication.pages.importerorRepPage
 
 class whoToBoRepaidSteps extends importerorRepPage with ScalaDsl with EN {
 
