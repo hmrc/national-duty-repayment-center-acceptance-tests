@@ -16,10 +16,9 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.pages.commonMethods
 import ndrcApplication.utils.Configuration
 
-import org.openqa.selenium.{By, WebDriver}
+import org.openqa.selenium.By
 import ndrcApplication.stepdefs.WebDriverInstance
 
 object commonPage extends commonMethods with WebDriverInstance {
@@ -37,6 +36,16 @@ object commonPage extends commonMethods with WebDriverInstance {
 
   def authLogin(): Unit = {
     enterValInTextField(redirectUrl, s"${Configuration.settings.ndrcApplicationLandingUrl}")
+    clickOnButton(submitButtonOnAuthLoginPage)
+  }
+
+  def loginNDRCAmendViaStub(): Unit = {
+    navigateToPage(s"${Configuration.settings.authLogin}")
+    authAmendLogin()
+  }
+
+  def authAmendLogin(): Unit = {
+    enterValInTextField(redirectUrl, s"${Configuration.settings.ndrcAmendApplicationLandingUrl}")
     clickOnButton(submitButtonOnAuthLoginPage)
   }
 
