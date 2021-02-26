@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
@@ -24,6 +25,14 @@ class AmendCaseResponseType extends amendCaseResponseTypePage with ScalaDsl with
     amendCaseResponseTypePage.selectSendMoreDocs
     amendCaseResponseTypePage.selectGiveMoreInfo
 
+  }
+
+  And("^I choose send more supporting documents$") {
+    amendCaseResponseTypePage.selectSendMoreDocs
+  }
+
+  And("^I choose to provide give further information$") {
+    amendCaseResponseTypePage.selectGiveMoreInfo
   }
 
 }

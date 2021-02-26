@@ -90,7 +90,7 @@ Feature: UK Regulations scenarios
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
-   # Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
