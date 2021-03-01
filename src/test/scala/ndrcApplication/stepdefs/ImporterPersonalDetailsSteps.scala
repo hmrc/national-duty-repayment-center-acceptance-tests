@@ -37,7 +37,6 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
     importerPersonalDetailsPage.enterCounty(county)
     importerPersonalDetailsPage.enterPostCode(postCode)
     importerPersonalDetailsPage.selectCountryCode(country)
-
   }
 
   And("^I enter \"([^\"]*)\" importers$") { (phoneNo: String) =>

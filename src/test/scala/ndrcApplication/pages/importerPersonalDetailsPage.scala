@@ -17,7 +17,7 @@
 package ndrcApplication.pages
 
 import org.openqa.selenium.By
-import org.openqa.selenium.Keys
+//import org.openqa.selenium.Keys
 
 object importerPersonalDetailsPage extends importerPersonalDetailsPage
 
@@ -29,12 +29,14 @@ class importerPersonalDetailsPage extends commonMethods {
   private val cityIdentifier = By.id("City")
   private val countyIdentifier = By.id("Region")
   private val postcodeIdentifier = By.id("PostalCode")
+  private val countryCodeIdentifier = By.id("CountryCode")
   private val phoneNoIdentifier = By.id("value")
   private val emailIdentifier = By.id("email")
 
 
   def enterAddManuallyLink: Unit = driver.findElement(By.id("enter-address-manually")).click()
-  def selectCountryCode(countryCodeValue : String): Unit = driver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
+  //def selectCountryCode(countryCodeValue : String): Unit = driver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
+
 
   def enterFName(fNameValue : String): Unit = enterValInTextField(fNameIdentifier, fNameValue)
   def enterLName(lNameValue : String): Unit = enterValInTextField(lNameIdentifier, lNameValue)
@@ -42,6 +44,7 @@ class importerPersonalDetailsPage extends commonMethods {
   def enterCity(cityValue : String): Unit = enterValInTextField(cityIdentifier, cityValue)
   def enterCounty(countyValue : String): Unit = enterValInTextField(countyIdentifier, countyValue)
   def enterPostCode(postCodeValue : String): Unit = enterValInTextField(postcodeIdentifier, postCodeValue)
+  def selectCountryCode(countryCodeValue : String): Unit = selectDropdown(countryCodeIdentifier, countryCodeValue)
   def enterPhoneNo(phoneNoValue : String): Unit = enterValInTextField(phoneNoIdentifier, phoneNoValue)
   def enterEmail(emailValue : String): Unit = enterValInTextField(emailIdentifier, emailValue)
 

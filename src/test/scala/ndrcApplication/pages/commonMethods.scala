@@ -18,7 +18,7 @@ package ndrcApplication.pages
 
 import java.util.concurrent.TimeUnit
 
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, Wait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
@@ -53,6 +53,11 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   def clickOnButton(identifier: By): Unit = {
     fluentWait.until(ExpectedConditions.elementToBeClickable(identifier))
     driver.findElement(identifier).click()
+  }
+
+  def selectDropdown(affinityGroup: By, level: String) = {
+    val dropdown = new Select(driver.findElement(affinityGroup))
+    dropdown.selectByVisibleText(level)
   }
 
   def enterValInTextField (identifier: By, value: String): Unit = {
