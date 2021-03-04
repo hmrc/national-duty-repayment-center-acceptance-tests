@@ -23,10 +23,7 @@ Feature: Importers Journey
       Then I am on "What does your application relate to? - National Duty Repayment Centre - GOV.UK" page
       And I choose an application Reason
       When I click on the "Continue" button
-      Then I am on "Reason for overpayment - National Duty Repayment Centre - GOV.UK" page
-      And I enter Reason for overpayment- Reason: "Paid more"
-      When I click on the "Continue" button
-      Then I am on "Tell us about the goods - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Tell us why the overpayment happened - National Duty Repayment Centre - GOV.UK" page
       And I enter goods details- Details: "Shoes Jeans Jackets"
       When I click on the "Continue" button
       Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page
@@ -113,11 +110,11 @@ Feature: Importers Journey
     Then I am on "What was the entry acceptance date? - National Duty Repayment Centre - GOV.UK" page
     And I choose a date Range on or before Dec
     When I click on the "Continue" button
-    Then I am on "Upload the multiple entries spreadsheet - National Duty Repayment Centre - GOV.UK" page
-    When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
     Then I am on "Why are you applying for this repayment? - National Duty Repayment Centre - GOV.UK" page
     And I choose a repayment Type
+    When I click on the "Continue" button
+    Then I am on "Upload the multiple entries spreadsheet - National Duty Repayment Centre - GOV.UK" page
+    When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
     Then I am on "Entry details - National Duty Repayment Centre - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
@@ -126,10 +123,7 @@ Feature: Importers Journey
     Then I am on "What does your application relate to? - National Duty Repayment Centre - GOV.UK" page
     And I choose an application Reason
     When I click on the "Continue" button
-    Then I am on "Reason for overpayment - National Duty Repayment Centre - GOV.UK" page
-    And I enter Reason for overpayment- Reason: "Paid more"
-    When I click on the "Continue" button
-    Then I am on "Tell us about the goods - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Tell us why the overpayment happened - National Duty Repayment Centre - GOV.UK" page
     And I enter goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
     Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page

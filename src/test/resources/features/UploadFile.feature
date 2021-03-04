@@ -21,10 +21,7 @@ Feature: Upload supporting files
     Then I am on "What does your application relate to? - National Duty Repayment Centre - GOV.UK" page
     And I choose an application Reason
     When I click on the "Continue" button
-    Then I am on "Reason for overpayment - National Duty Repayment Centre - GOV.UK" page
-    And I enter Reason for overpayment- Reason: "Paid more"
-    When I click on the "Continue" button
-    Then I am on "Tell us about the goods - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Tell us why the overpayment happened - National Duty Repayment Centre - GOV.UK" page
     And I enter goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
     Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page
