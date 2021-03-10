@@ -20,7 +20,7 @@ Feature: Amend case Journey
     Then I am on "Give us further information - National Duty Repayment Centre - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Check your answers before sending your information - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
@@ -45,7 +45,7 @@ Feature: Amend case Journey
     Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
     Then I select "<YorNuploadFile>" to uploading another file
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Check your answers before sending your information - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
@@ -66,7 +66,7 @@ Feature: Amend case Journey
     Then I am on "Give us further information - National Duty Repayment Centre - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Check your answers before sending your information - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 

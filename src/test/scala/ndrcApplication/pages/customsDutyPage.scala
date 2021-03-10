@@ -22,8 +22,8 @@ object customsDutyPage extends customsDutyPage
 
 class customsDutyPage extends commonMethods {
 
-  private val custDutyPaidIdentifier = By.id("value")
-  private val custDutyHaveBeenPaidIdentifier = By.id("value")
+  private val custDutyPaidIdentifier = By.id("ActualPaidAmount")
+  private val custDutyHaveBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
 
 

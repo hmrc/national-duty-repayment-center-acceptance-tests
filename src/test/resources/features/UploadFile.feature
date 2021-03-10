@@ -27,10 +27,8 @@ Feature: Upload supporting files
     Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page
     And I choose customsDuty importVAT anotherTypeofDuty options
     When I click on the "Continue" button
-    Then I am on "How much Customs Duty was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Customs Duty overpayment - National Duty Repayment Centre - GOV.UK" page
     And I enter customs Duty paid- CustomDuty: "1000.00"
-    When I click on the "Continue" button
-    Then I am on "How much Customs Duty should have been paid? - National Duty Repayment Centre - GOV.UK" page
     And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
     When I click on the "Continue" button
     Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
