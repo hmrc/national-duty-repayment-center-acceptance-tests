@@ -29,10 +29,8 @@ Feature: Importers Journey
       Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page
       And I choose customsDuty importVAT anotherTypeofDuty options
       When I click on the "Continue" button
-      Then I am on "How much Customs Duty was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Customs Duty overpayment - National Duty Repayment Centre - GOV.UK" page
       And I enter customs Duty paid- CustomDuty: "1000.00"
-      When I click on the "Continue" button
-      Then I am on "How much Customs Duty should have been paid? - National Duty Repayment Centre - GOV.UK" page
       And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
       When I click on the "Continue" button
       Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
@@ -87,7 +85,7 @@ Feature: Importers Journey
       Then I am on "Enter UK bank details - National Duty Repayment Centre - GOV.UK" page
       And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
       When I click on the "Continue" button
-      Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Check your answers before sending your information - National Duty Repayment Centre - GOV.UK" page
       When I click on the "Continue" button
       Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
@@ -129,10 +127,8 @@ Feature: Importers Journey
     Then I am on "What do you want to reclaim? - National Duty Repayment Centre - GOV.UK" page
     And I choose customsDuty importVAT anotherTypeofDuty options
     When I click on the "Continue" button
-    Then I am on "How much Customs Duty was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Customs Duty overpayment - National Duty Repayment Centre - GOV.UK" page
     And I enter customs Duty paid- CustomDuty: "1000.00"
-    When I click on the "Continue" button
-    Then I am on "How much Customs Duty should have been paid? - National Duty Repayment Centre - GOV.UK" page
     And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
     When I click on the "Continue" button
     Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
@@ -184,7 +180,7 @@ Feature: Importers Journey
     Then I am on "Enter UK bank details - National Duty Repayment Centre - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Check your answers before sending your information - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
