@@ -1,5 +1,5 @@
 Feature: Representatives Journey
- # @suite
+  @suite
     @ZAP
   Scenario Outline: A user wants to complete a New Representatives journey
       Given I am on the start page for trader service and select Apply Now
@@ -113,7 +113,7 @@ Feature: Representatives Journey
       |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       | YorNemail |emailAddress     | repayment              | yOrNoIndirectRep | aName    | sCode       | accNo         |
       | No            |    Yes      | GB123456789123   | Yes     | test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |     Yes   |test@gmail.com   | Bank transfer (Bacs)   |     No         | test     | 987890      | 98712356      |
 
- # @suite @accessibility
+  @suite @accessibility
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
