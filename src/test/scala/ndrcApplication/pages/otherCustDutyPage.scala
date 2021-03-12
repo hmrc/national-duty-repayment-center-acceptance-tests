@@ -22,8 +22,8 @@ object otherCustDutyPage extends otherCustDutyPage
 
 class otherCustDutyPage extends commonMethods {
 
-  private val otherCustDutyPaidIdentifier = By.id("value")
-  private val otherCustDutyBeenPaidIdentifier = By.id("value")
+  private val otherCustDutyPaidIdentifier = By.id("ActualPaidAmount")
+  private val otherCustDutyBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
 
   def enterOtherCustDutyPaid(otherCustDutyPaidValue : String): Unit = enterValInTextField(otherCustDutyPaidIdentifier, otherCustDutyPaidValue)
