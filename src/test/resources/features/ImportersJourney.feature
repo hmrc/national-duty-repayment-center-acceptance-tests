@@ -1,5 +1,5 @@
 Feature: Importers Journey
- #  @suite
+   @suite
      @accessibility
     @ZAP
   Scenario Outline: A user wants to complete a New Importers journey
@@ -91,7 +91,7 @@ Feature: Importers Journey
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
       |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  |  Yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
 
- # @suite
+  @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
