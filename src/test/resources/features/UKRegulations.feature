@@ -1,5 +1,5 @@
 Feature: UK Regulations scenarios
- # @suite
+  @suite
   Scenario Outline: A user wants to complete a New Importers journey with UK regulations
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
