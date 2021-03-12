@@ -1,5 +1,5 @@
 Feature: Importers Journey
-   @suite
+ #  @suite
      @accessibility
     @ZAP
   Scenario Outline: A user wants to complete a New Importers journey
@@ -39,10 +39,8 @@ Feature: Importers Journey
       Then I am on "How much import VAT should have been paid? - National Duty Repayment Centre - GOV.UK" page
       And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
       When I click on the "Continue" button
-      Then I am on "How much was paid in other duties to HMRC? - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Overpayment of other duties - National Duty Repayment Centre - GOV.UK" page
       And I enter other custom Duty paid- OtherCustDutyPaid: "1250.00"
-      When I click on the "Continue" button
-      Then I am on "How much should have been paid in other duties? - National Duty Repayment Centre - GOV.UK" page
       And I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "200.00"
       When I click on the "Continue" button
       Then I am on "Repayment amount summary - National Duty Repayment Centre - GOV.UK" page
@@ -93,7 +91,7 @@ Feature: Importers Journey
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
       |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  |  Yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
 
-  @suite
+ # @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
@@ -137,10 +135,8 @@ Feature: Importers Journey
     Then I am on "How much import VAT should have been paid? - National Duty Repayment Centre - GOV.UK" page
     And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
     When I click on the "Continue" button
-    Then I am on "How much was paid in other duties to HMRC? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Overpayment of other duties - National Duty Repayment Centre - GOV.UK" page
     And I enter other custom Duty paid- OtherCustDutyPaid: "1250.00"
-    When I click on the "Continue" button
-    Then I am on "How much should have been paid in other duties? - National Duty Repayment Centre - GOV.UK" page
     And I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "200.00"
     When I click on the "Continue" button
     Then I am on "Repayment amount summary - National Duty Repayment Centre - GOV.UK" page
