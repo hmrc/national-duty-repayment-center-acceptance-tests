@@ -31,10 +31,8 @@ Feature: Upload supporting files
     And I enter customs Duty paid- CustomDuty: "1000.00"
     And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
     When I click on the "Continue" button
-    Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Import VAT overpayment - National Duty Repayment Centre - GOV.UK" page
     And I enter import vat paid- VatPaid: "1500.00"
-    When I click on the "Continue" button
-    Then I am on "How much import VAT should have been paid? - National Duty Repayment Centre - GOV.UK" page
     And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
     When I click on the "Continue" button
     Then I am on "Overpayment of other duties - National Duty Repayment Centre - GOV.UK" page
@@ -72,3 +70,39 @@ Feature: Upload supporting files
       |YorNuploadFile  |
       |Yes             |
 
+  @suite
+  Scenario Outline: A user wants to upload supporting files in Amend case journey
+    Given I am on the start page for trader service and select Amend Now
+    Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
+    And I enter valid Application "<referenceNo>"
+    When I click on the "Continue" button
+    Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page
+    And I choose send more supporting documents
+    When I click on the "Continue" button
+    Then I am on "Upload a file - National Duty Repayment Centre - GOV.UK" page
+    When I click on Choose file button and add the "first" file
+    When I click on the "Continue" button
+    Then I am on "You have uploaded 1 file - National Duty Repayment Centre - GOV.UK" page
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
+    Then I select "<YorNuploadFile>" to uploading another file
+    When I click on the "Continue" button
+    #No selection made error message
+    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    When I click on the "Continue" button
+    Then I see an error message "Upload a file to support your application"
+    #file error duplicate file upload
+    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    When I click on Choose file button and add the "first" file
+    When I click on the "Continue" button
+    Then I see an error message "This file has already been uploaded"
+    #upload mutliple files
+    When I click on Choose file button and add the "second" file
+    When I click on the "Continue" button
+    Then I am on "You have uploaded 2 files - National Duty Repayment Centre - GOV.UK" page
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
+    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
+
+
+    Examples:
+      | referenceNo             | YorNuploadFile  |
+      | NDRC2103151135EE6L6YKH3 | Yes             |

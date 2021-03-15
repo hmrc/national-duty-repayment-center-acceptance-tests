@@ -22,8 +22,8 @@ object vatPage extends vatPage
 
 class vatPage extends commonMethods {
 
-  private val vatPaidIdentifier = By.id("value")
-  private val vatBeenPaidIdentifier = By.id("value")
+  private val vatPaidIdentifier = By.id("ActualPaidAmount")
+  private val vatBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
 
 
