@@ -1,6 +1,6 @@
 Feature: Error Scenarios Amend case Journey
   @suite
-  Scenario Outline: A user wants to Amend a case
+  Scenario Outline: Error messages for Amend case journey scenarios
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button

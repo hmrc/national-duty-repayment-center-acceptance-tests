@@ -25,7 +25,6 @@ class ReclaimSteps extends reclaimPage with ScalaDsl with EN {
     reclaimPage.selectCustDuty
     reclaimPage.selectImpVat
     reclaimPage.selectOtherDuty
-
   }
 
 }

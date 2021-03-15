@@ -26,5 +26,4 @@ class reclaimPage extends commonMethods {
   def selectImpVat: Unit = driver.findElement(By.cssSelector("#\\30 2")).click()
   def selectOtherDuty: Unit = driver.findElement(By.cssSelector("#\\30 3")).click()
 
-
 }
