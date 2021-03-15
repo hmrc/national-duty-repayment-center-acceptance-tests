@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{amendCaseRefNoPage, commonPage}
+import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
 
 class CommonSteps extends ScalaDsl with EN {
 
@@ -35,6 +35,10 @@ class CommonSteps extends ScalaDsl with EN {
 
   Then("^I clear the reference no field$"){ () =>
     amendCaseRefNoPage.clearRefNo
+  }
+
+  And("^Hint text is displayed \"([^\"]*)\"$"){ (hintText: String) =>
+    customsDutyPage.hintText
   }
 
 }
