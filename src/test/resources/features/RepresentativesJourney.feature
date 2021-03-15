@@ -32,10 +32,8 @@ Feature: Representatives Journey
       And I enter customs Duty paid- CustomDuty: "1000.00"
       And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
       When I click on the "Continue" button
-      Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Import VAT overpayment - National Duty Repayment Centre - GOV.UK" page
       And I enter import vat paid- VatPaid: "1500.00"
-      When I click on the "Continue" button
-      Then I am on "How much import VAT should have been paid? - National Duty Repayment Centre - GOV.UK" page
       And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
       When I click on the "Continue" button
       Then I am on "Overpayment of other duties - National Duty Repayment Centre - GOV.UK" page
@@ -151,10 +149,8 @@ Feature: Representatives Journey
     And I enter customs Duty paid- CustomDuty: "1000.00"
     And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
     When I click on the "Continue" button
-    Then I am on "How much import VAT was paid to HMRC? - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Import VAT overpayment - National Duty Repayment Centre - GOV.UK" page
     And I enter import vat paid- VatPaid: "1500.00"
-    When I click on the "Continue" button
-    Then I am on "How much import VAT should have been paid? - National Duty Repayment Centre - GOV.UK" page
     And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
     When I click on the "Continue" button
     Then I am on "Overpayment of other duties - National Duty Repayment Centre - GOV.UK" page

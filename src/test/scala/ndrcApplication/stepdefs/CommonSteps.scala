@@ -17,7 +17,7 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.commonPage
+import ndrcApplication.pages.{amendCaseRefNoPage, commonPage}
 
 class CommonSteps extends ScalaDsl with EN {
 
@@ -27,6 +27,14 @@ class CommonSteps extends ScalaDsl with EN {
 
   When("""^I click on the "([^"]*)" button$"""){ (continue: String) =>
     commonPage.clickOnContinueBtn()
+  }
+
+  Then("^An error message is displayed- Error: \"([^\"]*)\"$"){ (errorMsg: String) =>
+    amendCaseRefNoPage.errMsg
+  }
+
+  Then("^I clear the reference no field$"){ () =>
+    amendCaseRefNoPage.clearRefNo
   }
 
 }

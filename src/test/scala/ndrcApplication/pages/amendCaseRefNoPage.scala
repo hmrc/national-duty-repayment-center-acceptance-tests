@@ -24,6 +24,11 @@ class amendCaseRefNoPage extends commonMethods {
 
   private val refNoIdentifier = By.id("value")
 
+  //error messages
+
+  def errMsg: Unit = driver.findElement(By.id("value-error")).isDisplayed()
+  def clearRefNo:Unit = driver.findElement(By.id("value")).clear()
+
   def enterRefNo(refNoValue : String): Unit = enterValInTextField(refNoIdentifier, refNoValue)
 
 }

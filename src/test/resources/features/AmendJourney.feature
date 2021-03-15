@@ -1,7 +1,7 @@
 Feature: Amend case Journey
-  @suite
+#  @suite
     @accessibility
-  #  @ZAP
+    @ZAP
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
@@ -27,9 +27,9 @@ Feature: Amend case Journey
 
     Examples:
     | referenceNo               | YorNuploadFile |
-    | NDRC2103051008LDIG3D7Q0   | No             |
+    | NDRC2103151135EE6L6YKH3   | No             |
 
-  @suite
+ # @suite
   Scenario Outline: A user wants to Amend a case to send more supporting documents
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
@@ -52,9 +52,9 @@ Feature: Amend case Journey
 
     Examples:
       | referenceNo                | YorNuploadFile |
-      | NDRC210304971XG8WJSPBP4    | No             |
+      | NDRC2103151134NZY5YI5K1    | No             |
 
-  @suite
+ # @suite
   Scenario Outline: A user wants to Amend a case to give further information
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
@@ -73,4 +73,4 @@ Feature: Amend case Journey
 
     Examples:
       | referenceNo               |
-      | NDRC21030510072HQKYY6Q5   |
+      | NDRC2103151133GW67CXC52   |

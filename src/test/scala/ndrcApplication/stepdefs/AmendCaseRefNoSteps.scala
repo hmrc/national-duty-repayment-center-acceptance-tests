@@ -25,4 +25,18 @@ class AmendCaseRefNoSteps extends amendCaseRefNoPage with ScalaDsl with EN {
     amendCaseRefNoPage.enterRefNo(refNo)
   }
 
+  And("^I enter Application \"([^\"]*)\" reference no with a special character$"){ (splCharacterRefNo: String) =>
+    amendCaseRefNoPage.enterRefNo(splCharacterRefNo)
+  }
+
+  Then("^I enter wrong format Application \"([^\"]*)\" reference No$") { (wrongFormatRefNo: String) =>
+    amendCaseRefNoPage.enterRefNo(wrongFormatRefNo)
+  }
+
+  Then("^I enter invalid length Application \"([^\"]*)\" reference number$") { (invalidLenRefNo: String) =>
+    amendCaseRefNoPage.enterRefNo(invalidLenRefNo)
+  }
+
+
+
 }
