@@ -16,11 +16,14 @@
 
 package ndrcApplication.pages
 
-//import org.openqa.selenium.By
+import org.openqa.selenium.By
 
 object vatRegPage extends vatRegPage
 
 class vatRegPage extends commonMethods {
 
+
+  def vatRegHyperlink: Unit = driver.findElement(By.id("details-id")).click()
+  def vatRegText: Unit = driver.findElement(By.id("details-id")).isDisplayed()
 
 }

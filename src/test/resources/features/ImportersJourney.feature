@@ -97,8 +97,6 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
     And I choose multi entry
-    When I click on the "Continue" button
-    Then I am on "How many entries are you claiming for? - National Duty Repayment Centre - GOV.UK" page
     And I enter "<noOfEntries>" value
     When I click on the "Continue" button
     Then I am on "What was the entry acceptance date? - National Duty Repayment Centre - GOV.UK" page

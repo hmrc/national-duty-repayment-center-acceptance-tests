@@ -22,11 +22,12 @@ object entriesPage extends entriesPage
 
 class entriesPage extends commonMethods {
 
-  private val noOfEntriesIdentifier = By.id("value")
+  private val noOfEntriesIdentifier = By.id("entries")
 
 
 
   def enterNoOfEntries(noOfEntriesValue: String): Unit = enterValInTextField(noOfEntriesIdentifier, noOfEntriesValue)
+
   def selectOneEntry: Unit = driver.findElement(By.cssSelector("#value")).click()
   def selectMultiEntry: Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
