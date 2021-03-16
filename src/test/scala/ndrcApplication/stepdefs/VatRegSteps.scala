@@ -37,10 +37,4 @@ class VatRegSteps extends vatRegPage with ScalaDsl with EN {
     vatRegPage.vatRegText
   }
 
-  And("^Help VAT registration link is not displayed$") {
-    vatRegPage.
-
-  }
-
-
 }
