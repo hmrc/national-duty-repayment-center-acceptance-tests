@@ -29,4 +29,18 @@ class VatRegSteps extends vatRegPage with ScalaDsl with EN {
     }
   }
 
+  And("^I click on Help VAT registration link$"){ () =>
+    vatRegPage.vatRegHyperlink
+  }
+
+  And("^I confirm VAT registration is displayed: \"([^\"]*)\"$"){ (vatRegText: String) =>
+    vatRegPage.vatRegText
+  }
+
+  And("^Help VAT registration link is not displayed$") {
+    vatRegPage.
+
+  }
+
+
 }
