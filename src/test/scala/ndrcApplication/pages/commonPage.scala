@@ -26,6 +26,8 @@ object commonPage extends commonMethods with WebDriverInstance {
   private val redirectUrl = By.name("redirectionUrl")
   private val submitButtonOnAuthLoginPage = By.xpath("//*[@id='inputForm']/div[1]/p/input")
   private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
+  private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
+  private val hideCookieMessage = By.xpath("/html/body/div[1]/div/div[2]/button")
 
 
 
@@ -50,6 +52,10 @@ object commonPage extends commonMethods with WebDriverInstance {
   }
 
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
+
+  def acceptCookies(): Unit = clickOnButton(acceptCookiesOnAllPages)
+
+  def hideCookiesMsg() : Unit = clickOnButton(hideCookieMessage)
 
   def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)
 

@@ -2,6 +2,7 @@ Feature: Error Scenarios Amend case Journey
   @suite
   Scenario Outline: Error messages for Amend case journey scenarios
     Given I am on the start page for trader service and select Amend Now
+    Then I Accept cookies and hide message
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then An error message is displayed- Error: "Enter the reference number"

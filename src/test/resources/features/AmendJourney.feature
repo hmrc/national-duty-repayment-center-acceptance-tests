@@ -5,6 +5,7 @@ Feature: Amend case Journey
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page
@@ -33,6 +34,7 @@ Feature: Amend case Journey
   Scenario Outline: A user wants to Amend a case to send more supporting documents
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page
@@ -58,6 +60,7 @@ Feature: Amend case Journey
   Scenario Outline: A user wants to Amend a case to give further information
     Given I am on the start page for trader service and select Amend Now
     Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page
