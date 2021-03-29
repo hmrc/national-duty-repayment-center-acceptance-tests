@@ -3,6 +3,7 @@ Feature: Reclaim Dynamic content scenarios
   Scenario: Reclaim single entry journey help text
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
@@ -48,6 +49,7 @@ Feature: Reclaim Dynamic content scenarios
   Scenario: Reclaim multi entry journey help text
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page

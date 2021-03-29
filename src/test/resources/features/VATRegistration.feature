@@ -3,6 +3,7 @@ Feature: Importers Journey
   Scenario Outline: VAT Registration
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
+     Then I Accept cookies and hide message
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
@@ -69,6 +70,7 @@ Feature: Importers Journey
 
     Given I am on the start page for trader service and select Apply Now
     Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
+    Then I Accept cookies and hide message
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
@@ -84,7 +86,7 @@ Feature: Importers Journey
     Then I am on "Upload the multiple entries spreadsheet - National Duty Repayment Centre - GOV.UK" page
     When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
-    Then I am on "Entry details - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Enter the details of the oldest entry - National Duty Repayment Centre - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter entryDate- Day: "08", Month: "12" and Year: "2019"
     When I click on the "Continue" button

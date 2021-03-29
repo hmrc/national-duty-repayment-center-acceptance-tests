@@ -41,4 +41,9 @@ class CommonSteps extends ScalaDsl with EN {
     customsDutyPage.hintText
   }
 
+  Then("^I Accept cookies and hide message$") { () =>
+    commonPage.acceptCookies()
+    commonPage.hideCookiesMsg()
+  }
+
 }
