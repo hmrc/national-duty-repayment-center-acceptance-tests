@@ -65,7 +65,7 @@ Feature: Representatives Journey
       When I click on the "Continue" button
       Then I am on "What is the importer's address? - National Duty Repayment Centre - GOV.UK" page
       And I select "Enter address Manually" option
-      Then I am on "Enter their address - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "Enter the importer's address - National Duty Repayment Centre - GOV.UK" page
       And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
       When I click on the "Continue" button
       Then I am on "Do you have an EORI number? - National Duty Repayment Centre - GOV.UK" page
@@ -82,11 +82,15 @@ Feature: Representatives Journey
       Then I am on "Enter your business address - National Duty Repayment Centre - GOV.UK" page
       And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
       When I click on the "Continue" button
-      Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "How can we contact you? - National Duty Repayment Centre - GOV.UK" page
+      And I select email option
+      And I enter "<emailAddress>"
+      And I select phone no option
       And I enter "<phoneNo>" importers
       When I click on the "Continue" button
-      Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
-      And I choose "<YorNemail>" option and enter "<emailAddress>"
+      Then I am on "Do you want to create a declarant reference number? - National Duty Repayment Centre - GOV.UK" page
+      And I choose "<YorNDeclarantRefNO>" options
+      And I enter to create "<declarantRefNo>"
       When I click on the "Continue" button
       Then I am on "Select repayment method - National Duty Repayment Centre - GOV.UK" page
       And I chooose "<repayment>" option
@@ -108,8 +112,8 @@ Feature: Representatives Journey
       Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       | YorNemail |emailAddress     | repayment              | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      | No            |    Yes      | GB123456789123   | Yes     | test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |     Yes   |test@gmail.com   | Bank transfer (Bacs)   |     No         | test     | 987890      | 98712356      |
+      |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     | repayment             | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      | No            |    Yes      | GB123456789123   | Yes     | test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   | Bank transfer (Bacs)  |  Yes                | 123abcxyz      |     No           | test     | 987890      | 98712356      |
 
   @suite @accessibility @ZAP
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
@@ -181,7 +185,7 @@ Feature: Representatives Journey
     When I click on the "Continue" button
     Then I am on "What is the importer's address? - National Duty Repayment Centre - GOV.UK" page
     And I select "Enter address Manually" option
-    Then I am on "Enter their address - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Enter the importer's address - National Duty Repayment Centre - GOV.UK" page
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
     Then I am on "Do you have an EORI number? - National Duty Repayment Centre - GOV.UK" page
@@ -198,11 +202,15 @@ Feature: Representatives Journey
     Then I am on "Enter your business address - National Duty Repayment Centre - GOV.UK" page
     And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
     When I click on the "Continue" button
-    Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "How can we contact you? - National Duty Repayment Centre - GOV.UK" page
+    And I select email option
+    And I enter "<emailAddress>"
+    And I select phone no option
     And I enter "<phoneNo>" importers
     When I click on the "Continue" button
-    Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
-    And I choose "<YorNemail>" option and enter "<emailAddress>"
+    Then I am on "Do you want to create a declarant reference number? - National Duty Repayment Centre - GOV.UK" page
+    And I choose "<YorNDeclarantRefNO>" options
+    And I enter to create "<declarantRefNo>"
     When I click on the "Continue" button
     Then I am on "Who is to be repaid? - National Duty Repayment Centre - GOV.UK" page
     And I choose Representative option
@@ -221,5 +229,5 @@ Feature: Representatives Journey
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |YorNemail    | emailAddress     | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |9            | No            |    Yes      | GB123456789123   | Yes     |test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212    |    Yes      |test@gmail.com   |       No         | test     | 987890      | 98712356      |
+      | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | fName     | lName         | addLine        | city            | county        | postCode   | country         | agentEoriNo        | agentFName | agentLName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      |9            | No            |    Yes      | GB123456789123   | Yes     |test      | importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test       | agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | test     | 987890      | 98712356      |

@@ -70,11 +70,15 @@ Feature: Importers Journey
       Then I am on "Enter your address - National Duty Repayment Centre - GOV.UK" page
       And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
       When I click on the "Continue" button
-      Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "How can we contact you? - National Duty Repayment Centre - GOV.UK" page
+      And I select email option
+      And I enter "<emailAddress>"
+      And I select phone no option
       And I enter "<phoneNo>" importers
       When I click on the "Continue" button
-      Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
-      And I choose "<YorNemail>" option and enter "<emailAddress>"
+      Then I am on "Do you want to create a declarant reference number? - National Duty Repayment Centre - GOV.UK" page
+      And I choose "<YorNDeclarantRefNO>" options
+      And I enter to create "<declarantRefNo>"
       When I click on the "Continue" button
       Then I am on "Select repayment method - National Duty Repayment Centre - GOV.UK" page
       And I chooose "<repayment>" option
@@ -87,8 +91,8 @@ Feature: Importers Journey
       Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | YorNemail | emailAddress       | repayment                | aName   | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  |  Yes      | test@mail.com      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
+      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      |
+      |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
 
   @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
@@ -163,11 +167,15 @@ Feature: Importers Journey
     Then I am on "Enter your address - National Duty Repayment Centre - GOV.UK" page
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
-    Then I am on "Enter your phone number - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "How can we contact you? - National Duty Repayment Centre - GOV.UK" page
+    And I select email option
+    And I enter "<emailAddress>"
+    And I select phone no option
     And I enter "<phoneNo>" importers
     When I click on the "Continue" button
-    Then I am on "Can we contact you by email? - National Duty Repayment Centre - GOV.UK" page
-    And I choose "<YorNemail>" option and enter "<emailAddress>"
+    Then I am on "Do you want to create a declarant reference number? - National Duty Repayment Centre - GOV.UK" page
+    And I choose "<YorNDeclarantRefNO>" options
+    And I enter to create "<declarantRefNo>"
     When I click on the "Continue" button
     Then I am on "Enter UK bank details - National Duty Repayment Centre - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
@@ -177,5 +185,5 @@ Feature: Importers Journey
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country        | phoneNo      | YorNemail | emailAddress       |  aName   | sCode  | accNo      |
-     |     8       |  No           |  Yes     | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom | 09876543212  |  Yes      | test@mail.com      |  Test    | 987654 | 12345678   |
+     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
+     |     8       |  No           |  Yes     | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Test    | 987654 | 12345678   |

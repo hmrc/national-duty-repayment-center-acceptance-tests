@@ -30,13 +30,14 @@ class importerPersonalDetailsPage extends commonMethods {
   private val countyIdentifier = By.id("Region")
   private val postcodeIdentifier = By.id("PostalCode")
   private val countryCodeIdentifier = By.id("CountryCode")
-  private val phoneNoIdentifier = By.id("value")
+  private val phoneNoIdentifier = By.id("phone")
   private val emailIdentifier = By.id("email")
 
 
   def enterAddManuallyLink: Unit = driver.findElement(By.id("enter-address-manually")).click()
   //def selectCountryCode(countryCodeValue : String): Unit = driver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
-
+  def selectEmailOption: Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectPhoneOption: Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
   def enterFName(fNameValue : String): Unit = enterValInTextField(fNameIdentifier, fNameValue)
   def enterLName(lNameValue : String): Unit = enterValInTextField(lNameIdentifier, lNameValue)
