@@ -39,18 +39,20 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
     importerPersonalDetailsPage.selectCountryCode(country)
   }
 
-  And("^I enter \"([^\"]*)\" importers$") { (phoneNo: String) =>
-    importerPersonalDetailsPage.enterPhoneNo(phoneNo)
+  And("^I select email option$") { () =>
+    importerPersonalDetailsPage.selectEmailOption
   }
 
-  And("^I choose \"([^\"]*)\" option and enter \"([^\"]*)\"$") { (YorNEmail: String, email: String) =>
-
-    YorNEmail match {
-      case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-2")
-    }
-
+  And("^I enter \"([^\"]*)\"$") { (email: String) =>
     importerPersonalDetailsPage.enterEmail(email)
+  }
+
+  And("^I select phone no option$") { () =>
+    importerPersonalDetailsPage.selectPhoneOption
+  }
+
+  And("^I enter \"([^\"]*)\" importers$") { (phoneNo: String) =>
+    importerPersonalDetailsPage.enterPhoneNo(phoneNo)
   }
 
 }

@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package ndrcApplication.pages
+package ndrcApplication.stepdefs
 
-import org.openqa.selenium.By
+import cucumber.api.scala.{EN, ScalaDsl}
+import ndrcApplication.pages.declarantRefNoPage
 
-object reclaimPage extends reclaimPage
+class DeclarantRefNoSteps extends declarantRefNoPage with ScalaDsl with EN {
 
-class reclaimPage extends commonMethods {
+  And("^I choose \"([^\"]*)\" options$") { (yOrNDRN: String) =>
+    yOrNDRN match {
+      case "Yes" => clickByCSS("#value")
+      case "No" => clickByCSS("#value-2")
+    }
+  }
 
-  def selectCustDuty: Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectImpVat: Unit = driver.findElement(By.cssSelector("#value-2")).click()
-  def selectOtherDuty: Unit = driver.findElement(By.cssSelector("#value-3")).click()
+  And("^I enter to create \"([^\"]*)\"$") { (decRefNo: String) =>
+    declarantRefNoPage.enterDRN(decRefNo)
+
+  }
 
 }

@@ -18,12 +18,14 @@ package ndrcApplication.pages
 
 import org.openqa.selenium.By
 
-object reclaimPage extends reclaimPage
+object declarantRefNoPage extends declarantRefNoPage
 
-class reclaimPage extends commonMethods {
+class declarantRefNoPage extends commonMethods {
 
-  def selectCustDuty: Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectImpVat: Unit = driver.findElement(By.cssSelector("#value-2")).click()
-  def selectOtherDuty: Unit = driver.findElement(By.cssSelector("#value-3")).click()
+  private val decRefNoIdentifier = By.id("declarantReferenceNumber")
+
+
+
+  def enterDRN(drnValue : String): Unit = enterValInTextField(decRefNoIdentifier, drnValue)
 
 }
