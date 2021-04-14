@@ -16,11 +16,33 @@
 
 package ndrcApplication.pages
 
-//import org.openqa.selenium.By
+import org.openqa.selenium.{By, WebElement}
 
 object checkYourAnswersPage extends checkYourAnswersPage
 
 class checkYourAnswersPage extends commonMethods {
+
+  //Amend case summary list
+  val RefNo = "Reference number"
+  val ResType = "Response type"
+  val ResToHMRC = "Response to HMRC"
+  val Docs = "Documents"
+
+  def verifyRefNo(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(1) > dt").getText mustEqual text
+  def verifyResType(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(2) > dt").getText mustEqual text
+  def verifyResToHMRC(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(3) > dt").getText mustEqual text
+  def verifyDocs(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(4) > dt").getText mustEqual text
+
+  def RefNoResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[1]/dd[1]")
+  def ResTypeResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[2]/dd[1]")
+  def ResToHMRCResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[3]/dd[1]")
+  def DocsResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[4]/dd[1]")
+
+  def clickRefNOChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/changeReferenceNumber']")
+  def clickResTypeChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/changeAmendCaseResponseType']")
+  def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/changeFurtherInformation']")
+  def clickDocsChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/change-amend-case-send-information/file-uploaded']")
+
 
 
 }
