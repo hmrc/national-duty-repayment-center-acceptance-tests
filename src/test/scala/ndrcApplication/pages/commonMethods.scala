@@ -65,11 +65,17 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     driver.findElement(identifier).sendKeys(value)
   }
 
+  def assertElementText(content: String, element: WebElement): Unit = {
+    assert(element.getText.equals(content), message(s"Element displayed is: ${element.getText} Expecting: $content"))
+  }
+
   def optionSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe(true)
 
   def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe(false)
 
   def isElementVisible(css: String): Boolean = driver.findElement(By.cssSelector(css)).isDisplayed
+
+  def findByXpath(xpath: String): WebElement = driver.findElement(By.xpath(xpath))
 
   def findElementByCss(css: String): WebElement = {
     fluentWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(css))))
