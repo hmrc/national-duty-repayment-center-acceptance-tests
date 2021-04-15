@@ -37,6 +37,4 @@ class AmendCaseRefNoSteps extends amendCaseRefNoPage with ScalaDsl with EN {
     amendCaseRefNoPage.enterRefNo(invalidLenRefNo)
   }
 
-
-
 }

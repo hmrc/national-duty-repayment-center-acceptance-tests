@@ -41,16 +41,6 @@ object commonPage extends commonMethods with WebDriverInstance {
     clickOnButton(submitButtonOnAuthLoginPage)
   }
 
-  def loginNDRCAmendViaStub(): Unit = {
-    navigateToPage(s"${Configuration.settings.authLogin}")
-    authAmendLogin()
-  }
-
-  def authAmendLogin(): Unit = {
-    enterValInTextField(redirectUrl, s"${Configuration.settings.ndrcAmendApplicationLandingUrl}")
-    clickOnButton(submitButtonOnAuthLoginPage)
-  }
-
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
 
   def acceptCookies(): Unit = clickOnButton(acceptCookiesOnAllPages)

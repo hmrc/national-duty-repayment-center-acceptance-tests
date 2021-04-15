@@ -19,7 +19,7 @@ package ndrcApplication.utils
 import java.time.LocalDate
 import scala.util.Try
 
-case class Configuration(baseUrl: String, authLogin:String, ndrcApplicationLandingUrl:String, ndrcAmendApplicationLandingUrl:String, timeout: Int)
+case class Configuration(baseUrl: String, authLogin:String, ndrcApplicationLandingUrl:String, timeout: Int)
 
 object Configuration {
 
@@ -43,32 +43,28 @@ val local_date: LocalDate = Try(LocalDate.parse(System.getProperty("local-date",
         new Configuration(
           baseUrl = "www.development.tax.service.gov.uk",
           authLogin = "https://www.development.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-center/importer-or-representative",
-          ndrcAmendApplicationLandingUrl="/national-duty-repayment-center/referenceNumber",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.local =>
         new Configuration(
           baseUrl = "http://localhost:9949/",
           authLogin = "http://localhost:9949/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="http://localhost:8450/national-duty-repayment-center/importer-or-representative",
-          ndrcAmendApplicationLandingUrl="http://localhost:8450/national-duty-repayment-center/referenceNumber",
+          ndrcApplicationLandingUrl="http://localhost:8450/national-duty-repayment-center/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.qa =>
         new Configuration(
           baseUrl = "https://www.qa.tax.service.gov.uk",
           authLogin = "https://www.qa.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-center/importer-or-representative",
-          ndrcAmendApplicationLandingUrl="/national-duty-repayment-center/referenceNumber",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.staging =>
         new Configuration(
           baseUrl = "https://www.staging.tax.service.gov.uk",
           authLogin = "https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-center/importer-or-representative",
-          ndrcAmendApplicationLandingUrl="/national-duty-repayment-center/referenceNumber",
+          ndrcApplicationLandingUrl="/national-duty-repayment-center/what-do-you-want-to-do",
           timeout = 10
         )
       case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")

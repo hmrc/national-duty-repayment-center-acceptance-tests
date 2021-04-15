@@ -2,8 +2,9 @@ Feature: Representatives Journey
   @suite
   Scenario Outline: A user wants to complete a New Representatives journey
       Given I am on the start page for trader service and select Apply Now
+      Then I Accept cookies and hide message
+      When I click on the "Continue" button
       Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
-    Then I Accept cookies and hide message
       And I choose Representative claimant type
       When I click on the "Continue" button
       Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
@@ -118,8 +119,9 @@ Feature: Representatives Journey
   @suite @accessibility @ZAP
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
     Given I am on the start page for trader service and select Apply Now
-    Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
     Then I Accept cookies and hide message
+    When I click on the "Continue" button
+    Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
     And I choose Representative claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page

@@ -3,8 +3,9 @@ Feature: Amend case Journey
 
   Scenario Outline: A user wants to change an answer via the CYA page - Amend case
     Given I am on the start page for trader service and select Amend Now
-    Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     Then I Accept cookies and hide message
+    When I click on the "Continue" button
+    Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page
