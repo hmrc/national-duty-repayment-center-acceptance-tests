@@ -2,8 +2,9 @@ Feature: Upload supporting files
   @suite
   Scenario Outline: Upload supporting files scenarios
     Given I am on the start page for trader service and select Apply Now
-    Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
     Then I Accept cookies and hide message
+    When I click on the "Continue" button
+    Then I am on "Are you the importer or their representative? - National Duty Repayment Centre - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - National Duty Repayment Centre - GOV.UK" page
@@ -74,8 +75,9 @@ Feature: Upload supporting files
   @suite
   Scenario Outline: Upload supporting files scenarios - Amend case journey
     Given I am on the start page for trader service and select Amend Now
-    Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     Then I Accept cookies and hide message
+    When I click on the "Continue" button
+    Then I am on "What is the reference number? - National Duty Repayment Centre - GOV.UK" page
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - National Duty Repayment Centre - GOV.UK" page

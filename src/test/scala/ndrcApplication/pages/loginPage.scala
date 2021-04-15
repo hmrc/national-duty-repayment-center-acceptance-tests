@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-package ndrcApplication.stepdefs
+package ndrcApplication.pages
 
-import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.commonPage
-import ndrcApplication.pages.loginPage
+import org.openqa.selenium.By
 
-class LoginPageSteps extends loginPage with ScalaDsl with EN {
+object loginPage extends loginPage
 
-  Given("""^I am on the start page for trader service and select Apply Now$""") { () =>
-    commonPage.loginNDRCViaAuthStub()
-    loginPage.selectStart
+class loginPage extends commonMethods {
 
-  }
 
-  Given("^I am on the start page for trader service and select Amend Now$") { () =>
-    commonPage.loginNDRCViaAuthStub()
-    loginPage.selectAmend
-
-  }
+  def selectStart: Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectAmend: Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 }
