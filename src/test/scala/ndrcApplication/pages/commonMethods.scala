@@ -82,6 +82,8 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     driver.findElement(By.cssSelector(css))
   }
 
+  def verifyHeading(text: String): Unit = findElementByCss("h2").getText mustBe text
+
   def clickHref(href: String): Unit = driver.findElement(By.cssSelector(href)).click()
 
   def clickByCSS(css: String): Unit = driver.findElement(By.cssSelector(css)).click()

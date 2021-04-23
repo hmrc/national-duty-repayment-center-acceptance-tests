@@ -16,7 +16,7 @@
 
 package ndrcApplication.pages
 
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.WebElement
 
 object checkYourAnswersPage extends checkYourAnswersPage
 
@@ -42,7 +42,5 @@ class checkYourAnswersPage extends commonMethods {
   def clickResTypeChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/changeAmendCaseResponseType']")
   def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/changeFurtherInformation']")
   def clickDocsChangeOption: Unit = clickHref("a[href*='/national-duty-repayment-center/change-amend-case-send-information/file-uploaded']")
-
-
 
 }

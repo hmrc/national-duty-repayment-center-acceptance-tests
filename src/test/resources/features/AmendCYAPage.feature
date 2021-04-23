@@ -1,4 +1,4 @@
-Feature: Amend case Journey
+Feature: Amend case CYA Page
   @suite
 
   Scenario Outline: A user wants to change an answer via the CYA page - Amend case
