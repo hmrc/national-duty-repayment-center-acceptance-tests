@@ -56,7 +56,7 @@ Feature: Amend case Journey
 
     Examples:
       | referenceNo                | YorNuploadFile |
-      | NDRC2103151134NZY5YI5K1    | No             |
+      | NDRC2104271387KWIE0HH46    | No             |
 
   @suite
   Scenario Outline: A user wants to Amend a case to give further information
