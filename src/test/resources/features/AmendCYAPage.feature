@@ -66,7 +66,7 @@ Feature: Amend case CYA Page
     Then I am on "You have uploaded 1 file - National Duty Repayment Centre - GOV.UK" page
     Then I select "<YorNuploadFiles>" to uploading another file
     When I click on the "Continue" button
-    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Upload another file - National Duty Repayment Centre - GOV.UK" page
     When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
     Then I am on "You have uploaded 2 files - National Duty Repayment Centre - GOV.UK" page
