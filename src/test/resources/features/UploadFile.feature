@@ -53,11 +53,11 @@ Feature: Upload supporting files
     Then I select "<YorNuploadFile>" to uploading another file
     When I click on the "Continue" button
     #No selection made error message
-    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Upload another file - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I see an error message "Upload a file to support your application"
     #file error duplicate file upload
-    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Upload another file - National Duty Repayment Centre - GOV.UK" page
     When I click on Choose file button and add the "first" file
     When I click on the "Continue" button
     Then I see an error message "This file has already been uploaded"
@@ -91,11 +91,11 @@ Feature: Upload supporting files
     Then I select "<YorNuploadFile>" to uploading another file
     When I click on the "Continue" button
     #No selection made error message
-    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Upload another file - National Duty Repayment Centre - GOV.UK" page
     When I click on the "Continue" button
     Then I see an error message "Upload a file to support your application"
     #file error duplicate file upload
-    Then I am on "Upload another document - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "Upload another file - National Duty Repayment Centre - GOV.UK" page
     When I click on Choose file button and add the "first" file
     When I click on the "Continue" button
     Then I see an error message "This file has already been uploaded"
