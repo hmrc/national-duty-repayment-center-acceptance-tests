@@ -27,8 +27,4 @@ class eoriNoPage extends commonMethods {
 
   def enterEoriNo(eoriNoValue : String): Unit = enterValInTextField(eoriNoIdentifier, eoriNoValue)
 
-
-
-
-
 }

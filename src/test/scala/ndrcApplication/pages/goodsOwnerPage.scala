@@ -14,26 +14,17 @@
  * limitations under the License.
  */
 
-package ndrcApplication.stepdefs
+package ndrcApplication.pages
 
-import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.vatRegPage
+import org.openqa.selenium.By
 
-class VatRegSteps extends vatRegPage with ScalaDsl with EN {
+object goodsOwnerPage extends goodsOwnerPage
 
-  And("""^I choose "([^"]*)" option$""") { (yOrNVat: String) =>
-    yOrNVat match {
-      case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-2")
-    }
-  }
+class goodsOwnerPage extends commonMethods {
 
-  And("^I click on Help VAT registration link$"){ () =>
-    vatRegPage.vatRegHyperlink
-  }
+  private val goodsOwnerIdentifier = By.id("importerName")
 
-  And("^I confirm VAT registration is displayed: \"([^\"]*)\"$"){ (vatRegText: String) =>
-    vatRegPage.vatRegText
-  }
+
+  def entergoodsOwnerName(goodsOwnerValue : String): Unit = enterValInTextField(goodsOwnerIdentifier, goodsOwnerValue)
 
 }
