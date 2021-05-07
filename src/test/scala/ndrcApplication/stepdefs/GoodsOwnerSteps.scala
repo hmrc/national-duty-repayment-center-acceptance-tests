@@ -17,23 +17,21 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.vatRegPage
+import ndrcApplication.pages.goodsOwnerPage
 
-class VatRegSteps extends vatRegPage with ScalaDsl with EN {
+class GoodsOwnerSteps extends goodsOwnerPage with ScalaDsl with EN {
 
-  And("""^I choose "([^"]*)" option$""") { (yOrNVat: String) =>
-    yOrNVat match {
+  And("^I choose \"([^\"]*)\" option to confirm owner of the goods$") { (yOrNgoodsOwner: String) =>
+    yOrNgoodsOwner match {
       case "Yes" => clickByCSS("#value")
       case "No" => clickByCSS("#value-2")
     }
+
   }
 
-  And("^I click on Help VAT registration link$"){ () =>
-    vatRegPage.vatRegHyperlink
-  }
+  And("^I enter \"([^\"]*)\" name$") { (goodsOwnerName: String) =>
+    goodsOwnerPage.entergoodsOwnerName(goodsOwnerName)
 
-  And("^I confirm VAT registration is displayed: \"([^\"]*)\"$"){ (vatRegText: String) =>
-    vatRegPage.vatRegText
   }
 
 }

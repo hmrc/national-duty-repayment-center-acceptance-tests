@@ -63,8 +63,11 @@ Feature: Importers Journey
       Then I am on "Are you VAT registered? - National Duty Repayment Centre - GOV.UK" page
       And I choose "<YorNvat>" option
       When I click on the "Continue" button
-      Then I am on "What is your name - National Duty Repayment Centre - GOV.UK" page
+      Then I am on "What is your name? - National Duty Repayment Centre - GOV.UK" page
       And I enter first "<fName>" and last "<lName>"
+      When I click on the "Continue" button
+      Then I am on "Is Test Importer the name on the import documents? - National Duty Repayment Centre - GOV.UK" page
+      And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
       When I click on the "Continue" button
       Then I am on "What is your address? - National Duty Repayment Centre - GOV.UK" page
       And I select "Enter address Manually" option
@@ -92,8 +95,8 @@ Feature: Importers Journey
       Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
+      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      |
+      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    |    Yes         |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
 
   @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
@@ -161,8 +164,14 @@ Feature: Importers Journey
     Then I am on "Are you VAT registered? - National Duty Repayment Centre - GOV.UK" page
     And I choose "<YorNvat>" option
     When I click on the "Continue" button
-    Then I am on "What is your name - National Duty Repayment Centre - GOV.UK" page
+    Then I am on "What is your name? - National Duty Repayment Centre - GOV.UK" page
     And I enter first "<fName>" and last "<lName>"
+    When I click on the "Continue" button
+    Then I am on "Is Test Importer the name on the import documents? - National Duty Repayment Centre - GOV.UK" page
+    And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
+    When I click on the "Continue" button
+    Then I am on "What is the name on the import documents? - National Duty Repayment Centre - GOV.UK" page
+    And I enter "<goodsOwner>" name
     When I click on the "Continue" button
     Then I am on "What is your address? - National Duty Repayment Centre - GOV.UK" page
     And I select "Enter address Manually" option
@@ -187,5 +196,5 @@ Feature: Importers Journey
     Then I am on "Information sent - National Duty Repayment Centre - GOV.UK" page
 
     Examples:
-     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
-     |     8       |  No           |  Yes     | GB123456789123       | Yes       | test      | tester      | 38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Test    | 987654 | 12345678   |
+     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
+     |     8       |  No           |  Yes     | GB123456789123       | Yes       | Test      | Importer    |  No            | Goods Owner|38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Test    | 987654 | 12345678   |
