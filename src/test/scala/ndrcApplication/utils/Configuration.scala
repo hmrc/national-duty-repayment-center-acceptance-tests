@@ -75,4 +75,3 @@ val local_date: LocalDate = Try(LocalDate.parse(System.getProperty("local-date",
     val local, dev, qa, staging = Value
   }
 }
-
