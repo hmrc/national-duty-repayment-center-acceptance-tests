@@ -1,7 +1,7 @@
-Feature: Upload supporting files
+Feature: Feedback form
   @suite
-  Scenario Outline: Upload supporting files scenarios
-    Given I am on the start page for trader service and select Apply Now
+  Scenario Outline: A user submit Feedback form
+  Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -52,61 +52,54 @@ Feature: Upload supporting files
     Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
     Then I select "<YorNuploadFile>" to uploading another file
     When I click on the "Continue" button
-    #No selection made error message
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose eori "<YorNeori>" option
     When I click on the "Continue" button
-    Then I see an error message "Upload a file to support your application"
-    #file error duplicate file upload
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on Choose file button and add the "first" file
+    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter "<eoriNo>" in correct format GB
     When I click on the "Continue" button
-    Then I see an error message "This file has already been uploaded"
-    #upload mutliple files
-    When I click on Choose file button and add the "second" file
+    Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose "<YorNvat>" option
     When I click on the "Continue" button
-    Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
+    Then I am on "What is your name? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter first "<fName>" and last "<lName>"
+    When I click on the "Continue" button
+    Then I am on "Is Test Importer the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
+    When I click on the "Continue" button
+    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I select "Enter address Manually" option
+    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
+    When I click on the "Continue" button
+    Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I select email option
+    And I enter "<emailAddress>"
+    And I select phone no option
+    And I enter "<phoneNo>" importers
+    When I click on the "Continue" button
+    Then I am on "Do you want to create a declarant reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose "<YorNDeclarantRefNO>" options
+    And I enter to create "<declarantRefNo>"
+    When I click on the "Continue" button
+    Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I chooose "<repayment>" option
+    When I click on the "Continue" button
+    Then I am on "Enter UK bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
+    When I click on the "Continue" button
+    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on the "Continue" button
+    Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I click on what do you think of this service link
+    Then I am on "Give feedback - GOV.UK" page
+    And I choose "<YorN>" for you able to do what you needed to do today
+    And I choose rating for was it for you to do what you needed to do today
+    And I enter "<score>" of the service
+    And I choose overallRating for the overall service
+    When I click on the "Continue" button
+    Then I am on "Thank you for your feedback" page
 
     Examples:
-      |YorNuploadFile  |
-      |Yes             |
-
-  @suite
-  Scenario Outline: Upload supporting files scenarios - Amend case journey
-    Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
-    When I click on the "Continue" button
-    Then I am on "What is the reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter valid Application "<referenceNo>"
-    When I click on the "Continue" button
-    Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose send more supporting documents
-    When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
-    #No selection made error message
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I see an error message "Upload a file to support your application"
-    #file error duplicate file upload
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I see an error message "This file has already been uploaded"
-    #upload mutliple files
-    When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
-
-
-    Examples:
-      | referenceNo             | YorNuploadFile  |
-      | NDRC2104261385QBULEC4B5 | Yes             |
+      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | addLine              | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      | YorN | score |
+      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    |    Yes         |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |  Yes |   10  |
