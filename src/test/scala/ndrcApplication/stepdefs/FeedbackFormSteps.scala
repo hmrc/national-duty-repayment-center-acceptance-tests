@@ -44,4 +44,8 @@ class FeedbackFormSteps extends feedbackFormPage with ScalaDsl with EN {
     feedbackFormPage.selectVerySatisfied
   }
 
+  When("^I click on the \"([^\"]*)\" button on feedback form$") { (continue: String) =>
+  feedbackFormPage.clickOnFeedBackContinue
+  }
+
 }

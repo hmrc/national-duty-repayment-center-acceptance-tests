@@ -26,7 +26,7 @@ class feedbackFormPage extends commonMethods {
   private val scoreDetailsIdentifier = By.id("whyGiveScore")
 
 
-  def clickServiceSurveyFromConfPage: Unit = driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/div/p[4]/a")).click()
+  def clickServiceSurveyFromConfPage: Unit = driver.findElement(By.cssSelector("#main-content > div > div > div > p:nth-child(7) > a")).click()
   def selectVerEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryEasy")).click()
   def selectEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Easy")).click()
   def selectNeitherEasyofDiff: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Moderate")).click()
@@ -37,6 +37,7 @@ class feedbackFormPage extends commonMethods {
   def selectNeitherSatisfiedOrDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Moderate")).click()
   def selectDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Dissatisfied")).click()
   def selectVeryDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.VeryDissatisfied")).click()
+  def clickOnFeedBackContinue: Unit = driver.findElement(By.id("submit")).click()
   def enterScoreDetails(scoreDetailsValue : String): Unit = enterValInTextField(scoreDetailsIdentifier, scoreDetailsValue)
 
 }
