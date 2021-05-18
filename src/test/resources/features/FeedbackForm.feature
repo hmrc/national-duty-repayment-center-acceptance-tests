@@ -97,7 +97,7 @@ Feature: Feedback form
     And I choose rating for was it for you to do what you needed to do today
     And I enter "<score>" of the service
     And I choose overallRating for the overall service
-    When I click on the "Continue" button
+    When I click on the "Continue" button on feedback form
     Then I am on "Thank you for your feedback" page
 
     Examples:
