@@ -25,6 +25,9 @@ class importerPersonalDetailsPage extends commonMethods {
 
   private val fNameIdentifier = By.id("firstName")
   private val lNameIdentifier = By.id("lastName")
+  private val impNameIdentifier = By.id("importerName")
+  private val yourNameIdentifier = By.id("declarantName")
+  private val businessNameIdentifier = By.id("agentName")
   private val addLine1Identifier = By.id("AddressLine1")
   private val cityIdentifier = By.id("City")
   private val countyIdentifier = By.id("Region")
@@ -41,6 +44,9 @@ class importerPersonalDetailsPage extends commonMethods {
 
   def enterFName(fNameValue : String): Unit = enterValInTextField(fNameIdentifier, fNameValue)
   def enterLName(lNameValue : String): Unit = enterValInTextField(lNameIdentifier, lNameValue)
+  def enterImpName(impNameValue: String): Unit = enterValInTextField(impNameIdentifier,impNameValue)
+  def enterYourName(yourNameValue: String): Unit = enterValInTextField(yourNameIdentifier,yourNameValue)
+  def enterBusinessName(businessNameValue: String): Unit = enterValInTextField(businessNameIdentifier,businessNameValue)
   def enterAddLine1(addLine1Value : String): Unit = enterValInTextField(addLine1Identifier, addLine1Value)
   def enterCity(cityValue : String): Unit = enterValInTextField(cityIdentifier, cityValue)
   def enterCounty(countyValue : String): Unit = enterValInTextField(countyIdentifier, countyValue)
