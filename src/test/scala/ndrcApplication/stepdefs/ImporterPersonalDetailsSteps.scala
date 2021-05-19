@@ -24,7 +24,15 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
   And("^I enter first \"([^\"]*)\" and last \"([^\"]*)\"$"){ (fName: String, lName: String) =>
     importerPersonalDetailsPage.enterFName(fName)
     importerPersonalDetailsPage.enterLName(lName)
+  }
+//Representative journey - capture importer name
+  And("^I enter \"([^\"]*)\" name in rep journey$") { (impName: String) =>
+    importerPersonalDetailsPage.enterImpName(impName)
+  }
 
+  And("^I enter your \"([^\"]*)\" and business \"([^\"]*)\"$") { (yourName: String, businessName: String) =>
+    importerPersonalDetailsPage.enterYourName(yourName)
+    importerPersonalDetailsPage.enterBusinessName(businessName)
   }
 
   And("^I select \"([^\"]*)\" option$"){ (enterAddManLink: String) =>
