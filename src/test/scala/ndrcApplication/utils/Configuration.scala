@@ -43,28 +43,28 @@ val local_date: LocalDate = Try(LocalDate.parse(System.getProperty("local-date",
         new Configuration(
           baseUrl = "www.development.tax.service.gov.uk",
           authLogin = "https://www.development.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-centre/what-do-you-want-to-do",
+          ndrcApplicationLandingUrl="/apply-for-repayment-of-import-duty-and-import-vat/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.local =>
         new Configuration(
           baseUrl = "http://localhost:9949/",
           authLogin = "http://localhost:9949/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="http://localhost:8450/national-duty-repayment-centre/what-do-you-want-to-do",
+          ndrcApplicationLandingUrl="http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.qa =>
         new Configuration(
           baseUrl = "https://www.qa.tax.service.gov.uk",
           authLogin = "https://www.qa.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-centre/what-do-you-want-to-do",
+          ndrcApplicationLandingUrl="/apply-for-repayment-of-import-duty-and-import-vat/what-do-you-want-to-do",
           timeout = 10
         )
       case Environment.staging =>
         new Configuration(
           baseUrl = "https://www.staging.tax.service.gov.uk",
           authLogin = "https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in",
-          ndrcApplicationLandingUrl="/national-duty-repayment-centre/what-do-you-want-to-do",
+          ndrcApplicationLandingUrl="/apply-for-repayment-of-import-duty-and-import-vat/what-do-you-want-to-do",
           timeout = 10
         )
       case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")
