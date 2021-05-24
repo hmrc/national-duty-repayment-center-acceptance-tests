@@ -81,4 +81,4 @@ Feature: Amend case CYA Page
 
     Examples:
       | referenceNo               | YorNuploadFile | responseType               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType    | changeRespType | YorNuploadFiles | changeDocsUploaded                   |
-      | NDRC2105241644B5A8E7CL6   | No             | Documents and Information  | Shoes Jeans Jackets  | You have uploaded 1 document   | NDRC21052416427YXIJJ8P1 | Shoes Jeans JacketsShoes Jeans Jackets  | Information      | Documents      |  Yes            |You have uploaded 2 documents        |
+      | NDRC21052417701773N5DR2   | No             | Documents and Information  | Shoes Jeans Jackets  | You have uploaded 1 document   | NDRC2105241768GIZ5X6MO4 | Shoes Jeans JacketsShoes Jeans Jackets  | Information      | Documents      |  Yes            |You have uploaded 2 documents        |
