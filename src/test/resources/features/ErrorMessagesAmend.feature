@@ -43,4 +43,4 @@ Feature: Error Scenarios Amend case Journey
 
     Examples:
       | referenceNo               | splCharacterRefNo         | wrongFormatRefNo  | invalidLenRefNo     | YorNuploadFile |
-      | NDRC2104261385QBULEC4B5   | NDRC2103151135EE6L6YKH3&* | 103151135EE6L6YKH | NDRC2103151135EE6L6 | No             |
+      | NDRC2105241644B5A8E7CL6   | NDRC2103151135EE6L6YKH3&* | 103151135EE6L6YKH | NDRC2103151135EE6L6 | No             |
