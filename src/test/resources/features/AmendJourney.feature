@@ -29,7 +29,7 @@ Feature: Amend case Journey
 
     Examples:
     | referenceNo               | YorNuploadFile |
-    | NDRC2105241747VN7SH6KU6   | No             |
+    | NDRC21052618650YFLZNMV2   | No             |
 
   @suite
   Scenario Outline: A user wants to Amend a case to send more supporting documents
@@ -56,7 +56,7 @@ Feature: Amend case Journey
 
     Examples:
       | referenceNo                | YorNuploadFile |
-      | NDRC2105241768GIZ5X6MO4    | No             |
+      | NDRC21052618646XZ66EBX6    | No             |
 
   @suite
   Scenario Outline: A user wants to Amend a case to give further information
@@ -79,4 +79,4 @@ Feature: Amend case Journey
 
     Examples:
       | referenceNo               |
-      | NDRC2105241768GIZ5X6MO4   |
+      | NDRC2105261863OL4K3WXR2   |
