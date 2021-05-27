@@ -24,7 +24,7 @@ import ndrcApplication.stepdefs.WebDriverInstance
 object commonPage extends commonMethods with WebDriverInstance {
 
   private val redirectUrl = By.name("redirectionUrl")
-  private val submitButtonOnAuthLoginPage = By.xpath("//*[@id='inputForm']/div[1]/p/input")
+  private val submitButtonOnAuthLoginPage = By.xpath("//*[@id='inputForm']/input[1]")
   private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
   private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
   private val hideCookieMessage = By.xpath("/html/body/div[1]/div/div[2]/button")
