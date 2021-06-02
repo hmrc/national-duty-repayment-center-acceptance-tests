@@ -40,9 +40,6 @@ Feature: Amend case CYA Page
     #unselecting supporting documents
     And I choose send more supporting documents
     When I click on the "Continue" button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter further goods details- Details: "Shoes Jeans Jackets"
-    When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeResType>", "<responseToHMRC>"
 
