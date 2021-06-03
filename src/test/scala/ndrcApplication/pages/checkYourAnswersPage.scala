@@ -38,9 +38,9 @@ class checkYourAnswersPage extends commonMethods {
   def ResToHMRCResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[3]/dd[1]")
   def DocsResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[4]/dd[1]")
 
-  def clickRefNOChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend/change-application-reference-number']")
-  def clickResTypeChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend/change-what-do-you-need-to-do']")
-  def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend/change-further-information']")
-  def clickDocsChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/change-amend/file-uploaded']")
+  def clickRefNOChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
+  def clickResTypeChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendCaseResponseType']")
+  def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']")
+  def clickDocsChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadedPage']")
 
 }
