@@ -42,9 +42,8 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
   And("^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\", County: \"([^\"]*)\", PostCode: \"([^\"]*)\" and Country: \"([^\"]*)\"$") { (addLine: String, city: String, county: String, postCode: String, country: String) =>
     importerPersonalDetailsPage.enterAddLine1(addLine)
     importerPersonalDetailsPage.enterCity(city)
-    importerPersonalDetailsPage.enterCounty(county)
+    importerPersonalDetailsPage.enterCountryCode(country)
     importerPersonalDetailsPage.enterPostCode(postCode)
-    importerPersonalDetailsPage.selectCountryCode(country)
   }
 
   And("^I select email option$") { () =>

@@ -72,6 +72,8 @@ Feature: Feedback form
     Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
+    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on the "Continue" button
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"

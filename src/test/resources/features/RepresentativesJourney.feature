@@ -55,7 +55,7 @@ Feature: Representatives Journey
       Then I am on "Does the importer have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose eori "<YorNeori>" option
       When I click on the "Continue" button
-      Then I am on "What is the importer's EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "What is the importer’s EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter "<eoriNo>" in correct format GB
       When I click on the "Continue" button
       Then I am on "Is the importer VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -64,10 +64,12 @@ Feature: Representatives Journey
       Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter "<impName>" name in rep journey
       When I click on the "Continue" button
-      Then I am on "What is the importer's address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I select "Enter address Manually" option
-      Then I am on "Enter the importer's address - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
+      When I click on the "Continue" button
+      Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
       When I click on the "Continue" button
       Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose eori "<YorNeori>" option
@@ -82,6 +84,8 @@ Feature: Representatives Journey
       And I select "Enter address Manually" option
       Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
+      When I click on the "Continue" button
+      Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
       When I click on the "Continue" button
       Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I select email option
@@ -176,7 +180,7 @@ Feature: Representatives Journey
     Then I am on "Does the importer have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose eori "<YorNeori>" option
     When I click on the "Continue" button
-    Then I am on "What is the importer's EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the importer’s EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<eoriNo>" in correct format GB
     When I click on the "Continue" button
     Then I am on "Is the importer VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -185,10 +189,12 @@ Feature: Representatives Journey
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    Then I am on "What is the importer's address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select "Enter address Manually" option
-    Then I am on "Enter the importer's address - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
+    When I click on the "Continue" button
+    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose eori "<YorNeori>" option
@@ -203,6 +209,8 @@ Feature: Representatives Journey
     And I select "Enter address Manually" option
     Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
+    When I click on the "Continue" button
+    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
@@ -232,4 +240,4 @@ Feature: Representatives Journey
 
     Examples:
       | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | impName          | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName    | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |9            | No            |    Yes      | GB123456789123   | Yes     | test importer    | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test declarant      | test agent      | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | test     | 987890      | 98712356      |
+      |9            | No            |    Yes      | GB123456789123   | Yes     | test importer    | 2 Rue Des Fleurs | Paris        |                |            | France          | GB123456789123001  | test declarant      | test agent      | 27 rue National  | LIBOURNE     |              |               | France         | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | test     | 987890      | 98712356      |
