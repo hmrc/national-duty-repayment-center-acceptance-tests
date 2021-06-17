@@ -100,11 +100,11 @@ Feature: Upload supporting files
     When I click on the "Continue" button
     Then I see an error message "This file has already been uploaded"
     #upload mutliple files
-    When I click on Choose file button and add the "second" file
+    When I click on Choose file button and add the "text" file
     When I click on the "Continue" button
     Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
+    Then I should see second uploaded doc "testTxt.txt" on upload review page
 
 
     Examples:

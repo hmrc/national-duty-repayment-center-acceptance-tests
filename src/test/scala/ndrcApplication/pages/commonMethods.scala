@@ -92,6 +92,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     fileSeq match {
       case "first" => filePath = usrDir + "JPEGImage.jpeg"
       case "second" => filePath = usrDir + "VA Plan v0.3.xlsx"
+      case "text" => filePath = usrDir + "testTxt.txt"
       case "next"  => filePath = usrDir + "JPEGImage.jpeg"
       case "last"  => filePath = usrDir + "PDF.pdf"
     }
