@@ -99,4 +99,4 @@ Feature: UK Regulations scenarios
 
     Examples:
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  | repayment                | aName   | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       | Bank transfer (Bacs)     | Test    | 987654 | 12345678   |
+      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       | Bank transfer (Bacs)     | Test    | 400530 | 71584685   |
