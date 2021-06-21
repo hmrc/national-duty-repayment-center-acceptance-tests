@@ -26,7 +26,7 @@ Feature: Importers Journey
       And I choose an application Reason
       When I click on the "Continue" button
       Then I am on "Tell us why the overpayment happened - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I enter goods details- Details: "Shoes Jeans Jackets"
+      And I enter goods details- Details: "'Shoes Jeans Jackets'"
       When I click on the "Continue" button
       Then I am on "What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose customsDuty importVAT anotherTypeofDuty options
