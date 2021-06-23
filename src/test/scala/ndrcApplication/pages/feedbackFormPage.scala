@@ -26,7 +26,6 @@ class feedbackFormPage extends commonMethods {
   private val scoreDetailsIdentifier = By.id("whyGiveScore")
 
 
-  def clickServiceSurveyFromConfPage: Unit = driver.findElement(By.cssSelector("#main-content > div > div > div > p:nth-child(7) > a")).click()
   def selectVerEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryEasy")).click()
   def selectEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Easy")).click()
   def selectNeitherEasyofDiff: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Moderate")).click()

@@ -29,6 +29,10 @@ class CommonSteps extends ScalaDsl with EN {
     commonPage.clickOnContinueBtn()
   }
 
+  And("""^I click the (.*) link$""") { link: String =>
+    commonPage.click(link)
+  }
+
   Then("^An error message is displayed- Error: \"([^\"]*)\"$"){ (errorMsg: String) =>
     amendCaseRefNoPage.errMsg
   }

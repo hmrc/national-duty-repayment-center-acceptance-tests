@@ -94,7 +94,7 @@ Feature: Importers Journey
       When I click on the "Continue" button
       Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
       When I click on the "Continue" button
-      Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
       |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      |
@@ -197,7 +197,7 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
      | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
