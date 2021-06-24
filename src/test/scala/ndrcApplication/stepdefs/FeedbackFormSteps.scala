@@ -21,10 +21,6 @@ import ndrcApplication.pages.feedbackFormPage
 
 class FeedbackFormSteps extends feedbackFormPage with ScalaDsl with EN {
 
-  And("^I click on what do you think of this service link$") {  () =>
-    feedbackFormPage.clickServiceSurveyFromConfPage
-  }
-
   And("^I choose \"([^\"]*)\" for you able to do what you needed to do today$") {  (yOrN: String) =>
     yOrN match {
       case "Yes" => clickByCSS("#ableToDo-yes")

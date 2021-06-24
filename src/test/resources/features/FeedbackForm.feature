@@ -92,8 +92,8 @@ Feature: Feedback form
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I click on what do you think of this service link
+    Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I click the What did you think of this service? link
     Then I am on "Give feedback - GOV.UK" page
     And I choose "<YorN>" for you able to do what you needed to do today
     And I choose rating for was it for you to do what you needed to do today

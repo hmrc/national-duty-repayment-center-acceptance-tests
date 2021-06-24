@@ -17,7 +17,6 @@
 package ndrcApplication.pages
 
 import ndrcApplication.utils.Configuration
-
 import org.openqa.selenium.By
 import ndrcApplication.stepdefs.WebDriverInstance
 
@@ -49,4 +48,8 @@ object commonPage extends commonMethods with WebDriverInstance {
 
   def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)
 
+  def click(button: String): Unit = {
+    val element = s"//*[contains(text(), '$button')]"
+    clickOnButton(By.xpath(element))
+  }
 }
