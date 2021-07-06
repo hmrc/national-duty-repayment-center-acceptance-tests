@@ -59,6 +59,7 @@ Feature: Amend case CYA Page
     Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "second" file
     And I wait for the file to be uploaded
+    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
     When I click the file continue button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeRespType>", "<changeDocsUploaded>"
