@@ -18,14 +18,14 @@ package ndrcApplication.pages
 
 import java.util.concurrent.TimeUnit
 
+import ndrcApplication.driver.Driver
+import ndrcApplication.stepdefs.WebDriverInstance
+import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, Wait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
 import org.scalatest.selenium._
-import ndrcApplication.driver.Driver
-import ndrcApplication.stepdefs.WebDriverInstance
-import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
 
 
 abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
@@ -46,7 +46,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
       fluentWait.until(ExpectedConditions.titleIs(pageTitle))
       true
     } catch {
-      case _  : NoSuchElementException => false
+      case _: NoSuchElementException => false
     }
   }
 
@@ -60,7 +60,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     dropdown.selectByVisibleText(level)
   }
 
-  def enterValInTextField (identifier: By, value: String): Unit = {
+  def enterValInTextField(identifier: By, value: String): Unit = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(identifier))
     driver.findElement(identifier).sendKeys(value)
   }
@@ -69,9 +69,9 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     assert(element.getText.equals(content), message(s"Element displayed is: ${element.getText} Expecting: $content"))
   }
 
-  def optionSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe(true)
+  def optionSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe (true)
 
-  def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe(false)
+  def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe (false)
 
   def isElementVisible(css: String): Boolean = driver.findElement(By.cssSelector(css)).isDisplayed
 
@@ -90,13 +90,13 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
 
   def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
     fileSeq match {
-      case "first" => filePath = usrDir + "JPEGImage.jpeg"
+      case "first" => filePath = usrDir + "JPEGImage.jpg"
       case "second" => filePath = usrDir + "VA Plan v0.3.xlsx"
-      case "next"  => filePath = usrDir + "JPEGImage.jpeg"
-      case "last"  => filePath = usrDir + "PDF.pdf"
+      case "next" => filePath = usrDir + "JPEGImage.jpg"
+      case "last" => filePath = usrDir + "PDF.pdf"
     }
 
-    if(Driver.targetBrowser.startsWith("remote")) {
+    if (Driver.targetBrowser.startsWith("remote")) {
       Driver.webDriver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
     }
     driver.findElement(By.id(elementID)).sendKeys(filePath)

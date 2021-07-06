@@ -11,13 +11,11 @@ Feature: Amend case CYA Page
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose both send more supporting documents and give further information
     When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    When I click the file continue button
     Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
@@ -48,27 +46,20 @@ Feature: Amend case CYA Page
     #unselecting further information
     And I choose both send more supporting documents and give further information
     When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    When I click the file continue button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeRespType>", "<docsUploaded>"
 
     #change Documents
     When I click on change option on the amend review page for documents uploaded
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I select "<YorNuploadFiles>" to uploading another file
-    When I click on the "Continue" button
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
+    When I click the file continue button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeRespType>", "<changeDocsUploaded>"
 
@@ -77,5 +68,5 @@ Feature: Amend case CYA Page
 
 
     Examples:
-      | referenceNo               | YorNuploadFile | responseType               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType    | changeRespType | YorNuploadFiles | changeDocsUploaded                   |
-      | NDRC2105261863OL4K3WXR2   | No             | Documents and Information  | Shoes Jeans Jackets  | You have uploaded 1 document   | NDRC21052618646XZ66EBX6 | Shoes Jeans JacketsShoes Jeans Jackets  | Information      | Documents      |  Yes            | You have uploaded 2 documents        |
+      | referenceNo               |  responseType               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType    | changeRespType | changeDocsUploaded                   |
+      | NDRC2105261863OL4K3WXR2   |  Documents and Information  | Shoes Jeans Jackets  | JPEGImage.jpg                  | NDRC21052618646XZ66EBX6 | Shoes Jeans JacketsShoes Jeans Jackets  | Information      | Documents      | JPEGImage.jpg\nVA Plan v0.3.xlsx      |
