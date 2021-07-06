@@ -18,13 +18,32 @@ package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.fileUploadedPage
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.{By, NoSuchElementException}
 
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
+  When("""^I click the file continue button$""") {
+    driver.findElement(By.id("ndrc-fileupload-continue")).click()
+  }
+
+  And("""^I wait for the file to be uploaded""") { () =>
+    waitForFileToBeUploaded
+  }
+
   Then("""^I should see first uploaded doc "([^"]*)" on upload review page$""") { (fileName: String) =>
     findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(1)").isDisplayed
-   // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
+    // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
 
+  }
+
+  Then("""^I should see ([^"]*) uploaded doc "([^"]*)" on upload page$""") { (sequence: String, fileName: String) =>
+    val index = sequence match {
+      case "first" => "1"
+      case "second" => "2"
+    }
+    findElementByCss(s"div.govuk-summary-list__row:nth-child($index)").isDisplayed
+    findElementByCss(s"div.govuk-summary-list__row:nth-child($index) > dt").getText mustBe fileName
   }
 
   Then("""^I select "([^"]*)" to uploading another file$""") { (yORNoUploadFile: String) =>
@@ -35,8 +54,17 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
     }
   }
 
-  Then("""^I should see second uploaded doc "([^"]*)" on upload review page$"""){ (secondFileName: String) =>
+  Then("""^I should see second uploaded doc "([^"]*)" on upload review page$""") { (secondFileName: String) =>
     findElementByCss("div.govuk-summary-list__row:nth-child(2) > dd:nth-child(1)").isDisplayed
+  }
+
+  def waitForFileToBeUploaded: Boolean = {
+    try {
+      fluentWait.until(ExpectedConditions.elementToBeClickable(By.id("ndrc-fileupload-continue")))
+      true
+    } catch {
+      case _: NoSuchElementException => false
+    }
   }
 
 }

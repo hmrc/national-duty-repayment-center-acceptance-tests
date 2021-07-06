@@ -26,7 +26,8 @@ class UploadFileSteps extends uploadFilePage with ScalaDsl with EN {
   }
 
   Then("^I see an error message \"([^\"]*)\"$") { (errorMsg: String) =>
-    findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > div.govuk-error-summary > div > ul > li > a").isDisplayed
+    findElementByCss("ul.govuk-error-summary__list").isDisplayed
+    findElementByCss("ul.govuk-error-summary__list").getText.contains(errorMsg)
 
   }
 

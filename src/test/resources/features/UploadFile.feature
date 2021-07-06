@@ -83,30 +83,22 @@ Feature: Upload supporting files
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose send more supporting documents
     When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
-    #No selection made error message
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I see an error message "Upload a file to support your application"
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     #file error duplicate file upload
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
     Then I see an error message "This file has already been uploaded"
     #upload mutliple files
     When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
 
 
     Examples:
-      | referenceNo             | YorNuploadFile  |
-      | NDRC2104261385QBULEC4B5 | Yes             |
+      | referenceNo             |
+      | NDRC2104261385QBULEC4B5 |

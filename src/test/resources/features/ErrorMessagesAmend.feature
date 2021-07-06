@@ -24,13 +24,11 @@ Feature: Error Scenarios Amend case Journey
     And I choose both send more supporting documents and give further information
     When I click on the "Continue" button
     #upload file error messages in another feature file
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your additional documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    When I click the file continue button
     Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then An error message is displayed- Error: "Enter the further information"
@@ -42,5 +40,5 @@ Feature: Error Scenarios Amend case Journey
 
 
     Examples:
-      | referenceNo               | splCharacterRefNo         | wrongFormatRefNo  | invalidLenRefNo     | YorNuploadFile |
-      | NDRC2105261863OL4K3WXR2   | NDRC2103151135EE6L6YKH3&* | 103151135EE6L6YKH | NDRC2103151135EE6L6 | No             |
+      | referenceNo               | splCharacterRefNo         | wrongFormatRefNo  | invalidLenRefNo     |
+      | NDRC2105261863OL4K3WXR2   | NDRC2103151135EE6L6YKH3&* | 103151135EE6L6YKH | NDRC2103151135EE6L6 |
