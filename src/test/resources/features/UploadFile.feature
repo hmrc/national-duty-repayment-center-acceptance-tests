@@ -1,6 +1,6 @@
 Feature: Upload supporting files
   @suite
-  Scenario Outline: Upload supporting files scenarios
+  Scenario: Upload supporting files scenarios
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
@@ -50,6 +50,7 @@ Feature: Upload supporting files
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click on Choose file button and add the "first" file
+    And I wait for the file to be uploaded
     Then I see an error message "This file has already been uploaded"
     #upload mutliple files
     When I click on Choose file button and add the "second" file
