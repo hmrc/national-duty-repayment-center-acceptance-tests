@@ -43,34 +43,20 @@ Feature: Upload supporting files
     When I click on the "Continue" button
     Then I am on "Repayment amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Required supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your supporting documentation - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
-    #No selection made error message
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I see an error message "Upload a file to support your application"
-    #file error duplicate file upload
-    Then I am on "Upload another file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
     Then I see an error message "This file has already been uploaded"
     #upload mutliple files
     When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 2 files - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload review page
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    And I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
 
-    Examples:
-      |YorNuploadFile  |
-      |Yes             |
 
   @suite
   Scenario Outline: Upload supporting files scenarios - Amend case journey

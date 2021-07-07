@@ -43,15 +43,13 @@ Feature: Feedback form
     When I click on the "Continue" button
     Then I am on "Repayment amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Required supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Upload a file - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload your supporting documentation - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
-    When I click on the "Continue" button
-    Then I am on "You have uploaded 1 file - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I should see first uploaded doc "JPEGImage.jpg" on upload review page
-    Then I select "<YorNuploadFile>" to uploading another file
-    When I click on the "Continue" button
+    And I wait for the file to be uploaded
+    Then I should see first uploaded doc "JPEGImage.jpg" on upload page
+    When I click the file continue button
     Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose eori "<YorNeori>" option
     When I click on the "Continue" button
