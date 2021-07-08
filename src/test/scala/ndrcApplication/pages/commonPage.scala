@@ -23,6 +23,9 @@ import ndrcApplication.stepdefs.WebDriverInstance
 object commonPage extends commonMethods with WebDriverInstance {
 
   private val redirectUrl = By.name("redirectionUrl")
+  private val enrolment = By.name("enrolment[0].name")
+  private val enrolmentIdentifierName = By.name("enrolment[0].taxIdentifier[0].name")
+  private val enrolmentIdentifierValue = By.name("enrolment[0].taxIdentifier[0].value")
   private val submitButtonOnAuthLoginPage = By.cssSelector("Input[value='Submit']")
   private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
   private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
@@ -37,6 +40,10 @@ object commonPage extends commonMethods with WebDriverInstance {
 
   def authLogin(): Unit = {
     enterValInTextField(redirectUrl, s"${Configuration.settings.ndrcApplicationLandingUrl}")
+    enterValInTextField(enrolment, "HMRC-CTS-ORG")
+    enterValInTextField(enrolmentIdentifierName, "EORINumber")
+    enterValInTextField(enrolmentIdentifierValue, "GB123456789000")
+
     clickOnButton(submitButtonOnAuthLoginPage)
   }
 
