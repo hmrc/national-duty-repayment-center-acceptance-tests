@@ -24,9 +24,9 @@ class checkYourAnswersPage extends commonMethods {
 
   //Amend case summary list
   val RefNo = "Reference number"
-  val ResType = "Response type"
-  val ResToHMRC = "Response to HMRC"
-  val Docs = "Documents"
+  val ResType = "What do you need to do?"
+  val ResToHMRC = "Additional information"
+  val Docs = "Additional uploads"
 
   def verifyRefNo(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(1) > dt").getText mustEqual text
   def verifyResType(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(2) > dt").getText mustEqual text
