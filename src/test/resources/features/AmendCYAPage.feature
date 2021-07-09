@@ -69,5 +69,5 @@ Feature: Amend case CYA Page
 
 
     Examples:
-      | referenceNo               |  responseType               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType    | changeRespType | changeDocsUploaded                   |
-      | NDRC2105261863OL4K3WXR2   |  Documents and Information  | Shoes Jeans Jackets  | JPEGImage.jpg                  | NDRC21052618646XZ66EBX6 | Shoes Jeans JacketsShoes Jeans Jackets  | Information      | Documents      | JPEGImage.jpg\nVA Plan v0.3.xlsx      |
+      | referenceNo               |  responseType                               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType                   | changeRespType                 | changeDocsUploaded                   |
+      | NDRC2105261863OL4K3WXR2   |  Send additional Documents and Information  | Shoes Jeans Jackets  | JPEGImage.jpg                  | NDRC21052618646XZ66EBX6 | Shoes Jeans JacketsShoes Jeans Jackets  | Send additional Information     | Send additional Documents      | JPEGImage.jpg\nVA Plan v0.3.xlsx      |

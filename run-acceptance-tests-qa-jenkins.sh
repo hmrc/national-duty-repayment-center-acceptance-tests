@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sbt -Dbrowser="remote-chrome" -Denvironment="qa" "testOnly ndrcApplication.suites.RunSuite"
+sbt -Dbrowser="remote-chrome" -Denvironment="qa" "testOnly ndrcApplication.suites.RunSuiteQA"
