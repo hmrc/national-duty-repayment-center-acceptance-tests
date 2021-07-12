@@ -33,7 +33,7 @@ Feature: Upload supporting files
     And I enter customs Duty paid- CustomDuty: "1000.00"
     And I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "750.00"
     When I click on the "Continue" button
-    Then I am on "Import VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter import vat paid- VatPaid: "1500.00"
     And I enter import vat been Paid to HMRC- VatBeenPaid: "500.00"
     When I click on the "Continue" button
@@ -41,7 +41,7 @@ Feature: Upload supporting files
     And I enter other custom Duty paid- OtherCustDutyPaid: "1250.00"
     And I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "200.00"
     When I click on the "Continue" button
-    Then I am on "Repayment amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Required supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
