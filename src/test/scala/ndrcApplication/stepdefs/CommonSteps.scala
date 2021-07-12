@@ -17,7 +17,9 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
+import org.scalatest.MustMatchers
 import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
+import org.scalatest.MustMatchers.convertToAnyMustWrapper
 
 class CommonSteps extends ScalaDsl with EN {
 
@@ -42,7 +44,7 @@ class CommonSteps extends ScalaDsl with EN {
   }
 
   And("^Hint text is displayed \"([^\"]*)\"$"){ (hintText: String) =>
-    customsDutyPage.hintText
+    customsDutyPage.hintText mustBe hintText
   }
 
   Then("^I Accept cookies and hide message$") { () =>

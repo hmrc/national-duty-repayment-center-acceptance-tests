@@ -24,7 +24,7 @@ class repaymentAmtSummaryPage extends commonMethods {
 
   //Repayment reclaim options list
   val CustomDuty = "Customs Duty"
-  val ImportVat = "Import VAT"
+  val ImportVat = "VAT"
   val OtherDuty = "Other duties"
   val Total = "Total"
 
@@ -36,19 +36,19 @@ class repaymentAmtSummaryPage extends commonMethods {
   def CustomDutyPaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[1]/div[1]/dd[1]")
   def CustomDutyShldHavePaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[1]/div[2]/dd[1]")
 
-  def ClickCustDutyPaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(3) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
-  def ClickCustDutyShldHavePaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(3) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
+  def ClickCustDutyPaidChangeOption: Unit = clickByCSS("a.customs-duty-overpayment")
+  def ClickCustDutyShldHavePaidChangeOption: Unit = clickByCSS("a.customs-duty-overpayment")
 //import vat
   def ImportVatPaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[2]/div[1]/dd[1]")
   def ImportVathldHavePaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[2]/div[2]/dd[1]")
 
-  def ClickImpVatPaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(5) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
-  def ClickImpVatShldHavePaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(5) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
+  def ClickImpVatPaidChangeOption: Unit = clickByCSS("a.change-import-vat-overpayment")
+  def ClickImpVatShldHavePaidChangeOption: Unit = clickByCSS("a.change-import-vat-overpayment")
 //other duty
   def OtherDutyPaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[3]/div[1]/dd[1]")
   def OtherDutyShldHavePaidResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div/dl[3]/div[2]/dd[1]")
 
-  def ClickOtherDutyPaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(7) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
-  def ClickOtherDutyHavePaidChangeOption: Unit = clickByCSS("#main-content > div > div > div > dl:nth-child(7) > div:nth-child(1) > dd.govuk-summary-list__actions > a > span:nth-child(1)")
+  def ClickOtherDutyPaidChangeOption: Unit = clickByCSS("a.other-duties-overpayment")
+  def ClickOtherDutyHavePaidChangeOption: Unit = clickByCSS("a.other-duties-overpayment")
 
 }
