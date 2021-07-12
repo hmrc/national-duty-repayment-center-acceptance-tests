@@ -23,7 +23,7 @@ object checkYourAnswersPage extends checkYourAnswersPage
 class checkYourAnswersPage extends commonMethods {
 
   //Amend case summary list
-  val RefNo = "Reference number"
+  val RefNo = "Application reference number"
   val ResType = "What do you need to do?"
   val ResToHMRC = "Additional information"
   val Docs = "Additional uploads"

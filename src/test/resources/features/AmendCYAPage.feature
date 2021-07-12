@@ -5,7 +5,7 @@ Feature: Amend case CYA Page
     Given I am on the start page for trader service and select Amend Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "What is the reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -25,7 +25,7 @@ Feature: Amend case CYA Page
 
     #change Reference No
     When I click on change option on the amend review page for reference no
-    Then I am on "What is the reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I clear the reference no field
     And I enter valid Application "<changeReferenceNo>"
     When I click on the "Continue" button

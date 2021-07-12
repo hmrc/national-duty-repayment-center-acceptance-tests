@@ -64,7 +64,7 @@ Feature: Upload supporting files
     Given I am on the start page for trader service and select Amend Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "What is the reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page

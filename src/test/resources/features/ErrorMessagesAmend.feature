@@ -4,7 +4,7 @@ Feature: Error Scenarios Amend case Journey
     Given I am on the start page for trader service and select Amend Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "What is the reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then An error message is displayed- Error: "Enter the reference number"
     And I enter Application "<splCharacterRefNo>" reference no with a special character
