@@ -26,7 +26,7 @@ object commonPage extends commonMethods with WebDriverInstance {
   private val enrolment = By.name("enrolment[0].name")
   private val enrolmentIdentifierName = By.name("enrolment[0].taxIdentifier[0].name")
   private val enrolmentIdentifierValue = By.name("enrolment[0].taxIdentifier[0].value")
-  private val submitButtonOnAuthLoginPage = By.cssSelector("Input[value='Submit']")
+  private val submitButtonOnAuthLoginPage = By.id("submit")
   private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
   private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
   private val hideCookieMessage = By.xpath("/html/body/div[1]/div/div[2]/button")
