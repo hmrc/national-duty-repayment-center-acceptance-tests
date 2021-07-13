@@ -80,7 +80,7 @@ Feature: Importers Journey
       And I select phone no option
       And I enter "<phoneNo>" importers
       When I click on the "Continue" button
-      Then I am on "Do you want to create a declarant reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "Do you want to use your own reference? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose "<YorNDeclarantRefNO>" options
       And I enter to create "<declarantRefNo>"
       When I click on the "Continue" button
@@ -184,7 +184,7 @@ Feature: Importers Journey
     And I select phone no option
     And I enter "<phoneNo>" importers
     When I click on the "Continue" button
-    Then I am on "Do you want to create a declarant reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Do you want to use your own reference? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNDeclarantRefNO>" options
     And I enter to create "<declarantRefNo>"
     When I click on the "Continue" button
