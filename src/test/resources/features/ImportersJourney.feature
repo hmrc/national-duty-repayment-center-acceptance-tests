@@ -116,7 +116,7 @@ Feature: Importers Journey
     Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose a repayment Type
     When I click on the "Continue" button
-    Then I am on "Upload the multiple entries spreadsheet - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Upload the multiple entry document - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
     Then I am on "Enter the details of the oldest entry - Apply for repayment of import duty and import VAT - GOV.UK" page
