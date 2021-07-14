@@ -99,6 +99,8 @@ Feature: Create Journey QA
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I click the What did you think of this service? link
+    Then I am on "Give feedback - GOV.UK" page
 
     Examples:
       | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
@@ -222,6 +224,8 @@ Feature: Create Journey QA
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I click the What did you think of this service? link
+    Then I am on "Give feedback - GOV.UK" page
 
     Examples:
       | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | impName          | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName    | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
