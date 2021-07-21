@@ -76,3 +76,26 @@ Feature: Amend case Journey
     Examples:
       | referenceNo               |
       | NDRC2105261863OL4K3WXR2   |
+
+
+  Scenario Outline: A user tries to Amend a closed case
+    Given I am on the start page for trader service and select Amend Now
+    Then I Accept cookies and hide message
+    When I click on the "Continue" button
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter valid Application "<closedCaseReferenceNo>"
+    When I click on the "Continue" button
+    Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose to provide give further information
+    When I click on the "Continue" button
+    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I enter further goods details- Details: "Shoes Jeans Jackets"
+    When I click on the "Continue" button
+    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on the "Continue" button
+    Then I am on "This application is closed - Apply for repayment of import duty and import VAT - GOV.UK" page
+
+
+    Examples:
+      | closedCaseReferenceNo     |
+      | NDRC2107162273ZJ5CBE667   |
