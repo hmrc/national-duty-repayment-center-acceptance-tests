@@ -27,10 +27,10 @@ Feature: Amend case CYA Page
     When I click on change option on the amend review page for reference no
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I clear the reference no field
-    And I enter valid Application "<changeReferenceNo>"
+    And I enter valid Application "<referenceNoDoesNotExist>"
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<responseType>", "<responseToHMRC>" and "<docsUploaded>"
+    Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<responseType>", "<responseToHMRC>" and "<docsUploaded>"
 
     #change Response type
     When I click on change option on the amend review page for response type
@@ -39,7 +39,7 @@ Feature: Amend case CYA Page
     And I choose send more supporting documents
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeResType>", "<responseToHMRC>"
+    Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeResType>", "<responseToHMRC>"
 
     When I click on change option on the amend review page for response type
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -52,7 +52,7 @@ Feature: Amend case CYA Page
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeRespType>", "<docsUploaded>"
+    Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeRespType>", "<docsUploaded>"
 
     #change Documents
     When I click on change option on the amend review page for documents uploaded
@@ -62,12 +62,25 @@ Feature: Amend case CYA Page
     Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
     When I click the file continue button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
-    Then I verify correct responses is displayed for Amend case journey "<changeReferenceNo>", "<changeRespType>", "<changeDocsUploaded>"
+    Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeRespType>", "<changeDocsUploaded>"
+
+    When I click on the "Continue" button
+    Then I am on "Application not found - Apply for repayment of import duty and import VAT - GOV.UK" page
+
+    #fix invalid application reference
+    When I click on enter the application number again
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I clear the reference no field
+    And I enter valid Application "<referenceNo>"
+    When I click on the "Continue" button
+
+    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I verify correct responses is displayed for Amend case journey "<referenceNo>", "<changeRespType>", "<changeDocsUploaded>"
 
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
 
     Examples:
-      | referenceNo               |  responseType                               | responseToHMRC       | docsUploaded                   | changeReferenceNo       | changeResToHMRC                         | changeResType                   | changeRespType                 | changeDocsUploaded                   |
-      | NDRC2105261863OL4K3WXR2   |  Send additional Documents and Information  | Shoes Jeans Jackets  | JPEGImage.jpg                  | NDRC21052618646XZ66EBX6 | Shoes Jeans JacketsShoes Jeans Jackets  | Send additional Information     | Send additional Documents      | JPEGImage.jpg\nVA Plan v0.3.xlsx      |
+      | referenceNo               |  responseType                               | responseToHMRC       | docsUploaded  |  referenceNoDoesNotExist  |  changeResToHMRC                         | changeResType                   | changeRespType                 | changeDocsUploaded                   |
+      | NDRC2105261863OL4K3WXR2   |  Send additional Documents and Information  | Shoes Jeans Jackets  | JPEGImage.jpg |  NDRC21052618646XZ66E666  |  Shoes Jeans JacketsShoes Jeans Jackets  | Send additional Information     | Send additional Documents      | JPEGImage.jpg\nVA Plan v0.3.xlsx      |
