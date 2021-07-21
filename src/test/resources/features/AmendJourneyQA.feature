@@ -5,7 +5,7 @@ Feature: Amend case Journey QA
     Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter valid Application "<referenceNo>"
+    And I enter valid Application "<referenceNoDoesNotExist>"
     When I click on the "Continue" button
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose both send more supporting documents and give further information
@@ -20,11 +20,21 @@ Feature: Amend case Journey QA
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
+
+    Then I am on "Application not found - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on enter the application number again
+    Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I clear the reference no field
+    And I enter valid Application "<referenceNo>"
+    When I click on the "Continue" button
+    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on the "Continue" button
+
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I click the What did you think of this service? link
     Then I am on "Give feedback - GOV.UK" page
 
 
     Examples:
-    | referenceNo               |
-    | NDRC21052618650YFLZNMV2   |
+    | referenceNo               |  referenceNoDoesNotExist  |
+    | NDRC21052618650YFLZNMV2   |  NDRC21052618646XZ66E666  |
