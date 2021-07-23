@@ -95,8 +95,8 @@ Feature: Importers Journey
       Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment                | aName   | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    |    Yes         |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Test    | 400530 | 71584685   |
+      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress   |  YorNDeclarantRefNO    |  declarantRefNo  | repayment               | aName    | sCode  | accNo      |
+      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    |    Yes         |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com  |    Yes                 |  1234abcxyz      | Bank transfer (Bacs)     | Megacorp | 207106 | 86563611   |
 
   @suite
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
@@ -196,5 +196,5 @@ Feature: Importers Journey
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName   | sCode  | accNo      |
-     |     8       |  No           |  Yes     | GB123456789123       | Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Test    | 400530 | 71584685   |
+     | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName    | sCode  | accNo      |
+     |     8       |  No           |  Yes     | GB123456789123       | Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp | 207106 | 86563611   |
