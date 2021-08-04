@@ -43,7 +43,7 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Required supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Documents we need from you - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Upload your supporting documentation - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
@@ -113,7 +113,7 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
-    Then I am on "Required supporting documents - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Documents we need from you - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Upload your supporting documentation - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "first" file
