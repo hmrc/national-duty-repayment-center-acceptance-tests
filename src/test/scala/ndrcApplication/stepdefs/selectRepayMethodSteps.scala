@@ -21,7 +21,7 @@ import ndrcApplication.pages.selectRepayMethodPage
 
 class selectRepayMethodSteps extends selectRepayMethodPage with ScalaDsl with EN {
 
-  And("^I chooose \"([^\"]*)\" option$") { (repayment: String) =>
+  And("^I choose \"([^\"]*)\" repayment option$") { (repayment: String) =>
 
     repayment match {
       case "Bank transfer (Bacs)" => clickByCSS("#value")
