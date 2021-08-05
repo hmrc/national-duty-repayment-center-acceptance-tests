@@ -85,7 +85,7 @@ Feature: Importers Journey
       And I enter to create "<declarantRefNo>"
       When I click on the "Continue" button
       Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I chooose "<repayment>" option
+      And I choose "<repayment>" repayment option
       When I click on the "Continue" button
       Then I am on "Enter UK bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"

@@ -43,4 +43,6 @@ class checkYourAnswersPage extends commonMethods {
   def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']")
   def clickDocsChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadPage']")
 
+  def clickTotalReturnAmountChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/repaymentSummaryPage']")
+
 }

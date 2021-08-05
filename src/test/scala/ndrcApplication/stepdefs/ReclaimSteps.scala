@@ -27,4 +27,8 @@ class ReclaimSteps extends reclaimPage with ScalaDsl with EN {
     reclaimPage.selectOtherDuty
   }
 
+  And("^I choose the Customs Duty option$") {
+    reclaimPage.selectCustDuty
+  }
+
 }
