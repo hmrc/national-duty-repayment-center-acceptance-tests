@@ -62,6 +62,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
 
   def enterValInTextField(identifier: By, value: String): Unit = {
     fluentWait.until(ExpectedConditions.visibilityOfElementLocated(identifier))
+    driver.findElement(identifier).clear()
     driver.findElement(identifier).sendKeys(value)
   }
 
