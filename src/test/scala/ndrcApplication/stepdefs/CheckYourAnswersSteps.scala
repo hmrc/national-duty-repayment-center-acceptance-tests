@@ -58,4 +58,8 @@ class CheckYourAnswersSteps extends checkYourAnswersPage with ScalaDsl with EN {
     checkYourAnswersPage.clickTotalReturnAmountChangeOption
   }
 
+  When("^I click on change option on the review page for entry details") { () =>
+    checkYourAnswersPage.clickEntryDetailsChangeOption
+  }
+
 }

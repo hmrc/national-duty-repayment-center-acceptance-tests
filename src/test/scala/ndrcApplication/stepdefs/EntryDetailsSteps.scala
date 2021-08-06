@@ -16,8 +16,12 @@
 
 package ndrcApplication.stepdefs
 
+import java.time.LocalDate
+
 import cucumber.api.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.entryDetailsPage
+
+import scala.util.Try
 
   class EntryDetailsSteps extends entryDetailsPage with ScalaDsl with EN {
 
@@ -27,10 +31,11 @@ import ndrcApplication.pages.entryDetailsPage
 
     }
 
-    And("""^I enter entryDate- Day: "([^"]*)", Month: "([^"]*)" and Year: "([^"]*)"$""") { (day: String, month: String, year: String) =>
-      entryDetailsPage.enterDay(day)
-      entryDetailsPage.enterMonth(month)
-      entryDetailsPage.enterYear(year)
+    And("""^I enter an entry date that was ([^"]*) days ago$""") { (numberOfDays: String) =>
+      val entryDate = LocalDate.now().minusDays(Try(numberOfDays.toLong).getOrElse(0L))
+      entryDetailsPage.enterDay(entryDate.getDayOfMonth.toString)
+      entryDetailsPage.enterMonth(entryDate.getMonthValue.toString)
+      entryDetailsPage.enterYear(entryDate.getYear.toString)
 
     }
 
