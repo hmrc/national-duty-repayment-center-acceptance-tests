@@ -25,6 +25,10 @@ class whoToBoRepaidSteps extends importerorRepPage with ScalaDsl with EN {
     selectRepresentative
   }
 
+  And("^I choose Importer option$") {
+    selectImporter
+  }
+
   And("^I choose \"([^\"]*)\" indirect representative option$") { (yORNIndirectRep : String) =>
 
     yORNIndirectRep match {
