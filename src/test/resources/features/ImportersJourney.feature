@@ -22,7 +22,10 @@ Feature: Importers Journey
       And I enter declaration details- EPU: "345" and Entry No: "123456t"
       And I enter an entry date that was 7 days ago
       When I click on the "Continue" button
-      Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
+      And I choose multiple application Reasons
+      When I click on the "Continue" button
+      Then I am on "What is the main reason for making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose an application Reason
       When I click on the "Continue" button
       Then I am on "Tell us why the overpayment happened - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -123,7 +126,7 @@ Feature: Importers Journey
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date that was 7 days ago
     When I click on the "Continue" button
-    Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
     When I click on the "Continue" button
     Then I am on "Tell us why the overpayment happened - Apply for repayment of import duty and import VAT - GOV.UK" page
