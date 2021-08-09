@@ -27,5 +27,11 @@ class AppReasonSteps extends appReasonPage with ScalaDsl with EN {
 
   }
 
+  And("^I choose multiple application Reasons$") {
+    appReasonPage.selectCommCode
+    appReasonPage.selectPreference
+
+  }
+
 
 }
