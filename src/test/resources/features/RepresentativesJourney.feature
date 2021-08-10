@@ -107,7 +107,7 @@ Feature: Representatives Journey
       Then I am on "Upload proof of authority - Apply for repayment of import duty and import VAT - GOV.UK" page
       When I click on Choose file button and add the "next" file
       When I click on the "Continue" button
-      Then I am on "Enter your business bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
+      Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
       When I click on the "Continue" button
       Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -221,7 +221,7 @@ Feature: Representatives Journey
     Then I am on "Who is to be repaid? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer option
     When I click on the "Continue" button
-    Then I am on "Enter the importer’s business bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Enter the importer’s bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
