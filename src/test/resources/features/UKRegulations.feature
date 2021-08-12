@@ -4,7 +4,7 @@ Feature: UK Regulations scenarios
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -91,7 +91,7 @@ Feature: UK Regulations scenarios
     Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 

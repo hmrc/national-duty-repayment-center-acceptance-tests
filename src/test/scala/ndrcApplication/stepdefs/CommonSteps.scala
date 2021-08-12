@@ -17,7 +17,6 @@
 package ndrcApplication.stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import org.scalatest.MustMatchers
 import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.scalatest.MustMatchers.convertToAnyMustWrapper
 
@@ -27,7 +26,7 @@ class CommonSteps extends ScalaDsl with EN {
     assert(commonPage.isPageTitleDisplayed(pageTitle))
   }
 
-  When("""^I click on the "([^"]*)" button$"""){ (continue: String) =>
+  When("""^I click on the "([^"]*)" button$""") { (continue: String) =>
     commonPage.clickOnContinueBtn()
   }
 
@@ -35,15 +34,15 @@ class CommonSteps extends ScalaDsl with EN {
     commonPage.click(link)
   }
 
-  Then("^An error message is displayed- Error: \"([^\"]*)\"$"){ (errorMsg: String) =>
+  Then("^An error message is displayed- Error: \"([^\"]*)\"$") { (errorMsg: String) =>
     amendCaseRefNoPage.errMsg
   }
 
-  Then("^I clear the reference no field$"){ () =>
+  Then("^I clear the reference no field$") { () =>
     amendCaseRefNoPage.clearRefNo
   }
 
-  And("^Hint text is displayed \"([^\"]*)\"$"){ (hintText: String) =>
+  And("^Hint text is displayed \"([^\"]*)\"$") { (hintText: String) =>
     customsDutyPage.hintText mustBe hintText
   }
 

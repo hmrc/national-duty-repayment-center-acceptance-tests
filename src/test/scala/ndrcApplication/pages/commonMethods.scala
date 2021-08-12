@@ -16,7 +16,8 @@
 
 package ndrcApplication.pages
 
-import java.util.concurrent.TimeUnit
+import java.time.Duration
+import java.time.temporal.ChronoUnit
 
 import ndrcApplication.driver.Driver
 import ndrcApplication.stepdefs.WebDriverInstance
@@ -25,14 +26,14 @@ import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, W
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
-import org.scalatest.selenium._
+import org.scalatestplus.selenium.WebBrowser
 
 
 abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
 
   var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(30, TimeUnit.SECONDS)
-    .pollingEvery(100, TimeUnit.MILLISECONDS)
+    .withTimeout(Duration.of(30, ChronoUnit.SECONDS))
+    .pollingEvery(Duration.of(100, ChronoUnit.MILLIS))
 
   val usrDir = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath = ""

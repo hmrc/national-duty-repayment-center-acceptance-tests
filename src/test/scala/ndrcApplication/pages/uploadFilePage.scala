@@ -16,8 +16,6 @@
 
 package ndrcApplication.pages
 
-import org.openqa.selenium.By
-
 object uploadFilePage extends uploadFilePage
 
 class uploadFilePage extends commonMethods {

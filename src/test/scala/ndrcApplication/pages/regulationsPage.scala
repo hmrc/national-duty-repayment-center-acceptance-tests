@@ -22,11 +22,16 @@ object regulationsPage extends regulationsPage
 
 class regulationsPage extends commonMethods {
 
-  def selectErrorByCust: Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectLowerRate: Unit = driver.findElement(By.cssSelector("#value-2")).click()
-  def selectOverPayVat: Unit = driver.findElement(By.cssSelector("#value-3")).click()
-  def selectRejected: Unit = driver.findElement(By.cssSelector("#value-4")).click()
-  def selectSpecialCircum: Unit = driver.findElement(By.cssSelector("#value-5")).click()
-  def selectWithdrawalOfCust: Unit = driver.findElement(By.cssSelector("#value-6")).click()
+  def selectErrorByCust(): Unit = driver.findElement(By.cssSelector("#value")).click()
+
+  def selectLowerRate(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
+
+  def selectOverPayVat(): Unit = driver.findElement(By.cssSelector("#value-3")).click()
+
+  def selectRejected(): Unit = driver.findElement(By.cssSelector("#value-4")).click()
+
+  def selectSpecialCircum(): Unit = driver.findElement(By.cssSelector("#value-5")).click()
+
+  def selectWithdrawalOfCust(): Unit = driver.findElement(By.cssSelector("#value-6")).click()
 
 }

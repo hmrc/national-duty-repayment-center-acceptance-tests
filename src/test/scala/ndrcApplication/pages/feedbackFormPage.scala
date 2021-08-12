@@ -26,17 +26,17 @@ class feedbackFormPage extends commonMethods {
   private val scoreDetailsIdentifier = By.id("whyGiveScore")
 
 
-  def selectVerEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryEasy")).click()
-  def selectEasy: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Easy")).click()
-  def selectNeitherEasyofDiff: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Moderate")).click()
-  def selectDiff: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Difficult")).click()
-  def selectVeryDiff: Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryDifficult")).click()
-  def selectVerySatisfied: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.VerySatisfied")).click()
-  def selectSatisfied: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Satisfied")).click()
-  def selectNeitherSatisfiedOrDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Moderate")).click()
-  def selectDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Dissatisfied")).click()
-  def selectVeryDiss: Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.VeryDissatisfied")).click()
-  def clickOnFeedBackContinue: Unit = driver.findElement(By.id("submit")).click()
+  def selectVerEasy(): Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryEasy")).click()
+  def selectEasy(): Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Easy")).click()
+  def selectNeitherEasyofDiff(): Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Moderate")).click()
+  def selectDiff(): Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.Difficult")).click()
+  def selectVeryDiff(): Unit = driver.findElement(By.cssSelector("#howEasyQuestion\\.VeryDifficult")).click()
+  def selectVerySatisfied(): Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.VerySatisfied")).click()
+  def selectSatisfied(): Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Satisfied")).click()
+  def selectNeitherSatisfiedOrDiss(): Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Moderate")).click()
+  def selectDiss(): Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.Dissatisfied")).click()
+  def selectVeryDiss(): Unit = driver.findElement(By.cssSelector("#howDoYouFeelQuestion\\.VeryDissatisfied")).click()
+  def clickOnFeedBackContinue(): Unit = driver.findElement(By.id("submit")).click()
   def enterScoreDetails(scoreDetailsValue : String): Unit = enterValInTextField(scoreDetailsIdentifier, scoreDetailsValue)
 
 }
