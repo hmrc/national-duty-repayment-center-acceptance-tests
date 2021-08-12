@@ -38,12 +38,12 @@ class checkYourAnswersPage extends commonMethods {
   def ResToHMRCResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[3]/dd[1]")
   def DocsResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[4]/dd[1]")
 
-  def clickRefNOChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
-  def clickResTypeChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendCaseResponseType']")
-  def clickResToHMRCChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']")
-  def clickDocsChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadPage']")
+  def clickRefNOChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
+  def clickResTypeChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendCaseResponseType']")
+  def clickResToHMRCChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']")
+  def clickDocsChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadPage']")
 
-  def clickTotalReturnAmountChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/repaymentSummaryPage']")
-  def clickEntryDetailsChangeOption: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/entryDetails']")
+  def clickTotalReturnAmountChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/repaymentSummaryPage']")
+  def clickEntryDetailsChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/entryDetails']")
 
 }

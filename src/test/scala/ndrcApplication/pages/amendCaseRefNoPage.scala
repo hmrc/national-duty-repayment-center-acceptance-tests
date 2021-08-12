@@ -26,9 +26,10 @@ class amendCaseRefNoPage extends commonMethods {
 
   //error messages
 
-  def errMsg: Unit = driver.findElement(By.id("value-error")).isDisplayed()
-  def clearRefNo:Unit = driver.findElement(By.id("value")).clear()
+  def errMsg(): Unit = driver.findElement(By.id("value-error")).isDisplayed()
 
-  def enterRefNo(refNoValue : String): Unit = enterValInTextField(refNoIdentifier, refNoValue)
+  def clearRefNo(): Unit = driver.findElement(By.id("value")).clear()
+
+  def enterRefNo(refNoValue: String): Unit = enterValInTextField(refNoIdentifier, refNoValue)
 
 }

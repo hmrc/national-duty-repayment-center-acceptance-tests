@@ -20,6 +20,6 @@ object applicationNotFoundPage extends applicationNotFoundPage
 
 class applicationNotFoundPage extends commonMethods {
 
-  def clickEnterRefNoAgain: Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
+  def clickEnterRefNoAgain(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
 
 }

@@ -16,12 +16,9 @@
 
 package ndrcApplication.pages
 
-import org.openqa.selenium.By
-
 object whoToBeRepaidPage extends whoToBeRepaidPage
 
 class whoToBeRepaidPage extends commonMethods {
-
 
 
 }

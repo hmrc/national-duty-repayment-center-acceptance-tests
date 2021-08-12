@@ -23,8 +23,8 @@ object articlePage extends articlePage
 class articlePage extends commonMethods {
 
 
-  def selectVatArticle: Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectErrorOfCustoms: Unit = driver.findElement(By.cssSelector("#value-2")).click()
-  def selectExceptionalCircum: Unit = driver.findElement(By.cssSelector("#value-3")).click()
+  def selectVatArticle(): Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectErrorOfCustoms(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
+  def selectExceptionalCircum(): Unit = driver.findElement(By.cssSelector("#value-3")).click()
 
 }
