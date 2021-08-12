@@ -5,7 +5,7 @@ Feature: Restricted CMA
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -82,7 +82,7 @@ Feature: Restricted CMA
     Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     # Change duty claimed to more than £250
 
@@ -100,7 +100,7 @@ Feature: Restricted CMA
     Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "Bank transfer (Bacs)" repayment option
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -114,7 +114,7 @@ Feature: Restricted CMA
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -202,7 +202,7 @@ Feature: Restricted CMA
 
     # "Select repayment method" page not shown
 
-    Then I am on "Who is to be repaid? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Who do you want HMRC to repay? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative option
     When I click on the "Continue" button
     Then I am on "Are you an indirect representative of the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -214,7 +214,7 @@ Feature: Restricted CMA
     Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     # Change duty claimed to more than £250
 
@@ -232,7 +232,7 @@ Feature: Restricted CMA
     Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "Bank transfer (Bacs)" repayment option
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -246,7 +246,7 @@ Feature: Restricted CMA
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -323,7 +323,7 @@ Feature: Restricted CMA
     Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     # Change entry date to less than 42 days ago
 
@@ -337,7 +337,7 @@ Feature: Restricted CMA
     Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "Bank transfer (Bacs)" repayment option
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -351,7 +351,7 @@ Feature: Restricted CMA
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -439,7 +439,7 @@ Feature: Restricted CMA
 
     # "Select repayment method" page not shown
 
-    Then I am on "Who is to be repaid? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Who do you want HMRC to repay? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative option
     When I click on the "Continue" button
     Then I am on "Are you an indirect representative of the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -451,7 +451,7 @@ Feature: Restricted CMA
     Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     # Change entry date to less than 42 days ago
 
@@ -465,7 +465,7 @@ Feature: Restricted CMA
     Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "Bank transfer (Bacs)" repayment option
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page

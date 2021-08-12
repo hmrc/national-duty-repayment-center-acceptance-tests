@@ -4,7 +4,7 @@ Feature: Importers Journey
     Given I am on the start page for trader service and select Apply Now
      Then I Accept cookies and hide message
      When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -70,7 +70,7 @@ Feature: Importers Journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
     When I click on the "Continue" button
-    Then I am on "Are you the importer or their representative? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
     When I click on the "Continue" button
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page

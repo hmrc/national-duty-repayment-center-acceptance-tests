@@ -29,12 +29,12 @@ Feature: Error Scenarios Amend case Journey
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then An error message is displayed- Error: "Enter the further information"
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 

@@ -16,10 +16,10 @@ Feature: Amend case CYA Page
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct data items is displayed
     Then I verify correct responses is displayed for Amend case journey "<referenceNo>", "<responseType>", "<responseToHMRC>" and "<docsUploaded>"
 
@@ -29,7 +29,7 @@ Feature: Amend case CYA Page
     Then I clear the reference no field
     And I enter valid Application "<referenceNoDoesNotExist>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<responseType>", "<responseToHMRC>" and "<docsUploaded>"
 
     #change Response type
@@ -38,7 +38,7 @@ Feature: Amend case CYA Page
     #unselecting supporting documents
     And I choose send more supporting documents
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeResType>", "<responseToHMRC>"
 
     When I click on change option on the amend review page for response type
@@ -51,7 +51,7 @@ Feature: Amend case CYA Page
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeRespType>", "<docsUploaded>"
 
     #change Documents
@@ -61,7 +61,7 @@ Feature: Amend case CYA Page
     And I wait for the file to be uploaded
     Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
     When I click the file continue button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<referenceNoDoesNotExist>", "<changeRespType>", "<changeDocsUploaded>"
 
     When I click on the "Continue" button
@@ -74,7 +74,7 @@ Feature: Amend case CYA Page
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
 
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     Then I verify correct responses is displayed for Amend case journey "<referenceNo>", "<changeRespType>", "<changeDocsUploaded>"
 
     When I click on the "Continue" button

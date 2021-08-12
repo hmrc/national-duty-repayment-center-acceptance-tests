@@ -17,10 +17,10 @@ Feature: Amend case Journey
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "'Shoes Jeans Jackets'"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
@@ -45,7 +45,7 @@ Feature: Amend case Journey
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
@@ -65,10 +65,10 @@ Feature: Amend case Journey
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose to provide give further information
     When I click on the "Continue" button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
@@ -88,10 +88,10 @@ Feature: Amend case Journey
     Then I am on "What do you need to do? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose to provide give further information
     When I click on the "Continue" button
-    Then I am on "Give us further information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your information - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "This application is closed - Apply for repayment of import duty and import VAT - GOV.UK" page
 
