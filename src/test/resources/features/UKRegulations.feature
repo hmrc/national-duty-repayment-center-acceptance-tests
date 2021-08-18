@@ -86,15 +86,12 @@ Feature: UK Regulations scenarios
     And I enter to create "<declarantRefNo>"
     When I click on the "Continue" button
     Then I am on "Select repayment method - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose "<repayment>" repayment option
-    When I click on the "Continue" button
-    Then I am on "Enter your bank details - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter account "<aName>" and sortcode "<sCode>" and account number "<accNo>"
+    And I choose "Current month amendment (CMA)" repayment option
     When I click on the "Continue" button
     Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      |YorNuploadFile | YorNeori | eoriNo               | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  | repayment                | aName    | sCode  | accNo      |
-      |No             |   Yes    | GB123456789123       | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       | Bank transfer (Bacs)     | Megacorp | 207106 | 86563611   |
+      | YorNeori | eoriNo               | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  |
+      |   Yes    | GB123456789123       | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       |
