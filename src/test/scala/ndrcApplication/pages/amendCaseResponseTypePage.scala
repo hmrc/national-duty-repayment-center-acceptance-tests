@@ -22,9 +22,9 @@ object amendCaseResponseTypePage extends amendCaseResponseTypePage
 
 class amendCaseResponseTypePage extends commonMethods {
 
-  def selectSendMoreDocs(): Unit = driver.findElement(By.cssSelector("#supportingDocuments")).click()
+  def selectSendMoreDocs(): Unit = driver.findElement(By.cssSelector("#value")).click()
 
-  def selectGiveMoreInfo(): Unit = driver.findElement(By.cssSelector("#furtherInformation")).click()
+  def selectGiveMoreInfo(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 
 }
