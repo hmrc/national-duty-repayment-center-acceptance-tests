@@ -18,7 +18,7 @@ Feature: Amend case Journey QA
     Then I am on "Add more information to your application - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter further goods details- Details: "'Shoes Jeans Jackets'"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your additional information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Application not found - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -27,7 +27,7 @@ Feature: Amend case Journey QA
     Then I clear the reference no field
     And I enter valid Application "<referenceNo>"
     When I click on the "Continue" button
-    Then I am on "Check your answers before sending your application - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Check your additional information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
