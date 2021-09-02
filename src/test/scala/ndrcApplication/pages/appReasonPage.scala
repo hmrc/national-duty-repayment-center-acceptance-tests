@@ -23,25 +23,9 @@ object appReasonPage extends appReasonPage
 class appReasonPage extends commonMethods {
 
 
-  def selectCommCode(): Unit = driver.findElement(By.cssSelector("#\\30 4")).click()
+  def selectCommCode(): Unit = driver.findElement(By.cssSelector("#value")).click()
 
-  def selectCurrChange(): Unit = driver.findElement(By.cssSelector("#\\30 3")).click()
-
-  def selectCustProCode(): Unit = driver.findElement(By.cssSelector("#\\30 2")).click()
-
-  def selectCustSplPro(): Unit = driver.findElement(By.cssSelector("#\\30 5")).click()
-
-  def selectPreference(): Unit = driver.findElement(By.cssSelector("#\\30 6")).click()
-
-  def selectRetroQuota(): Unit = driver.findElement(By.cssSelector("#\\30 1")).click()
-
-  def selectRetUnwantGoods(): Unit = driver.findElement(By.cssSelector("#\\30 8")).click()
-
-  def selectRetGoodsRelief(): Unit = driver.findElement(By.cssSelector("#\\30 7")).click()
-
-  def selectValue(): Unit = driver.findElement(By.cssSelector("#\\30 9")).click()
-
-  def selectOther(): Unit = driver.findElement(By.cssSelector("#\\31 0")).click()
+  def selectPreference(): Unit = driver.findElement(By.cssSelector("#value-5")).click()
 
 
 }
