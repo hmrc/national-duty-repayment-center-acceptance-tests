@@ -21,7 +21,7 @@ import ndrcApplication.pages.articlePage
 
   class ArticleSteps extends articlePage with ScalaDsl with EN {
 
-    And("^I choose a repayment Type$") {
+    And("^I choose an article Type$") {
       selectVatArticle
     }
 

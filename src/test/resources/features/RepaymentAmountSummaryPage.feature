@@ -10,15 +10,12 @@ Feature: Repayment Amount Summary Page
     Then I am on "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose one entry
     When I click on the "Continue" button
-    Then I am on "What was the entry acceptance date? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a date Range on or before Dec
-    When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a repayment Type
-    When I click on the "Continue" button
     Then I am on "Add the details for this entry - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date that was 7 days ago
+    When I click on the "Continue" button
+    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose a regulation repayment Type
     When I click on the "Continue" button
     Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
