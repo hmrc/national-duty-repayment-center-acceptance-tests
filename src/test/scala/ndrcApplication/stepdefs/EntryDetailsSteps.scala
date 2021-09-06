@@ -39,4 +39,11 @@ import scala.util.Try
 
     }
 
+    And("""^I enter an entry date of (.*)/(.*)/(.*)$""") { (day: String,month: String, year: String) =>
+      entryDetailsPage.enterDay(day)
+      entryDetailsPage.enterMonth(month)
+      entryDetailsPage.enterYear(year)
+
+    }
+
 }

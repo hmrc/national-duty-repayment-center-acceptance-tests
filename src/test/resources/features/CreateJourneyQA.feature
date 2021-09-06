@@ -12,18 +12,15 @@ Feature: Create Journey QA
     And I choose multi entry
     And I enter "<noOfEntries>" value
     When I click on the "Continue" button
-    Then I am on "What was the entry acceptance date? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a date Range on or before Dec
-    When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a repayment Type
-    When I click on the "Continue" button
-    Then I am on "Upload the multiple entry document - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
     Then I am on "Enter the details of the oldest entry - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date that was 7 days ago
+    When I click on the "Continue" button
+    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose a regulation repayment Type
+    When I click on the "Continue" button
+    Then I am on "Upload the multiple entry document - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
     Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose multiple application Reasons
@@ -121,18 +118,15 @@ Feature: Create Journey QA
     And I choose multi entry
     And I enter "<noOfEntries>" value
     When I click on the "Continue" button
-    Then I am on "What was the entry acceptance date? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a date Range on or before Dec
-    When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose a repayment Type
-    When I click on the "Continue" button
-    Then I am on "Upload the multiple entry document - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
     Then I am on "Enter the details of the oldest entry - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date that was 7 days ago
+    When I click on the "Continue" button
+    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    And I choose a regulation repayment Type
+    When I click on the "Continue" button
+    Then I am on "Upload the multiple entry document - Apply for repayment of import duty and import VAT - GOV.UK" page
+    When I click on Choose file button and add the "second" file
     When I click on the "Continue" button
     Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
