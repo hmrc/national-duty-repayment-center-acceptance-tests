@@ -66,12 +66,6 @@ Feature: Representatives Journey
       When I click on the "Continue" button
       Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
       When I click on the "Continue" button
-      Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I choose eori "<YorNeori>" option
-      When I click on the "Continue" button
-      Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I enter "<agentEoriNo>" in correct format GB
-      When I click on the "Continue" button
       Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I enter your "<declarantName>" and business "<businessName>"
       When I click on the "Continue" button
@@ -185,12 +179,6 @@ Feature: Representatives Journey
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<agentEoriNo>" in correct format GB
     When I click on the "Continue" button
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"

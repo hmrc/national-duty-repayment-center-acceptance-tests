@@ -47,19 +47,13 @@ Feature: Importers Journey
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
-    When I click on the "Continue" button
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
 
 
 
     Examples:
-      | YorNuploadFile | YorNeori | eoriNo              |
-      |      No        | Yes      | GB123456789123      |
+      | YorNuploadFile |
+      |      No        |
 
   @suite
   Scenario Outline: VAT Registration Importers multi-entry journey
@@ -114,18 +108,12 @@ Feature: Importers Journey
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
-    When I click on the "Continue" button
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I click on Help VAT registration link
     And I confirm VAT registration is displayed: "Help with VAT registration You must register your business for VAT with HMRC if its VAT taxable turnover is over the current VAT registration threshold. You can register voluntarily if your turnover is under the threshold, unless everything you sell is exempt."
 
 
     Examples:
-      | noOfEntries| YorNuploadFile | YorNeori | eoriNo              |
-      | 8          |      No        | Yes      | GB123456789123      |
+      | noOfEntries| YorNuploadFile |
+      | 8          |      No        |
 

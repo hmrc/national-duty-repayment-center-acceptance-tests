@@ -41,12 +41,6 @@ Feature: Restricted CMA
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
-    When I click on the "Continue" button
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNvat>" option
     When I click on the "Continue" button
@@ -103,8 +97,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNuploadFile | YorNeori | eoriNo         | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | repayment            | aName    | sCode  | accNo    |
-      | No             | Yes      | GB123456789123 | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Bank transfer (Bacs) | Megacorp | 207106 | 86563611 |
+      |  YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | repayment            | aName    | sCode  | accNo    |
+      |  Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Bank transfer (Bacs) | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
@@ -166,12 +160,6 @@ Feature: Restricted CMA
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<agentEoriNo>" in correct format GB
     When I click on the "Continue" button
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
@@ -276,12 +264,6 @@ Feature: Restricted CMA
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
-    When I click on the "Continue" button
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNvat>" option
     When I click on the "Continue" button
@@ -334,8 +316,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori | eoriNo         | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
-      | Yes      | GB123456789123 | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
+      | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims more than 42 days ago
@@ -397,12 +379,6 @@ Feature: Restricted CMA
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<agentEoriNo>" in correct format GB
     When I click on the "Continue" button
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"

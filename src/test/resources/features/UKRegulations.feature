@@ -47,12 +47,6 @@ Feature: UK Regulations scenarios
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
-    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I choose eori "<YorNeori>" option
-    When I click on the "Continue" button
-    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter "<eoriNo>" in correct format GB
-    When I click on the "Continue" button
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNvat>" option
     When I click on the "Continue" button
@@ -90,8 +84,8 @@ Feature: UK Regulations scenarios
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori | eoriNo               | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  |
-      |   Yes    | GB123456789123       | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       |
+      | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  |
+      | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       |
 
 
   @suite
