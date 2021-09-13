@@ -56,14 +56,6 @@ Feature: Create Journey QA
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     When I click the file continue button
 
-    # Un-comment if EORI integration is disabled in QA
-#    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I choose eori "<YorNeori>" option
-#    When I click on the "Continue" button
-#    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I enter "<eoriNo>" in correct format GB
-#    When I click on the "Continue" button
-
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNvat>" option
     When I click on the "Continue" button
@@ -103,8 +95,8 @@ Feature: Create Journey QA
     Then I am on "Give feedback - GOV.UK" page
 
     Examples:
-      | noOfEntries | YorNuploadFile| YorNeori | eoriNo               | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName     | sCode  | accNo      |
-      |     8       |  No           |  Yes     | GB123456789123       | Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp  | 207106 | 86563611   |
+      | noOfEntries |  YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName     | sCode  | accNo      |
+      |     8       |  Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp  | 207106 | 86563611   |
 
   @qa
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey with Proof of Authority upload
@@ -178,14 +170,6 @@ Feature: Create Journey QA
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
 
-    # Un-comment if EORI integration is disabled in QA
-#    Then I am on "Do you have an EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I choose eori "<YorNeori>" option
-#    When I click on the "Continue" button
-#    Then I am on "What is your EORI number? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I enter "<agentEoriNo>" in correct format GB
-#    When I click on the "Continue" button
-
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
@@ -225,5 +209,5 @@ Feature: Create Journey QA
     Then I am on "Give feedback - GOV.UK" page
 
     Examples:
-      | noOfEntries |YorNuploadFile | YorNeori    | eoriNo           | YorNvat | impName          | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName    | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |9            | No            |    Yes      | GB123456789123   | Yes     | test importer    | 2 Rue Des Fleurs | Paris        |                |            | France          | GB123456789123001  | test declarant      | test agent      | 27 rue National  | LIBOURNE     |              |               | France         | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | Megacorp | 207106      | 86563611      |
+      | noOfEntries | YorNvat | impName          | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName    | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      |9            | Yes     | test importer    | 2 Rue Des Fleurs | Paris        |                |            | France          | GB123456789123001  | test declarant      | test agent      | 27 rue National  | LIBOURNE     |              |               | France         | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | Megacorp | 207106      | 86563611      |
