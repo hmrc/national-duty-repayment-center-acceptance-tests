@@ -17,7 +17,7 @@ Feature: Repayment Amount Summary Page
     Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose a regulation repayment Type
     When I click on the "Continue" button
-    Then I am on "Why are you making an application? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
     When I click on the "Continue" button
     Then I am on "Tell us why the overpayment happened - Apply for repayment of import duty and import VAT - GOV.UK" page
