@@ -14,7 +14,7 @@ Prior to executing the tests ensure you have:
 Run the following command to start services locally:
 
     sudo mongod
-    sm --start UI_TEST_TEMPLATE -f
+    sm --start UI_TEST_TEMPLATE -r
 
 Then execute the `run_tests.sh` script:
 

@@ -14,13 +14,13 @@ Feature: UK Regulations scenarios
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date that was 7 days ago
     When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose a regulation repayment Type
     When I click on the "Continue" button
     Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
     When I click on the "Continue" button
-    Then I am on "Tell us why the overpayment happened - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Give us more details about the overpayment - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter goods details- Details: "Shoes Jeans Jackets"
     When I click on the "Continue" button
     Then I am on "What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -103,7 +103,7 @@ Feature: UK Regulations scenarios
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date of 1/1/2021
     When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose a regulation repayment Type
     When I click on the "Continue" button
     Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -123,7 +123,7 @@ Feature: UK Regulations scenarios
     And I enter declaration details- EPU: "345" and Entry No: "123456t"
     And I enter an entry date of 31/12/2020
     When I click on the "Continue" button
-    Then I am on "Why are you applying for this repayment? - Apply for repayment of import duty and import VAT - GOV.UK" page
+    Then I am on "Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an article Type
     When I click on the "Continue" button
     Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
