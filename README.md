@@ -1,53 +1,40 @@
 **This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
 
 # national-duty-repayment-center-acceptance-tests
-UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
+UI test suite for the `NDRC` using WebDriver and `cucumber`.  
 
 ## Running the tests
 
 Prior to executing the tests ensure you have:
- - Docker - to run a Chrome or Firefox browser inside a container 
  - Appropriate [drivers installed](#install-driver-binary) - to run tests against locally installed Browser
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
+ - Installed/configured [service manager](https://github.com/hmrc/service-manager).
 
 Run the following command to start services locally:
 
     sudo mongod
-    sm --start UI_TEST_TEMPLATE -r
+    sm --start NDRC_ALL -r
 
-Then execute the `run_tests.sh` script:
+Then execute the `run-acceptance-tests-local.sh` script:
 
-    ./run_tests.sh <environment> <browser-driver>
+    ./run-acceptance-tests-local.sh
 
-The `run_tests.sh` script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
+The script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
  - `src/test/resources/application.conf` for **environment** 
  - [webdriver-factory](https://github.com/hmrc/webdriver-factory#2-instantiating-a-browser-with-default-options) for **browser-driver**
+ 
+The script runs the following sbt command.  Run this command directly if you want to use different drivers or environments
 
-## Running tests against a containerised browser - on a developer machine
-
-The script `./run-browser-with-docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
-The script requires `remote-chrome` or `remote-firefox` as an argument.
-
-Read more about the script's functionality [here](run-acceptance-tests-qa-jenkins.sh).
-
-To run against a containerised Chrome browser:
-
-```bash
-./run-browser-with-docker.sh remote-chrome 
-./run_tests.sh local remote-chrome
-```
-
-`./run-browser-with-docker.sh` is **NOT** required when running in a CI environment. 
+    sbt -Dbrowser="chrome" -Denvironment="local" "testOnly ndrcApplication.suites.RunSuite"
 
 #### Running the tests against a test environment
 
 To run the tests against an environment set the corresponding `host` environment property as specified under
  `<env>.host.services` in the [application.conf](/src/test/resources/application.conf). 
 
-For example, to execute the `run_tests.sh` script against QA  environment using Chrome remote-webdriver
+For example, to execute against QA environment using Chrome remote-webdriver
 
-    ./run_tests.sh qa remote-chrome
+    sbt -Dbrowser="remote-chrome" -Denvironment="qa" "testOnly ndrcApplication.suites.RunSuite"
 
 ## Running ZAP tests
 
@@ -69,28 +56,21 @@ Running ZAP tests require passing a zap-automation config object to the zap-auto
 defined in the [application.conf](/src/test/resources/application.conf). The config is passed to the `zap-automation`
 library via [ZapSpec](/src/test/scala/uk/gov/hmrc/test/ui/ZapSpec.scala) from which the ZAP tests are triggered.
 
-#### Executing a ZAP test
+#### Executing a DAST ZAP test
 
-The shell script `run_zap_tests.sh` is available to execute ZAP tests. The script first proxies a set of journey tests, 
+The shell script `dast_zap.sh.sh` is available to execute ZAP tests. The script first proxies a set of journey tests, 
 tagged as `ZapTests`, via ZAP. Upon completion, the script then triggers a ZAP scan for the provided `zap-automation` config. 
 
 For example, to execute ZAP tests locally using a Chrome browser
 
-```
-./run_zap_test.sh local chrome
-```
-
-To execute ZAP tests locally using a Chrome browser
-
-```
-./run-browser-with-docker.sh remote-chrome 
-./run_zap_test.sh local remote-chrome
-``` 
-
-`./run-browser-with-docker.sh` is **NOT** required when running in a CI environment.
-
+    ./dast_zap.sh.sh local chrome
 
 For more information about ZAP tests, please refer to the `zap-automation` [documentation](https://github.com/hmrc/zap-automation/blob/master/README.md).
+
+## Running accessibilityTest
+The accessibility tests run as a subset of the main tests.  This can be run by using the script
+
+    ./run_accessibilityTests.sh
 
 ### Running tests using BrowserStack
 If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.
@@ -102,7 +82,8 @@ This project supports UI test execution using Firefox (Geckodriver) and Chrome (
 See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
 
     ./installGeckodriver.sh <operating-system> <driver-version>
-    or
+or
+
     ./installChromedriver <operating-system> <driver-version>
 
 - *<operating-system>* defaults to **linux64**, however it also supports **macos**
