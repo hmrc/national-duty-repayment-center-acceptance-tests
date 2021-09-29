@@ -29,6 +29,13 @@
 	  "newLevel": -1
 	},
 	{
+	  "reason": "This issue is related to stub implementaion for QA and outside our scope.",
+	  "contextId": 1,
+	  "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+	  "ruleId": 10202,
+	  "newLevel": -1
+	},
+	{
 	  "reason": "This issue is in assets front end and is outside our scope.",
 	  "contextId": 1,
 	  "url": "http:\/\/localhost:9032\/assets\/.*",
