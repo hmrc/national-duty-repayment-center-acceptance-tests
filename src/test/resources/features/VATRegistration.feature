@@ -114,6 +114,6 @@ Feature: Importers Journey
 
 
     Examples:
-      | noOfEntries| YorNuploadFile |
-      | 8          |      No        |
+      | noOfEntries|
+      | 8          |
 

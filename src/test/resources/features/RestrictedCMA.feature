@@ -97,8 +97,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      |  YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | repayment            | aName    | sCode  | accNo    |
-      |  Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Bank transfer (Bacs) | Megacorp | 207106 | 86563611 |
+      |  YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      |  Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
@@ -220,8 +220,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
+      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
 
   @suite
   Scenario Outline: User is not presented with CMA repayment option for claims more than 42 days ago
@@ -435,6 +435,6 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | agentEoriNo        | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | GB123456789123001  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
+      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
 
