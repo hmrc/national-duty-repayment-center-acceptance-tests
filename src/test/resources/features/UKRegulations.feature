@@ -2,7 +2,6 @@ Feature: UK Regulations scenarios
   @suite
   Scenario Outline: A user wants to complete a New Importers journey with UK regulations
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
@@ -91,7 +90,6 @@ Feature: UK Regulations scenarios
   @suite
   Scenario: UK regulations available for entry date 1 Jan 2021
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
@@ -111,7 +109,6 @@ Feature: UK Regulations scenarios
   @suite
   Scenario: Customs articles available for entry date pre 1 Jan 2021
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type

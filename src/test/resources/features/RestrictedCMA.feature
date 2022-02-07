@@ -3,7 +3,6 @@ Feature: Restricted CMA
   @suite
   Scenario Outline: User is not presented with CMA repayment option for claims less than £250
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
@@ -103,7 +102,6 @@ Feature: Restricted CMA
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative claimant type
@@ -226,7 +224,6 @@ Feature: Restricted CMA
   @suite
   Scenario Outline: User is not presented with CMA repayment option for claims more than 42 days ago
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type
@@ -322,7 +319,6 @@ Feature: Restricted CMA
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims more than 42 days ago
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Representative claimant type

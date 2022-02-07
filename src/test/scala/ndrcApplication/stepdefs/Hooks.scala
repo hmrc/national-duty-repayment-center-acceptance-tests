@@ -16,9 +16,9 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.Scenario
-import cucumber.api.java.{After, Before}
+import org.junit.{After, Before}
 import org.openqa.selenium._
+import _root_.io.cucumber.scala.Scenario
 
 class Hooks extends WebDriverInstance {
 
@@ -34,7 +34,11 @@ class Hooks extends WebDriverInstance {
         case screenshot1: TakesScreenshot =>
           try {
             val screenshot = screenshot1.getScreenshotAs(OutputType.BYTES)
-            result.embed(screenshot, "image/png")
+            result.attach(
+              data = screenshot,
+              mediaType = "image/png",
+              name = "screenshot"
+            )
           } catch {
             case somePlatformsDontSupportScreenshots: WebDriverException => System.err.println(somePlatformsDontSupportScreenshots.getMessage)
           }

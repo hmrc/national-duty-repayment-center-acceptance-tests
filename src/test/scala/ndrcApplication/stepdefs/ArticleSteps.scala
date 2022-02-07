@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.articlePage
 
   class ArticleSteps extends articlePage with ScalaDsl with EN {

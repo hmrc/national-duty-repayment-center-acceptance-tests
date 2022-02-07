@@ -4,7 +4,6 @@ Feature: Amend case Journey
    # @ZAP
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
@@ -32,7 +31,6 @@ Feature: Amend case Journey
   @suite
   Scenario Outline: A user wants to Amend a case to send more supporting documents
     Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
@@ -57,7 +55,6 @@ Feature: Amend case Journey
   @suite
   Scenario Outline: A user wants to Amend a case to give further information
     Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
@@ -80,7 +77,6 @@ Feature: Amend case Journey
 
   Scenario Outline: A user tries to Amend a closed case
     Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<closedCaseReferenceNo>"

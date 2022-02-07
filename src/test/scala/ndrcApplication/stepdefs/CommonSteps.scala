@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.scalatest.MustMatchers.convertToAnyMustWrapper
 

@@ -2,7 +2,6 @@ Feature: Repayment Amount Summary Page
   @suite
   Scenario: A user wants to complete a New Importers journey
     Given I am on the start page for trader service and select Apply Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose Importer claimant type

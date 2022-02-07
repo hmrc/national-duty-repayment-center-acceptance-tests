@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.fileUploadedPage
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, NoSuchElementException}

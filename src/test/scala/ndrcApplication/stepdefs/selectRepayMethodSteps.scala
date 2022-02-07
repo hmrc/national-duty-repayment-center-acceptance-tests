@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.selectRepayMethodPage
 
 class selectRepayMethodSteps extends selectRepayMethodPage with ScalaDsl with EN {
