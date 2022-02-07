@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.feedbackFormPage
 
 class FeedbackFormSteps extends feedbackFormPage with ScalaDsl with EN {

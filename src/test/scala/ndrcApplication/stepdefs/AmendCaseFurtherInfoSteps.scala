@@ -16,7 +16,7 @@
 
 package ndrcApplication.stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.amendCaseFurtherInfoPage
 
 class AmendCaseFurtherInfoSteps extends amendCaseFurtherInfoPage with ScalaDsl with EN {

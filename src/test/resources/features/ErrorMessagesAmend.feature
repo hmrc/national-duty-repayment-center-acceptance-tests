@@ -2,7 +2,6 @@ Feature: Error Scenarios Amend case Journey
   @suite
   Scenario Outline: Error messages for Amend case journey scenarios
     Given I am on the start page for trader service and select Amend Now
-    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button

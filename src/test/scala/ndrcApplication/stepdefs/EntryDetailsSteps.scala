@@ -18,7 +18,7 @@ package ndrcApplication.stepdefs
 
 import java.time.LocalDate
 
-import cucumber.api.scala.{EN, ScalaDsl}
+import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.entryDetailsPage
 
 import scala.util.Try
