@@ -1,6 +1,6 @@
 Feature: Create Journey QA
 
-  @qa
+  @smoke
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -97,7 +97,7 @@ Feature: Create Journey QA
       | noOfEntries |  YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName     | sCode  | accNo      |
       |     8       |  Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp  | 207106 | 86563611   |
 
-  @qa
+  @smoke
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey with Proof of Authority upload
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button

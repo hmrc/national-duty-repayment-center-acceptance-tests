@@ -1,5 +1,5 @@
 Feature: Amend case Journey QA
-  @qa
+  @smoke
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button
