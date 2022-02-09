@@ -29,8 +29,8 @@ import org.junit.runner.RunWith
     "json:target/cucumber.json"
   ),
 
-  tags = "@qa"
+  tags = "@smoke"
 )
-class RunSuiteQA {
+class RunSmoke {
 
 }
