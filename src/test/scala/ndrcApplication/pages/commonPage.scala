@@ -16,9 +16,9 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.utils.Configuration
-import org.openqa.selenium.By
 import ndrcApplication.stepdefs.WebDriverInstance
+import ndrcApplication.utils.Configuration
+import org.openqa.selenium.{By, NoSuchElementException}
 
 object commonPage extends commonMethods with WebDriverInstance {
 
@@ -49,9 +49,20 @@ object commonPage extends commonMethods with WebDriverInstance {
 
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
 
-  def acceptCookies(): Unit = clickOnButton(acceptCookiesOnAllPages)
+  def findElement(identifier: By): Boolean = {
+    try {
+      driver.findElement(identifier)
+      true
+    } catch {
+      case _: NoSuchElementException => false
+    }
+  }
 
-  def hideCookiesMsg() : Unit = clickOnButton(hideCookieMessage)
+  def acceptCookies(): Unit =
+    if (findElement(acceptCookiesOnAllPages)) clickOnButton(acceptCookiesOnAllPages)
+
+  def hideCookiesMsg() : Unit =
+    if (findElement(hideCookieMessage)) clickOnButton(hideCookieMessage)
 
   def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)
 
