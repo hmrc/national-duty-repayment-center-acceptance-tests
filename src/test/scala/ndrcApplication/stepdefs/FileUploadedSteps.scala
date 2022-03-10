@@ -18,7 +18,6 @@ package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.fileUploadedPage
-import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, NoSuchElementException}
 
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
@@ -60,7 +59,7 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   def waitForFileToBeUploaded: Boolean = {
     try {
-      fluentWait.until(ExpectedConditions.elementToBeClickable(By.id("ndrc-fileupload-continue")))
+      fluentWait.until(_.findElement(By.id("ndrc-fileupload-continue")).isDisplayed)
       true
     } catch {
       case _: NoSuchElementException => false

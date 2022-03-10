@@ -28,7 +28,7 @@ import org.junit.runner.RunWith
     "html:target/cucumber",
     "json:target/cucumber.json"
   ),
-  tags = "@suite"
+  tags = "@wip"
 )
 class RunSuite {
 

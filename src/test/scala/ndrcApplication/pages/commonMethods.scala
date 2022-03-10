@@ -16,17 +16,17 @@
 
 package ndrcApplication.pages
 
-import java.time.Duration
-import java.time.temporal.ChronoUnit
-
 import ndrcApplication.driver.Driver
 import ndrcApplication.stepdefs.WebDriverInstance
 import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, Wait}
+import org.openqa.selenium.support.ui.{FluentWait, Select, Wait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
 import org.scalatestplus.selenium.WebBrowser
+
+import java.time.Duration
+import java.time.temporal.ChronoUnit
 
 
 abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
@@ -35,16 +35,16 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
     .withTimeout(Duration.of(30, ChronoUnit.SECONDS))
     .pollingEvery(Duration.of(100, ChronoUnit.MILLIS))
 
-  val usrDir = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
+  val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath = ""
 
-  def navigateToPage(url: String) {
+  def navigateToPage(url: String): Unit = {
     driver.navigate().to(url)
   }
 
   def isPageTitleDisplayed(pageTitle: String): Boolean = {
     try {
-      fluentWait.until(ExpectedConditions.titleIs(pageTitle))
+      fluentWait.until(_.findElement(By.tagName("title")).getText == pageTitle)
       true
     } catch {
       case _: NoSuchElementException => false
@@ -52,17 +52,17 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   }
 
   def clickOnButton(identifier: By): Unit = {
-    fluentWait.until(ExpectedConditions.elementToBeClickable(identifier))
+    fluentWait.until(_.findElement(identifier).isDisplayed)
     driver.findElement(identifier).click()
   }
 
-  def selectDropdown(affinityGroup: By, level: String) = {
+  def selectDropdown(affinityGroup: By, level: String): Unit = {
     val dropdown = new Select(driver.findElement(affinityGroup))
     dropdown.selectByVisibleText(level)
   }
 
   def enterValInTextField(identifier: By, value: String): Unit = {
-    fluentWait.until(ExpectedConditions.visibilityOfElementLocated(identifier))
+    fluentWait.until(_.findElement(identifier).isDisplayed)
     driver.findElement(identifier).clear()
     driver.findElement(identifier).sendKeys(value)
   }
@@ -80,7 +80,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   def findByXpath(xpath: String): WebElement = driver.findElement(By.xpath(xpath))
 
   def findElementByCss(css: String): WebElement = {
-    fluentWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(css))))
+    fluentWait.until(_.findElement(By.cssSelector(css)))
     driver.findElement(By.cssSelector(css))
   }
 
