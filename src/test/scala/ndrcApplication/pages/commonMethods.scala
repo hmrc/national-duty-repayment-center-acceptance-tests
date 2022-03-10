@@ -44,8 +44,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
 
   def isPageTitleDisplayed(pageTitle: String): Boolean = {
     try {
-      fluentWait.until(_.findElement(By.tagName("title")).getText == pageTitle)
-      true
+      fluentWait.until(_.getTitle == pageTitle)
     } catch {
       case _: NoSuchElementException => false
     }

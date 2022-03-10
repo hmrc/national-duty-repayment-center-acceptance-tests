@@ -16,12 +16,10 @@
 
 package ndrcApplication.utils
 
-import address.v2.Country
 import com.typesafe.scalalogging.Logger
-import controllers.api.{ConfirmedResponseAddress, ConfirmedResponseAddressDetails}
 import org.mockserver.integration.ClientAndServer
 import org.mockserver.model.{HttpRequest, HttpResponse}
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json._
 
 import java.util.UUID
 
@@ -59,19 +57,24 @@ object MockALFServer {
       .withStatusCode(303)
   }
 
-  val expectedAlfResponse: JsValue = Json.toJson(
-    ConfirmedResponseAddress(
-      auditRef = "some-ref",
-      id       = Some("123456789"),
-      address  = ConfirmedResponseAddressDetails(
-        organisation = Some("organisation"),
-        lines        = Some(List("1 test Street")),
-        postcode     = Some("TE5 5TD"),
-        country      = Some(Country("UK", "United Kingdom")),
-        poBox        = None
-      )
+  val expectedAlfResponse: JsValue =
+    JsObject(Seq(
+      "auditRef" -> JsString("some-ref"),
+      "id"       -> JsString("123456789"),
+      "address"  -> JsObject(Seq(
+        "organisation" -> JsString("organisation"),
+        "lines"        -> JsArray(IndexedSeq(
+          JsString("1 test Street"))
+        ),
+        "postcode"     -> JsString("TE5 5TD"),
+        "country"      -> JsObject(Seq(
+          "code" -> JsString("UK"),
+          "name" -> JsString("United Kingdom")
+        ))
+      ))
     )
   )
+
 
   mockServer.when(
     HttpRequest
