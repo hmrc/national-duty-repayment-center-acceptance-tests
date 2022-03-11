@@ -15,9 +15,10 @@ object Dependencies {
     "org.apache.commons"  %  "commons-lang3"            % "3.11",
     "com.typesafe"        %  "config"                   % "1.3.2"     % Test,
     "org.mock-server"     %  "mockserver-client-java"   % "5.12.0"    % Test,
-    "org.mock-server"     %  "mockserver-netty"         % "5.12.0"    % Test,
-    "com.typesafe.play"   %% "play-json"                % "2.9.2"     % Test,
-    "com.google.guava"    %  "guava"                    % "31.1-jre"  % Test
+    "org.mock-server"     %  "mockserver-netty"         % "5.12.0"    % Test
   )
 
+  val dependencyOverrides = Seq(
+    "com.google.guava"    %  "guava" % "25.0-jre"  % Test
+  )
 }

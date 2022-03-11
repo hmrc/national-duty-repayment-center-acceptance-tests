@@ -59,8 +59,7 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   def waitForFileToBeUploaded: Boolean = {
     try {
-//      findElementByCss("div.govuk-summary-list__row.upload_row_1 > dd.govuk-summary-list__actions").isDisplayed
-      fluentWait.until(_.findElement(By.id("ndrc-fileupload-continue")).isDisplayed)
+      fluentWait.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)
       true
     } catch {
       case _: NoSuchElementException => false

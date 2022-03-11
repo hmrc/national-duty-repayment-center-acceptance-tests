@@ -16,9 +16,10 @@
 
 package ndrcApplication.driver
 
-import org.junit.Before
+import io.cucumber.scala.ScalaDsl
+import ndrcApplication.driver.MockALFServer.mockServer
 
-trait StartUpTearDown {
+trait StartUpTearDown extends ScalaDsl {
 
   def isJsDisabled: Boolean = false
 
@@ -26,8 +27,8 @@ trait StartUpTearDown {
 
   implicit lazy val webDriver = driver
 
-  @Before
-  def initialize() {
+  Before {
+    mockServer.isRunning
     driver.manage().deleteAllCookies()
   }
 }

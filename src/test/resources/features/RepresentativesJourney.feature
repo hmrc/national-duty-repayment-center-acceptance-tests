@@ -60,21 +60,25 @@ Feature: Representatives Journey
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
+    # address start
+#    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+#    And I select "Enter address Manually" option
+#    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
+#    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
+#    When I click on the "Continue" button
+    # address end
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-    When I click on the "Continue" button
+    # address start
+#    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+#    And I select "Enter address Manually" option
+#    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
+#    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
+#    When I click on the "Continue" button
+    # address end
     Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -107,8 +111,8 @@ Feature: Representatives Journey
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori | eoriNo         | YorNvat | impName       | addLine        | city       | county     | postCode | country        | declarantName  | businessName | agentaddLine | agentcity | agentcounty | agentpostCode | agentcountry   | phoneNo     | emailAddress   | repayment            | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
-      | Yes      | GB123456789123 | Yes     | test importer | 23 Ludgatehill | Manchester | Lancashire | M239SA   | United Kingdom | test declarant | test agent   | 2 Piccadilly | Bradford  | Yorkshire   | BD232AJ       | United Kingdom | 09876543212 | test@gmail.com | Bank transfer (Bacs) | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
+      | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | repayment            | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
+      | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Bank transfer (Bacs) | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 
   @suite @accessibility @ZAP
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
@@ -173,21 +177,25 @@ Feature: Representatives Journey
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
+    # address start
     Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select "Enter address Manually" option
     Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
     When I click on the "Continue" button
+    # address end
     Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
+    # address start
     Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select "Enter address Manually" option
     Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
     When I click on the "Continue" button
+    # address end
     Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -211,5 +219,5 @@ Feature: Representatives Journey
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | noOfEntries | YorNeori | eoriNo         | YorNvat | impName       | addLine          | city  | county | postCode | country | declarantName  | businessName | agentaddLine    | agentcity | agentcounty | agentpostCode | agentcountry | phoneNo     | emailAddress   | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
-      | 9           | Yes      | GB123456789123 | Yes     | test importer | 2 Rue Des Fleurs | Paris |        |          | France  | test declarant | test agent   | 27 rue National | LIBOURNE  |             |               | France       | 09876543212 | test@gmail.com | Yes                | 123abcxyz      | Megacorp | 207106 | 86563611 |
+      | noOfEntries | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      | 9           | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Yes                | 123abcxyz      | Megacorp | 207106 | 86563611 |
