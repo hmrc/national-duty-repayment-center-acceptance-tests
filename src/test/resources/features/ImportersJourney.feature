@@ -60,13 +60,13 @@ Feature: Importers Journey
       Then I am on "Is Test Importer the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
       When I click on the "Continue" button
-      Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I select "Enter address Manually" option
-      Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-      And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-      When I click on the "Continue" button
-      Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-      When I click on the "Continue" button
+#      Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
+#      And I select "Enter address Manually" option
+#      Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
+#      And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
+#      When I click on the "Continue" button
+#      Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
+#      When I click on the "Continue" button
       Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
       And I select email option
       And I enter "<emailAddress>"
@@ -155,13 +155,7 @@ Feature: Importers Journey
     Then I am on "What is the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<goodsOwner>" name
     When I click on the "Continue" button
-    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -180,5 +174,5 @@ Feature: Importers Journey
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-     | noOfEntries | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine                | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName    | sCode  | accNo      |
-     |     8       | Yes       | Test      | Importer    |  No            | Goods Owner| 52 Rue Des Fleurs      | Paris     |                | 34092     | France         | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp | 207106 | 86563611   |
+     | noOfEntries | YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName    | sCode  | accNo      |
+     |     8       | Yes       | Test      | Importer    |  No            | Goods Owner| 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp | 207106 | 86563611   |

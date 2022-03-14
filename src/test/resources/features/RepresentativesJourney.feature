@@ -60,27 +60,11 @@ Feature: Representatives Journey
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    # address start
-#    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I select "Enter address Manually" option
-#    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-#    When I click on the "Continue" button
-    # address end
-    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    # address start
-#    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I select "Enter address Manually" option
-#    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-#    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-#    When I click on the "Continue" button
-    # address end
-    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -114,7 +98,7 @@ Feature: Representatives Journey
       | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | repayment            | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
       | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Bank transfer (Bacs) | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 
-  @suite @accessibility @ZAP
+  @suite @accessibility @ZAP @wip
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -177,27 +161,11 @@ Feature: Representatives Journey
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    # address start
-    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    # address end
-    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    # address start
-    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-    When I click on the "Continue" button
-    # address end
-    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
