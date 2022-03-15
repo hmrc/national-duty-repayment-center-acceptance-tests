@@ -49,13 +49,7 @@ Feature: Restricted CMA
     Then I am on "Is Test Importer the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
     When I click on the "Continue" button
-    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -96,8 +90,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      |  YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
-      |  Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
+      | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
@@ -152,23 +146,11 @@ Feature: Restricted CMA
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -218,8 +200,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
+      | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
+      | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: User is not presented with CMA repayment option for claims more than 42 days ago
@@ -270,13 +252,7 @@ Feature: Restricted CMA
     Then I am on "Is Test Importer the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
     When I click on the "Continue" button
-    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -313,8 +289,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
-      | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
+      | YorNvat | fName | lName    | YorNgoodsOwner | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      | Yes     | Test  | Importer | Yes            | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims more than 42 days ago
@@ -369,23 +345,11 @@ Feature: Restricted CMA
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -431,6 +395,6 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNeori    | eoriNo           | YorNvat | impName            | addLine        | city            | county        | postCode   | country         | declarantName       | businessName | agentaddLine  | agentcity    | agentcounty    | agentpostCode  | agentcountry    | phoneNo       |  emailAddress     |  YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      |    Yes      | GB123456789123   | Yes     | test importer      | 23 Ludgatehill | Manchester      | Lancashire    |  M239SA    | United Kingdom  | test declarant      | test agent   | 2 Piccadilly  | Bradford     | Yorkshire      | BD232AJ        | United Kingdom  | 09876543212   |  test@gmail.com   |   Yes                | 123abcxyz      |     No           | Megacorp | 207106      | 86563611      |
+      | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
+      | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 

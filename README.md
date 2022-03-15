@@ -9,15 +9,21 @@ Prior to executing the tests ensure you have:
  - Appropriate [drivers installed](#install-driver-binary) - to run tests against locally installed Browser
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
  - Installed/configured [service manager](https://github.com/hmrc/service-manager).
+ - Mongo running on port 27017
 
 Run the following command to start services locally:
 
-    sudo mongod
-    sm --start NDRC_ALL -r
+    sm --start NDRC_ALL -r --appendArgs '{"NATIONAL_DUTY_REPAYMENT_CENTER_FRONTEND":["-J-Dmicroservice.services.address-lookup-frontend.port=6001", "-J-Dmicroservice.services.address-lookup-frontend-web.port=6001", "-J-Dmicroservice.services.address-lookup-frontend-api.port=6001"]}'
 
-Then execute the `run-acceptance-tests-local.sh` script:
+NDRC acceptance tests use [Wire Mock](https://wiremock.org/) to stub Address Lookup Frontend UI, hence the append args mapping `address-lookup-frontend` config to port `6001`
+
+To run tests against `chromedriver`, execute the `run-acceptance-tests-local.sh` script:
 
     ./run-acceptance-tests-local.sh
+
+If you are able to use Docker, and wish to run tests against a Docker-ised `remote-chrome` instance, once you have spun up your container, execute the `run-acceptance-tests-local-jenkins.sh` script:
+
+    ./run-acceptance-tests-local-jenkins.sh
 
 The script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
  - `src/test/resources/application.conf` for **environment** 

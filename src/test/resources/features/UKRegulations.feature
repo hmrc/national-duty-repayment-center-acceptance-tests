@@ -58,14 +58,8 @@ Feature: UK Regulations scenarios
     Then I am on "What is the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<goodsOwner>" name
     When I click on the "Continue" button
-    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-    Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
+#   ALF Stubbing
+   Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
     And I select phone no option
@@ -83,8 +77,8 @@ Feature: UK Regulations scenarios
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  |addLine               | city      | county         | postCode  | country                  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  |
-      | Yes       | Test      | Importer    | No              | Goods Owner |38 Piccadilly Street  | Bradford  | West Yorkshire | BD1 3LY   | United Kingdom           | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       |
+      | YorNvat   | fName     | lName       |  YorNgoodsOwner | goodsOwner  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo  |
+      | Yes       | Test      | Importer    | No              | Goods Owner | 09876543212  | test@mail.com    |     Yes             | 123abcxyz       |
 
 
   @suite
