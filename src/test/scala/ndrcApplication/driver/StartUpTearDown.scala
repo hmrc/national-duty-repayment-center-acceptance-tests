@@ -16,14 +16,11 @@
 
 package ndrcApplication.driver
 
+import com.github.tomakehurst.wiremock.WireMockServer
+import com.github.tomakehurst.wiremock.client.WireMock._
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig
 import io.cucumber.scala.ScalaDsl
-import org.mockserver.integration.ClientAndServer
-import org.mockserver.matchers.{TimeToLive, Times}
-import org.mockserver.mock.Expectation
-import org.mockserver.model.{HttpRequest, HttpResponse}
 import org.openqa.selenium.WebDriver
-
-import java.util.concurrent.TimeUnit
 
 trait StartUpTearDown extends ScalaDsl {
 
@@ -33,7 +30,8 @@ trait StartUpTearDown extends ScalaDsl {
 
   implicit lazy val webDriver: WebDriver = driver
 
-  val mockServer: ClientAndServer = ClientAndServer.startClientAndServer(6001)
+  val server: WireMockServer = new WireMockServer(wireMockConfig().port(6001))
+
   val journeyId: String = "Test-id"
   val alfStubbedUrl: String = s"http://localhost:9028/lookup-address/$journeyId/confirm"
   val ndrcBaseUrl: String = "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat"
@@ -60,65 +58,59 @@ trait StartUpTearDown extends ScalaDsl {
       |}""".stripMargin
 
   Before {
+    server.stubFor(
+      post(urlEqualTo("/api/init"))
+        .withRequestBody(
+          matchingJsonPath(
+            "$.options.continueUrl",
+            containing(s"$ndrcBaseUrl/select-importer-address/update")
+          )
+        )
+        .willReturn(
+          aResponse
+            .withStatus(202)
+            .withHeader("Location", callBackUrl)
+        )
+    )
 
-    def apiInit(callBackUrl: String): Array[Expectation] =
-      mockServer.when(
-        HttpRequest
-          .request()
-          .withPath("/api/init"),
-        Times.exactly(1),
-        TimeToLive.exactly(TimeUnit.SECONDS, 60L),
-        0
-      ) respond {
-        HttpResponse
-          .response()
-          .withHeader("Location", callBackUrl)
-          .withStatusCode(202)
-      }
+    server.stubFor(
+      post(urlEqualTo("/api/init"))
+        .withRequestBody(
+          matchingJsonPath(
+            "$.options.continueUrl",
+            containing(s"$ndrcBaseUrl/your-business-address/update")
+          )
+        )
+        .willReturn(
+          aResponse
+            .withStatus(202)
+            .withHeader("Location", callBackUrlAgent)
+        )
+    )
 
-    def apiConfirmed: Array[Expectation] =
-      mockServer.when(
-        HttpRequest
-          .request()
-          .withPath("/api/confirmed")
-          .withQueryStringParameter("id", journeyId),
-        Times.exactly(1),
-        TimeToLive.exactly(TimeUnit.SECONDS, 60L),
-        0
-      ) respond {
-        HttpResponse
-          .response()
-          .withHeader("Content-Type", "application/json")
-          .withBody(expectedAlfResponse)
-          .withStatusCode(200)
-      }
+    server.stubFor(
+      get(urlEqualTo(s"/api/confirmed?id=$journeyId"))
+        .willReturn(
+          aResponse()
+            .withStatus(200)
+            .withHeader("Content-Type", "application/json")
+            .withBody(expectedAlfResponse)
+        )
+    )
 
-    def alfStubbed: Array[Expectation] =
-      mockServer.when(
-        HttpRequest
-          .request()
-          .withPath(alfStubbedUrl),
-        Times.exactly(1),
-        TimeToLive.exactly(TimeUnit.SECONDS, 60L),
-        0
-      ) respond {
-        HttpResponse
-          .response()
-          .withHeader("Location", callBackUrl)
-          .withStatusCode(303)
-      }
+    server.stubFor(
+      get(urlEqualTo(alfStubbedUrl))
+        .willReturn(
+          aResponse
+            .withStatus(303)
+            .withHeader("Location", callBackUrl)
+        )
+    )
 
-    apiInit(callBackUrl) ++
-      alfStubbed ++
-      apiConfirmed ++
-      apiInit(callBackUrlAgent) ++
-      alfStubbed ++
-      apiConfirmed
-
-    ()
+    server.start()
   }
 
   After {
-    mockServer.stop()
+    server.stop()
   }
 }

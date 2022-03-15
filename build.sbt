@@ -8,6 +8,5 @@ lazy val testSuite = (project in file("."))
     scalacOptions ++= Seq("-feature"),
     libraryDependencies ++= Dependencies.dependencies,
     //The testOptions from SbtAutoBuildPlugin supports only ScalaTest. Resetting testOptions for Cucumber Tests.
-    testOptions in Test := Seq.empty,
-    dependencyOverrides ++= Dependencies.dependencyOverrides
+    testOptions in Test := Seq.empty
   )
