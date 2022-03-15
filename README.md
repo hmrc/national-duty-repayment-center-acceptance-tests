@@ -15,7 +15,7 @@ Run the following command to start services locally:
 
     sm --start NDRC_ALL -r --appendArgs '{"NATIONAL_DUTY_REPAYMENT_CENTER_FRONTEND":["-J-Dmicroservice.services.address-lookup-frontend.port=6001", "-J-Dmicroservice.services.address-lookup-frontend-web.port=6001", "-J-Dmicroservice.services.address-lookup-frontend-api.port=6001"]}'
 
-NDRC acceptance tests use [mock server](https://www.mock-server.com/) to stub Address Lookup Frontend UI, hence the append args mapping `address-lookup-frontend` config to port `6001`
+NDRC acceptance tests use [Wire Mock](https://wiremock.org/) to stub Address Lookup Frontend UI, hence the append args mapping `address-lookup-frontend` config to port `6001`
 
 To run tests against `chromedriver`, execute the `run-acceptance-tests-local.sh` script:
 
