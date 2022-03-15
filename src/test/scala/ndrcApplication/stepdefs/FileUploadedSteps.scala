@@ -58,6 +58,7 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
   }
 
   def waitForFileToBeUploaded: Boolean = {
+    Thread.sleep(1000)
     try {
       fluentWait.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)
       true

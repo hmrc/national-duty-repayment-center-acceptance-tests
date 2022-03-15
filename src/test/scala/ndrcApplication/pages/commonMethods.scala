@@ -101,6 +101,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
       Driver.webDriver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
     }
     driver.findElement(By.id(elementID)).sendKeys(filePath)
+    Thread.sleep(1000)
   }
 
 }
