@@ -25,8 +25,6 @@ object Driver extends Driver
 class Driver {
 
   val targetBrowser: String = Option(systemProperties.getProperty("browser")).map(_.toLowerCase).getOrElse("chrome")
-  //private val pwd: String = System.getProperty("user.dir")
-  //System.setProperty("webdriver.chrome.driver", pwd + "/drivers/chromedriver")
 
   val webDriver: WebDriver = {
 
