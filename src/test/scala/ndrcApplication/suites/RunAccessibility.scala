@@ -26,7 +26,7 @@ import org.junit.runner.RunWith
   glue = Array("ndrcApplication.stepdefs"),
   plugin = Array(
     "pretty",
-    "html:target/cucumber",
+    "html:target/cucumber.html",
     "json:target/cucumber.json"
   ),
   tags = "@accessibility"

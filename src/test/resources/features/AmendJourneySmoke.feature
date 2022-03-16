@@ -1,4 +1,4 @@
-Feature: Amend case Journey QA
+Feature: Amend case Journey Staging
   @smoke
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
