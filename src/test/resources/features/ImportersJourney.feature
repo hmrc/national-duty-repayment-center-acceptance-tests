@@ -1,8 +1,6 @@
 Feature: Importers Journey
 
-  @suite
-    @accessibility
-    @ZAP
+  @suite @accessibility @ZAP
   Scenario Outline: A user wants to complete a New Importers journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
@@ -62,13 +60,7 @@ Feature: Importers Journey
     Then I am on "Is Test Importer the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose "<YorNgoodsOwner>" option to confirm owner of the goods
     When I click on the "Continue" button
-#      Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-#      And I select "Enter address Manually" option
-#      Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-#      And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-#      When I click on the "Continue" button
-#      Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-#      When I click on the "Continue" button
+# ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
