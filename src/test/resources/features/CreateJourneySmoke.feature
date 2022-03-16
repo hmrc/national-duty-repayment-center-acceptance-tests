@@ -68,13 +68,7 @@ Feature: Create Journey QA
     Then I am on "What is the name on the import documents? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<goodsOwner>" name
     When I click on the "Continue" button
-    Then I am on "What is your address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -95,8 +89,8 @@ Feature: Create Journey QA
     Then I am on "Give feedback - GOV.UK" page
 
     Examples:
-      | noOfEntries |  YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner | addLine               | city      | county         | postCode  | country        | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName     | sCode  | accNo      |
-      |     8       |  Yes       | Test      | Importer    |  No            | Goods Owner|52 Rue Des Fleurs      | Paris     |                 | 34092     | France        | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp  | 207106 | 86563611   |
+      | noOfEntries |  YorNvat   | fName     | lName       | YorNgoodsOwner | goodsOwner  | phoneNo      | emailAddress     | YorNDeclarantRefNO  | declarantRefNo | aName     | sCode  | accNo      |
+      |     8       |  Yes       | Test      | Importer    |  No            | Goods Owner | 09876543212  | test@mail.com    |    Yes              |  123abcxyz     | Megacorp  | 207106 | 86563611   |
 
   @smoke
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey with Proof of Authority upload
@@ -161,24 +155,11 @@ Feature: Create Journey QA
     Then I am on "Who is the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter "<impName>" name in rep journey
     When I click on the "Continue" button
-    Then I am on "What is the importer’s address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<addLine>", City: "<city>", County: "<county>", PostCode: "<postCode>" and Country: "<country>"
-    When I click on the "Continue" button
-    Then I am on "Confirm the importer’s address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
-
+#   ALF Stubbing
     Then I am on "Your details - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter your "<declarantName>" and business "<businessName>"
     When I click on the "Continue" button
-    Then I am on "What is your business address? - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I select "Enter address Manually" option
-    Then I am on "Enter your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    And I enter address manually Address Line: "<agentaddLine>", City: "<agentcity>", County: "<agentcounty>", PostCode: "<agentpostCode>" and Country: "<agentcountry>"
-    When I click on the "Continue" button
-    Then I am on "Confirm your business address - Apply for repayment of import duty and import VAT - GOV.UK" page
-    When I click on the "Continue" button
+#   ALF Stubbing
     Then I am on "How can we contact you? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I select email option
     And I enter "<emailAddress>"
@@ -208,5 +189,5 @@ Feature: Create Journey QA
     Then I am on "Give feedback - GOV.UK" page
 
     Examples:
-      | YorNeori  | eoriNo          | noOfEntries | YorNvat | impName          | addLine        | city           | county        | postCode   | country         | declarantName       | businessName    | agentaddLine     | agentcity    | agentcounty  | agentpostCode | agentcountry   | phoneNo        |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
-      | Yes       | GB123456789123  | 9            | Yes    | test importer    | 2 Rue Des Fleurs | Paris        |               |            | France          | test declarant      | test agent      | 27 rue National  | LIBOURNE     |              |               | France         | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | Megacorp | 207106      | 86563611      |
+      | YorNeori  | eoriNo          | noOfEntries | YorNvat | impName           | declarantName       | businessName   | phoneNo        |  emailAddress    | YorNDeclarantRefNO  | declarantRefNo | yOrNoIndirectRep | aName    | sCode       | accNo         |
+      | Yes       | GB123456789123  | 9            | Yes    | test importer     | test declarant      | test agent     | 09876543212    |  test@gmail.com  |  Yes                |  123abcxyz     |       No         | Megacorp | 207106      | 86563611      |
