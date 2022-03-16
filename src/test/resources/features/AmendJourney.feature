@@ -1,9 +1,9 @@
 Feature: Amend case Journey
   @suite
     @accessibility
-   # @ZAP
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
+    Then I Accept cookies and hide message
     When I click on the "Continue" button
     Then I am on "What is the application reference number? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I enter valid Application "<referenceNo>"
