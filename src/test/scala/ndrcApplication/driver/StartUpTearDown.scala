@@ -20,6 +20,7 @@ import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock._
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig
 import io.cucumber.scala.ScalaDsl
+import ndrcApplication.utils.Configuration
 import org.openqa.selenium.WebDriver
 
 trait StartUpTearDown extends ScalaDsl {
@@ -34,7 +35,7 @@ trait StartUpTearDown extends ScalaDsl {
 
   val journeyId: String = "Test-id"
   val alfStubbedUrl: String = s"http://localhost:9028/lookup-address/$journeyId/confirm"
-  val ndrcBaseUrl: String = "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat"
+  val ndrcBaseUrl: String = Configuration.settings.ndrcBaseUrl
   val callBackUrl: String = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
   val callBackUrlAgent: String = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
   val expectedAlfResponse: String =
