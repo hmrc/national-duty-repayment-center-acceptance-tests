@@ -18,9 +18,12 @@ package ndrcApplication.driver
 
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock._
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig
 import io.cucumber.scala.ScalaDsl
 import ndrcApplication.utils.Configuration
+import ndrcApplication.utils.Configuration.Urls.stagingUrl
+import ndrcApplication.utils.Configuration.{Environment, environment}
 import org.openqa.selenium.WebDriver
 
 trait StartUpTearDown extends ScalaDsl {
@@ -31,14 +34,24 @@ trait StartUpTearDown extends ScalaDsl {
 
   implicit lazy val webDriver: WebDriver = driver
 
-  val server: WireMockServer = new WireMockServer(wireMockConfig().port(6001))
+  private val local: Boolean = environment == Environment.local
 
-  val journeyId: String = "Test-id"
-  val alfStubbedUrl: String = s"http://localhost:9028/lookup-address/$journeyId/confirm"
-  val ndrcBaseUrl: String = Configuration.settings.ndrcBaseUrl
-  val callBackUrl: String = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
-  val callBackUrlAgent: String = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
-  val expectedAlfResponse: String =
+  private val journeyId: String = "Test-id"
+
+  private val wireMockConfiguration: WireMockConfiguration =
+    if (local) wireMockConfig().port(6001)
+    else wireMockConfig().httpsPort(6001)
+
+  private val alfStubbedUrl: String =
+    if (local) "http://localhost:9028/lookup-address/Test-id/confirm"
+    else s"$stagingUrl/lookup-address/$journeyId/confirm"
+
+  val server: WireMockServer = new WireMockServer(wireMockConfiguration)
+
+  private val ndrcBaseUrl: String = Configuration.settings.ndrcBaseUrl
+  private val callBackUrl: String = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
+  private val callBackUrlAgent: String = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
+  private val expectedAlfResponse: String =
     """{
       | "auditRef" : "some-ref",
       | "id" : "123456789",
