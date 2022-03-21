@@ -33,7 +33,6 @@ object Configuration {
     val environmentProperty = System.getProperty("environment", "local").toLowerCase
     environmentProperty match {
       case "local" => Environment.local
-      case "qa" => Environment.qa
       case "staging" => Environment.staging
       case _ => throw new IllegalArgumentException(s"Environment '$environmentProperty' not known")
     }
@@ -54,12 +53,6 @@ object Configuration {
           ndrcApplicationLandingUrl = s"http://localhost:8450$ndrcBaseUrl",
           timeout = 10
         )
-      case Environment.qa =>
-        new Configuration(
-          authLoginUrl = s"https://www.qa.tax.service.gov.uk$authLogin",
-          ndrcApplicationLandingUrl = ndrcBaseUrl,
-          timeout = 10
-        )
       case Environment.staging =>
         new Configuration(
           authLoginUrl = s"https://www.staging.tax.service.gov.uk$authLogin",
@@ -73,7 +66,7 @@ object Configuration {
 
   object Environment extends Enumeration {
     type Name = Value
-    val local, qa, staging = Value
+    val local, staging = Value
   }
 }
 
