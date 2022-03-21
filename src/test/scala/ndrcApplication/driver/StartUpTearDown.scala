@@ -18,12 +18,8 @@ package ndrcApplication.driver
 
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock._
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig
 import io.cucumber.scala.ScalaDsl
-import ndrcApplication.utils.Configuration
-import ndrcApplication.utils.Configuration.Urls.stagingUrl
-import ndrcApplication.utils.Configuration.{Environment, environment}
 import org.openqa.selenium.WebDriver
 
 trait StartUpTearDown extends ScalaDsl {
@@ -34,21 +30,11 @@ trait StartUpTearDown extends ScalaDsl {
 
   implicit lazy val webDriver: WebDriver = driver
 
-  private val local: Boolean = environment == Environment.local
+  val server: WireMockServer = new WireMockServer(wireMockConfig().port(6001))
 
   private val journeyId: String = "Test-id"
-
-  private val wireMockConfiguration: WireMockConfiguration =
-    if (local) wireMockConfig().port(6001)
-    else wireMockConfig().httpsPort(6001)
-
-  private val alfStubbedUrl: String =
-    if (local) "http://localhost:9028/lookup-address/Test-id/confirm"
-    else s"$stagingUrl/lookup-address/$journeyId/confirm"
-
-  val server: WireMockServer = new WireMockServer(wireMockConfiguration)
-
-  private val ndrcBaseUrl: String = Configuration.settings.ndrcBaseUrl
+  private val alfStubbedUrl: String = "http://localhost:9028/lookup-address/Test-id/confirm"
+  private val ndrcBaseUrl: String = "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat"
   private val callBackUrl: String = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
   private val callBackUrlAgent: String = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
   private val expectedAlfResponse: String =
