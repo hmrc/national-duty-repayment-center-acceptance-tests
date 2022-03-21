@@ -34,7 +34,7 @@ object commonPage extends commonMethods with WebDriverInstance {
 
 
   def loginNDRCViaAuthStub(): Unit = {
-    navigateToPage(s"${Configuration.settings.authLogin}")
+    navigateToPage(s"${Configuration.settings.authLoginUrl}")
     authLogin()
   }
 
