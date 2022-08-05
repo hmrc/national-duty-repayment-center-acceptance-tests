@@ -16,9 +16,8 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.driver.Driver
+import ndrcApplication.driver.Driver.webDriver
 import ndrcApplication.stepdefs.WebDriverInstance
-import org.openqa.selenium.remote.{LocalFileDetector, RemoteWebDriver}
 import org.openqa.selenium.support.ui.{FluentWait, Select, Wait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.MustMatchers
@@ -31,7 +30,7 @@ import java.time.temporal.ChronoUnit
 
 abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
 
-  var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](driver)
+  var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](webDriver)
     .withTimeout(Duration.of(30, ChronoUnit.SECONDS))
     .pollingEvery(Duration.of(100, ChronoUnit.MILLIS))
 
@@ -39,7 +38,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   var filePath = ""
 
   def navigateToPage(url: String): Unit = {
-    driver.navigate().to(url)
+    webDriver.navigate().to(url)
   }
 
   def isPageTitleDisplayed(pageTitle: String): Boolean = {
@@ -52,42 +51,42 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
 
   def clickOnButton(identifier: By): Unit = {
     fluentWait.until(_.findElement(identifier).isDisplayed)
-    driver.findElement(identifier).click()
+    webDriver.findElement(identifier).click()
   }
 
   def selectDropdown(affinityGroup: By, level: String): Unit = {
-    val dropdown = new Select(driver.findElement(affinityGroup))
+    val dropdown = new Select(webDriver.findElement(affinityGroup))
     dropdown.selectByVisibleText(level)
   }
 
   def enterValInTextField(identifier: By, value: String): Unit = {
     fluentWait.until(_.findElement(identifier).isDisplayed)
-    driver.findElement(identifier).clear()
-    driver.findElement(identifier).sendKeys(value)
+    webDriver.findElement(identifier).clear()
+    webDriver.findElement(identifier).sendKeys(value)
   }
 
   def assertElementText(content: String, element: WebElement): Unit = {
     assert(element.getText.equals(content), message(s"Element displayed is: ${element.getText} Expecting: $content"))
   }
 
-  def optionSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe (true)
+  def optionSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe (true)
 
-  def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe (false)
+  def optionNoSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe (false)
 
-  def isElementVisible(css: String): Boolean = driver.findElement(By.cssSelector(css)).isDisplayed
+  def isElementVisible(css: String): Boolean = webDriver.findElement(By.cssSelector(css)).isDisplayed
 
-  def findByXpath(xpath: String): WebElement = driver.findElement(By.xpath(xpath))
+  def findByXpath(xpath: String): WebElement = webDriver.findElement(By.xpath(xpath))
 
   def findElementByCss(css: String): WebElement = {
     fluentWait.until(_.findElement(By.cssSelector(css)))
-    driver.findElement(By.cssSelector(css))
+    webDriver.findElement(By.cssSelector(css))
   }
 
   def verifyHeading(text: String): Unit = findElementByCss("h2").getText mustBe text
 
-  def clickHref(href: String): Unit = driver.findElement(By.cssSelector(href)).click()
+  def clickHref(href: String): Unit = webDriver.findElement(By.cssSelector(href)).click()
 
-  def clickByCSS(css: String): Unit = driver.findElement(By.cssSelector(css)).click()
+  def clickByCSS(css: String): Unit = webDriver.findElement(By.cssSelector(css)).click()
 
   def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
     fileSeq match {
@@ -97,10 +96,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
       case "last" => filePath = usrDir + "PDF.pdf"
     }
 
-    if (Driver.targetBrowser.startsWith("remote")) {
-      Driver.webDriver.asInstanceOf[RemoteWebDriver].setFileDetector(new LocalFileDetector)
-    }
-    driver.findElement(By.id(elementID)).sendKeys(filePath)
+    webDriver.findElement(By.id(elementID)).sendKeys(filePath)
     Thread.sleep(1000)
   }
 

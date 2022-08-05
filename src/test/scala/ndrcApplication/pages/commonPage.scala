@@ -16,9 +16,11 @@
 
 package ndrcApplication.pages
 
+import ndrcApplication.driver.Driver.webDriver
 import ndrcApplication.stepdefs.WebDriverInstance
 import ndrcApplication.utils.Configuration
-import org.openqa.selenium.{By, NoSuchElementException}
+import org.openqa.selenium.support.ui.{ExpectedConditions}
+import org.openqa.selenium.{By, JavascriptExecutor, NoSuchElementException, WebElement}
 
 object commonPage extends commonMethods with WebDriverInstance {
 
@@ -45,6 +47,22 @@ object commonPage extends commonMethods with WebDriverInstance {
     enterValInTextField(enrolmentIdentifierValue, "GB123456789000")
 
     clickOnButton(submitButtonOnAuthLoginPage)
+  }
+
+  def scrollToElement(element: WebElement): AnyRef = {
+    val jse2: JavascriptExecutor = webDriver.asInstanceOf[JavascriptExecutor]
+    jse2.executeScript("arguments[0].scrollIntoView()", element)
+  }
+
+  def click(by: By): Unit = {
+    val element = webDriver.findElement(by)
+    scrollToElement(element)
+    element.click()
+  }
+
+  def clickGenericButton(): Unit = {
+    fluentWait.until(ExpectedConditions.elementToBeClickable(By.className("govuk-button")))
+    click(By.className("govuk-button"))
   }
 
   def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()

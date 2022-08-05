@@ -28,7 +28,7 @@ class CommonSteps extends ScalaDsl with EN with StartUpTearDown {
   }
 
   When("""^I click on the "([^"]*)" button$""") { (continue: String) =>
-    commonPage.clickOnContinueBtn()
+    commonPage.clickGenericButton()
   }
 
   And("""^I click the (.*) link$""") { link: String =>
