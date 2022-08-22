@@ -19,7 +19,7 @@ package ndrcApplication.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.driver.StartUpTearDown
 import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
-import org.scalatest.MustMatchers.convertToAnyMustWrapper
+import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
 class CommonSteps extends ScalaDsl with EN with StartUpTearDown {
 

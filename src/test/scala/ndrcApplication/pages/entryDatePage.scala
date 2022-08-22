@@ -23,8 +23,8 @@ object entryDatePage extends entryDatePage
 class entryDatePage extends commonMethods {
 
 
-  def selectJanDate(): Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectOnORBeforeDecDate(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
+  def selectJanDate(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
+  def selectOnORBeforeDecDate(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
 
 
 }

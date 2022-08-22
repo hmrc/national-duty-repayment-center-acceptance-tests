@@ -18,7 +18,6 @@ package ndrcApplication.driver
 
 import ndrcApplication.driver.Browser._
 import org.openqa.selenium.WebDriver
-import scala.util.Try
 
 object Driver extends Driver
 
@@ -29,11 +28,10 @@ class Driver {
   val webDriver: WebDriver = {
 
     var selectedDriver: WebDriver = null
-    sys addShutdownHook {
-      Try(webDriver.quit())
-    }
-      targetBrowser match {
-        case "chrome" | "firefox" | "zap-firefox" | "zap-chrome" | "remote-chrome" | "remote-firefox" => selectedDriver = createRemoteDriver()
+    sys.addShutdownHook(createRemoteDriver().quit())
+
+    targetBrowser match {
+        case "chrome" | "headless-chrome" |"firefox" | "zap-firefox" | "zap-chrome" | "remote-chrome" | "remote-firefox" => selectedDriver = createRemoteDriver()
         case _ => throw new IllegalArgumentException(s"target browser $targetBrowser not recognised")
       }
 
