@@ -18,6 +18,7 @@ package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.uploadFilePage
+import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
 
 class UploadFileSteps extends uploadFilePage with ScalaDsl with EN {
 

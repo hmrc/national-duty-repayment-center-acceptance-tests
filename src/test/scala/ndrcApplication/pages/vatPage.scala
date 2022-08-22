@@ -26,9 +26,9 @@ class vatPage extends commonMethods {
   private val vatBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
 
-  def clearImpVATPaid(): Unit = driver.findElement(By.id("ActualPaidAmount")).clear()
+  def clearImpVATPaid(): Unit = webDriver.findElement(By.id("ActualPaidAmount")).clear()
 
-  def clearImpVATBeenPaid(): Unit = driver.findElement(By.id("ShouldHavePaidAmount")).clear()
+  def clearImpVATBeenPaid(): Unit = webDriver.findElement(By.id("ShouldHavePaidAmount")).clear()
 
   def enterVatPaid(vatPaidValue: String): Unit = enterValInTextField(vatPaidIdentifier, vatPaidValue)
 

@@ -23,7 +23,7 @@ object vatRegPage extends vatRegPage
 class vatRegPage extends commonMethods {
 
 
-  def vatRegHyperlink(): Unit = driver.findElement(By.id("details-id")).click()
-  def vatRegText(): Unit = driver.findElement(By.id("details-id")).isDisplayed()
+  def vatRegHyperlink(): Unit = webDriver.findElement(By.id("details-id")).click()
+  def vatRegText(): Unit = webDriver.findElement(By.id("details-id")).isDisplayed()
 
 }

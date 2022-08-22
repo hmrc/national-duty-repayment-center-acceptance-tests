@@ -25,9 +25,9 @@ class otherCustDutyPage extends commonMethods {
   private val otherCustDutyPaidIdentifier = By.id("ActualPaidAmount")
   private val otherCustDutyBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
-  def clearOtherDutyPaid(): Unit = driver.findElement(By.id("ActualPaidAmount")).clear()
+  def clearOtherDutyPaid(): Unit = webDriver.findElement(By.id("ActualPaidAmount")).clear()
 
-  def clearOtherDutyBeenPaid(): Unit = driver.findElement(By.id("ShouldHavePaidAmount")).clear()
+  def clearOtherDutyBeenPaid(): Unit = webDriver.findElement(By.id("ShouldHavePaidAmount")).clear()
 
   def enterOtherCustDutyPaid(otherCustDutyPaidValue: String): Unit = enterValInTextField(otherCustDutyPaidIdentifier, otherCustDutyPaidValue)
 

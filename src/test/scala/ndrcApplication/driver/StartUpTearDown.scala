@@ -58,6 +58,7 @@ trait StartUpTearDown extends ScalaDsl {
       |}""".stripMargin
 
   Before {
+
     server.stubFor(
       post(urlEqualTo("/api/init"))
         .withRequestBody(

@@ -17,7 +17,6 @@
 package ndrcApplication.pages
 
 import org.openqa.selenium.By
-//import org.openqa.selenium.Keys
 
 object importerPersonalDetailsPage extends importerPersonalDetailsPage
 
@@ -36,10 +35,10 @@ class importerPersonalDetailsPage extends commonMethods {
   private val emailIdentifier = By.id("email")
 
 
-  def enterAddManuallyLink(): Unit = driver.findElement(By.id("manualAddress")).click()
-  //def selectCountryCode(countryCodeValue : String): Unit = driver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
-  def selectEmailOption(): Unit = driver.findElement(By.cssSelector("#value")).click()
-  def selectPhoneOption(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
+  def enterAddManuallyLink(): Unit = webDriver.findElement(By.id("manualAddress")).click()
+  //def selectCountryCode(countryCodeValue : String): Unit = webDriver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
+  def selectEmailOption(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
+  def selectPhoneOption(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
 
   def enterFName(fNameValue : String): Unit = enterValInTextField(fNameIdentifier, fNameValue)
   def enterLName(lNameValue : String): Unit = enterValInTextField(lNameIdentifier, lNameValue)

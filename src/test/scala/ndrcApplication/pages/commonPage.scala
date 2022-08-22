@@ -16,13 +16,11 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.driver.Driver.webDriver
-import ndrcApplication.stepdefs.WebDriverInstance
 import ndrcApplication.utils.Configuration
-import org.openqa.selenium.support.ui.{ExpectedConditions}
+import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, JavascriptExecutor, NoSuchElementException, WebElement}
 
-object commonPage extends commonMethods with WebDriverInstance {
+object commonPage extends commonMethods {
 
   private val redirectUrl = By.name("redirectionUrl")
   private val enrolment = By.name("enrolment[0].name")
@@ -32,8 +30,6 @@ object commonPage extends commonMethods with WebDriverInstance {
   private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
   private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
   private val hideCookieMessage = By.xpath("/html/body/div[1]/div/div[2]/button")
-
-
 
   def loginNDRCViaAuthStub(): Unit = {
     navigateToPage(s"${Configuration.settings.authLoginUrl}")
@@ -61,15 +57,15 @@ object commonPage extends commonMethods with WebDriverInstance {
   }
 
   def clickGenericButton(): Unit = {
-    fluentWait.until(ExpectedConditions.elementToBeClickable(By.className("govuk-button")))
+    waitFor.until(ExpectedConditions.elementToBeClickable(By.className("govuk-button")))
     click(By.className("govuk-button"))
   }
 
-  def deleteBrowserCookies(): Unit = driver.manage().deleteAllCookies()
+  def deleteBrowserCookies(): Unit = webDriver.manage().deleteAllCookies()
 
   def findElement(identifier: By): Boolean = {
     try {
-      driver.findElement(identifier)
+      webDriver.findElement(identifier)
       true
     } catch {
       case _: NoSuchElementException => false

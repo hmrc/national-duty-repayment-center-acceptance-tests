@@ -19,18 +19,19 @@ package ndrcApplication.stepdefs
 import org.junit.{After, Before}
 import org.openqa.selenium._
 import _root_.io.cucumber.scala.Scenario
+import ndrcApplication.pages.commonMethods
 
-class Hooks extends WebDriverInstance {
+class Hooks extends commonMethods {
 
   @Before
   def initialize() {
-    driver.manage().deleteAllCookies()
+    webDriver.manage().deleteAllCookies()
   }
 
   @After
   def tearDown(result: Scenario) {
     if (result.isFailed) {
-      driver match {
+      webDriver match {
         case screenshot1: TakesScreenshot =>
           try {
             val screenshot = screenshot1.getScreenshotAs(OutputType.BYTES)

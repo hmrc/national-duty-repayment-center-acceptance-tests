@@ -17,6 +17,7 @@
 package ndrcApplication.pages
 
 import org.openqa.selenium.WebElement
+import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
 object repaymentAmtSummaryPage extends repaymentAmtSummaryPage
 

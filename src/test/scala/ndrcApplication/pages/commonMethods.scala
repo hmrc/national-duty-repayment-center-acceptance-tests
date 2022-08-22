@@ -16,23 +16,22 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.driver.Driver.webDriver
-import ndrcApplication.stepdefs.WebDriverInstance
-import org.openqa.selenium.support.ui.{FluentWait, Select, Wait}
+import ndrcApplication.driver.Driver
+import org.openqa.selenium.support.ui.{FluentWait, Select}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
-import org.scalatest.MustMatchers
 import org.scalatest.concurrent.Eventually
-import org.scalatestplus.selenium.WebBrowser
-
+import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
 import java.time.Duration
-import java.time.temporal.ChronoUnit
 
 
-abstract class commonMethods extends WebBrowser with Eventually with MustMatchers with WebDriverInstance {
+abstract class commonMethods extends Eventually {
 
-  var fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](webDriver)
-    .withTimeout(Duration.of(30, ChronoUnit.SECONDS))
-    .pollingEvery(Duration.of(100, ChronoUnit.MILLIS))
+  implicit val webDriver: WebDriver = Driver.webDriver
+
+  implicit val waitFor: FluentWait[WebDriver] =
+    new FluentWait[WebDriver](webDriver)
+      .withTimeout(Duration.ofSeconds(30))
+      .pollingEvery(Duration.ofMillis(500))
 
   val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath = ""
@@ -43,14 +42,14 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
 
   def isPageTitleDisplayed(pageTitle: String): Boolean = {
     try {
-      fluentWait.until(_.getTitle == pageTitle)
+      waitFor.until(_.getTitle == pageTitle)
     } catch {
       case _: NoSuchElementException => false
     }
   }
 
   def clickOnButton(identifier: By): Unit = {
-    fluentWait.until(_.findElement(identifier).isDisplayed)
+    waitFor.until(_.findElement(identifier).isDisplayed)
     webDriver.findElement(identifier).click()
   }
 
@@ -60,7 +59,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   }
 
   def enterValInTextField(identifier: By, value: String): Unit = {
-    fluentWait.until(_.findElement(identifier).isDisplayed)
+    waitFor.until(_.findElement(identifier).isDisplayed)
     webDriver.findElement(identifier).clear()
     webDriver.findElement(identifier).sendKeys(value)
   }
@@ -78,7 +77,7 @@ abstract class commonMethods extends WebBrowser with Eventually with MustMatcher
   def findByXpath(xpath: String): WebElement = webDriver.findElement(By.xpath(xpath))
 
   def findElementByCss(css: String): WebElement = {
-    fluentWait.until(_.findElement(By.cssSelector(css)))
+    waitFor.until(_.findElement(By.cssSelector(css)))
     webDriver.findElement(By.cssSelector(css))
   }
 
