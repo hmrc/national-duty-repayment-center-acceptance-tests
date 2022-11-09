@@ -74,7 +74,7 @@ Feature: Amend case Journey
       | referenceNo               |
       | NDRC2105261863OL4K3WXR2   |
 
-
+  @Smoke
   Scenario Outline: A user tries to Amend a closed case
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button

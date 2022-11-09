@@ -16,7 +16,7 @@
 
 package ndrcApplication.pages
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, Keys}
 
 object importerPersonalDetailsPage extends importerPersonalDetailsPage
 
@@ -30,9 +30,9 @@ class importerPersonalDetailsPage extends commonMethods {
   private val addLine1Identifier = By.id("line1")
   private val cityIdentifier = By.id("town")
   private val postcodeIdentifier = By.id("postcode")
-  private val countryCodeIdentifier = By.id("countryCode")
   private val phoneNoIdentifier = By.id("phone")
   private val emailIdentifier = By.id("email")
+  private val countryIdentifier = By.id("countryCode")
 
 
   def enterAddManuallyLink(): Unit = webDriver.findElement(By.id("manualAddress")).click()
@@ -48,8 +48,8 @@ class importerPersonalDetailsPage extends commonMethods {
   def enterAddLine1(addLine1Value : String): Unit = enterValInTextField(addLine1Identifier, addLine1Value)
   def enterCity(cityValue : String): Unit = enterValInTextField(cityIdentifier, cityValue)
   def enterPostCode(postCodeValue : String): Unit = enterValInTextField(postcodeIdentifier, postCodeValue)
-  def enterCountryCode(countryCodeValue : String): Unit = enterValInTextField(countryCodeIdentifier, countryCodeValue)
   def enterPhoneNo(phoneNoValue : String): Unit = enterValInTextField(phoneNoIdentifier, phoneNoValue)
   def enterEmail(emailValue : String): Unit = enterValInTextField(emailIdentifier, emailValue)
-
+  def enterCountry(countryValue : String): Unit = {enterValInTextField(countryIdentifier, countryValue)
+                                                 webDriver.findElement(countryIdentifier).sendKeys(Keys.ENTER)}
 }

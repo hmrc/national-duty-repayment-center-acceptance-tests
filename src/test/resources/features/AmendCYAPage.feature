@@ -1,5 +1,5 @@
 Feature: Amend case CYA Page
-  @suite
+  @suite @Smoke
 
   Scenario Outline: A user wants to change an answer via the CYA page - Amend case
     Given I am on the start page for trader service and select Amend Now
