@@ -1,5 +1,5 @@
 Feature: Repayment Amount Summary Page
-  @suite
+  @suite @Smoke
   Scenario: A user wants to complete a New Importers journey
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button

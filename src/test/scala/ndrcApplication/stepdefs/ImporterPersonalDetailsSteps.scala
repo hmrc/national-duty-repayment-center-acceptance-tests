@@ -18,6 +18,7 @@ package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.importerPersonalDetailsPage
+import org.openqa.selenium.Keys
 
 class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with ScalaDsl with EN {
 
@@ -39,10 +40,9 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
     importerPersonalDetailsPage.enterAddManuallyLink
   }
 
-  And("^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\", County: \"([^\"]*)\", PostCode: \"([^\"]*)\" and Country: \"([^\"]*)\"$") { (addLine: String, city: String, county: String, postCode: String, country: String) =>
+  And("^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\" and PostCode: \"([^\"]*)\"$") { (addLine: String, city: String, postCode: String) =>
     importerPersonalDetailsPage.enterAddLine1(addLine)
     importerPersonalDetailsPage.enterCity(city)
-    importerPersonalDetailsPage.enterCountryCode(country)
     importerPersonalDetailsPage.enterPostCode(postCode)
   }
 
@@ -52,6 +52,10 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
 
   And("^I enter \"([^\"]*)\"$") { (email: String) =>
     importerPersonalDetailsPage.enterEmail(email)
+  }
+
+  And("^I enter country \"([^\"]*)\"$") { (country: String) =>
+    importerPersonalDetailsPage.enterCountry(country)
   }
 
   And("^I select phone no option$") { () =>
