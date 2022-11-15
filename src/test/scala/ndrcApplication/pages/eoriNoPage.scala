@@ -24,7 +24,6 @@ class eoriNoPage extends commonMethods {
 
   private val eoriNoIdentifier = By.id("value")
 
-
-  def enterEoriNo(eoriNoValue : String): Unit = enterValInTextField(eoriNoIdentifier, eoriNoValue)
+  def enterEoriNo(eoriNoValue: String): Unit = enterValInTextField(eoriNoIdentifier, eoriNoValue)
 
 }

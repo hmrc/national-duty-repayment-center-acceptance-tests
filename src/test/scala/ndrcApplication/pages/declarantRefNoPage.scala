@@ -24,8 +24,6 @@ class declarantRefNoPage extends commonMethods {
 
   private val decRefNoIdentifier = By.id("declarantReferenceNumber")
 
-
-
-  def enterDRN(drnValue : String): Unit = enterValInTextField(decRefNoIdentifier, drnValue)
+  def enterDRN(drnValue: String): Unit = enterValInTextField(decRefNoIdentifier, drnValue)
 
 }

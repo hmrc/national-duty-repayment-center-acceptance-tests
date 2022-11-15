@@ -22,17 +22,17 @@ import ndrcApplication.pages.amendCaseResponseTypePage
 class AmendCaseResponseType extends amendCaseResponseTypePage with ScalaDsl with EN {
 
   And("^I choose both send more supporting documents and give further information$") {
-    amendCaseResponseTypePage.selectSendMoreDocs
-    amendCaseResponseTypePage.selectGiveMoreInfo
+    amendCaseResponseTypePage.selectSendMoreDocs()
+    amendCaseResponseTypePage.selectGiveMoreInfo()
 
   }
 
   And("^I choose send more supporting documents$") {
-    amendCaseResponseTypePage.selectSendMoreDocs
+    amendCaseResponseTypePage.selectSendMoreDocs()
   }
 
   And("^I choose to provide give further information$") {
-    amendCaseResponseTypePage.selectGiveMoreInfo
+    amendCaseResponseTypePage.selectGiveMoreInfo()
   }
 
 }

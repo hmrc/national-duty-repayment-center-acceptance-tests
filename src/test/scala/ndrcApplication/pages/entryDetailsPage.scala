@@ -22,17 +22,16 @@ object entryDetailsPage extends entryDetailsPage
 
 class entryDetailsPage extends commonMethods {
 
-  private val epuID = By.id("EPU")
+  private val epuID     = By.id("EPU")
   private val entryNoID = By.id("EntryNumber")
-  private val dayID = By.id("EntryDate.day")
-  private val monthID = By.id("EntryDate.month")
-  private val yearID = By.id("EntryDate.year")
+  private val dayID     = By.id("EntryDate.day")
+  private val monthID   = By.id("EntryDate.month")
+  private val yearID    = By.id("EntryDate.year")
 
-
-  def enterEPU(epuValue : String): Unit = enterValInTextField(epuID, epuValue)
+  def enterEPU(epuValue: String): Unit         = enterValInTextField(epuID, epuValue)
   def enterEntryNo(entryNoValue: String): Unit = enterValInTextField(entryNoID, entryNoValue)
-  def enterDay(dayValue : String): Unit = enterValInTextField(dayID, dayValue)
-  def enterMonth(monthValue : String): Unit = enterValInTextField(monthID, monthValue)
-  def enterYear(yearValue : String): Unit = enterValInTextField(yearID, yearValue)
+  def enterDay(dayValue: String): Unit         = enterValInTextField(dayID, dayValue)
+  def enterMonth(monthValue: String): Unit     = enterValInTextField(monthID, monthValue)
+  def enterYear(yearValue: String): Unit       = enterValInTextField(yearID, yearValue)
 
 }

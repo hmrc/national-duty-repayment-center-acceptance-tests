@@ -32,22 +32,22 @@ object Configuration {
   val environment: Environment.Name = {
     val environmentProperty = System.getProperty("environment", "local").toLowerCase
     environmentProperty match {
-      case "local" => Environment.local
+      case "local"   => Environment.local
       case "staging" => Environment.staging
-      case _ => throw new IllegalArgumentException(s"Environment '$environmentProperty' not known")
+      case _         => throw new IllegalArgumentException(s"Environment '$environmentProperty' not known")
     }
   }
 
   private val ndrcBaseUrl: String =
     "/apply-for-repayment-of-import-duty-and-import-vat/what-do-you-want-to-do"
-  private val authLogin: String =
+  private val authLogin: String   =
     "/auth-login-stub/gg-sign-in"
 
   lazy val settings: Configuration = create()
 
-  def create(): Configuration = {
+  def create(): Configuration =
     environment match {
-      case Environment.local =>
+      case Environment.local   =>
         new Configuration(
           authLoginUrl = s"http://localhost:9949$authLogin",
           ndrcApplicationLandingUrl = s"http://localhost:8450$ndrcBaseUrl",
@@ -59,14 +59,12 @@ object Configuration {
           ndrcApplicationLandingUrl = ndrcBaseUrl,
           timeout = 10
         )
-      case _ =>
+      case _                   =>
         throw new IllegalArgumentException(s"Environment '$environment' not known")
     }
-  }
 
   object Environment extends Enumeration {
     type Name = Value
     val local, staging = Value
   }
 }
-

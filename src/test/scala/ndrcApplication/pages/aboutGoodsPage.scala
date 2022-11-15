@@ -22,14 +22,11 @@ object aboutGoodsPage extends aboutGoodsPage
 
 class aboutGoodsPage extends commonMethods {
 
-  private val reasonIdentifier = By.id("value")
+  private val reasonIdentifier       = By.id("value")
   private val goodsDetailsIdentifier = By.id("value")
 
-
-
-
-
-  def enterReason(reasonValue : String): Unit = enterValInTextField(reasonIdentifier, reasonValue)
-  def enterGoodsDetails(goodsDetailsValue : String): Unit = enterValInTextField(goodsDetailsIdentifier, goodsDetailsValue)
+  def enterReason(reasonValue: String): Unit             = enterValInTextField(reasonIdentifier, reasonValue)
+  def enterGoodsDetails(goodsDetailsValue: String): Unit =
+    enterValInTextField(goodsDetailsIdentifier, goodsDetailsValue)
 
 }

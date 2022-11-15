@@ -19,7 +19,4 @@ package ndrcApplication.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.confirmationPage
 
-class ConfirmationSteps extends confirmationPage with ScalaDsl with EN {
-
-
-}
+class ConfirmationSteps extends confirmationPage with ScalaDsl with EN {}

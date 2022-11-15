@@ -22,7 +22,7 @@ object customsDutyPage extends customsDutyPage
 
 class customsDutyPage extends commonMethods {
 
-  private val custDutyPaidIdentifier = By.id("ActualPaidAmount")
+  private val custDutyPaidIdentifier         = By.id("ActualPaidAmount")
   private val custDutyHaveBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
   def clearCustDutyPaid(): Unit = webDriver.findElement(By.id("ActualPaidAmount")).clear()
@@ -31,8 +31,10 @@ class customsDutyPage extends commonMethods {
 
   def hintText: String = webDriver.findElement(By.id("instructions")).getText()
 
-  def enterCustDutyPaid(custDutyPaidValue: String): Unit = enterValInTextField(custDutyPaidIdentifier, custDutyPaidValue)
+  def enterCustDutyPaid(custDutyPaidValue: String): Unit =
+    enterValInTextField(custDutyPaidIdentifier, custDutyPaidValue)
 
-  def enterCustDutyHaveBeenPaid(custDutyHaveBeenPaidValue: String): Unit = enterValInTextField(custDutyHaveBeenPaidIdentifier, custDutyHaveBeenPaidValue)
+  def enterCustDutyHaveBeenPaid(custDutyHaveBeenPaidValue: String): Unit =
+    enterValInTextField(custDutyHaveBeenPaidIdentifier, custDutyHaveBeenPaidValue)
 
 }

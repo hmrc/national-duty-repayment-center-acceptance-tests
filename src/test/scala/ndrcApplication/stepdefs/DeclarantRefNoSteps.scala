@@ -24,7 +24,7 @@ class DeclarantRefNoSteps extends declarantRefNoPage with ScalaDsl with EN {
   And("^I choose \"([^\"]*)\" options$") { (yOrNDRN: String) =>
     yOrNDRN match {
       case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-2")
+      case "No"  => clickByCSS("#value-2")
     }
   }
 

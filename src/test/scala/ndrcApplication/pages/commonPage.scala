@@ -22,14 +22,14 @@ import org.openqa.selenium.{By, JavascriptExecutor, NoSuchElementException, WebE
 
 object commonPage extends commonMethods {
 
-  private val redirectUrl = By.name("redirectionUrl")
-  private val enrolment = By.name("enrolment[0].name")
-  private val enrolmentIdentifierName = By.name("enrolment[0].taxIdentifier[0].name")
-  private val enrolmentIdentifierValue = By.name("enrolment[0].taxIdentifier[0].value")
+  private val redirectUrl                 = By.name("redirectionUrl")
+  private val enrolment                   = By.name("enrolment[0].name")
+  private val enrolmentIdentifierName     = By.name("enrolment[0].taxIdentifier[0].name")
+  private val enrolmentIdentifierValue    = By.name("enrolment[0].taxIdentifier[0].value")
   private val submitButtonOnAuthLoginPage = By.id("submit")
-  private val continueBtnOnAllPages = By.xpath("//*[contains(@class, 'govuk-button')]")
-  private val acceptCookiesOnAllPages = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
-  private val hideCookieMessage = By.xpath("/html/body/div[1]/div/div[2]/button")
+  private val continueBtnOnAllPages       = By.xpath("//*[contains(@class, 'govuk-button')]")
+  private val acceptCookiesOnAllPages     = By.xpath("/html/body/div[1]/div/div[2]/button[1]")
+  private val hideCookieMessage           = By.xpath("/html/body/div[1]/div/div[2]/button")
 
   def loginNDRCViaAuthStub(): Unit = {
     navigateToPage(s"${Configuration.settings.authLoginUrl}")
@@ -63,19 +63,18 @@ object commonPage extends commonMethods {
 
   def deleteBrowserCookies(): Unit = webDriver.manage().deleteAllCookies()
 
-  def findElement(identifier: By): Boolean = {
+  def findElement(identifier: By): Boolean =
     try {
       webDriver.findElement(identifier)
       true
     } catch {
       case _: NoSuchElementException => false
     }
-  }
 
   def acceptCookies(): Unit =
     if (findElement(acceptCookiesOnAllPages)) clickOnButton(acceptCookiesOnAllPages)
 
-  def hideCookiesMsg() : Unit =
+  def hideCookiesMsg(): Unit =
     if (findElement(hideCookieMessage)) clickOnButton(hideCookieMessage)
 
   def clickOnContinueBtn(): Unit = clickOnButton(continueBtnOnAllPages)

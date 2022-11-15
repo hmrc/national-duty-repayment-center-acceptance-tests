@@ -36,11 +36,11 @@ class CommonSteps extends ScalaDsl with EN with StartUpTearDown {
   }
 
   Then("^An error message is displayed- Error: \"([^\"]*)\"$") { (errorMsg: String) =>
-    amendCaseRefNoPage.errMsg
+    amendCaseRefNoPage.errMsg()
   }
 
   Then("^I clear the reference no field$") { () =>
-    amendCaseRefNoPage.clearRefNo
+    amendCaseRefNoPage.clearRefNo()
   }
 
   And("^Hint text is displayed \"([^\"]*)\"$") { (hintText: String) =>

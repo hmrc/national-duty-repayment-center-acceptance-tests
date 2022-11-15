@@ -21,12 +21,13 @@ import ndrcApplication.pages.otherCustDutyPage
 
 class OtherCustDutySteps extends otherCustDutyPage with ScalaDsl with EN {
 
-  And("""^I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"$"""){  (otherCustDutyPaid: String) =>
+  And("""^I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"$""") { (otherCustDutyPaid: String) =>
     otherCustDutyPage.enterOtherCustDutyPaid(otherCustDutyPaid)
   }
 
-  And("""^I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"$""") { (otherCustDutyBeenPaid: String) =>
-    otherCustDutyPage.enterOtherCustDutyBeenPaid(otherCustDutyBeenPaid)
+  And("""^I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"$""") {
+    (otherCustDutyBeenPaid: String) =>
+      otherCustDutyPage.enterOtherCustDutyBeenPaid(otherCustDutyBeenPaid)
   }
 
 }

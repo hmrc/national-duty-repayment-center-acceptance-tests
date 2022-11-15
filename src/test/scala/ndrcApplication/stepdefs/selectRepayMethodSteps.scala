@@ -22,17 +22,17 @@ import ndrcApplication.pages.selectRepayMethodPage
 class selectRepayMethodSteps extends selectRepayMethodPage with ScalaDsl with EN {
 
   And("^I choose \"([^\"]*)\" repayment option$") { (repayment: String) =>
-
     repayment match {
-      case "Bank transfer (Bacs)" => clickByCSS("#value")
+      case "Bank transfer (Bacs)"          => clickByCSS("#value")
       case "Current month amendment (CMA)" => clickByCSS("#value-2")
     }
   }
 
-  And("^I enter account \"([^\"]*)\" and sortcode \"([^\"]*)\" and account number \"([^\"]*)\"$") { (accName: String, sortCode: String, accNo: String) =>
-    selectRepayMethodPage.enterAccName(accName)
-    selectRepayMethodPage.enterSortCode(sortCode)
-    selectRepayMethodPage.enterAccNo(accNo)
+  And("^I enter account \"([^\"]*)\" and sortcode \"([^\"]*)\" and account number \"([^\"]*)\"$") {
+    (accName: String, sortCode: String, accNo: String) =>
+      selectRepayMethodPage.enterAccName(accName)
+      selectRepayMethodPage.enterSortCode(sortCode)
+      selectRepayMethodPage.enterAccNo(accNo)
   }
 
 }

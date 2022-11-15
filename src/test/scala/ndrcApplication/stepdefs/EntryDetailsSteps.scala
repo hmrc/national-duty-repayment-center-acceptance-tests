@@ -23,27 +23,27 @@ import ndrcApplication.pages.entryDetailsPage
 
 import scala.util.Try
 
-  class EntryDetailsSteps extends entryDetailsPage with ScalaDsl with EN {
+class EntryDetailsSteps extends entryDetailsPage with ScalaDsl with EN {
 
-    And("""^I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"$""") { (epu: String, entryNo: String) =>
-      entryDetailsPage.enterEPU(epu)
-      entryDetailsPage.enterEntryNo(entryNo)
+  And("""^I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"$""") { (epu: String, entryNo: String) =>
+    entryDetailsPage.enterEPU(epu)
+    entryDetailsPage.enterEntryNo(entryNo)
 
-    }
+  }
 
-    And("""^I enter an entry date that was ([^"]*) days ago$""") { (numberOfDays: String) =>
-      val entryDate = LocalDate.now().minusDays(Try(numberOfDays.toLong).getOrElse(0L))
-      entryDetailsPage.enterDay(entryDate.getDayOfMonth.toString)
-      entryDetailsPage.enterMonth(entryDate.getMonthValue.toString)
-      entryDetailsPage.enterYear(entryDate.getYear.toString)
+  And("""^I enter an entry date that was ([^"]*) days ago$""") { (numberOfDays: String) =>
+    val entryDate = LocalDate.now().minusDays(Try(numberOfDays.toLong).getOrElse(0L))
+    entryDetailsPage.enterDay(entryDate.getDayOfMonth.toString)
+    entryDetailsPage.enterMonth(entryDate.getMonthValue.toString)
+    entryDetailsPage.enterYear(entryDate.getYear.toString)
 
-    }
+  }
 
-    And("""^I enter an entry date of (.*)/(.*)/(.*)$""") { (day: String,month: String, year: String) =>
-      entryDetailsPage.enterDay(day)
-      entryDetailsPage.enterMonth(month)
-      entryDetailsPage.enterYear(year)
+  And("""^I enter an entry date of (.*)/(.*)/(.*)$""") { (day: String, month: String, year: String) =>
+    entryDetailsPage.enterDay(day)
+    entryDetailsPage.enterMonth(month)
+    entryDetailsPage.enterYear(year)
 
-    }
+  }
 
 }

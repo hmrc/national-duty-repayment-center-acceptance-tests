@@ -23,28 +23,48 @@ object checkYourAnswersPage extends checkYourAnswersPage
 
 class checkYourAnswersPage extends commonMethods {
 
-  //Amend case summary list
-  val RefNo = "Application reference number"
-  val ResType = "What do you need to do?"
+  // Amend case summary list
+  val RefNo     = "Application reference number"
+  val ResType   = "What do you need to do?"
   val ResToHMRC = "Additional information"
-  val Docs = "Additional uploads"
+  val Docs      = "Additional uploads"
 
-  def verifyRefNo(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(1) > dt").getText mustEqual text
-  def verifyResType(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(2) > dt").getText mustEqual text
-  def verifyResToHMRC(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(3) > dt").getText mustEqual text
-  def verifyDocs(text: String): Unit = findElementByCss("#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(4) > dt").getText mustEqual text
+  def verifyRefNo(text: String): Unit     = findElementByCss(
+    "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(1) > dt"
+  ).getText mustEqual text
+  def verifyResType(text: String): Unit   = findElementByCss(
+    "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(2) > dt"
+  ).getText mustEqual text
+  def verifyResToHMRC(text: String): Unit = findElementByCss(
+    "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(3) > dt"
+  ).getText mustEqual text
+  def verifyDocs(text: String): Unit      = findElementByCss(
+    "#main-content > div > div > div.govuk-\\!-margin-bottom-6 > form > dl > div:nth-child(4) > dt"
+  ).getText mustEqual text
 
-  def RefNoResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[1]/dd[1]")
-  def ResTypeResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[2]/dd[1]")
+  def RefNoResponse: WebElement     = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[1]/dd[1]")
+  def ResTypeResponse: WebElement   = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[2]/dd[1]")
   def ResToHMRCResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[3]/dd[1]")
-  def DocsResponse: WebElement = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[4]/dd[1]")
+  def DocsResponse: WebElement      = findByXpath("//*[@id=\"main-content\"]/div/div/div[1]/form/dl/div[4]/dd[1]")
 
-  def clickRefNOChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']")
-  def clickResTypeChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendCaseResponseType']")
-  def clickResToHMRCChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']")
-  def clickDocsChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadPage']")
+  def clickRefNOChangeOption(): Unit     = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/referenceNumber']"
+  )
+  def clickResTypeChangeOption(): Unit   = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendCaseResponseType']"
+  )
+  def clickResToHMRCChangeOption(): Unit = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/furtherInformation']"
+  )
+  def clickDocsChangeOption(): Unit      = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/amend-check-your-answers/change/amendFileUploadPage']"
+  )
 
-  def clickTotalReturnAmountChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/repaymentSummaryPage']")
-  def clickEntryDetailsChangeOption(): Unit = clickHref("a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/entryDetails']")
+  def clickTotalReturnAmountChangeOption(): Unit = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/repaymentSummaryPage']"
+  )
+  def clickEntryDetailsChangeOption(): Unit      = clickHref(
+    "a[href*='/apply-for-repayment-of-import-duty-and-import-vat/check-answers/change/entryDetails']"
+  )
 
 }

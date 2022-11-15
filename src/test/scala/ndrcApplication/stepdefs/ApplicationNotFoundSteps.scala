@@ -21,9 +21,8 @@ import ndrcApplication.pages.applicationNotFoundPage
 
 class ApplicationNotFoundSteps extends applicationNotFoundPage with ScalaDsl with EN {
 
-
   When("^I click on enter the application number again$") { () =>
-    applicationNotFoundPage.clickEnterRefNoAgain
+    applicationNotFoundPage.clickEnterRefNoAgain()
   }
 
 }

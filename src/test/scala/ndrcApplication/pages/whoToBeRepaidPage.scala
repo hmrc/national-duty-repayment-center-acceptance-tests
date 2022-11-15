@@ -18,7 +18,4 @@ package ndrcApplication.pages
 
 object whoToBeRepaidPage extends whoToBeRepaidPage
 
-class whoToBeRepaidPage extends commonMethods {
-
-
-}
+class whoToBeRepaidPage extends commonMethods {}

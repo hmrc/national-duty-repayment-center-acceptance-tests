@@ -20,8 +20,4 @@ package ndrcApplication.pages
 
 object fileUploadedPage extends fileUploadedPage
 
-class fileUploadedPage extends commonMethods {
-
-
-
-}
+class fileUploadedPage extends commonMethods {}

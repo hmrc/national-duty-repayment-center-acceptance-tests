@@ -22,8 +22,8 @@ object reclaimPage extends reclaimPage
 
 class reclaimPage extends commonMethods {
 
-  def selectCustDuty(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
-  def selectImpVat(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
+  def selectCustDuty(): Unit  = webDriver.findElement(By.cssSelector("#value")).click()
+  def selectImpVat(): Unit    = webDriver.findElement(By.cssSelector("#value-2")).click()
   def selectOtherDuty(): Unit = webDriver.findElement(By.cssSelector("#value-3")).click()
 
 }

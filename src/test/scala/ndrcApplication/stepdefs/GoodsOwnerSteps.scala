@@ -24,7 +24,7 @@ class GoodsOwnerSteps extends goodsOwnerPage with ScalaDsl with EN {
   And("^I choose \"([^\"]*)\" option to confirm owner of the goods$") { (yOrNgoodsOwner: String) =>
     yOrNgoodsOwner match {
       case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-2")
+      case "No"  => clickByCSS("#value-2")
     }
 
   }

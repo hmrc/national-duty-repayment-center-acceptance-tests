@@ -104,3 +104,19 @@ or
 **Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
 
 **Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+
+### Formatting code
+This library uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf). Prior to checking in any changes to this repository, please make sure all files are formatted correctly.
+
+To apply formatting to this repository using the configured rules in [.scalafmt.conf](.scalafmt.conf) execute:
+
+```
+sbt scalafmtAll 
+or 
+Intellij Format on save (recommended): Preferences > Editor > Code Style > Scala > Reformat on file save
+```
+
+To check files have been formatted as expected execute:
+
+```
+sbt scalafmtCheckAll scalafmtSbtCheck

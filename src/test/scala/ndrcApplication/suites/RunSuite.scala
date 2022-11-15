@@ -30,6 +30,4 @@ import org.junit.runner.RunWith
   ),
   tags = "@suite"
 )
-class RunSuite {
-
-}
+class RunSuite {}

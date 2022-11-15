@@ -21,19 +21,15 @@ import ndrcApplication.pages.eoriNoPage
 
 class EoriNoSteps extends eoriNoPage with ScalaDsl with EN {
 
-    And("""^I choose eori "([^"]*)" option$""") { (yOrNEori: String) =>
-      yOrNEori match {
-        case "Yes" => clickByCSS("#value")
-        case "No" => clickByCSS("#value-no")
-      }
+  And("""^I choose eori "([^"]*)" option$""") { (yOrNEori: String) =>
+    yOrNEori match {
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-no")
     }
+  }
 
-    And("^I enter \"([^\"]*)\" in correct format GB$") { (eoriNO: String) =>
-      eoriNoPage.enterEoriNo(eoriNO)
-    }
+  And("^I enter \"([^\"]*)\" in correct format GB$") { (eoriNO: String) =>
+    eoriNoPage.enterEoriNo(eoriNO)
+  }
 
 }
-
-
-
-

@@ -26,5 +26,4 @@ class amendCaseResponseTypePage extends commonMethods {
 
   def selectGiveMoreInfo(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
 
-
 }

@@ -21,15 +21,15 @@ import ndrcApplication.pages.feedbackFormPage
 
 class FeedbackFormSteps extends feedbackFormPage with ScalaDsl with EN {
 
-  And("^I choose \"([^\"]*)\" for you able to do what you needed to do today$") {  (yOrN: String) =>
+  And("^I choose \"([^\"]*)\" for you able to do what you needed to do today$") { (yOrN: String) =>
     yOrN match {
       case "Yes" => clickByCSS("#ableToDo-yes")
-      case "No" => clickByCSS("#ableToDo-no")
+      case "No"  => clickByCSS("#ableToDo-no")
     }
   }
 
   And("^I choose rating for was it for you to do what you needed to do today$") { () =>
-    feedbackFormPage.selectEasy
+    feedbackFormPage.selectEasy()
   }
 
   And("^I enter \"([^\"]*)\" of the service$") { (score: String) =>
@@ -37,11 +37,11 @@ class FeedbackFormSteps extends feedbackFormPage with ScalaDsl with EN {
   }
 
   And("^I choose overallRating for the overall service$") { () =>
-    feedbackFormPage.selectVerySatisfied
+    feedbackFormPage.selectVerySatisfied()
   }
 
-  When("^I click on the \"([^\"]*)\" button on feedback form$") { (continue: String) =>
-  feedbackFormPage.clickOnFeedBackContinue
+  When("^I click on the \"([^\"]*)\" button on feedback form$") { (_: String) =>
+    feedbackFormPage.clickOnFeedBackContinue()
   }
 
 }

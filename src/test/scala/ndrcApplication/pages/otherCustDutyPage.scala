@@ -22,15 +22,17 @@ object otherCustDutyPage extends otherCustDutyPage
 
 class otherCustDutyPage extends commonMethods {
 
-  private val otherCustDutyPaidIdentifier = By.id("ActualPaidAmount")
+  private val otherCustDutyPaidIdentifier     = By.id("ActualPaidAmount")
   private val otherCustDutyBeenPaidIdentifier = By.id("ShouldHavePaidAmount")
 
   def clearOtherDutyPaid(): Unit = webDriver.findElement(By.id("ActualPaidAmount")).clear()
 
   def clearOtherDutyBeenPaid(): Unit = webDriver.findElement(By.id("ShouldHavePaidAmount")).clear()
 
-  def enterOtherCustDutyPaid(otherCustDutyPaidValue: String): Unit = enterValInTextField(otherCustDutyPaidIdentifier, otherCustDutyPaidValue)
+  def enterOtherCustDutyPaid(otherCustDutyPaidValue: String): Unit =
+    enterValInTextField(otherCustDutyPaidIdentifier, otherCustDutyPaidValue)
 
-  def enterOtherCustDutyBeenPaid(otherCustDutyBeenPaidValue: String): Unit = enterValInTextField(otherCustDutyBeenPaidIdentifier, otherCustDutyBeenPaidValue)
+  def enterOtherCustDutyBeenPaid(otherCustDutyBeenPaidValue: String): Unit =
+    enterValInTextField(otherCustDutyBeenPaidIdentifier, otherCustDutyBeenPaidValue)
 
 }

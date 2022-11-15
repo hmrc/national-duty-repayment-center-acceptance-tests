@@ -19,10 +19,10 @@ package ndrcApplication.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.articlePage
 
-  class ArticleSteps extends articlePage with ScalaDsl with EN {
+class ArticleSteps extends articlePage with ScalaDsl with EN {
 
-    And("^I choose an article Type$") {
-      selectVatArticle
-    }
+  And("^I choose an article Type$") {
+    selectVatArticle()
+  }
 
 }

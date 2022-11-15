@@ -22,10 +22,8 @@ object appReasonPage extends appReasonPage
 
 class appReasonPage extends commonMethods {
 
-
   def selectCommCode(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
 
   def selectPreference(): Unit = webDriver.findElement(By.cssSelector("#value-5")).click()
-
 
 }

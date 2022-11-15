@@ -21,13 +21,13 @@ import ndrcApplication.pages.customsDutyPage
 
 class CustomsDutySteps extends customsDutyPage with ScalaDsl with EN {
 
-
   And("""^I enter customs Duty paid- CustomDuty: "([^"]*)"$""") { (custDutyPaid: String) =>
     customsDutyPage.enterCustDutyPaid(custDutyPaid)
   }
 
-  And("""^I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "([^"]*)"$""") { (custDutyBeenPaid: String) =>
-    customsDutyPage.enterCustDutyHaveBeenPaid(custDutyBeenPaid)
+  And("""^I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "([^"]*)"$""") {
+    (custDutyBeenPaid: String) =>
+      customsDutyPage.enterCustDutyHaveBeenPaid(custDutyBeenPaid)
   }
 
 }

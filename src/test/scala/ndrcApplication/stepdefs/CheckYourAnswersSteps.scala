@@ -28,38 +28,41 @@ class CheckYourAnswersSteps extends checkYourAnswersPage with ScalaDsl with EN {
     checkYourAnswersPage.verifyDocs(Docs)
   }
 
-  Then("^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\" and \"([^\"]*)\"$") { (refNo: String, resType: String, resHMRC: String, docsCount: String) =>
-    assertElementText(refNo,RefNoResponse)
-    assertElementText(resType,ResTypeResponse)
-    assertElementText(resHMRC,ResToHMRCResponse)
-    assertElementText(docsCount,DocsResponse)
+  Then(
+    "^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\" and \"([^\"]*)\"$"
+  ) { (refNo: String, resType: String, resHMRC: String, docsCount: String) =>
+    assertElementText(refNo, RefNoResponse)
+    assertElementText(resType, ResTypeResponse)
+    assertElementText(resHMRC, ResToHMRCResponse)
+    assertElementText(docsCount, DocsResponse)
 
   }
 
   When("^I click on change option on the amend review page for reference no$") { () =>
-    checkYourAnswersPage.clickRefNOChangeOption
+    checkYourAnswersPage.clickRefNOChangeOption()
   }
 
   When("^I click on change option on the amend review page for response type$") { () =>
-    checkYourAnswersPage.clickResTypeChangeOption
+    checkYourAnswersPage.clickResTypeChangeOption()
   }
 
-  Then("^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$") { (refNo: String, resType: String, resHMRC: String) =>
-    assertElementText(refNo,RefNoResponse)
-    assertElementText(resType,ResTypeResponse)
-    assertElementText(resHMRC,ResToHMRCResponse)
+  Then("^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$") {
+    (refNo: String, resType: String, resHMRC: String) =>
+      assertElementText(refNo, RefNoResponse)
+      assertElementText(resType, ResTypeResponse)
+      assertElementText(resHMRC, ResToHMRCResponse)
   }
 
   When("^I click on change option on the amend review page for documents uploaded$") { () =>
-    checkYourAnswersPage.clickDocsChangeOption
+    checkYourAnswersPage.clickDocsChangeOption()
   }
 
   When("^I click on change option on the review page for total return amount$") { () =>
-    checkYourAnswersPage.clickTotalReturnAmountChangeOption
+    checkYourAnswersPage.clickTotalReturnAmountChangeOption()
   }
 
   When("^I click on change option on the review page for entry details") { () =>
-    checkYourAnswersPage.clickEntryDetailsChangeOption
+    checkYourAnswersPage.clickEntryDetailsChangeOption()
   }
 
 }
