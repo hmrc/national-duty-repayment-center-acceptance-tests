@@ -24,7 +24,7 @@ class amendCaseRefNoPage extends commonMethods {
 
   private val refNoIdentifier = By.id("value")
 
-  //error messages
+  // error messages
 
   def errMsg(): Unit = webDriver.findElement(By.id("value-error")).isDisplayed()
 

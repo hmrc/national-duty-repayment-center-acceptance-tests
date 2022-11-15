@@ -16,22 +16,20 @@
 
 package ndrcApplication.stepdefs
 
-
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.appReasonPage
 
 class AppReasonSteps extends appReasonPage with ScalaDsl with EN {
 
   And("^I choose an application Reason$") {
-    appReasonPage.selectCommCode
+    appReasonPage.selectCommCode()
 
   }
 
   And("^I choose multiple application Reasons$") {
-    appReasonPage.selectCommCode
-    appReasonPage.selectPreference
+    appReasonPage.selectCommCode()
+    appReasonPage.selectPreference()
 
   }
-
 
 }

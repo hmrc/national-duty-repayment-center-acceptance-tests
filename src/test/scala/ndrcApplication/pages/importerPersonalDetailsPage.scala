@@ -22,34 +22,36 @@ object importerPersonalDetailsPage extends importerPersonalDetailsPage
 
 class importerPersonalDetailsPage extends commonMethods {
 
-  private val fNameIdentifier = By.id("firstName")
-  private val lNameIdentifier = By.id("lastName")
-  private val impNameIdentifier = By.id("importerName")
-  private val yourNameIdentifier = By.id("declarantName")
+  private val fNameIdentifier        = By.id("firstName")
+  private val lNameIdentifier        = By.id("lastName")
+  private val impNameIdentifier      = By.id("importerName")
+  private val yourNameIdentifier     = By.id("declarantName")
   private val businessNameIdentifier = By.id("agentName")
-  private val addLine1Identifier = By.id("line1")
-  private val cityIdentifier = By.id("town")
-  private val postcodeIdentifier = By.id("postcode")
-  private val phoneNoIdentifier = By.id("phone")
-  private val emailIdentifier = By.id("email")
-  private val countryIdentifier = By.id("countryCode")
-
+  private val addLine1Identifier     = By.id("line1")
+  private val cityIdentifier         = By.id("town")
+  private val postcodeIdentifier     = By.id("postcode")
+  private val phoneNoIdentifier      = By.id("phone")
+  private val emailIdentifier        = By.id("email")
+  private val countryIdentifier      = By.id("countryCode")
 
   def enterAddManuallyLink(): Unit = webDriver.findElement(By.id("manualAddress")).click()
-  //def selectCountryCode(countryCodeValue : String): Unit = webDriver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
-  def selectEmailOption(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
-  def selectPhoneOption(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
+  // def selectCountryCode(countryCodeValue : String): Unit = webDriver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
+  def selectEmailOption(): Unit    = webDriver.findElement(By.cssSelector("#value")).click()
+  def selectPhoneOption(): Unit    = webDriver.findElement(By.cssSelector("#value-2")).click()
 
-  def enterFName(fNameValue : String): Unit = enterValInTextField(fNameIdentifier, fNameValue)
-  def enterLName(lNameValue : String): Unit = enterValInTextField(lNameIdentifier, lNameValue)
-  def enterImpName(impNameValue: String): Unit = enterValInTextField(impNameIdentifier,impNameValue)
-  def enterYourName(yourNameValue: String): Unit = enterValInTextField(yourNameIdentifier,yourNameValue)
-  def enterBusinessName(businessNameValue: String): Unit = enterValInTextField(businessNameIdentifier,businessNameValue)
-  def enterAddLine1(addLine1Value : String): Unit = enterValInTextField(addLine1Identifier, addLine1Value)
-  def enterCity(cityValue : String): Unit = enterValInTextField(cityIdentifier, cityValue)
-  def enterPostCode(postCodeValue : String): Unit = enterValInTextField(postcodeIdentifier, postCodeValue)
-  def enterPhoneNo(phoneNoValue : String): Unit = enterValInTextField(phoneNoIdentifier, phoneNoValue)
-  def enterEmail(emailValue : String): Unit = enterValInTextField(emailIdentifier, emailValue)
-  def enterCountry(countryValue : String): Unit = {enterValInTextField(countryIdentifier, countryValue)
-                                                 webDriver.findElement(countryIdentifier).sendKeys(Keys.ENTER)}
+  def enterFName(fNameValue: String): Unit               = enterValInTextField(fNameIdentifier, fNameValue)
+  def enterLName(lNameValue: String): Unit               = enterValInTextField(lNameIdentifier, lNameValue)
+  def enterImpName(impNameValue: String): Unit           = enterValInTextField(impNameIdentifier, impNameValue)
+  def enterYourName(yourNameValue: String): Unit         = enterValInTextField(yourNameIdentifier, yourNameValue)
+  def enterBusinessName(businessNameValue: String): Unit =
+    enterValInTextField(businessNameIdentifier, businessNameValue)
+  def enterAddLine1(addLine1Value: String): Unit         = enterValInTextField(addLine1Identifier, addLine1Value)
+  def enterCity(cityValue: String): Unit                 = enterValInTextField(cityIdentifier, cityValue)
+  def enterPostCode(postCodeValue: String): Unit         = enterValInTextField(postcodeIdentifier, postCodeValue)
+  def enterPhoneNo(phoneNoValue: String): Unit           = enterValInTextField(phoneNoIdentifier, phoneNoValue)
+  def enterEmail(emailValue: String): Unit               = enterValInTextField(emailIdentifier, emailValue)
+  def enterCountry(countryValue: String): Unit           = {
+    enterValInTextField(countryIdentifier, countryValue)
+    webDriver.findElement(countryIdentifier).sendKeys(Keys.ENTER)
+  }
 }

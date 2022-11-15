@@ -30,5 +30,4 @@ import org.junit.runner.RunWith
   ),
   tags = "@ZAP"
 )
-class RunZAP {
-}
+class RunZAP {}

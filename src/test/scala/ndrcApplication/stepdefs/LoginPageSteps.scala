@@ -24,13 +24,13 @@ class LoginPageSteps extends loginPage with ScalaDsl with EN {
 
   Given("""^I am on the start page for trader service and select Apply Now$""") { () =>
     commonPage.loginNDRCViaAuthStub()
-    loginPage.selectStart
+    loginPage.selectStart()
 
   }
 
   Given("^I am on the start page for trader service and select Amend Now$") { () =>
     commonPage.loginNDRCViaAuthStub()
-    loginPage.selectAmend
+    loginPage.selectAmend()
 
   }
 

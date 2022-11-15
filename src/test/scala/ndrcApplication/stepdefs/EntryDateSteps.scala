@@ -22,11 +22,11 @@ import ndrcApplication.pages.entryDatePage
 class EntryDateSteps extends entryDatePage with ScalaDsl with EN {
 
   And("^I choose a date Range on or before Dec$") {
-    selectOnORBeforeDecDate
+    selectOnORBeforeDecDate()
   }
 
   And("^I choose a date Range from Jan this year$") {
-    selectJanDate
+    selectJanDate()
   }
 
 }

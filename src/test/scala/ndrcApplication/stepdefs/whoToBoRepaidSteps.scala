@@ -22,18 +22,17 @@ import ndrcApplication.pages.importerorRepPage
 class whoToBoRepaidSteps extends importerorRepPage with ScalaDsl with EN {
 
   And("^I choose Representative option$") {
-    selectRepresentative
+    selectRepresentative()
   }
 
   And("^I choose Importer option$") {
-    selectImporter
+    selectImporter()
   }
 
-  And("^I choose \"([^\"]*)\" indirect representative option$") { (yORNIndirectRep : String) =>
-
+  And("^I choose \"([^\"]*)\" indirect representative option$") { (yORNIndirectRep: String) =>
     yORNIndirectRep match {
       case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-no")
+      case "No"  => clickByCSS("#value-no")
     }
 
   }

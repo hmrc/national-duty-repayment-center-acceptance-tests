@@ -23,7 +23,6 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
 import java.time.Duration
 
-
 abstract class commonMethods extends Eventually {
 
   implicit val webDriver: WebDriver = Driver.webDriver
@@ -34,19 +33,17 @@ abstract class commonMethods extends Eventually {
       .pollingEvery(Duration.ofMillis(500))
 
   val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
-  var filePath = ""
+  var filePath       = ""
 
-  def navigateToPage(url: String): Unit = {
+  def navigateToPage(url: String): Unit =
     webDriver.navigate().to(url)
-  }
 
-  def isPageTitleDisplayed(pageTitle: String): Boolean = {
-    try {
+  def isPageTitleDisplayed(pageTitle: String): Boolean =
+    try
       waitFor.until(_.getTitle == pageTitle)
-    } catch {
+    catch {
       case _: NoSuchElementException => false
     }
-  }
 
   def clickOnButton(identifier: By): Unit = {
     waitFor.until(_.findElement(identifier).isDisplayed)
@@ -64,13 +61,12 @@ abstract class commonMethods extends Eventually {
     webDriver.findElement(identifier).sendKeys(value)
   }
 
-  def assertElementText(content: String, element: WebElement): Unit = {
+  def assertElementText(content: String, element: WebElement): Unit =
     assert(element.getText.equals(content), message(s"Element displayed is: ${element.getText} Expecting: $content"))
-  }
 
-  def optionSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe (true)
+  def optionSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe true
 
-  def optionNoSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe (false)
+  def optionNoSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe false
 
   def isElementVisible(css: String): Boolean = webDriver.findElement(By.cssSelector(css)).isDisplayed
 
@@ -89,10 +85,10 @@ abstract class commonMethods extends Eventually {
 
   def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
     fileSeq match {
-      case "first" => filePath = usrDir + "JPEGImage.jpg"
+      case "first"  => filePath = usrDir + "JPEGImage.jpg"
       case "second" => filePath = usrDir + "VA Plan v0.3.xlsx"
-      case "next" => filePath = usrDir + "JPEGImage.jpg"
-      case "last" => filePath = usrDir + "PDF.pdf"
+      case "next"   => filePath = usrDir + "JPEGImage.jpg"
+      case "last"   => filePath = usrDir + "PDF.pdf"
     }
 
     webDriver.findElement(By.id(elementID)).sendKeys(filePath)

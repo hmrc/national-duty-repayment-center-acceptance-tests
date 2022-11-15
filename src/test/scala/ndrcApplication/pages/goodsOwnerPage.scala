@@ -24,7 +24,6 @@ class goodsOwnerPage extends commonMethods {
 
   private val goodsOwnerIdentifier = By.id("importerName")
 
-
-  def entergoodsOwnerName(goodsOwnerValue : String): Unit = enterValInTextField(goodsOwnerIdentifier, goodsOwnerValue)
+  def entergoodsOwnerName(goodsOwnerValue: String): Unit = enterValInTextField(goodsOwnerIdentifier, goodsOwnerValue)
 
 }

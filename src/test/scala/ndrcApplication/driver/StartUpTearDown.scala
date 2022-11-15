@@ -32,11 +32,11 @@ trait StartUpTearDown extends ScalaDsl {
 
   val server: WireMockServer = new WireMockServer(wireMockConfig().port(6001))
 
-  private val journeyId: String = "Test-id"
-  private val alfStubbedUrl: String = "http://localhost:9028/lookup-address/Test-id/confirm"
-  private val ndrcBaseUrl: String = "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat"
-  private val callBackUrl: String = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
-  private val callBackUrlAgent: String = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
+  private val journeyId: String           = "Test-id"
+  private val alfStubbedUrl: String       = "http://localhost:9028/lookup-address/Test-id/confirm"
+  private val ndrcBaseUrl: String         = "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat"
+  private val callBackUrl: String         = s"$ndrcBaseUrl/select-importer-address/update?id=$journeyId"
+  private val callBackUrlAgent: String    = s"$ndrcBaseUrl/your-business-address/update?id=$journeyId"
   private val expectedAlfResponse: String =
     """{
       | "auditRef" : "some-ref",

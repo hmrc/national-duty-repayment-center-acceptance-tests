@@ -21,11 +21,11 @@ import ndrcApplication.pages.amendCaseRefNoPage
 
 class AmendCaseRefNoSteps extends amendCaseRefNoPage with ScalaDsl with EN {
 
-  And("^I enter valid Application \"([^\"]*)\"$") { (refNo : String) =>
+  And("^I enter valid Application \"([^\"]*)\"$") { (refNo: String) =>
     amendCaseRefNoPage.enterRefNo(refNo)
   }
 
-  And("^I enter Application \"([^\"]*)\" reference no with a special character$"){ (splCharacterRefNo: String) =>
+  And("^I enter Application \"([^\"]*)\" reference no with a special character$") { (splCharacterRefNo: String) =>
     amendCaseRefNoPage.enterRefNo(splCharacterRefNo)
   }
 

@@ -18,11 +18,10 @@ package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.importerPersonalDetailsPage
-import org.openqa.selenium.Keys
 
 class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with ScalaDsl with EN {
 
-  And("^I enter first \"([^\"]*)\" and last \"([^\"]*)\"$"){ (fName: String, lName: String) =>
+  And("^I enter first \"([^\"]*)\" and last \"([^\"]*)\"$") { (fName: String, lName: String) =>
     importerPersonalDetailsPage.enterFName(fName)
     importerPersonalDetailsPage.enterLName(lName)
   }
@@ -36,18 +35,19 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
     importerPersonalDetailsPage.enterBusinessName(businessName)
   }
 
-  And("^I select \"([^\"]*)\" option$"){ (enterAddManLink: String) =>
-    importerPersonalDetailsPage.enterAddManuallyLink
+  And("^I select \"([^\"]*)\" option$") { (_: String) =>
+    importerPersonalDetailsPage.enterAddManuallyLink()
   }
 
-  And("^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\" and PostCode: \"([^\"]*)\"$") { (addLine: String, city: String, postCode: String) =>
-    importerPersonalDetailsPage.enterAddLine1(addLine)
-    importerPersonalDetailsPage.enterCity(city)
-    importerPersonalDetailsPage.enterPostCode(postCode)
+  And("^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\" and PostCode: \"([^\"]*)\"$") {
+    (addLine: String, city: String, postCode: String) =>
+      importerPersonalDetailsPage.enterAddLine1(addLine)
+      importerPersonalDetailsPage.enterCity(city)
+      importerPersonalDetailsPage.enterPostCode(postCode)
   }
 
   And("^I select email option$") { () =>
-    importerPersonalDetailsPage.selectEmailOption
+    importerPersonalDetailsPage.selectEmailOption()
   }
 
   And("^I enter \"([^\"]*)\"$") { (email: String) =>
@@ -59,7 +59,7 @@ class ImporterPersonalDetailsSteps extends importerPersonalDetailsPage with Scal
   }
 
   And("^I select phone no option$") { () =>
-    importerPersonalDetailsPage.selectPhoneOption
+    importerPersonalDetailsPage.selectPhoneOption()
   }
 
   And("^I enter \"([^\"]*)\" importers$") { (phoneNo: String) =>

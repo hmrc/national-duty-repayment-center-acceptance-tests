@@ -33,13 +33,13 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   Then("""^I should see first uploaded doc "([^"]*)" on upload review page$""") { (fileName: String) =>
     findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(1)").isDisplayed
-    // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
+  // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
 
   }
 
   Then("""^I should see ([^"]*) uploaded doc "([^"]*)" on upload page$""") { (sequence: String, fileName: String) =>
     val index = sequence match {
-      case "first" => "1"
+      case "first"  => "1"
       case "second" => "2"
     }
     findElementByCss(s"div.govuk-summary-list__row:nth-child($index)").isDisplayed
@@ -49,7 +49,7 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
   Then("""^I select "([^"]*)" to uploading another file$""") { (yORNoUploadFile: String) =>
     yORNoUploadFile match {
       case "Yes" => clickByCSS("#uploadAnotherFile")
-      case "No" => clickByCSS("#uploadAnotherFile-2")
+      case "No"  => clickByCSS("#uploadAnotherFile-2")
 
     }
   }

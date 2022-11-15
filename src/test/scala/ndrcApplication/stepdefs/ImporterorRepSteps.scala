@@ -22,11 +22,11 @@ import ndrcApplication.pages.importerorRepPage
 class ImporterorRepSteps extends importerorRepPage with ScalaDsl with EN {
 
   And("^I choose Importer claimant type$") {
-    selectImporter
+    selectImporter()
   }
 
   And("^I choose Representative claimant type$") {
-    selectRepresentative
+    selectRepresentative()
   }
 
 }

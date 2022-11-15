@@ -21,7 +21,7 @@ import ndrcApplication.pages.amendCaseFurtherInfoPage
 
 class AmendCaseFurtherInfoSteps extends amendCaseFurtherInfoPage with ScalaDsl with EN {
 
-  And("^I enter further goods details- Details: \"([^\"]*)\"$") { (furtherInfo : String) =>
+  And("^I enter further goods details- Details: \"([^\"]*)\"$") { (furtherInfo: String) =>
     amendCaseFurtherInfoPage.enterFurtherInfo(furtherInfo)
 
   }

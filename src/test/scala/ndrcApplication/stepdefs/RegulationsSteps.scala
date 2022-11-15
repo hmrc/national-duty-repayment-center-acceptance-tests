@@ -22,7 +22,7 @@ import ndrcApplication.pages.regulationsPage
 class RegulationsSteps extends regulationsPage with ScalaDsl with EN {
 
   And("^I choose a regulation repayment Type$") {
-    selectErrorByCust
+    selectErrorByCust()
   }
 
 }

@@ -20,8 +20,4 @@ package ndrcApplication.pages
 
 object supportingDocsPage extends supportingDocsPage
 
-class supportingDocsPage extends commonMethods {
-
-
-
-}
+class supportingDocsPage extends commonMethods {}

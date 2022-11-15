@@ -18,8 +18,4 @@ package ndrcApplication.pages
 
 object confirmationPage extends confirmationPage
 
-class confirmationPage extends commonMethods {
-
-
-
-}
+class confirmationPage extends commonMethods {}

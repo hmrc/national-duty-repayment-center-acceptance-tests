@@ -19,6 +19,4 @@ package ndrcApplication.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl}
 import ndrcApplication.pages.supportingDocsPage
 
-class SupportingDocsSteps extends supportingDocsPage with ScalaDsl with EN {
-
-}
+class SupportingDocsSteps extends supportingDocsPage with ScalaDsl with EN {}

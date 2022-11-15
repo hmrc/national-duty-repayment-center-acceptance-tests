@@ -22,14 +22,14 @@ import ndrcApplication.pages.entriesPage
 class EntriesSteps extends entriesPage with ScalaDsl with EN {
 
   And("^I choose one entry$") {
-    entriesPage.selectOneEntry
+    entriesPage.selectOneEntry()
   }
 
   And("^I choose multi entry$") {
-    entriesPage.selectMultiEntry
+    entriesPage.selectMultiEntry()
   }
 
-  And("^I enter \"([^\"]*)\" value$"){ (noOfEntries: String) =>
+  And("^I enter \"([^\"]*)\" value$") { (noOfEntries: String) =>
     entriesPage.enterNoOfEntries(noOfEntries)
 
   }

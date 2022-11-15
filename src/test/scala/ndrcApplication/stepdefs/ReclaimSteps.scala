@@ -22,13 +22,13 @@ import ndrcApplication.pages.reclaimPage
 class ReclaimSteps extends reclaimPage with ScalaDsl with EN {
 
   And("^I choose customsDuty importVAT anotherTypeofDuty options$") {
-    reclaimPage.selectCustDuty
-    reclaimPage.selectImpVat
-    reclaimPage.selectOtherDuty
+    reclaimPage.selectCustDuty()
+    reclaimPage.selectImpVat()
+    reclaimPage.selectOtherDuty()
   }
 
   And("^I choose the Customs Duty option$") {
-    reclaimPage.selectCustDuty
+    reclaimPage.selectCustDuty()
   }
 
 }

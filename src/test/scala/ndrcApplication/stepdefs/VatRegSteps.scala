@@ -24,16 +24,16 @@ class VatRegSteps extends vatRegPage with ScalaDsl with EN {
   And("""^I choose "([^"]*)" option$""") { (yOrNVat: String) =>
     yOrNVat match {
       case "Yes" => clickByCSS("#value")
-      case "No" => clickByCSS("#value-2")
+      case "No"  => clickByCSS("#value-2")
     }
   }
 
-  And("^I click on Help VAT registration link$"){ () =>
-    vatRegPage.vatRegHyperlink
+  And("^I click on Help VAT registration link$") { () =>
+    vatRegPage.vatRegHyperlink()
   }
 
-  And("^I confirm VAT registration is displayed: \"([^\"]*)\"$"){ (vatRegText: String) =>
-    vatRegPage.vatRegText
+  And("^I confirm VAT registration is displayed: \"([^\"]*)\"$") { (_: String) =>
+    vatRegPage.vatRegText()
   }
 
 }

@@ -24,6 +24,6 @@ class amendCaseFurtherInfoPage extends commonMethods {
 
   private val furtherInfoIdentifier = By.id("value")
 
-  def enterFurtherInfo(furtherInfoValue : String): Unit = enterValInTextField(furtherInfoIdentifier, furtherInfoValue)
+  def enterFurtherInfo(furtherInfoValue: String): Unit = enterValInTextField(furtherInfoIdentifier, furtherInfoValue)
 
 }

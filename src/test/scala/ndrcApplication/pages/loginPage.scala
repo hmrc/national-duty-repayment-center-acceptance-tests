@@ -22,7 +22,6 @@ object loginPage extends loginPage
 
 class loginPage extends commonMethods {
 
-
   def selectStart(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
   def selectAmend(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
 

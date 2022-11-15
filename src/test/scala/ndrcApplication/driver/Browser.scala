@@ -26,12 +26,10 @@ object Browser {
 
   lazy val systemProperties: Properties = System.getProperties
 
-  def javascriptEnabled: Boolean = {
+  def javascriptEnabled: Boolean =
     if (StringUtils.isEmpty(systemProperties.getProperty("javascriptEnabled"))) true
     else false
-  }
 
-  def createRemoteDriver(): WebDriver = {
+  def createRemoteDriver(): WebDriver =
     SingletonDriver.getInstance()
-  }
 }
