@@ -7,7 +7,6 @@ object Dependencies {
     "org.scalatest"         %% "scalatest"              % "3.2.14"   % Test,
     "org.scalatestplus"     %% "selenium-4-2"           % "3.2.13.0" % Test,
     "org.scalactic"         %% "scalactic"              % "3.2.14",
-    "org.pegdown"            % "pegdown"                % "1.6.0",
     "io.cucumber"           %% "cucumber-scala"         % "8.12.0"   % Test,
     "io.cucumber"            % "cucumber-junit"         % "7.8.1"    % Test,
     "io.cucumber"            % "cucumber-picocontainer" % "7.8.1",

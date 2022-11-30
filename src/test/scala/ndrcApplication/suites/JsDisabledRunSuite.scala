@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package ndrcApplication.driver
+package ndrcApplication.suites
 
-import java.util.Properties
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
-
-object Browser {
-
-  lazy val systemProperties: Properties = System.getProperties
-
-  def javascriptDisabled: Boolean = Option(systemProperties.getProperty("disable.javascript")).exists(_.toBoolean)
-
-  def createRemoteDriver(): WebDriver =
-    SingletonDriver.getInstance()
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("ndrcApplication.stepdefs"),
+  plugin = Array(
+    "pretty",
+    "html:target/cucumber.html",
+    "json:target/cucumber.json"
+  ),
+  tags = "@suite"
+)
+class JsDisabledRunSuite {}
