@@ -105,7 +105,7 @@ Feature: Importers Journey
     When I click on the "Continue" button
     Then I am on "Upload your document with multiple entries - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on Choose file button and add the "second" file
-    When I click on the "Continue" button
+    When I click on the file upload continue button
 
     Then I am on "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I choose an application Reason
