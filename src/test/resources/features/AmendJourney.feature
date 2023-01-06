@@ -1,6 +1,6 @@
 Feature: Amend case Journey
   @suite
-    @accessibility @smoke
+    @accessibility @Smoke
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     Then I Accept cookies and hide message
