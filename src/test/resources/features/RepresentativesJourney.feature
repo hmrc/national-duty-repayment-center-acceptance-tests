@@ -1,6 +1,6 @@
 Feature: Representatives Journey
 
-  @suite
+  @suite @smoke
   Scenario Outline: A user wants to complete a New Representatives journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
