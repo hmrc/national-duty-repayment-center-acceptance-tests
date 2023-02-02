@@ -1,5 +1,3 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
-
 # national-duty-repayment-center-acceptance-tests
 UI test suite for the `NDRC` using WebDriver and `cucumber`.  
 
