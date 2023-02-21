@@ -24,12 +24,11 @@ import ndrcApplication.pages.commonMethods
 class Hooks extends commonMethods {
 
   @Before
-  def initialize(): Unit = {
+  def initialize(): Unit =
     webDriver.manage().deleteAllCookies()
-  }
 
   @After
-  def tearDown(result: Scenario): Unit = {
+  def tearDown(result: Scenario): Unit =
     if (result.isFailed) {
       webDriver match {
         case screenshot1: TakesScreenshot =>
@@ -48,6 +47,5 @@ class Hooks extends commonMethods {
       }
 
     }
-  }
 
 }

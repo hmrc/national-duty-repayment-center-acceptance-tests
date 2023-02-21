@@ -25,7 +25,7 @@ import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   When("""^I click the file continue button$""") {
-    if(Browser.javascriptDisabled) {
+    if (Browser.javascriptDisabled) {
       webDriver.findElement(By.className("file-upload__submit")).click()
     } else {
       webDriver.findElement(By.id("ndrc-fileupload-continue")).click()
@@ -33,7 +33,7 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
   }
 
   When("""^I click on the file upload continue button$""") {
-    if(Browser.javascriptDisabled) {
+    if (Browser.javascriptDisabled) {
       webDriver.findElement(By.className("file-upload__submit")).click()
       waitFor.until(_.findElement(By.id("continue")).isEnabled)
       webDriver.findElement(By.id("continue")).click()
@@ -73,9 +73,8 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
     findElementByCss("div.govuk-summary-list__row:nth-child(2) > dd:nth-child(1)").isDisplayed
   }
 
-  def waitForFileToBeUploaded: Boolean = {
-
-    if(Browser.javascriptDisabled) {
+  def waitForFileToBeUploaded: Boolean =
+    if (Browser.javascriptDisabled) {
       webDriver.findElement(By.className("file-upload__submit")).click()
       true
     } else {
@@ -87,6 +86,5 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
         case _: NoSuchElementException => false
       }
     }
-  }
 
 }

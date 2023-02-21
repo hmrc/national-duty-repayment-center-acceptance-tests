@@ -21,9 +21,9 @@ To run tests against `chromedriver`, execute the `run-acceptance-tests-local.sh`
 
     ./run-acceptance-tests-local.sh
 
-If you are able to use Docker, and wish to run tests against a Docker-ised `remote-chrome` instance, once you have spun up your container, execute the `run-acceptance-tests-local-jenkins.sh` script:
+If you are able to use Docker, and wish to run tests against a Docker-ised `remote-chrome` instance, once you have spun up your container, execute the `run-acceptance-tests-local.sh` script:
 
-    ./run-acceptance-tests-local-jenkins.sh
+    ./run-acceptance-tests-local.sh  remote-chrome
 
 The script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
  - `src/test/resources/application.conf` for **environment** 
