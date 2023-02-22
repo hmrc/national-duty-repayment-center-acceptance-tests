@@ -49,11 +49,6 @@ Feature: Importers Journey
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
 
 
-
-    Examples:
-      | YorNuploadFile |
-      |      No        |
-
   @suite
   Scenario Outline: VAT Registration Importers multi-entry journey
 

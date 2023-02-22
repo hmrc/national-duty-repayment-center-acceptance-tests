@@ -90,8 +90,8 @@ Feature: Restricted CMA
     Then I am on "Application complete - Apply for repayment of import duty and import VAT - GOV.UK" page
 
     Examples:
-      | YorNvat | fName | lName    | YorNgoodsOwner | addLine              | city     | county         | postCode | country        | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
-      | Yes     | Test  | Importer | Yes            | 38 Piccadilly Street | Bradford | West Yorkshire | BD1 3LY  | United Kingdom | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
+      | YorNvat | fName | lName    | YorNgoodsOwner | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
+      | Yes     | Test  | Importer | Yes            | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
   @suite
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
