@@ -41,7 +41,7 @@ For example, to execute against QA environment using Chrome remote-webdriver
     sbt -Dbrowser="remote-chrome" -Denvironment="qa" "testOnly ndrcApplication.suites.RunSuite"
 
 ## Running smoke test in staging
-The `run_staging_smoke_tests.sh` script defaults to using `remote-chrome` in the `staging` environment. This script can be run locally and tested in Staging environment by running the
+The `./run_smoke_staging.sh` script defaults to using `remote-chrome` in the `staging` environment. This script can be run locally and tested in Staging environment by running the
 below docker shell script first. Alternatively you can update the default browser to an alternative.
 
 ./run-browser-with-docker.sh remote-chrome
