@@ -21,6 +21,8 @@ import org.openqa.selenium.support.ui.{FluentWait, Select}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
+import org.scalatest.time.SpanSugar.convertIntToGrainOfTime
+
 import java.time.Duration
 
 abstract class commonMethods extends Eventually {
@@ -92,7 +94,7 @@ abstract class commonMethods extends Eventually {
     }
 
     webDriver.findElement(By.id(elementID)).sendKeys(filePath)
-    Thread.sleep(1000)
+    eventually {waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)}
   }
 
 }

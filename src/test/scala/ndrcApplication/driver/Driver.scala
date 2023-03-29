@@ -31,9 +31,10 @@ class Driver {
     sys.addShutdownHook(createRemoteDriver().quit())
 
     targetBrowser match {
-      case "chrome" | "headless-chrome" | "firefox" | "zap-firefox" | "zap-chrome" | "remote-chrome" |
-          "remote-firefox" =>
+      case "firefox" | "zap-firefox" | "remote-firefox" =>
         selectedDriver = createRemoteDriver()
+      case "chrome" | "headless-chrome" | "zap-chrome" | "remote-chrome" =>
+        selectedDriver = createRemoteChromeDriver()
       case _ => throw new IllegalArgumentException(s"target browser $targetBrowser not recognised")
     }
 

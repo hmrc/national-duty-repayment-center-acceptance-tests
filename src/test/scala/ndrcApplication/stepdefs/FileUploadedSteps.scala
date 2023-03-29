@@ -78,12 +78,13 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
       webDriver.findElement(By.className("file-upload__submit")).click()
       true
     } else {
-      Thread.sleep(1000)
-      try {
-        waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)
-        true
-      } catch {
-        case _: NoSuchElementException => false
+      eventually {
+        try {
+          waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)
+          true
+        } catch {
+          case _: NoSuchElementException => false
+        }
       }
     }
 
