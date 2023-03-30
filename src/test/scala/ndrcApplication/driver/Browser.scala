@@ -16,8 +16,6 @@
 
 package ndrcApplication.driver
 
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
-
 import java.util.Properties
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
@@ -38,9 +36,14 @@ object Browser {
     options.addArguments("--disable-gpu")
     options.addArguments("start-maximized")
 
+    if(javascriptDisabled){
+      val prefs = new java.util.HashMap[String, Object]()
+      prefs.put("profile.content_settings.exceptions.javascript.*.setting", new Integer(2))
+      options.setExperimentalOption("prefs", prefs)
+    }
+
     sys.addShutdownHook(SingletonDriver.closeInstance())
 
     SingletonDriver.getInstance(Some(options))
   }
 }
-

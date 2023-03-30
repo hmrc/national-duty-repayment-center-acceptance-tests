@@ -28,12 +28,13 @@ class Driver {
   val webDriver: WebDriver = {
 
     var selectedDriver: WebDriver = null
-    sys.addShutdownHook(createRemoteDriver().quit())
 
     targetBrowser match {
       case "firefox" | "zap-firefox" | "remote-firefox" =>
+        sys.addShutdownHook(createRemoteDriver().quit())
         selectedDriver = createRemoteDriver()
       case "chrome" | "headless-chrome" | "zap-chrome" | "remote-chrome" =>
+        sys.addShutdownHook(createRemoteChromeDriver().quit())
         selectedDriver = createRemoteChromeDriver()
       case _ => throw new IllegalArgumentException(s"target browser $targetBrowser not recognised")
     }
