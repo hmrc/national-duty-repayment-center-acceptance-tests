@@ -94,7 +94,7 @@ abstract class commonMethods extends Eventually {
     }
 
     webDriver.findElement(By.id(elementID)).sendKeys(filePath)
-    eventually {waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)}
+    eventually(waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled))
   }
 
 }
