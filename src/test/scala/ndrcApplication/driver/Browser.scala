@@ -29,7 +29,7 @@ object Browser {
 
   def javascriptDisabled: Boolean = Option(systemProperties.getProperty("disable.javascript")).exists(_.toBoolean)
 
-  def createRemoteDriver(): WebDriver =
+  def createRemoteDriver(): WebDriver       =
     SingletonDriver.getInstance()
   def createRemoteChromeDriver(): WebDriver = {
     val options = new ChromeOptions()
@@ -43,4 +43,3 @@ object Browser {
     SingletonDriver.getInstance(Some(options))
   }
 }
-
