@@ -16,12 +16,11 @@
 
 package ndrcApplication.driver
 
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
-
-import java.util.Properties
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import uk.gov.hmrc.webdriver.SingletonDriver
+
+import java.util.Properties
 
 object Browser {
 
