@@ -16,12 +16,10 @@
 
 package ndrcApplication.driver
 
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
+import org.openqa.selenium.WebDriver
+import uk.gov.hmrc.webdriver.SingletonDriver
 
 import java.util.Properties
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeOptions
-import uk.gov.hmrc.webdriver.SingletonDriver
 
 object Browser {
 
@@ -31,15 +29,4 @@ object Browser {
 
   def createRemoteDriver(): WebDriver       =
     SingletonDriver.getInstance()
-  def createRemoteChromeDriver(): WebDriver = {
-    val options = new ChromeOptions()
-    options.addArguments("--remote-allow-origins=*")
-    options.addArguments("test-type")
-    options.addArguments("--disable-gpu")
-    options.addArguments("start-maximized")
-
-    sys.addShutdownHook(SingletonDriver.closeInstance())
-
-    SingletonDriver.getInstance(Some(options))
-  }
 }

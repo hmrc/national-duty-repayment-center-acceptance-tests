@@ -17,11 +17,10 @@
 package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.driver.StartUpTearDown
 import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
-class CommonSteps extends ScalaDsl with EN with StartUpTearDown {
+class CommonSteps extends ScalaDsl with EN {
 
   Then("""^I am on "([^"]*)" page$""") { pageTitle: String =>
     assert(commonPage.isPageTitleDisplayed(pageTitle))
