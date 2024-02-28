@@ -57,8 +57,7 @@ object commonPage extends commonMethods {
   }
 
   def clickGenericButton(): Unit = {
-    waitFor.until(ExpectedConditions.elementToBeClickable(By.className("govuk-button")))
-    click(By.className("govuk-button"))
+    webDriver.findElements(By.className("govuk-button")).get(1).click()
   }
 
   def deleteBrowserCookies(): Unit = webDriver.manage().deleteAllCookies()
