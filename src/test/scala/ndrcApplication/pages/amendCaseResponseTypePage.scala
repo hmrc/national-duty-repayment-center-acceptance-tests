@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ object amendCaseResponseTypePage extends amendCaseResponseTypePage
 
 class amendCaseResponseTypePage extends commonMethods {
 
-  def selectSendMoreDocs(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
+  def selectSendMoreDocs(): Unit = driver.findElement(By.cssSelector("#value")).click()
 
-  def selectGiveMoreInfo(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
+  def selectGiveMoreInfo(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 }

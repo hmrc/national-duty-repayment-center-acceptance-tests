@@ -1,5 +1,6 @@
+@suite
 Feature: Upload supporting files
-  @suite
+
   Scenario: Upload supporting files scenarios
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -55,7 +56,6 @@ Feature: Upload supporting files
     And I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
 
 
-  @suite
   Scenario Outline: Upload supporting files scenarios - Amend case journey
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button
@@ -79,7 +79,6 @@ Feature: Upload supporting files
     And I wait for the file to be uploaded
     Then I should see first uploaded doc "JPEGImage.jpg" on upload page
     Then I should see second uploaded doc "VA Plan v0.3.xlsx" on upload page
-
 
     Examples:
       | referenceNo             |

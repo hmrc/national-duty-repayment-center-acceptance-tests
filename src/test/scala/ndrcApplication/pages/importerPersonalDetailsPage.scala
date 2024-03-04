@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,10 +34,10 @@ class importerPersonalDetailsPage extends commonMethods {
   private val emailIdentifier        = By.id("email")
   private val countryIdentifier      = By.id("countryCode")
 
-  def enterAddManuallyLink(): Unit = webDriver.findElement(By.id("manualAddress")).click()
+  def enterAddManuallyLink(): Unit = driver.findElement(By.id("manualAddress")).click()
   // def selectCountryCode(countryCodeValue : String): Unit = webDriver.findElement(By.cssSelector("#CountryCode")).sendKeys(countryCodeValue, Keys.DOWN, Keys.ENTER)
-  def selectEmailOption(): Unit    = webDriver.findElement(By.cssSelector("#value")).click()
-  def selectPhoneOption(): Unit    = webDriver.findElement(By.cssSelector("#value-2")).click()
+  def selectEmailOption(): Unit    = driver.findElement(By.cssSelector("#value")).click()
+  def selectPhoneOption(): Unit    = driver.findElement(By.cssSelector("#value-2")).click()
 
   def enterFName(fNameValue: String): Unit               = enterValInTextField(fNameIdentifier, fNameValue)
   def enterLName(lNameValue: String): Unit               = enterValInTextField(lNameIdentifier, lNameValue)
@@ -52,6 +52,6 @@ class importerPersonalDetailsPage extends commonMethods {
   def enterEmail(emailValue: String): Unit               = enterValInTextField(emailIdentifier, emailValue)
   def enterCountry(countryValue: String): Unit           = {
     enterValInTextField(countryIdentifier, countryValue)
-    webDriver.findElement(countryIdentifier).sendKeys(Keys.ENTER)
+    driver.findElement(countryIdentifier).sendKeys(Keys.ENTER)
   }
 }

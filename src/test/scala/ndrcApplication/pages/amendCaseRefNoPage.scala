@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ class amendCaseRefNoPage extends commonMethods {
 
   // error messages
 
-  def errMsg(): Unit = webDriver.findElement(By.id("value-error")).isDisplayed()
+  def errMsg(): Unit = driver.findElement(By.id("value-error")).isDisplayed()
 
-  def clearRefNo(): Unit = webDriver.findElement(By.id("value")).clear()
+  def clearRefNo(): Unit = driver.findElement(By.id("value")).clear()
 
   def enterRefNo(refNoValue: String): Unit = enterValInTextField(refNoIdentifier, refNoValue)
 

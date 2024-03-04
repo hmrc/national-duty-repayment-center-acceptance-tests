@@ -16,73 +16,71 @@
 
 package ndrcApplication.pages
 
-import ndrcApplication.driver.Driver
-import org.openqa.selenium.support.ui.{FluentWait, Select}
+import ndrcApplication.driver.BrowserDriver
+import org.openqa.selenium.support.ui.ExpectedConditions.{elementToBeClickable, presenceOfAllElementsLocatedBy}
+import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait, Select, WebDriverWait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
+import org.scalatestplus.selenium.WebBrowser
 
 import java.time.Duration
+import java.util.concurrent.TimeUnit
 
-abstract class commonMethods extends Eventually {
+abstract class commonMethods extends Eventually with BrowserDriver with WebBrowser {
 
-  implicit val webDriver: WebDriver = Driver.webDriver
-
-  implicit val waitFor: FluentWait[WebDriver] =
-    new FluentWait[WebDriver](webDriver)
-      .withTimeout(Duration.ofSeconds(30))
-      .pollingEvery(Duration.ofMillis(500))
+  def waitFor[T](condition: ExpectedCondition[T]): T = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    wait.until(condition)
+  }
+  def waitForVisible(by: By): Unit = waitFor(elementToBeClickable(by))
+  val header: TagNameQuery = TagNameQuery("h1")
+  def waitForPageHeader(): Unit          = waitFor(presenceOfAllElementsLocatedBy(header.by))
+  def waitForMillis(time: Int): Unit     = TimeUnit.MILLISECONDS.sleep(time)
 
   val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath       = ""
 
   def navigateToPage(url: String): Unit =
-    webDriver.navigate().to(url)
+    driver.navigate().to(url)
 
   def isPageTitleDisplayed(pageTitle: String): Boolean =
-    try
-      waitFor.until(_.getTitle == pageTitle)
-    catch {
-      case _: NoSuchElementException => false
-    }
+      driver.getTitle == pageTitle
 
   def clickOnButton(identifier: By): Unit = {
-    waitFor.until(_.findElement(identifier).isDisplayed)
-    webDriver.findElement(identifier).click()
+    driver.findElement(identifier).click()
   }
 
   def selectDropdown(affinityGroup: By, level: String): Unit = {
-    val dropdown = new Select(webDriver.findElement(affinityGroup))
+    val dropdown = new Select(driver.findElement(affinityGroup))
     dropdown.selectByVisibleText(level)
   }
 
   def enterValInTextField(identifier: By, value: String): Unit = {
-    waitFor.until(_.findElement(identifier).isDisplayed)
-    webDriver.findElement(identifier).clear()
-    webDriver.findElement(identifier).sendKeys(value)
+    driver.findElement(identifier).clear()
+    driver.findElement(identifier).sendKeys(value)
   }
 
   def assertElementText(content: String, element: WebElement): Unit =
     assert(element.getText.equals(content), message(s"Element displayed is: ${element.getText} Expecting: $content"))
 
-  def optionSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe true
+  def optionSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe true
 
-  def optionNoSelected(css: String): Unit = webDriver.findElement(By.cssSelector(css)).isSelected mustBe false
+  def optionNoSelected(css: String): Unit = driver.findElement(By.cssSelector(css)).isSelected mustBe false
 
-  def isElementVisible(css: String): Boolean = webDriver.findElement(By.cssSelector(css)).isDisplayed
+  def isElementVisible(css: String): Boolean = driver.findElement(By.cssSelector(css)).isDisplayed
 
-  def findByXpath(xpath: String): WebElement = webDriver.findElement(By.xpath(xpath))
+  def findByXpath(xpath: String): WebElement = driver.findElement(By.xpath(xpath))
 
   def findElementByCss(css: String): WebElement = {
-    waitFor.until(_.findElement(By.cssSelector(css)))
-    webDriver.findElement(By.cssSelector(css))
+    driver.findElement(By.cssSelector(css))
   }
 
   def verifyHeading(text: String): Unit = findElementByCss("h2").getText mustBe text
 
-  def clickHref(href: String): Unit = webDriver.findElement(By.cssSelector(href)).click()
+  def clickHref(href: String): Unit = driver.findElement(By.cssSelector(href)).click()
 
-  def clickByCSS(css: String): Unit = webDriver.findElement(By.cssSelector(css)).click()
+  def clickByCSS(css: String): Unit = driver.findElement(By.cssSelector(css)).click()
 
   def uploadFilesToBrowser(fileSeq: String, elementID: String): Unit = {
     fileSeq match {
@@ -92,8 +90,8 @@ abstract class commonMethods extends Eventually {
       case "last"   => filePath = usrDir + "PDF.pdf"
     }
 
-    webDriver.findElement(By.id(elementID)).sendKeys(filePath)
-    eventually(waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled))
+    driver.findElement(By.id(elementID)).sendKeys(filePath)
+    driver.findElement(By.id("ndrc-fileupload-continue")).isEnabled
   }
 
 }

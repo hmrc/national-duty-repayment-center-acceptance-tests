@@ -1,6 +1,6 @@
+@suite
 Feature: Restricted CMA
 
-  @suite
   Scenario Outline: User is not presented with CMA repayment option for claims less than £250
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -93,7 +93,7 @@ Feature: Restricted CMA
       | YorNvat | fName | lName    | YorNgoodsOwner | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
       | Yes     | Test  | Importer | Yes            | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
-  @suite
+
   Scenario Outline: Representative is not presented with CMA repayment option for claims less than £250
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -203,7 +203,7 @@ Feature: Restricted CMA
       | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
       | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 
-  @suite
+
   Scenario Outline: User is not presented with CMA repayment option for claims more than 42 days ago
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -292,7 +292,7 @@ Feature: Restricted CMA
       | YorNvat | fName | lName    | YorNgoodsOwner | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | aName    | sCode  | accNo    |
       | Yes     | Test  | Importer | Yes            | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Megacorp | 207106 | 86563611 |
 
-  @suite
+
   Scenario Outline: Representative is not presented with CMA repayment option for claims more than 42 days ago
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button

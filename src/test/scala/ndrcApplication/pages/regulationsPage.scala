@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +22,16 @@ object regulationsPage extends regulationsPage
 
 class regulationsPage extends commonMethods {
 
-  def selectErrorByCust(): Unit = webDriver.findElement(By.cssSelector("input[value=\"048\"]")).click()
+  def selectErrorByCust(): Unit = driver.findElement(By.cssSelector("input[value=\"048\"]")).click()
 
-  def selectLowerRate(): Unit = webDriver.findElement(By.cssSelector("input[value=\"049\"]")).click()
+  def selectLowerRate(): Unit = driver.findElement(By.cssSelector("input[value=\"049\"]")).click()
 
-  def selectOverPayVat(): Unit = webDriver.findElement(By.cssSelector("input[value=\"050\"]")).click()
+  def selectOverPayVat(): Unit = driver.findElement(By.cssSelector("input[value=\"050\"]")).click()
 
-  def selectRejected(): Unit = webDriver.findElement(By.cssSelector("input[value=\"051\"]")).click()
+  def selectRejected(): Unit = driver.findElement(By.cssSelector("input[value=\"051\"]")).click()
 
-  def selectSpecialCircum(): Unit = webDriver.findElement(By.cssSelector("input[value=\"052\"]")).click()
+  def selectSpecialCircum(): Unit = driver.findElement(By.cssSelector("input[value=\"052\"]")).click()
 
-  def selectWithdrawalOfCust(): Unit = webDriver.findElement(By.cssSelector("input[value=\"053\"]")).click()
+  def selectWithdrawalOfCust(): Unit = driver.findElement(By.cssSelector("input[value=\"053\"]")).click()
 
 }

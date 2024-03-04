@@ -1,6 +1,7 @@
+@suite
 Feature: Importers Journey
 
-  @suite @accessibility @ZAP
+  @ZAP
   Scenario Outline: A user wants to complete a New Importers journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
@@ -85,7 +86,7 @@ Feature: Importers Journey
       | YorNvat | fName | lName    | YorNgoodsOwner  | phoneNo     | emailAddress  | YorNDeclarantRefNO | declarantRefNo | repayment            | aName    | sCode  | accNo    |
       | Yes     | Test  | Importer | Yes             | 09876543212 | test@mail.com | Yes                | 1234abcxyz     | Bank transfer (Bacs) | Megacorp | 207106 | 86563611 |
 
-  @suite
+
   Scenario Outline: A user wants to complete a New Multi entry Importers journey
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
