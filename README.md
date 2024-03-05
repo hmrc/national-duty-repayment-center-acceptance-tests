@@ -1,109 +1,45 @@
 # national-duty-repayment-center-acceptance-tests
-UI test suite for the `NDRC` using WebDriver and `cucumber`.  
+UI test suite for the `NDRC` using UITestRunner and `cucumber`.  
 
-## Running the tests
+## Pre-requisites
 
 Prior to executing the tests ensure you have:
- - Appropriate [drivers installed](#install-driver-binary) - to run tests against locally installed Browser
  - Installed [MongoDB](https://docs.mongodb.com/manual/installation/) 
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).
- - Mongo running on port 27017
+ - Installed/configured [service manager](https://github.com/hmrc/sm2).
 
-Run the following command to start services locally:
+### Services
 
-    sm --start NDRC_ALL -r 
+Start Mongo as follows:
 
-NDRC acceptance tests use NDRC stub to stub Address Lookup Frontend UI
+```bash
+sudo mongod
+```
 
-To run tests against `chromedriver`, execute the `run-acceptance-tests-local.sh` script:
+Start `NDRC_ALL` services locally as follows:
 
-    ./run-acceptance-tests-local.sh
+```bash
+sm2 --start NDRC_ALL
+```
 
-If you are able to use Docker, and wish to run tests against a Docker-ised `remote-chrome` instance, once you have spun up your container, execute the `run-acceptance-tests-local.sh` script:
+### Selenium Grid
 
-    ./run-acceptance-tests-local.sh  remote-chrome
+Confirm that [docker-selenium-grid](https://github.com/hmrc/docker-selenium-grid) is up-to-date and follow the provided [instructions](https://github.com/hmrc/docker-selenium-grid/blob/main/README.md).
 
-The script defaults to the `local` environment with the locally installed `chrome` driver binary.  For a complete list of supported param values, see:
- - `src/test/resources/application.conf` for **environment** 
- - [webdriver-factory](https://github.com/hmrc/webdriver-factory#2-instantiating-a-browser-with-default-options) for **browser-driver**
- 
-The script runs the following sbt command.  Run this command directly if you want to use different drivers or environments
+or use [local-selenium-grid](https://github.com/hmrc/local-selenium-grid) and follow the provided [instructions](https://github.com/hmrc/local-selenium-grid/blob/main/README.md).
 
-    sbt -Dbrowser="chrome" -Denvironment="local" "testOnly ndrcApplication.suites.RunSuite"
+## Tests
 
-#### Running the tests against a test environment
+NDRC acceptance tests use NDRC stub to stub Address Lookup Frontend UI.
+Run tests as follows:
 
-To run the tests against an environment set the corresponding `host` environment property as specified under
- `<env>.host.services` in the [application.conf](/src/test/resources/application.conf). 
+* Argument `<browser>` must be `chrome`, `edge` or `firefox`.
+* Argument `<environment>` must be `local`, `qa` or `staging`.
 
-For example, to execute against QA environment using Chrome remote-webdriver
+```bash
+./run-tests.sh <browser> <environment>
+```
 
-    sbt -Dbrowser="remote-chrome" -Denvironment="qa" "testOnly ndrcApplication.suites.RunSuite"
-
-## Running smoke test in staging
-The `./run_smoke_staging.sh` script defaults to using `remote-chrome` in the `staging` environment. This script can be run locally and tested in Staging environment by running the
-below docker shell script first. Alternatively you can update the default browser to an alternative.
-
-./run-browser-with-docker.sh remote-chrome
-
-## Running ZAP tests
-
-ZAP tests can be automated using the HMRC [zap-automation](https://github.com/hmrc/zap-automation) library. It is not mandatory to do so and should not be considered a substitute for manual exploratory testing using OWASP ZAP.
-
-#### Tagging tests for ZAP
-
-It is not required to proxy every journey test via ZAP. The intention of proxying a test through ZAP is to expose all the
- relevant pages of an application to ZAP. So tagging a subset of the journey tests or creating a 
- single ZAP focused journey test is sufficient.
-
-#### Configuring the browser to proxy via ZAP 
-
-Setting the system property `zap.proxy=true` configures the browser specified in `browser` property to proxy via ZAP. 
-This is achieved using [webdriver-factory](https://github.com/hmrc/webdriver-factory#proxying-trafic-via-zap).  
-
-#### zap-automation config
-Running ZAP tests require passing a zap-automation config object to the zap-automation library. `zap-automation` config is 
-defined in the [application.conf](/src/test/resources/application.conf). The config is passed to the `zap-automation`
-library via [ZapSpec](/src/test/scala/uk/gov/hmrc/test/ui/ZapSpec.scala) from which the ZAP tests are triggered.
-
-#### Executing a DAST ZAP test
-
-The shell script `dast_zap.sh.sh` is available to execute ZAP tests. The script first proxies a set of journey tests, 
-tagged as `ZapTests`, via ZAP. Upon completion, the script then triggers a ZAP scan for the provided `zap-automation` config. 
-
-For example, to execute ZAP tests locally using a Chrome browser
-
-    ./dast_zap.sh.sh local chrome
-
-For more information about ZAP tests, please refer to the `zap-automation` [documentation](https://github.com/hmrc/zap-automation/blob/master/README.md).
-
-## Running accessibilityTest
-The accessibility tests run as a subset of the main tests.  This can be run by using the script
-
-    ./run_accessibilityTests.sh
-
-### Running tests using BrowserStack
-If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/master/README.md/#user-content-running-tests-using-browser-stack) project.
-
-## [Installing local driver binaries](#install-driver-binaries)
-
-This project supports UI test execution using Firefox (Geckodriver) and Chrome (Chromedriver) browsers. 
-
-See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
-
-    ./installGeckodriver.sh <operating-system> <driver-version>
-or
-
-    ./installChromedriver <operating-system> <driver-version>
-
-- *<operating-system>* defaults to **linux64**, however it also supports **macos**
-- *<driver-version>* defaults to **0.21.0** for Gecko/Firefox, and the latest release for Chrome.  You can, however, however pass any version available at the [Geckodriver](https://github.com/mozilla/geckodriver/tags) or [Chromedriver](http://chromedriver.storage.googleapis.com/) repositories.
-
-**Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
-
-**Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
-
-### Formatting code
+## Formatting code
 This library uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf). Prior to checking in any changes to this repository, please make sure all files are formatted correctly.
 
 To apply formatting to this repository using the configured rules in [.scalafmt.conf](.scalafmt.conf) execute:
