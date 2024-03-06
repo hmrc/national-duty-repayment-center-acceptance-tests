@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ object loginPage extends loginPage
 
 class loginPage extends commonMethods {
 
-  def selectStart(): Unit = webDriver.findElement(By.cssSelector("#value")).click()
-  def selectAmend(): Unit = webDriver.findElement(By.cssSelector("#value-2")).click()
+  def selectStart(): Unit = driver.findElement(By.cssSelector("#value")).click()
+  def selectAmend(): Unit = driver.findElement(By.cssSelector("#value-2")).click()
 
 }

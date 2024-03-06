@@ -1,6 +1,6 @@
+@suite
 Feature: Amend case Journey
-  @suite
-    @accessibility
+
   Scenario Outline: A user wants to Amend a case
     Given I am on the start page for trader service and select Amend Now
     Then I Accept cookies and hide message
@@ -23,12 +23,11 @@ Feature: Amend case Journey
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
-
     Examples:
     | referenceNo               |
     | NDRC21052618650YFLZNMV2   |
 
-  @suite
+
   Scenario Outline: A user wants to Amend a case to send more supporting documents
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button
@@ -47,12 +46,11 @@ Feature: Amend case Journey
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
-
     Examples:
       | referenceNo                |
       | NDRC21052618646XZ66EBX6    |
 
-  @suite
+
   Scenario Outline: A user wants to Amend a case to give further information
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button
@@ -69,12 +67,11 @@ Feature: Amend case Journey
     When I click on the "Continue" button
     Then I am on "Information sent - Apply for repayment of import duty and import VAT - GOV.UK" page
 
-
     Examples:
       | referenceNo               |
       | NDRC2105261863OL4K3WXR2   |
 
-  @Smoke
+
   Scenario Outline: A user tries to Amend a closed case
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button
@@ -90,7 +87,6 @@ Feature: Amend case Journey
     Then I am on "Check your additional information - Apply for repayment of import duty and import VAT - GOV.UK" page
     When I click on the "Continue" button
     Then I am on "This application is closed - Apply for repayment of import duty and import VAT - GOV.UK" page
-
 
     Examples:
       | closedCaseReferenceNo     |

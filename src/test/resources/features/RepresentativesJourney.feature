@@ -1,6 +1,6 @@
+@suite
 Feature: Representatives Journey
 
-  @suite
   Scenario Outline: A user wants to complete a New Representatives journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message
@@ -98,7 +98,7 @@ Feature: Representatives Journey
       | YorNeori | eoriNo         | YorNvat | impName       | declarantName  | businessName | phoneNo     | emailAddress   | repayment            | YorNDeclarantRefNO | declarantRefNo | yOrNoIndirectRep | aName    | sCode  | accNo    |
       | Yes      | GB123456789123 | Yes     | test importer | test declarant | test agent   | 09876543212 | test@gmail.com | Bank transfer (Bacs) | Yes                | 123abcxyz      | No               | Megacorp | 207106 | 86563611 |
 
-  @suite @accessibility @ZAP
+  @ZAP
   Scenario Outline: A user wants to complete a New Multi entry Representatives journey
     Given I am on the start page for trader service and select Apply Now
     Then I Accept cookies and hide message

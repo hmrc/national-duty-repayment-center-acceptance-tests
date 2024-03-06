@@ -17,7 +17,6 @@
 package ndrcApplication.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.driver.Browser
 import ndrcApplication.pages.fileUploadedPage
 import org.openqa.selenium.{By, NoSuchElementException}
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
@@ -25,21 +24,12 @@ import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   When("""^I click the file continue button$""") {
-    if (Browser.javascriptDisabled) {
-      webDriver.findElement(By.className("file-upload__submit")).click()
-    } else {
-      webDriver.findElement(By.id("ndrc-fileupload-continue")).click()
-    }
+    driver.findElement(By.id("ndrc-fileupload-continue")).click()
   }
 
   When("""^I click on the file upload continue button$""") {
-    if (Browser.javascriptDisabled) {
-      webDriver.findElement(By.className("file-upload__submit")).click()
-      waitFor.until(_.findElement(By.id("continue")).isEnabled)
-      webDriver.findElement(By.id("continue")).click()
-    } else {
-      webDriver.findElement(By.id("ndrc-fileupload-continue")).click()
-    }
+    waitForVisible(By.id("ndrc-fileupload-continue"))
+    driver.findElement(By.id("ndrc-fileupload-continue")).click()
   }
 
   And("""^I wait for the file to be uploaded""") { () =>
@@ -48,8 +38,6 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
 
   Then("""^I should see first uploaded doc "([^"]*)" on upload review page$""") { (fileName: String) =>
     findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(1)").isDisplayed
-  // findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(2)").getText mustBe fileName
-
   }
 
   Then("""^I should see ([^"]*) uploaded doc "([^"]*)" on upload page$""") { (sequence: String, fileName: String) =>
@@ -74,18 +62,11 @@ class FileUploadedSteps extends fileUploadedPage with ScalaDsl with EN {
   }
 
   def waitForFileToBeUploaded: Boolean =
-    if (Browser.javascriptDisabled) {
-      webDriver.findElement(By.className("file-upload__submit")).click()
+    try {
+      waitForVisible(By.id("ndrc-fileupload-continue"))
       true
-    } else {
-      eventually {
-        try {
-          waitFor.until(_.findElement(By.id("ndrc-fileupload-continue")).isEnabled)
-          true
-        } catch {
-          case _: NoSuchElementException => false
-        }
-      }
+    } catch {
+      case _: NoSuchElementException => false
     }
 
 }

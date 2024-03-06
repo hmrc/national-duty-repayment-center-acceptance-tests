@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ object vatRegPage extends vatRegPage
 
 class vatRegPage extends commonMethods {
 
-  def vatRegHyperlink(): Unit = webDriver.findElement(By.id("details-id")).click()
-  def vatRegText(): Unit      = webDriver.findElement(By.id("details-id")).isDisplayed()
+  def vatRegHyperlink(): Unit = driver.findElement(By.id("details-id")).click()
+  def vatRegText(): Unit      = driver.findElement(By.id("details-id")).isDisplayed()
 
 }

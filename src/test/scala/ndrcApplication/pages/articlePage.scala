@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ object articlePage extends articlePage
 
 class articlePage extends commonMethods {
 
-  def selectVatArticle(): Unit        = webDriver.findElement(By.cssSelector("input[value=\"117\"]")).click()
-  def selectErrorOfCustoms(): Unit    = webDriver.findElement(By.cssSelector("input[value=\"119\"]")).click()
-  def selectExceptionalCircum(): Unit = webDriver.findElement(By.cssSelector("input[value=\"120\"]")).click()
+  def selectVatArticle(): Unit        = driver.findElement(By.cssSelector("input[value=\"117\"]")).click()
+  def selectErrorOfCustoms(): Unit    = driver.findElement(By.cssSelector("input[value=\"119\"]")).click()
+  def selectExceptionalCircum(): Unit = driver.findElement(By.cssSelector("input[value=\"120\"]")).click()
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package ndrcApplication.pages
 
 import ndrcApplication.utils.Configuration
-import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, JavascriptExecutor, NoSuchElementException, WebElement}
 
 object commonPage extends commonMethods {
@@ -46,25 +45,23 @@ object commonPage extends commonMethods {
   }
 
   def scrollToElement(element: WebElement): AnyRef = {
-    val jse2: JavascriptExecutor = webDriver.asInstanceOf[JavascriptExecutor]
+    val jse2: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
     jse2.executeScript("arguments[0].scrollIntoView()", element)
   }
 
   def click(by: By): Unit = {
-    val element = webDriver.findElement(by)
+    val element = driver.findElement(by)
     scrollToElement(element)
     element.click()
   }
 
   def clickGenericButton(): Unit = {
-    webDriver.findElements(By.className("govuk-button")).get(1).click()
+    driver.findElements(By.className("govuk-button")).get(1).click()
   }
-
-  def deleteBrowserCookies(): Unit = webDriver.manage().deleteAllCookies()
 
   def findElement(identifier: By): Boolean =
     try {
-      webDriver.findElement(identifier)
+      driver.findElement(identifier)
       true
     } catch {
       case _: NoSuchElementException => false

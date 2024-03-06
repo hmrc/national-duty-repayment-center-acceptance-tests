@@ -16,36 +16,32 @@
 
 package ndrcApplication.stepdefs
 
-import org.junit.{After, Before}
-import org.openqa.selenium._
-import _root_.io.cucumber.scala.Scenario
+import io.cucumber.scala.{ScalaDsl, Scenario}
+import org.openqa.selenium.{OutputType, TakesScreenshot}
 import ndrcApplication.pages.commonMethods
+import org.apache.commons.io.FileUtils
+import uk.gov.hmrc.selenium.webdriver.Browser
 
-class Hooks extends commonMethods {
+import java.io.File
 
-  @Before
-  def initialize(): Unit =
-    webDriver.manage().deleteAllCookies()
+class Hooks extends commonMethods with ScalaDsl with Browser {
 
-  @After
-  def tearDown(result: Scenario): Unit =
-    if (result.isFailed) {
-      webDriver match {
-        case screenshot1: TakesScreenshot =>
-          try {
-            val screenshot = screenshot1.getScreenshotAs(OutputType.BYTES)
-            result.attach(
-              data = screenshot,
-              mediaType = "image/png",
-              name = "screenshot"
-            )
-          } catch {
-            case somePlatformsDontSupportScreenshots: WebDriverException =>
-              System.err.println(somePlatformsDontSupportScreenshots.getMessage)
-          }
-        case _                            =>
-      }
+  Before {
+    startBrowser()
+    driver.manage().deleteAllCookies()
+  }
 
+  After { scenario: Scenario =>
+    if (scenario.isFailed) {
+      val screenshotName = scenario.getName.replaceAll(" ", "_")
+      val screenshot = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
+      val screenshotFile = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+      val screenshotDestination: String = "./target/screenshots/" + screenshotName + ".png"
+
+      FileUtils.copyFile(screenshotFile, new File(screenshotDestination))
+      scenario.attach(screenshot, "image/png", screenshotName)
     }
+    quitBrowser()
+  }
 
 }

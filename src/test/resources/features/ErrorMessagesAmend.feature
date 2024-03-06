@@ -1,5 +1,5 @@
 Feature: Error Scenarios Amend case Journey
-  @suite @Smoke
+  @suite
   Scenario Outline: Error messages for Amend case journey scenarios
     Given I am on the start page for trader service and select Amend Now
     When I click on the "Continue" button

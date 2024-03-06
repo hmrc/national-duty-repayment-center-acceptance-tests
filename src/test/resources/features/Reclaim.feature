@@ -1,5 +1,6 @@
+@suite
 Feature: Reclaim Dynamic content scenarios
-  @suite
+
   Scenario: Reclaim single entry journey help text
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button
@@ -42,7 +43,7 @@ Feature: Reclaim Dynamic content scenarios
     When I click on the "Continue" button
     Then I am on "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK" page
 
-  @suite
+
   Scenario: Reclaim multi entry journey help text
     Given I am on the start page for trader service and select Apply Now
     When I click on the "Continue" button

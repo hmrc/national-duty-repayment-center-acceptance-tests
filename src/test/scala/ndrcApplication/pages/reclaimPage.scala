@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ object reclaimPage extends reclaimPage
 
 class reclaimPage extends commonMethods {
 
-  def selectCustDuty(): Unit  = webDriver.findElement(By.cssSelector("#value")).click()
-  def selectImpVat(): Unit    = webDriver.findElement(By.cssSelector("#value-2")).click()
-  def selectOtherDuty(): Unit = webDriver.findElement(By.cssSelector("#value-3")).click()
+  def selectCustDuty(): Unit  = driver.findElement(By.cssSelector("#value")).click()
+  def selectImpVat(): Unit    = driver.findElement(By.cssSelector("#value-2")).click()
+  def selectOtherDuty(): Unit = driver.findElement(By.cssSelector("#value-3")).click()
 
 }

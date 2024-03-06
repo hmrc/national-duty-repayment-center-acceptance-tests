@@ -1,6 +1,7 @@
+@suite
 Feature: Importers Journey
-   @suite
-  Scenario Outline: VAT Registration
+
+  Scenario: VAT Registration
     Given I am on the start page for trader service and select Apply Now
      When I click on the "Continue" button
     Then I am on "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK" page
@@ -49,7 +50,6 @@ Feature: Importers Journey
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
 
 
-  @suite
   Scenario Outline: VAT Registration Importers multi-entry journey
 
     Given I am on the start page for trader service and select Apply Now
@@ -104,7 +104,6 @@ Feature: Importers Journey
     Then I am on "Are you VAT registered? - Apply for repayment of import duty and import VAT - GOV.UK" page
     And I click on Help VAT registration link
     And I confirm VAT registration is displayed: "Help with VAT registration You must register your business for VAT with HMRC if its VAT taxable turnover is over the current VAT registration threshold. You can register voluntarily if your turnover is under the threshold, unless everything you sell is exempt."
-
 
     Examples:
       | noOfEntries|

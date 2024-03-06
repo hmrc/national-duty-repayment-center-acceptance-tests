@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,10 @@
 
 package ndrcApplication.driver
 
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.remote.RemoteWebDriver
+import uk.gov.hmrc.selenium.webdriver.Driver
 
-import java.util.Properties
+trait BrowserDriver {
 
-object Browser {
-
-  lazy val systemProperties: Properties = System.getProperties
-
-  def javascriptDisabled: Boolean = Option(systemProperties.getProperty("disable.javascript")).exists(_.toBoolean)
-
-  def createRemoteDriver(): WebDriver =
-    SingletonDriver.getInstance()
+  implicit def driver: RemoteWebDriver = Driver.instance
 }
