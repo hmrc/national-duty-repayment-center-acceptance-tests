@@ -17,6 +17,7 @@
 package ndrcApplication.pages
 
 import ndrcApplication.driver.BrowserDriver
+import org.openqa.selenium.remote.LocalFileDetector
 import org.openqa.selenium.support.ui.ExpectedConditions.{elementToBeClickable, presenceOfAllElementsLocatedBy}
 import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait, Select, WebDriverWait}
 import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
@@ -90,6 +91,7 @@ abstract class commonMethods extends Eventually with BrowserDriver with WebBrows
       case "last"   => filePath = usrDir + "PDF.pdf"
     }
 
+    driver.setFileDetector(new LocalFileDetector())
     driver.findElement(By.id(elementID)).sendKeys(filePath)
     driver.findElement(By.id("ndrc-fileupload-continue")).isEnabled
   }
