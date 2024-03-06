@@ -18,15 +18,14 @@ package ndrcApplication.pages
 
 import ndrcApplication.driver.BrowserDriver
 import org.openqa.selenium.remote.LocalFileDetector
-import org.openqa.selenium.support.ui.ExpectedConditions.{elementToBeClickable, presenceOfAllElementsLocatedBy}
-import org.openqa.selenium.support.ui.{ExpectedCondition, FluentWait, Select, WebDriverWait}
-import org.openqa.selenium.{By, NoSuchElementException, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable
+import org.openqa.selenium.support.ui.{ExpectedCondition, Select, WebDriverWait}
+import org.openqa.selenium.{By, WebElement}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
 import org.scalatestplus.selenium.WebBrowser
 
 import java.time.Duration
-import java.util.concurrent.TimeUnit
 
 abstract class commonMethods extends Eventually with BrowserDriver with WebBrowser {
 
@@ -35,9 +34,6 @@ abstract class commonMethods extends Eventually with BrowserDriver with WebBrows
     wait.until(condition)
   }
   def waitForVisible(by: By): Unit = waitFor(elementToBeClickable(by))
-  val header: TagNameQuery = TagNameQuery("h1")
-  def waitForPageHeader(): Unit          = waitFor(presenceOfAllElementsLocatedBy(header.by))
-  def waitForMillis(time: Int): Unit     = TimeUnit.MILLISECONDS.sleep(time)
 
   val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath       = ""
