@@ -1,8 +1,0 @@
-{
-  "exclusions": [
-    {
-      "path": "/auth-login-stub",
-      "reason": "Stubbed auth endpoints are owned by a different team."
-    }
-  ]
-}

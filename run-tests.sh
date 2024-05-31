@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BROWSER=$1
-ENVIRONMENT=$2
+BROWSER=${1:-chrome}
+ENVIRONMENT=${2:-local}
 
-sbt clean -Dbrowser="${BROWSER:=chrome}" -Denvironment="${ENVIRONMENT:=local}" "testOnly ndrcApplication.suites.RunSuite" testReport
+sbt clean -Dbrowser="${BROWSER}" -Denvironment="${ENVIRONMENT}" -Dbrowser.option.headless=false "testOnly ndrcApplication.suites.RunSuite" testReport
