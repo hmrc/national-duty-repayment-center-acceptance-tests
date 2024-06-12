@@ -58,6 +58,14 @@
       "urlIsRegex":"true",
       "ruleId":10021,
       "newLevel":-1
+    },
+    {
+      "reason": "Absence of Anti-CSRF Tokens - a failure for Absence of Anti-CSRF Tokens was being reported",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9949\/auth-login-stub\/.*",
+      "ruleId": 10202,
+      "urlIsRegex": "true",
+      "newLevel": 0
     }
   ]
 }
