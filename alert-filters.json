@@ -3,35 +3,35 @@
     {
       "reason": "This issue is related to upscan outside our scope.",
       "contextId": 1,
-      "url": "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat/upload-proof-of-authority",
+      "url": "http:\/\/localhost:8450\/apply-for-repayment-of-import-duty-and-import-vat\/upload-proof-of-authority",
       "ruleId": 10202,
       "newLevel": -1
     },
     {
       "reason": "This issue is related to upscan outside our scope.",
       "contextId": 1,
-      "url": "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat/file-upload",
+      "url": "http:\/\/localhost:8450\/apply-for-repayment-of-import-duty-and-import-vat\/file-upload",
       "ruleId": 10202,
       "newLevel": -1
     },
     {
       "reason": "This issue is related to upscan outside our scope.",
       "contextId": 1,
-      "url": "http://localhost:8450/apply-for-repayment-of-import-duty-and-import-vat/upload-multiple-entries",
+      "url": "http:\/\/localhost:8450\/apply-for-repayment-of-import-duty-and-import-vat\/upload-multiple-entries",
       "ruleId": 10202,
       "newLevel": -1
     },
     {
-      "reason": "This issue is related to stub implementaion for QA and outside our scope.",
+      "reason": "This issue is related to stub implementation for QA and outside our scope.",
       "contextId": 1,
-      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "url": "http:\/\/localhost:9949\/auth-login-stub\/gg-sign-in",
       "ruleId": 10017,
       "newLevel": -1
     },
     {
-      "reason": "This issue is related to stub implementaion for QA and outside our scope.",
+      "reason": "This issue is related to stub implementation for QA and outside our scope.",
       "contextId": 1,
-      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "url": "http:\/\/localhost:9949\/auth-login-stub\/gg-sign-in",
       "ruleId": 10202,
       "newLevel": -1
     },
