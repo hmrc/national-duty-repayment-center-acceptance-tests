@@ -10,6 +10,13 @@
     {
       "reason": "This issue is related to upscan outside our scope.",
       "contextId": 1,
+      "url": "http:\/\/localhost:8450/apply-for-repayment-of-import-duty-and-import-vat\/amend\/upload-a-file",
+      "ruleId": 10202,
+      "newLevel": -1
+    },
+    {
+      "reason": "This issue is related to upscan outside our scope.",
+      "contextId": 1,
       "url": "http:\/\/localhost:8450\/apply-for-repayment-of-import-duty-and-import-vat\/file-upload",
       "ruleId": 10202,
       "newLevel": -1
