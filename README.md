@@ -21,12 +21,6 @@ Start `NDRC_ALL` services locally as follows:
 sm2 --start NDRC_ALL
 ```
 
-### Selenium Grid
-
-Confirm that [docker-selenium-grid](https://github.com/hmrc/docker-selenium-grid) is up-to-date and follow the provided [instructions](https://github.com/hmrc/docker-selenium-grid/blob/main/README.md).
-
-or use [local-selenium-grid](https://github.com/hmrc/local-selenium-grid) and follow the provided [instructions](https://github.com/hmrc/local-selenium-grid/blob/main/README.md).
-
 ## Tests
 
 NDRC acceptance tests use NDRC stub to stub Address Lookup Frontend UI.
