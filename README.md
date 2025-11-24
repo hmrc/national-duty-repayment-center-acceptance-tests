@@ -18,7 +18,7 @@ sudo mongod
 Start `NDRC_ALL` services locally as follows:
 
 ```bash
-sm2 --start NDRC_ALL
+sm2 --start NDRC_TESTS
 ```
 
 ## Tests
