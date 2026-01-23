@@ -1,0 +1,192 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "testSuite",
+        "directory": "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests",
+        "workspaceDir": "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests",
+        "sources": [
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/main/scala",
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/main/scala-2.13",
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/main/scala-2",
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/main/java",
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/target/scala-2.13/src_managed/main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar"
+        ],
+        "out": "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/.bloop/testSuite",
+        "classesDir": "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/.bloop/testSuite/scala-2.13/classes",
+        "resources": [
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/main/resources",
+            "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/target/scala-2.13/resource_managed/main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.16",
+            "options": [
+                "-unchecked",
+                "-deprecation",
+                "-encoding",
+                "UTF-8",
+                "-Xlint",
+                "-Ywarn-macros:after",
+                "-release",
+                "11",
+                "-feature"
+            ],
+            "jars": [
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar",
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.16/scala-compiler-2.13.16.jar",
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.16/scala-reflect-2.13.16.jar",
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.15/java-diff-utils-4.15.jar",
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.27.1/jline-3.27.1-jdk8.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": false,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": false,
+                "filterLibraryFromClasspath": false
+            },
+            "bridgeJars": [
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala2-sbt-bridge/2.13.16/scala2-sbt-bridge-2.13.16.jar"
+            ]
+        },
+        "java": {
+            "options": [
+                "-Xlint",
+                "-encoding",
+                "UTF-8",
+                "--release",
+                "11"
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "weaver.framework.CatsEffect"
+                    ]
+                },
+                {
+                    "names": [
+                        "hedgehog.sbt.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/home/abdul_quadri/.sdkman/candidates/java/11.0.19-tem",
+                "options": [
+                    "-Duser.dir=/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests"
+                ]
+            },
+            "mainClass": [
+                
+            ],
+            "runtimeConfig": {
+                "home": "/home/abdul_quadri/.sdkman/candidates/java/11.0.19-tem",
+                "options": [
+                    "-Duser.dir=/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests"
+                ]
+            },
+            "classpath": [
+                "/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/.bloop/testSuite/scala-2.13/classes",
+                "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar"
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.16",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.16",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/abdul_quadri/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

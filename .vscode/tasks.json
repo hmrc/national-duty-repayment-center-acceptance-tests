@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All Conversion Steps",
+      "type": "shell",
+      "command": "sbt",
+      "args": [
+        "\"Test/runMain mdruitests.utils.FeatureToScalaSpecConverter src/test/resources/features src/test/scala/specs; Test/runMain mdruitests.utils.StepDefToScalaFunctionConverter src/test/scala/uk/gov/hmrc/test/ui/cucumber/stepdefs src/test/scala/specsteps; Test/runMain mdruitests.utils.PageFileConverter src/test/scala/uk/gov/hmrc/test/ui/pages src/test/scala/specpage; Test/runMain mdruitests.utils.InjectStepDefsIntoSpecs src/test/scala/specs src/test/scala/specsteps src/test/scala/output --threshold 0.75 --auto-choose-best\""
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Step 1 - Convert Feature Files",
+      "type": "shell",
+      "command": "sbt \"Test/runMain ndrcApplication.injectorfiles.FeatureToScalaSpecConverter src/test/resources/features src/test/scala/ndrcApplication/specs\"",
+      "group": "build"
+    },
+    {
+      "label": "Step 2 - Convert Step Definitions",
+      "type": "shell",
+      "command": "sbt \"Test/runMain ndrcApplication.injectorfiles.StepDefToScalaFunctionConverter src/test/scala/ndrcApplication/stepdefs src/test/scala/ndrcApplication/specsteps\"",
+      "group": "build"
+    },
+    {
+      "label": "Step 3 - Convert Page Objects",
+      "type": "shell",
+      "command": "sbt \"Test/runMain ndrcApplication.injectorfiles.PageFileConverter src/test/scala/ndrcApplication/pages src/test/scala/ndrcApplication/specpage\"",
+      "group": "build"
+    },
+    {
+      "label": "Step 4 - Inject Step Definitions",
+      "type": "shell",
+      "command": "sbt \"Test/runMain ndrcApplication.injectorfiles.InjectStepDefsIntoSpecs src/test/scala/ndrcApplication/specs src/test/scala/ndrcApplication/specsteps src/test/scala/ndrcApplication/output --threshold 0.45 --auto-choose-best\"",
+      "group": "build"
+    }
+  ]
+}
