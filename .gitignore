@@ -18,6 +18,7 @@ logs
 eclipse
 .scala_dependencies
 /.metals
+/.vscode
 
 # sbt files
 dist
