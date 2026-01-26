@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.checkYourAnswersPage._
-import ndrcApplication.pages.checkYourAnswersPage
+import ndrcApplication.specpage.checkYourAnswersPage._
+import ndrcApplication.specpage.checkYourAnswersPage
 
 object CheckYourAnswersStepsSteps {
 

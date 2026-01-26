@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.reclaimPage
+import ndrcApplication.specpage.reclaimPage
 
 object ReclaimStepsSteps {
 

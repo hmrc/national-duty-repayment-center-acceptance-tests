@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.entriesPage
+import ndrcApplication.specpage.entriesPage
 
 object EntriesStepsSteps {
 

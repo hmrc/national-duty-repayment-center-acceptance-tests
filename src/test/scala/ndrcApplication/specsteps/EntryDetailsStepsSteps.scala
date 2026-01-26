@@ -15,8 +15,8 @@
  */
 
 import java.time.LocalDate
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.entryDetailsPage
+
+import ndrcApplication.specpage.entryDetailsPage
 import scala.util.Try
 
 object EntryDetailsStepsSteps {

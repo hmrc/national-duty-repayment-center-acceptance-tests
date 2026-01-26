@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.goodsOwnerPage
-import ndrcApplication.pages.goodsOwnerPage._
+import ndrcApplication.specpage.goodsOwnerPage
+import ndrcApplication.specpage.goodsOwnerPage._
 
 object GoodsOwnerStepsSteps {
 

@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.selectRepayMethodPage
-import ndrcApplication.pages.selectRepayMethodPage._
+import ndrcApplication.specpage.selectRepayMethodPage
+import ndrcApplication.specpage.selectRepayMethodPage._
 
 object selectRepayMethodStepsSteps {
 

@@ -15,9 +15,9 @@
  */
 
 package ndrcApplication.specsteps
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.commonPage
-import ndrcApplication.pages.loginPage
+
+import ndrcApplication.specpage.commonPage
+import ndrcApplication.specpage.loginPage
 
 object LoginPageStepsSteps {
 

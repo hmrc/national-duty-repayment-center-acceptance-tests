@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.eoriNoPage._
-import ndrcApplication.pages.eoriNoPage
+import ndrcApplication.specpage.eoriNoPage._
+import ndrcApplication.specpage.eoriNoPage
 
 object EoriNoStepsSteps {
 

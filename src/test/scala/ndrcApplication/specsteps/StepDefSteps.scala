@@ -17,35 +17,35 @@
 package ndrcApplication.specsteps
 
 import java.time.LocalDate
-import ndrcApplication.pages.aboutGoodsPage
-import ndrcApplication.pages.amendCaseFurtherInfoPage
-import ndrcApplication.pages.amendCaseResponseTypePage
-import ndrcApplication.pages.appReasonPage
-import ndrcApplication.pages.applicationNotFoundPage
-import ndrcApplication.pages.articlePage._
-import ndrcApplication.pages.checkYourAnswersPage
-import ndrcApplication.pages.checkYourAnswersPage._
-import ndrcApplication.pages.commonMethods
-import ndrcApplication.pages.declarantRefNoPage
-import ndrcApplication.pages.entriesPage
-import ndrcApplication.pages.entryDatePage._
-import ndrcApplication.pages.entryDetailsPage
-import ndrcApplication.pages.eoriNoPage
-import ndrcApplication.pages.feedbackFormPage
-import ndrcApplication.pages.goodsOwnerPage
-import ndrcApplication.pages.importerPersonalDetailsPage
-import ndrcApplication.pages.importerorRepPage._
-import ndrcApplication.pages.loginPage
-import ndrcApplication.pages.otherCustDutyPage
-import ndrcApplication.pages.reclaimPage
-import ndrcApplication.pages.regulationsPage._
-import ndrcApplication.pages.repaymentAmtSummaryPage
-import ndrcApplication.pages.repaymentAmtSummaryPage._
-import ndrcApplication.pages.selectRepayMethodPage
-import ndrcApplication.pages.uploadFilePage
-import ndrcApplication.pages.vatPage
-import ndrcApplication.pages.vatRegPage
-import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
+import ndrcApplication.specpage.aboutGoodsPage
+import ndrcApplication.specpage.amendCaseFurtherInfoPage
+import ndrcApplication.specpage.amendCaseResponseTypePage
+import ndrcApplication.specpage.appReasonPage
+import ndrcApplication.specpage.applicationNotFoundPage
+import ndrcApplication.specpage.articlePage._
+import ndrcApplication.specpage.checkYourAnswersPage
+import ndrcApplication.specpage.checkYourAnswersPage._
+import ndrcApplication.specpage.commonMethods
+import ndrcApplication.specpage.declarantRefNoPage
+import ndrcApplication.specpage.entriesPage
+import ndrcApplication.specpage.entryDatePage._
+import ndrcApplication.specpage.entryDetailsPage
+import ndrcApplication.specpage.eoriNoPage
+import ndrcApplication.specpage.feedbackFormPage
+import ndrcApplication.specpage.goodsOwnerPage
+import ndrcApplication.specpage.importerPersonalDetailsPage
+import ndrcApplication.specpage.importerorRepPage._
+import ndrcApplication.specpage.loginPage
+import ndrcApplication.specpage.otherCustDutyPage
+import ndrcApplication.specpage.reclaimPage
+import ndrcApplication.specpage.regulationsPage._
+import ndrcApplication.specpage.repaymentAmtSummaryPage
+import ndrcApplication.specpage.repaymentAmtSummaryPage._
+import ndrcApplication.specpage.selectRepayMethodPage
+import ndrcApplication.specpage.uploadFilePage
+import ndrcApplication.specpage.vatPage
+import ndrcApplication.specpage.vatRegPage
+import ndrcApplication.specpage.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.openqa.selenium.{By, NoSuchElementException}
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
 import scala.util.Try
@@ -471,19 +471,6 @@ object StepDefsSteps extends commonMethods {
 
   // ^I verify changed customs duty paid- CustomDuty: \"([^\"]*)\" is displayed$
   def andIVerifyChangedCustomsDutyPaidIsDisplayed(changeCDutyPaid: String): Unit = {
-    println("=" * 60)
-    println("DEBUG - Verifying Changed Customs Duty Paid")
-    println("-" * 60)
-    println(s"Expected value: '$changeCDutyPaid'")
-    println(s"Actual element text: '${CustomDutyPaidResponse.getText}'")
-    println(s"Expected length: ${changeCDutyPaid.length}")
-    println(s"Actual length: ${CustomDutyPaidResponse.getText.length}")
-    println(s"Are they equal? ${CustomDutyPaidResponse.getText.equals(changeCDutyPaid)}")
-    println(s"Expected bytes: ${changeCDutyPaid.getBytes.mkString(",")}")
-    println(s"Actual bytes: ${CustomDutyPaidResponse.getText.getBytes.mkString(",")}")
-    println(s"Element is displayed? ${CustomDutyPaidResponse.isDisplayed}")
-    println(s"Element location: ${CustomDutyPaidResponse.getLocation}")
-    println("=" * 60)
     assertElementText(changeCDutyPaid, CustomDutyPaidResponse)
   }
 
@@ -544,27 +531,6 @@ object StepDefsSteps extends commonMethods {
 
   // ^I verify changed other duty paid- OtherDutyPaid: \"([^\"]*)\" is displayed$
   def andIVerifyChangedOtherDutyPaidIsDisplayed(changeODutyPaid: String): Unit = {
-    println("=" * 60)
-    println("DEBUG - Other Duty Verification")
-
-    // Check if element exists and is displayed
-    try {
-      println(s"Element found: ${OtherDutyPaidResponse != null}")
-      println(s"Element displayed: ${OtherDutyPaidResponse.isDisplayed}")
-      println(s"Element enabled: ${OtherDutyPaidResponse.isEnabled}")
-      println(s"Element text: '${OtherDutyPaidResponse.getText}'")
-      println(s"Element location: ${OtherDutyPaidResponse.getLocation}")
-      println(s"Element size: ${OtherDutyPaidResponse.getSize}")
-
-      // Show the HTML of the element
-      println(s"Element HTML: ${OtherDutyPaidResponse.getAttribute("outerHTML")}")
-
-    } catch {
-      case e: Exception => println(s"ERROR accessing element: ${e.getMessage}")
-    }
-
-    println(s"Expected: '$changeODutyPaid'")
-    println("=" * 60)
     assertElementText(changeODutyPaid, OtherDutyPaidResponse)
   }
 

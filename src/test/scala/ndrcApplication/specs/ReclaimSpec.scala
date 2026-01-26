@@ -24,631 +24,307 @@ class ReclaimSpec extends BaseSpec {
 
     Scenario("Reclaim single entry journey help text") {
       Given("I am on the start page for trader service and select Apply Now")
-      givenIAmOnTheStartPageForTraderServiceAndSelectApplyNow() // auto-chosen (score=1.00, LoginPageStepsSteps.scala)
-      // --- Other possible matches ---
-      // thenIAmOnPage() [0.70] (CommonStepsSteps.scala) pattern: I am on "([^"]*)" page
-      // givenIAmOnTheStartPageForTraderServiceAndSelectAmendNow() [0.65] (LoginPageStepsSteps.scala) pattern: I am on the start page for trader service and select Amend Now
-      // andISelectOption() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I select \"([^\"]*)\" option
+      givenIAmOnTheStartPageForTraderServiceAndSelectApplyNow()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose Importer claimant type")
-      andIChooseImporterClaimantType() // auto-chosen (score=1.00, ImporterorRepStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseAnArticleType() [0.56] (ArticleStepsSteps.scala) pattern: I choose an article Type
-      // andIChooseRepresentativeClaimantType() [0.56] (ImporterorRepStepsSteps.scala) pattern: I choose Representative claimant type
-      // andIChooseImporterOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Importer option
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseARegulationRepaymentType() [0.47] (RegulationsStepsSteps.scala) pattern: I choose a regulation repayment Type
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseImporterClaimantType()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose one entry")
-      andIChooseOneEntry() // auto-chosen (score=1.00, EntriesStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseMultiEntry() [0.52] (EntriesStepsSteps.scala) pattern: I choose multi entry
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseOneEntry()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Add the details for this entry - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Add the details for this entry - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickOnChangeOptionOnTheReviewPageForEntryDetails() [0.47] (CheckYourAnswersStepsSteps.scala) pattern: I click on change option on the review page for entry details
+      )
 
       And("I enter declaration details- EPU: 345 and Entry No: 123456t")
-      andIEnterDeclarationDetails("345", "123456t") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterDeclarationDetails() [0.70] (EntryDetailsStepsSteps.scala) pattern: I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"
-      // andIEnterGoodsDetails() [0.56] (AboutGoodsStepsSteps.scala) pattern: I enter goods details- Details: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterFurtherGoodsDetails() [0.47] (AmendCaseFurtherInfoStepsSteps.scala) pattern: I enter further goods details- Details: \"([^\"]*)\"
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterDeclarationDetails("345", "123456t")
 
       And("I enter an entry date that was 7 days ago")
-      andIEnterAnEntryDateThatWasXDaysAgo("7") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterAnEntryDateThatWasXDaysAgo() [0.70] (EntryDetailsStepsSteps.scala) pattern: I enter an entry date that was ([^"]*) days ago
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterAnEntryDateThatWasXDaysAgo("7")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose a regulation repayment Type")
-      andIChooseARegulationRepaymentType() // auto-chosen (score=1.00, RegulationsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseRepaymentOption() [0.52] (selectRepayMethodStepsSteps.scala) pattern: I choose \"([^\"]*)\" repayment option
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseARegulationRepaymentType()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseXForYouAbleToDoWhatYouNeededToDoToday() [0.48] (FeedbackFormStepsSteps.scala) pattern: I choose \"([^\"]*)\" for you able to do what you needed to do today
+      )
 
       And("I choose an application Reason")
-      andIChooseAnApplicationReason() // auto-chosen (score=1.00, AppReasonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseAnApplicationReason()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on Give us more details about the overpayment - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "Give us more details about the overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I enter goods details- Details: Shoes Jeans Jackets")
-      andIEnterGoodsDetails("Shoes Jeans Jackets") // auto-chosen (score=1.00, AboutGoodsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterGoodsDetails() [0.70] (AboutGoodsStepsSteps.scala) pattern: I enter goods details- Details: "([^"]*)"
-      // andIEnterFurtherGoodsDetails() [0.58] (AmendCaseFurtherInfoStepsSteps.scala) pattern: I enter further goods details- Details: \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterGoodsDetails("Shoes Jeans Jackets")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseXForYouAbleToDoWhatYouNeededToDoToday() [0.48] (FeedbackFormStepsSteps.scala) pattern: I choose \"([^\"]*)\" for you able to do what you needed to do today
+      )
 
       And("I choose customsDuty importVAT anotherTypeofDuty options")
-      andIChooseCustomsDutyImportVATAnotherTypeofDutyOptions() // auto-chosen (score=1.00, ReclaimStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseTheCustomsDutyOption() [0.70] (ReclaimStepsSteps.scala) pattern: I choose the Customs Duty option
-      // andIChooseOptions() [0.70] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.70] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
-      // andIChooseAnArticleType() [0.56] (ArticleStepsSteps.scala) pattern: I choose an article Type
-      // andIChooseEori() [0.52] (EoriNoStepsSteps.scala) pattern: I choose eori "([^"]*)" option
-      // andIChooseRepresentativeOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Representative option
-      // andIChooseImporterOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Importer option
-      // andIChooseRepaymentOption() [0.52] (selectRepayMethodStepsSteps.scala) pattern: I choose \"([^\"]*)\" repayment option
-      // andISelectOption() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I select \"([^\"]*)\" option
-      // andIChooseOptionToConfirmOwnerOfTheGoods() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I choose \"([^\"]*)\" option to confirm owner of the goods
-      // andIChooseARegulationRepaymentType() [0.47] (RegulationsStepsSteps.scala) pattern: I choose a regulation repayment Type
+      andIChooseCustomsDutyImportVATAnotherTypeofDutyOptions()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Customs Duty overpayment - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Customs Duty overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter customs Duty paid- CustomDuty: 100000.00")
-      andIEnterCustomsDutyPaid("100000.00") // auto-chosen (score=1.00, CustomsDutyStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterCustomsDutyPaid() [0.70] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterOtherCustomDutyPaid() [0.50] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIClearAmountAndEnterCustomsDutyPaid() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter customs Duty paid- CustomDuty: \"([^\"]*)\"
+      andIEnterCustomsDutyPaid("100000.00")
 
       And("I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: 750.00")
-      andIEnterCustomsDutyShouldHavePaidToHMRC("750.00") // auto-chosen (score=1.00, CustomsDutyStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterCustomsDutyShouldHavePaidToHMRC() [0.70] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "([^"]*)"
-      // andIEnterCustomsDutyPaid() [0.58] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.56] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIClearAmountAndEnterCustomsDutyShouldHavePaid() [0.51] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter customs Duty should have paid- CustomsDutyBeenPaid: \"([^\"]*)\"
-      // andIEnterOtherCustomDutyPaid() [0.50] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterImportVatBeenPaidToHMRC() [0.47] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
+      andIEnterCustomsDutyShouldHavePaidToHMRC("750.00")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter import vat paid- VatPaid: 9999999.00")
-      andIEnterImportVatPaid("9999999.00") // auto-chosen (score=1.00, VatStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterImportVatPaid() [0.70] (VatStepsSteps.scala) pattern: I enter import vat paid- VatPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIClearAmountAndEnterImportVatPaid() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter import vat paid- VatPaid: \"([^\"]*)\"
+      andIEnterImportVatPaid("9999999.00")
 
       And("I enter import vat been Paid to HMRC- VatBeenPaid: 500.00")
-      andIEnterImportVatBeenPaidToHMRC("500.00") // auto-chosen (score=1.00, VatStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterImportVatBeenPaidToHMRC() [0.70] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
-      // andIEnterImportVatPaid() [0.58] (VatStepsSteps.scala) pattern: I enter import vat paid- VatPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIClearAmountAndEnterImportVatBeenPaidToHMRC() [0.52] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter import vat been Paid to HMRC- VatBeenPaid: \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIVerifyChangedImportVatBeenPaidToHMRCIsDisplayed() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I verify changed import vat been Paid to HMRC- VatBeenPaid: \"([^\"]*)\" is displayed
+      andIEnterImportVatBeenPaidToHMRC("500.00")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Overpayment of other duties - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Overpayment of other duties - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter other custom Duty paid- OtherCustDutyPaid: 1250.00")
-      andIEnterOtherCustomDutyPaid("1250.00") // auto-chosen (score=1.00, OtherCustDutyStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterOtherCustomDutyPaid() [0.70] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.49] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterCustomsDutyPaid() [0.47] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
+      andIEnterOtherCustomDutyPaid("1250.00")
 
       And("I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: 200.00")
-      andIEnterOtherCustomDutyBeenPaidToHMRC("200.00") // auto-chosen (score=1.00, OtherCustDutyStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.70] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterOtherCustomDutyPaid() [0.60] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterImportVatBeenPaidToHMRC() [0.47] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
-      // andIEnterCustomsDutyPaid() [0.47] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
+      andIEnterOtherCustomDutyBeenPaidToHMRC("200.00")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
     }
 
     Scenario("Reclaim multi entry journey help text") {
       Given("I am on the start page for trader service and select Apply Now")
-      givenIAmOnTheStartPageForTraderServiceAndSelectApplyNow() // auto-chosen (score=1.00, LoginPageStepsSteps.scala)
-      // --- Other possible matches ---
-      // thenIAmOnPage() [0.70] (CommonStepsSteps.scala) pattern: I am on "([^"]*)" page
-      // givenIAmOnTheStartPageForTraderServiceAndSelectAmendNow() [0.65] (LoginPageStepsSteps.scala) pattern: I am on the start page for trader service and select Amend Now
-      // andISelectOption() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I select \"([^\"]*)\" option
+      givenIAmOnTheStartPageForTraderServiceAndSelectApplyNow()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Are you the importer? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose Importer claimant type")
-      andIChooseImporterClaimantType() // auto-chosen (score=1.00, ImporterorRepStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseAnArticleType() [0.56] (ArticleStepsSteps.scala) pattern: I choose an article Type
-      // andIChooseRepresentativeClaimantType() [0.56] (ImporterorRepStepsSteps.scala) pattern: I choose Representative claimant type
-      // andIChooseImporterOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Importer option
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseARegulationRepaymentType() [0.47] (RegulationsStepsSteps.scala) pattern: I choose a regulation repayment Type
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseImporterClaimantType()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "How many entries do you want to submit? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose one entry")
-      andIChooseOneEntry() // auto-chosen (score=1.00, EntriesStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseMultiEntry() [0.52] (EntriesStepsSteps.scala) pattern: I choose multi entry
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseOneEntry()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Add the details for this entry - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Add the details for this entry - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickOnChangeOptionOnTheReviewPageForEntryDetails() [0.47] (CheckYourAnswersStepsSteps.scala) pattern: I click on change option on the review page for entry details
+      )
 
       And("I enter declaration details- EPU: 345 and Entry No: 123456t")
-      andIEnterDeclarationDetails("345", "123456t") // auto-chosen (score=0.70, EntryDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterDeclarationDetails() [0.70] (EntryDetailsStepsSteps.scala) pattern: I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"
-      // andIEnterGoodsDetails() [0.56] (AboutGoodsStepsSteps.scala) pattern: I enter goods details- Details: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterFurtherGoodsDetails() [0.47] (AmendCaseFurtherInfoStepsSteps.scala) pattern: I enter further goods details- Details: \"([^\"]*)\"
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterDeclarationDetails("345", "123456t")
 
       And("I enter an entry date that was 7 days ago")
-      andIEnterAnEntryDateThatWasXDaysAgo("7") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterAnEntryDateThatWasXDaysAgo() [0.70] (EntryDetailsStepsSteps.scala) pattern: I enter an entry date that was ([^"]*) days ago
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterAnEntryDateThatWasXDaysAgo("7")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Why did the overpayment happen? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I choose a regulation repayment Type")
-      andIChooseARegulationRepaymentType() // auto-chosen (score=1.00, RegulationsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseRepaymentOption() [0.52] (selectRepayMethodStepsSteps.scala) pattern: I choose \"([^\"]*)\" repayment option
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseARegulationRepaymentType()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "What does your application relate to? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseXForYouAbleToDoWhatYouNeededToDoToday() [0.48] (FeedbackFormStepsSteps.scala) pattern: I choose \"([^\"]*)\" for you able to do what you needed to do today
+      )
 
       And("I choose an application Reason")
-      andIChooseAnApplicationReason() // auto-chosen (score=1.00, AppReasonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseOptions() [0.47] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.47] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
+      andIChooseAnApplicationReason()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then(
         "I am on Give us more details about the overpayment - Apply for repayment of import duty and import VAT - GOV.UK page"
       )
       thenIAmOnPage(
         "Give us more details about the overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("I enter goods details- Details: Shoes Jeans Jackets")
-      andIEnterGoodsDetails("Shoes Jeans Jackets") // auto-chosen (score=0.70, AboutGoodsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterGoodsDetails() [0.70] (AboutGoodsStepsSteps.scala) pattern: I enter goods details- Details: "([^"]*)"
-      // andIEnterFurtherGoodsDetails() [0.58] (AmendCaseFurtherInfoStepsSteps.scala) pattern: I enter further goods details- Details: \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
+      andIEnterGoodsDetails("Shoes Jeans Jackets")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "What do you want to reclaim? - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseXForYouAbleToDoWhatYouNeededToDoToday() [0.48] (FeedbackFormStepsSteps.scala) pattern: I choose \"([^\"]*)\" for you able to do what you needed to do today
+      )
 
       And("I choose customsDuty importVAT anotherTypeofDuty options")
-      andIChooseCustomsDutyImportVATAnotherTypeofDutyOptions() // auto-chosen (score=1.00, ReclaimStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIChooseTheCustomsDutyOption() [0.70] (ReclaimStepsSteps.scala) pattern: I choose the Customs Duty option
-      // andIChooseOptions() [0.70] (DeclarantRefNoStepsSteps.scala) pattern: I choose \"([^\"]*)\" options
-      // andIChooseOption() [0.70] (VatRegStepsSteps.scala) pattern: I choose "([^"]*)" option
-      // andIChooseAnArticleType() [0.56] (ArticleStepsSteps.scala) pattern: I choose an article Type
-      // andIChooseEori() [0.52] (EoriNoStepsSteps.scala) pattern: I choose eori "([^"]*)" option
-      // andIChooseRepresentativeOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Representative option
-      // andIChooseImporterOption() [0.52] (whoToBoRepaidStepsSteps.scala) pattern: I choose Importer option
-      // andIChooseRepaymentOption() [0.52] (selectRepayMethodStepsSteps.scala) pattern: I choose \"([^\"]*)\" repayment option
-      // andISelectOption() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I select \"([^\"]*)\" option
-      // andIChooseOptionToConfirmOwnerOfTheGoods() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I choose \"([^\"]*)\" option to confirm owner of the goods
-      // andIChooseARegulationRepaymentType() [0.47] (RegulationsStepsSteps.scala) pattern: I choose a regulation repayment Type
+      andIChooseCustomsDutyImportVATAnotherTypeofDutyOptions()
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Customs Duty overpayment - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Customs Duty overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter customs Duty paid- CustomDuty: 100000.00")
-      andIEnterCustomsDutyPaid("100000.00") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterCustomsDutyPaid() [0.70] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterOtherCustomDutyPaid() [0.50] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIClearAmountAndEnterCustomsDutyPaid() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter customs Duty paid- CustomDuty: \"([^\"]*)\"
+      andIEnterCustomsDutyPaid("100000.00")
 
       And("I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: 750.00")
       andIEnterCustomsDutyShouldHavePaidToHMRC(
         "750.00"
-      ) // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterCustomsDutyShouldHavePaidToHMRC() [0.70] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "([^"]*)"
-      // andIEnterCustomsDutyPaid() [0.58] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.56] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIClearAmountAndEnterCustomsDutyShouldHavePaid() [0.51] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter customs Duty should have paid- CustomsDutyBeenPaid: \"([^\"]*)\"
-      // andIEnterOtherCustomDutyPaid() [0.50] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterImportVatBeenPaidToHMRC() [0.47] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
+      )
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "VAT overpayment - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter import vat paid- VatPaid: 9999999.00")
-      andIEnterImportVatPaid("9999999.00") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterImportVatPaid() [0.70] (VatStepsSteps.scala) pattern: I enter import vat paid- VatPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIClearAmountAndEnterImportVatPaid() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter import vat paid- VatPaid: \"([^\"]*)\"
+      andIEnterImportVatPaid("9999999.00")
 
       And("I enter import vat been Paid to HMRC- VatBeenPaid: 500.00")
-      andIEnterImportVatBeenPaidToHMRC("500.00") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterImportVatBeenPaidToHMRC() [0.70] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
-      // andIEnterImportVatPaid() [0.58] (VatStepsSteps.scala) pattern: I enter import vat paid- VatPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIClearAmountAndEnterImportVatBeenPaidToHMRC() [0.52] (RepaymentAmountSummaryStepsSteps.scala) pattern: I clear amount and enter import vat been Paid to HMRC- VatBeenPaid: \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIVerifyChangedImportVatBeenPaidToHMRCIsDisplayed() [0.47] (RepaymentAmountSummaryStepsSteps.scala) pattern: I verify changed import vat been Paid to HMRC- VatBeenPaid: \"([^\"]*)\" is displayed
+      andIEnterImportVatBeenPaidToHMRC("500.00")
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Overpayment of other duties - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Overpayment of other duties - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
       And("Hint text is displayed Do not include any agent fees.")
-      andHintTextIsDisplayed("Do not include any agent fees.") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andHintTextIsDisplayed("Do not include any agent fees.")
 
       And("I enter other custom Duty paid- OtherCustDutyPaid: 1250.00")
-      andIEnterOtherCustomDutyPaid("1250.00") // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterOtherCustomDutyPaid() [0.70] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.49] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterCustomsDutyPaid() [0.47] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
+      andIEnterOtherCustomDutyPaid("1250.00")
 
       And("I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: 200.00")
       andIEnterOtherCustomDutyBeenPaidToHMRC(
         "200.00"
-      ) // auto-chosen (score=1.00, ImporterPersonalDetailsStepsSteps.scala)
-      // --- Other possible matches ---
-      // andIEnterOtherCustomDutyBeenPaidToHMRC() [0.70] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"
-      // andIEnterOtherCustomDutyPaid() [0.60] (OtherCustDutyStepsSteps.scala) pattern: I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"
-      // andIEnterToCreate() [0.52] (DeclarantRefNoStepsSteps.scala) pattern: I enter to create \"([^\"]*)\"
-      // andIEnterCountry() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter country \"([^\"]*)\"
-      // andIEnterPhoneNo() [0.47] (ImporterPersonalDetailsStepsSteps.scala) pattern: I enter \"([^\"]*)\" importers
-      // andIEnterValue() [0.47] (EntriesStepsSteps.scala) pattern: I enter \"([^\"]*)\" value
-      // andIEnterName() [0.47] (GoodsOwnerStepsSteps.scala) pattern: I enter \"([^\"]*)\" name
-      // andIEnterImportVatBeenPaidToHMRC() [0.47] (VatStepsSteps.scala) pattern: I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"
-      // andIEnterCustomsDutyPaid() [0.47] (CustomsDutyStepsSteps.scala) pattern: I enter customs Duty paid- CustomDuty: "([^"]*)"
+      )
 
       When("I click on the Continue button")
-      whenIClickOnTheXButton("") // auto-chosen (score=0.70, CommonStepsSteps.scala)
-      // --- Other possible matches ---
-      // whenIClickTheFileContinueButton() [0.58] (FileUploadedStepsSteps.scala) pattern: I click the file continue button
-      // whenIClickOnTheXButtonOnFeedbackForm() [0.52] (FeedbackFormStepsSteps.scala) pattern: I click on the \"([^\"]*)\" button on feedback form
-      // whenIClickOnTheFileUploadContinueButton() [0.52] (FileUploadedStepsSteps.scala) pattern: I click on the file upload continue button
+      whenIClickOnTheXButton("")
 
       Then("I am on Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK page")
       thenIAmOnPage(
         "Return amount summary - Apply for repayment of import duty and import VAT - GOV.UK"
-      ) // auto-chosen (score=0.70, CommonStepsSteps.scala)
+      )
 
     }
   }

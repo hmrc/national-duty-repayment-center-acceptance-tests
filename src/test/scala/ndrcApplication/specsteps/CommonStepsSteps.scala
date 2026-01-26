@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.{amendCaseRefNoPage, commonPage, customsDutyPage}
+import ndrcApplication.specpage.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
 object CommonStepsSteps {

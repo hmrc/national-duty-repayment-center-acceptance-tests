@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.declarantRefNoPage._
-import ndrcApplication.pages.declarantRefNoPage
+import ndrcApplication.specpage.declarantRefNoPage._
+import ndrcApplication.specpage.declarantRefNoPage
 
 object DeclarantRefNoStepsSteps {
 

@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.vatRegPage
-import ndrcApplication.pages.vatRegPage._
+import ndrcApplication.specpage.vatRegPage
+import ndrcApplication.specpage.vatRegPage._
 
 object VatRegStepsSteps {
 

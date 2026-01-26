@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.regulationsPage._
+import ndrcApplication.specpage.regulationsPage._
 
 object RegulationsStepsSteps {
 

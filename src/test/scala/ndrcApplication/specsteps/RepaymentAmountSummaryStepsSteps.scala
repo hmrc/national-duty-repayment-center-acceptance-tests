@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import ndrcApplication.pages.repaymentAmtSummaryPage
-import ndrcApplication.pages.repaymentAmtSummaryPage._
-import ndrcApplication.pages.customsDutyPage
-import ndrcApplication.pages.vatPage
-import ndrcApplication.pages.otherCustDutyPage
+import ndrcApplication.specpage.repaymentAmtSummaryPage
+import ndrcApplication.specpage.repaymentAmtSummaryPage._
+import ndrcApplication.specpage.customsDutyPage
+import ndrcApplication.specpage.vatPage
+import ndrcApplication.specpage.otherCustDutyPage
 
 object RepaymentAmountSummaryStepsSteps {
 

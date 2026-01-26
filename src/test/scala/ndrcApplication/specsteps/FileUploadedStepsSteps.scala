@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.fileUploadedPage
 import org.openqa.selenium.{By, NoSuchElementException}
 import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 import uk.gov.hmrc.selenium.webdriver.Driver
-import ndrcApplication.pages.commonMethods
+import ndrcApplication.specpage.commonMethods
 
 object FileUploadedStepsSteps extends commonMethods {
 

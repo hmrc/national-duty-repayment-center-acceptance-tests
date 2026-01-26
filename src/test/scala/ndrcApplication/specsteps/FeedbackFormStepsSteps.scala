@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.feedbackFormPage
-import ndrcApplication.pages.feedbackFormPage._
+import ndrcApplication.specpage.feedbackFormPage
+import ndrcApplication.specpage.feedbackFormPage._
 
 object FeedbackFormStepsSteps {
 

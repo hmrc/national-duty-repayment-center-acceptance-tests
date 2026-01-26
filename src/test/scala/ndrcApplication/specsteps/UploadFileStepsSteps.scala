@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.uploadFilePage
-import ndrcApplication.pages.uploadFilePage._
+import ndrcApplication.specpage.uploadFilePage
+import ndrcApplication.specpage.uploadFilePage._
 import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
 
 object UploadFileStepsSteps {

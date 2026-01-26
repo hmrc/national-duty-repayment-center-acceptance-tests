@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import ndrcApplication.pages.importerorRepPage._
+import ndrcApplication.specpage.importerorRepPage._
 
 object whoToBoRepaidStepsSteps {
 
