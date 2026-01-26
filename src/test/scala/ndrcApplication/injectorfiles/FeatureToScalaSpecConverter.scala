@@ -93,7 +93,7 @@ object FeatureToScalaSpecConverter {
       case stepPattern(keyword, text) =>
         currentSteps = currentSteps :+ (keyword.capitalize -> cleanStepText(text))
 
-      case examplesPattern()          =>
+      case examplesPattern() =>
         inExamplesBlock = true
 
       case examplesRowPattern(row) if inExamplesBlock =>

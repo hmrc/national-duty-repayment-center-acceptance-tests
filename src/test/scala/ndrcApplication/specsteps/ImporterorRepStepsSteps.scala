@@ -20,13 +20,11 @@ import ndrcApplication.pages.importerorRepPage._
 object ImporterorRepStepsSteps {
 
   // ^I choose Importer claimant type$
-  def andIChooseImporterClaimantType(): Unit = {
+  def andIChooseImporterClaimantType(): Unit =
     selectImporter()
-  }
 
   // ^I choose Representative claimant type$
-  def andIChooseRepresentativeClaimantType(): Unit = {
+  def andIChooseRepresentativeClaimantType(): Unit =
     selectRepresentative()
-  }
 
 }

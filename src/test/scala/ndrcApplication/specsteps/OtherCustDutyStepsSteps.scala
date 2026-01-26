@@ -20,13 +20,11 @@ import ndrcApplication.pages.otherCustDutyPage
 object OtherCustDutyStepsSteps {
 
   // ^I enter other custom Duty paid- OtherCustDutyPaid: "([^"]*)"$
-  def andIEnterOtherCustomDutyPaid(otherCustDutyPaid: String): Unit = {
+  def andIEnterOtherCustomDutyPaid(otherCustDutyPaid: String): Unit =
     otherCustDutyPage.enterOtherCustDutyPaid(otherCustDutyPaid)
-  }
 
   // ^I enter other custom Duty been paid to HMRC- OtherCustDutyBeenPaid: "([^"]*)"$
-  def andIEnterOtherCustomDutyBeenPaidToHMRC(otherCustDutyBeenPaid: String): Unit = {
+  def andIEnterOtherCustomDutyBeenPaidToHMRC(otherCustDutyBeenPaid: String): Unit =
     otherCustDutyPage.enterOtherCustDutyBeenPaid(otherCustDutyBeenPaid)
-  }
 
 }

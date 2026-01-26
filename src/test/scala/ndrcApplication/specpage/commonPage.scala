@@ -56,9 +56,8 @@ object commonPage extends commonMethods {
     element.click()
   }
 
-  def clickGenericButton(): Unit = {
+  def clickGenericButton(): Unit =
     Driver.instance.findElements(By.className("govuk-button")).get(1).click()
-  }
 
   def findElement(identifier: By): Boolean =
     try {

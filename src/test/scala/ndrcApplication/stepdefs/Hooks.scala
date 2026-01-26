@@ -33,9 +33,9 @@ class Hooks extends commonMethods with ScalaDsl with Browser {
 
   After { scenario: Scenario =>
     if (scenario.isFailed) {
-      val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
-      val screenshotFile = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+      val screenshotName                = scenario.getName.replaceAll(" ", "_")
+      val screenshot                    = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
+      val screenshotFile                = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
       val screenshotDestination: String = "./target/screenshots/" + screenshotName + ".png"
 
       FileUtils.copyFile(screenshotFile, new File(screenshotDestination))

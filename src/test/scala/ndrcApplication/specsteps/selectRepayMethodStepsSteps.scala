@@ -21,18 +21,17 @@ import ndrcApplication.pages.selectRepayMethodPage._
 object selectRepayMethodStepsSteps {
 
   // ^I choose \"([^\"]*)\" repayment option$
-  def andIChooseRepaymentOption(repayment: String): Unit = {
+  def andIChooseRepaymentOption(repayment: String): Unit =
     repayment match {
-          case "Bank transfer (Bacs)"          => clickByCSS("#value")
-          case "Current month amendment (CMA)" => clickByCSS("#value-2")
-        }
-  }
+      case "Bank transfer (Bacs)"          => clickByCSS("#value")
+      case "Current month amendment (CMA)" => clickByCSS("#value-2")
+    }
 
   // ^I enter account \"([^\"]*)\" and sortcode \"([^\"]*)\" and account number \"([^\"]*)\"$
   def andIEnterAccountAndSortcodeAndAccountNumber(accName: String, sortCode: String, accNo: String): Unit = {
     selectRepayMethodPage.enterAccName(accName)
-          selectRepayMethodPage.enterSortCode(sortCode)
-          selectRepayMethodPage.enterAccNo(accNo)
+    selectRepayMethodPage.enterSortCode(sortCode)
+    selectRepayMethodPage.enterAccNo(accNo)
   }
 
 }

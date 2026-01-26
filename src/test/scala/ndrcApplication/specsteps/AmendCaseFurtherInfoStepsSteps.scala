@@ -20,8 +20,7 @@ import ndrcApplication.pages.amendCaseFurtherInfoPage
 object AmendCaseFurtherInfoStepsSteps {
 
   // ^I enter further goods details- Details: \"([^\"]*)\"$
-  def andIEnterFurtherGoodsDetails(furtherInfo: String): Unit = {
+  def andIEnterFurtherGoodsDetails(furtherInfo: String): Unit =
     amendCaseFurtherInfoPage.enterFurtherInfo(furtherInfo)
-  }
 
 }

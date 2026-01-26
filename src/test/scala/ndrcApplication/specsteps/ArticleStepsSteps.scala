@@ -20,8 +20,7 @@ import ndrcApplication.pages.articlePage._
 object ArticleStepsSteps {
 
   // ^I choose an article Type$
-  def andIChooseAnArticleType(): Unit = {
+  def andIChooseAnArticleType(): Unit =
     selectVatArticle()
-  }
 
 }

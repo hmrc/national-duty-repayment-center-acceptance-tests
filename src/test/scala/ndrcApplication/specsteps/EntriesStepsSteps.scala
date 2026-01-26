@@ -20,18 +20,15 @@ import ndrcApplication.pages.entriesPage
 object EntriesStepsSteps {
 
   // ^I choose one entry$
-  def andIChooseOneEntry(): Unit = {
+  def andIChooseOneEntry(): Unit =
     entriesPage.selectOneEntry()
-  }
 
   // ^I choose multi entry$
-  def andIChooseMultiEntry(): Unit = {
+  def andIChooseMultiEntry(): Unit =
     entriesPage.selectMultiEntry()
-  }
 
   // ^I enter \"([^\"]*)\" value$
-  def andIEnterValue(noOfEntries: String): Unit = {
+  def andIEnterValue(noOfEntries: String): Unit =
     entriesPage.enterNoOfEntries(noOfEntries)
-  }
 
 }

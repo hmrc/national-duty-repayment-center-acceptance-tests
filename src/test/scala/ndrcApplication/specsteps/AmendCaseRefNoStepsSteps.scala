@@ -20,23 +20,19 @@ import ndrcApplication.pages.amendCaseRefNoPage
 object AmendCaseRefNoStepsSteps {
 
   // ^I enter valid Application \"([^\"]*)\"$
-  def andIEnterValidApplication(refNo: String): Unit = {
+  def andIEnterValidApplication(refNo: String): Unit =
     amendCaseRefNoPage.enterRefNo(refNo)
-  }
 
   // ^I enter Application \"([^\"]*)\" reference no with a special character$
-  def andIEnterApplicationReferenceNoWithASpecialCharacter(splCharacterRefNo: String): Unit = {
+  def andIEnterApplicationReferenceNoWithASpecialCharacter(splCharacterRefNo: String): Unit =
     amendCaseRefNoPage.enterRefNo(splCharacterRefNo)
-  }
 
   // ^I enter wrong format Application \"([^\"]*)\" reference No$
-  def thenIEnterWrongFormatApplicationReferenceNo(wrongFormatRefNo: String): Unit = {
+  def thenIEnterWrongFormatApplicationReferenceNo(wrongFormatRefNo: String): Unit =
     amendCaseRefNoPage.enterRefNo(wrongFormatRefNo)
-  }
 
   // ^I enter invalid length Application \"([^\"]*)\" reference number$
-  def thenIEnterInvalidLengthApplicationReferenceNumber(invalidLenRefNo: String): Unit = {
+  def thenIEnterInvalidLengthApplicationReferenceNumber(invalidLenRefNo: String): Unit =
     amendCaseRefNoPage.enterRefNo(invalidLenRefNo)
-  }
 
 }

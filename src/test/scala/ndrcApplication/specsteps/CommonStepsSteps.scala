@@ -21,40 +21,34 @@ import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 object CommonStepsSteps {
 
   // ^I am on "([^"]*)" page$
-  def thenIAmOnPage(pageTitle: String): Unit = {
+  def thenIAmOnPage(pageTitle: String): Unit =
     assert(commonPage.isPageTitleDisplayed(pageTitle))
-  }
 
   // ^I click on the "([^"]*)" button$
-  def whenIClickOnTheXButton(continue: String): Unit = {
+  def whenIClickOnTheXButton(continue: String): Unit =
     commonPage.clickGenericButton()
-  }
 
   // ^I click the (.*) link$
-  def andIClickTheXLink(): Unit = {
-    link: String =>
-        commonPage.click(link)
+  def andIClickTheXLink(): Unit = { link: String =>
+    commonPage.click(link)
   }
 
   // ^An error message is displayed- Error: \"([^\"]*)\"$
-  def thenAnErrorMessageIsDisplayed(errorMsg: String): Unit = {
+  def thenAnErrorMessageIsDisplayed(errorMsg: String): Unit =
     amendCaseRefNoPage.errMsg()
-  }
 
   // ^I clear the reference no field$
-  def thenIClearTheReferenceNoField(): Unit = {
+  def thenIClearTheReferenceNoField(): Unit =
     amendCaseRefNoPage.clearRefNo()
-  }
 
   // ^Hint text is displayed \"([^\"]*)\"$
-  def andHintTextIsDisplayed(hintText: String): Unit = {
+  def andHintTextIsDisplayed(hintText: String): Unit =
     customsDutyPage.hintText mustBe hintText
-  }
 
   // ^I Accept cookies and hide message$
   def thenIAcceptCookiesAndHideMessage(): Unit = {
     commonPage.acceptCookies()
-        commonPage.hideCookiesMsg()
+    commonPage.hideCookiesMsg()
   }
 
 }

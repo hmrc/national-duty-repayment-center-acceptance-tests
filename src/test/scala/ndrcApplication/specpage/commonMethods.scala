@@ -33,7 +33,7 @@ abstract class commonMethods extends Eventually with BrowserDriver with WebBrows
     val wait = new WebDriverWait(Driver.instance, Duration.ofSeconds(10))
     wait.until(condition)
   }
-  def waitForVisible(by: By): Unit = waitFor(elementToBeClickable(by))
+  def waitForVisible(by: By): Unit                   = waitFor(elementToBeClickable(by))
 
   val usrDir: String = System.getProperty("user.dir") + "/src/test/resources/filestoupload/"
   var filePath       = ""
@@ -42,11 +42,10 @@ abstract class commonMethods extends Eventually with BrowserDriver with WebBrows
     Driver.instance.navigate().to(url)
 
   def isPageTitleDisplayed(pageTitle: String): Boolean =
-      Driver.instance.getTitle == pageTitle
+    Driver.instance.getTitle == pageTitle
 
-  def clickOnButton(identifier: By): Unit = {
+  def clickOnButton(identifier: By): Unit =
     Driver.instance.findElement(identifier).click()
-  }
 
   def selectDropdown(affinityGroup: By, level: String): Unit = {
     val dropdown = new Select(Driver.instance.findElement(affinityGroup))
@@ -69,9 +68,8 @@ abstract class commonMethods extends Eventually with BrowserDriver with WebBrows
 
   def findByXpath(xpath: String): WebElement = Driver.instance.findElement(By.xpath(xpath))
 
-  def findElementByCss(css: String): WebElement = {
+  def findElementByCss(css: String): WebElement =
     Driver.instance.findElement(By.cssSelector(css))
-  }
 
   def verifyHeading(text: String): Unit = findElementByCss("h2").getText mustBe text
 

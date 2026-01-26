@@ -20,12 +20,10 @@ import ndrcApplication.pages.customsDutyPage
 object CustomsDutyStepsSteps {
 
   // ^I enter customs Duty paid- CustomDuty: "([^"]*)"$
-  def andIEnterCustomsDutyPaid(custDutyPaid: String): Unit = {
+  def andIEnterCustomsDutyPaid(custDutyPaid: String): Unit =
     customsDutyPage.enterCustDutyPaid(custDutyPaid)
-  }
 
   // ^I enter customs Duty should have paid to HMRC- CustomsDutyBeenPaid: "([^"]*)"$
-  def andIEnterCustomsDutyShouldHavePaidToHMRC(custDutyBeenPaid: String): Unit = {
+  def andIEnterCustomsDutyShouldHavePaidToHMRC(custDutyBeenPaid: String): Unit =
     customsDutyPage.enterCustDutyHaveBeenPaid(custDutyBeenPaid)
-  }
 }

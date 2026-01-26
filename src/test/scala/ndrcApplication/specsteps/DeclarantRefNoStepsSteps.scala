@@ -21,16 +21,14 @@ import ndrcApplication.pages.declarantRefNoPage
 object DeclarantRefNoStepsSteps {
 
   // ^I choose \"([^\"]*)\" options$
-  def andIChooseOptions(yOrNDRN: String): Unit = {
+  def andIChooseOptions(yOrNDRN: String): Unit =
     yOrNDRN match {
-          case "Yes" => clickByCSS("#value")
-          case "No"  => clickByCSS("#value-2")
-        }
-  }
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-2")
+    }
 
   // ^I enter to create \"([^\"]*)\"$
-  def andIEnterToCreate(decRefNo: String): Unit = {
+  def andIEnterToCreate(decRefNo: String): Unit =
     declarantRefNoPage.enterDRN(decRefNo)
-  }
 
 }

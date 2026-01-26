@@ -22,13 +22,12 @@ object ReclaimStepsSteps {
   // ^I choose customsDuty importVAT anotherTypeofDuty options$
   def andIChooseCustomsDutyImportVATAnotherTypeofDutyOptions(): Unit = {
     reclaimPage.selectCustDuty()
-        reclaimPage.selectImpVat()
-        reclaimPage.selectOtherDuty()
+    reclaimPage.selectImpVat()
+    reclaimPage.selectOtherDuty()
   }
 
   // ^I choose the Customs Duty option$
-  def andIChooseTheCustomsDutyOption(): Unit = {
+  def andIChooseTheCustomsDutyOption(): Unit =
     reclaimPage.selectCustDuty()
-  }
 
 }

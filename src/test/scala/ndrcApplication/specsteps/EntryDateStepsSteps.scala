@@ -20,13 +20,11 @@ import ndrcApplication.pages.entryDatePage._
 object EntryDateStepsSteps {
 
   // ^I choose a date Range on or before Dec$
-  def andIChooseADateRangeOnOrBeforeDec(): Unit = {
+  def andIChooseADateRangeOnOrBeforeDec(): Unit =
     selectOnORBeforeDecDate()
-  }
 
   // ^I choose a date Range from Jan this year$
-  def andIChooseADateRangeFromJanThisYear(): Unit = {
+  def andIChooseADateRangeFromJanThisYear(): Unit =
     selectJanDate()
-  }
 
 }

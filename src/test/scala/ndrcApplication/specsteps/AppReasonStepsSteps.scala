@@ -20,14 +20,13 @@ import ndrcApplication.pages.appReasonPage
 object AppReasonStepsSteps {
 
   // ^I choose an application Reason$
-  def andIChooseAnApplicationReason(): Unit = {
+  def andIChooseAnApplicationReason(): Unit =
     appReasonPage.selectCommCode()
-  }
 
   // ^I choose multiple application Reasons$
   def andIChooseMultipleApplicationReasons(): Unit = {
     appReasonPage.selectCommCode()
-        appReasonPage.selectPreference()
+    appReasonPage.selectPreference()
   }
 
 }

@@ -24,22 +24,22 @@ object EntryDetailsStepsSteps {
   // ^I enter declaration details- EPU: "([^"]*)" and Entry No: "([^"]*)"$
   def andIEnterDeclarationDetails(epu: String, entryNo: String): Unit = {
     entryDetailsPage.enterEPU(epu)
-        entryDetailsPage.enterEntryNo(entryNo)
+    entryDetailsPage.enterEntryNo(entryNo)
   }
 
   // ^I enter an entry date that was ([^"]*) days ago$
   def andIEnterAnEntryDateThatWasXDaysAgo(numberOfDays: String): Unit = {
     val entryDate = LocalDate.now().minusDays(Try(numberOfDays.toLong).getOrElse(0L))
-        entryDetailsPage.enterDay(entryDate.getDayOfMonth.toString)
-        entryDetailsPage.enterMonth(entryDate.getMonthValue.toString)
-        entryDetailsPage.enterYear(entryDate.getYear.toString)
+    entryDetailsPage.enterDay(entryDate.getDayOfMonth.toString)
+    entryDetailsPage.enterMonth(entryDate.getMonthValue.toString)
+    entryDetailsPage.enterYear(entryDate.getYear.toString)
   }
 
   // ^I enter an entry date of (.*)/(.*)/(.*)$
   def andIEnterAnEntryDateOfX(day: String, month: String, year: String): Unit = {
     entryDetailsPage.enterDay(day)
-        entryDetailsPage.enterMonth(month)
-        entryDetailsPage.enterYear(year)
+    entryDetailsPage.enterMonth(month)
+    entryDetailsPage.enterYear(year)
   }
 
 }

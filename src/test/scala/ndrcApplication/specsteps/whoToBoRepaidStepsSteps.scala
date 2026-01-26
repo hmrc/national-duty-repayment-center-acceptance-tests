@@ -20,21 +20,18 @@ import ndrcApplication.pages.importerorRepPage._
 object whoToBoRepaidStepsSteps {
 
   // ^I choose Representative option$
-  def andIChooseRepresentativeOption(): Unit = {
+  def andIChooseRepresentativeOption(): Unit =
     selectRepresentative()
-  }
 
   // ^I choose Importer option$
-  def andIChooseImporterOption(): Unit = {
+  def andIChooseImporterOption(): Unit =
     selectImporter()
-  }
 
   // ^I choose \"([^\"]*)\" indirect representative option$
-  def andIChooseXIndirectRepresentativeOption(yORNIndirectRep: String): Unit = {
+  def andIChooseXIndirectRepresentativeOption(yORNIndirectRep: String): Unit =
     yORNIndirectRep match {
-          case "Yes" => clickByCSS("#value")
-          case "No"  => clickByCSS("#value-no")
-        }
-  }
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-no")
+    }
 
 }

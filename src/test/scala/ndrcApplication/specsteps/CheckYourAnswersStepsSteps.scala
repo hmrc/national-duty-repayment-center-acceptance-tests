@@ -29,43 +29,47 @@ object CheckYourAnswersStepsSteps {
   }
 
   // ^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\" and \"([^\"]*)\"$
-  def thenIVerifyCorrectResponsesIsDisplayedForAmendCaseJourney(refNo: String, resType: String, resHMRC: String, docsCount: String): Unit = {
+  def thenIVerifyCorrectResponsesIsDisplayedForAmendCaseJourney(
+    refNo: String,
+    resType: String,
+    resHMRC: String,
+    docsCount: String
+  ): Unit = {
     assertElementText(refNo, RefNoResponse)
-        assertElementText(resType, ResTypeResponse)
-        assertElementText(resHMRC, ResToHMRCResponse)
-        assertElementText(docsCount, DocsResponse)
+    assertElementText(resType, ResTypeResponse)
+    assertElementText(resHMRC, ResToHMRCResponse)
+    assertElementText(docsCount, DocsResponse)
   }
 
   // ^I click on change option on the amend review page for reference no$
-  def whenIClickOnChangeOptionOnTheAmendReviewPageForReferenceNo(): Unit = {
+  def whenIClickOnChangeOptionOnTheAmendReviewPageForReferenceNo(): Unit =
     checkYourAnswersPage.clickRefNOChangeOption()
-  }
 
   // ^I click on change option on the amend review page for response type$
-  def whenIClickOnChangeOptionOnTheAmendReviewPageForResponseType(): Unit = {
+  def whenIClickOnChangeOptionOnTheAmendReviewPageForResponseType(): Unit =
     checkYourAnswersPage.clickResTypeChangeOption()
-  }
 
   // ^I verify correct responses is displayed for Amend case journey \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$
-  def thenIVerifyCorrectResponsesIsDisplayedForAmendCaseJourney(refNo: String, resType: String, resHMRC: String): Unit = {
+  def thenIVerifyCorrectResponsesIsDisplayedForAmendCaseJourney(
+    refNo: String,
+    resType: String,
+    resHMRC: String
+  ): Unit = {
     assertElementText(refNo, RefNoResponse)
-          assertElementText(resType, ResTypeResponse)
-          assertElementText(resHMRC, ResToHMRCResponse)
+    assertElementText(resType, ResTypeResponse)
+    assertElementText(resHMRC, ResToHMRCResponse)
   }
 
   // ^I click on change option on the amend review page for documents uploaded$
-  def whenIClickOnChangeOptionOnTheAmendReviewPageForDocumentsUploaded(): Unit = {
+  def whenIClickOnChangeOptionOnTheAmendReviewPageForDocumentsUploaded(): Unit =
     checkYourAnswersPage.clickDocsChangeOption()
-  }
 
   // ^I click on change option on the review page for total return amount$
-  def whenIClickOnChangeOptionOnTheReviewPageForTotalReturnAmount(): Unit = {
+  def whenIClickOnChangeOptionOnTheReviewPageForTotalReturnAmount(): Unit =
     checkYourAnswersPage.clickTotalReturnAmountChangeOption()
-  }
 
   // ^I click on change option on the review page for entry details
-  def whenIClickOnChangeOptionOnTheReviewPageForEntryDetails(): Unit = {
+  def whenIClickOnChangeOptionOnTheReviewPageForEntryDetails(): Unit =
     checkYourAnswersPage.clickEntryDetailsChangeOption()
-  }
 
 }

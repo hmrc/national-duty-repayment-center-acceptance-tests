@@ -21,16 +21,14 @@ import ndrcApplication.pages.goodsOwnerPage._
 object GoodsOwnerStepsSteps {
 
   // ^I choose \"([^\"]*)\" option to confirm owner of the goods$
-  def andIChooseOptionToConfirmOwnerOfTheGoods(yOrNgoodsOwner: String): Unit = {
+  def andIChooseOptionToConfirmOwnerOfTheGoods(yOrNgoodsOwner: String): Unit =
     yOrNgoodsOwner match {
-          case "Yes" => clickByCSS("#value")
-          case "No"  => clickByCSS("#value-2")
-        }
-  }
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-2")
+    }
 
   // ^I enter \"([^\"]*)\" name$
-  def andIEnterName(goodsOwnerName: String): Unit = {
+  def andIEnterName(goodsOwnerName: String): Unit =
     goodsOwnerPage.entergoodsOwnerName(goodsOwnerName)
-  }
 
 }

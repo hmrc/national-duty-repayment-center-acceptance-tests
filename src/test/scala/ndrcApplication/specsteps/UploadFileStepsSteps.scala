@@ -22,14 +22,13 @@ import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
 object UploadFileStepsSteps {
 
   // ^I click on Choose file button and add the "([^"]*)" file$
-  def whenIClickOnChooseFileButtonAndAddTheXFile(fileSeq: String): Unit = {
+  def whenIClickOnChooseFileButtonAndAddTheXFile(fileSeq: String): Unit =
     uploadFilePage.uploadFile(fileSeq)
-  }
 
   // ^I see an error message \"([^\"]*)\"$
   def thenISeeAnErrorMessageX(errorMsg: String): Unit = {
     findElementByCss("ul.govuk-error-summary__list").isDisplayed mustBe true
-        findElementByCss("ul.govuk-error-summary__list").getText must include(errorMsg)
+    findElementByCss("ul.govuk-error-summary__list").getText must include(errorMsg)
   }
 
 }

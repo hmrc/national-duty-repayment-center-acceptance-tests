@@ -24,49 +24,44 @@ import ndrcApplication.pages.commonMethods
 object FileUploadedStepsSteps extends commonMethods {
 
   // ^I click the file continue button$
-  def whenIClickTheFileContinueButton(): Unit = {
+  def whenIClickTheFileContinueButton(): Unit =
     Driver.instance.findElement(By.id("ndrc-fileupload-continue")).click()
-  }
 
   // ^I click on the file upload continue button$
   def whenIClickOnTheFileUploadContinueButton(): Unit = {
     waitForVisible(By.id("ndrc-fileupload-continue"))
-        Driver.instance.findElement(By.id("ndrc-fileupload-continue")).click()
+    Driver.instance.findElement(By.id("ndrc-fileupload-continue")).click()
   }
 
   // ^I wait for the file to be uploaded
-  def andIWaitForTheFileToBeUploaded(): Unit = {
+  def andIWaitForTheFileToBeUploaded(): Unit =
     waitForFileToBeUploaded
-  }
 
   // ^I should see first uploaded doc "([^"]*)" on upload review page$
-  def thenIShouldSeeFirstUploadedDocOnUploadReviewPage(fileName: String): Unit = {
+  def thenIShouldSeeFirstUploadedDocOnUploadReviewPage(fileName: String): Unit =
     findElementByCss("div.govuk-summary-list__row:nth-child(1) > dd:nth-child(1)").isDisplayed
-  }
 
   // ^I should see ([^"]*) uploaded doc "([^"]*)" on upload page$
   def thenIShouldSeeUploadedDocOnUploadPage(sequence: String, fileName: String): Unit = {
     val index = sequence match {
-          case "first"  => "1"
-          case "second" => "2"
-        }
-        findElementByCss(s"div.govuk-summary-list__row:nth-child($index)").isDisplayed
-        findElementByCss(s"div.govuk-summary-list__row:nth-child($index) > dt").getText mustBe fileName
+      case "first"  => "1"
+      case "second" => "2"
+    }
+    findElementByCss(s"div.govuk-summary-list__row:nth-child($index)").isDisplayed
+    findElementByCss(s"div.govuk-summary-list__row:nth-child($index) > dt").getText mustBe fileName
   }
 
   // ^I select "([^"]*)" to uploading another file$
-  def thenISelectXToUploadingAnotherFile(yORNoUploadFile: String): Unit = {
+  def thenISelectXToUploadingAnotherFile(yORNoUploadFile: String): Unit =
     yORNoUploadFile match {
-          case "Yes" => clickByCSS("#uploadAnotherFile")
-          case "No"  => clickByCSS("#uploadAnotherFile-2")
+      case "Yes" => clickByCSS("#uploadAnotherFile")
+      case "No"  => clickByCSS("#uploadAnotherFile-2")
 
-        }
-  }
+    }
 
   // ^I should see second uploaded doc "([^"]*)" on upload review page$
-  def thenIShouldSeeSecondUploadedDocOnUploadReviewPage(secondFileName: String): Unit = {
+  def thenIShouldSeeSecondUploadedDocOnUploadReviewPage(secondFileName: String): Unit =
     findElementByCss("div.govuk-summary-list__row:nth-child(2) > dd:nth-child(1)").isDisplayed
-  }
 
   def waitForFileToBeUploaded: Boolean =
     try {

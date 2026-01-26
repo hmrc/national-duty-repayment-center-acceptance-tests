@@ -21,16 +21,14 @@ import ndrcApplication.pages.eoriNoPage
 object EoriNoStepsSteps {
 
   // ^I choose eori "([^"]*)" option$
-  def andIChooseEori(yOrNEori: String): Unit = {
+  def andIChooseEori(yOrNEori: String): Unit =
     yOrNEori match {
-          case "Yes" => clickByCSS("#value")
-          case "No"  => clickByCSS("#value-no")
-        }
-  }
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-no")
+    }
 
   // ^I enter \"([^\"]*)\" in correct format GB$
-  def andIEnterXInCorrectFormatGB(eoriNO: String): Unit = {
+  def andIEnterXInCorrectFormatGB(eoriNO: String): Unit =
     eoriNoPage.enterEoriNo(eoriNO)
-  }
 
 }

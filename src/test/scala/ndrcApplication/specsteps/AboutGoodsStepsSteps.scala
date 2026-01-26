@@ -20,13 +20,11 @@ import ndrcApplication.pages.aboutGoodsPage
 object AboutGoodsStepsSteps {
 
   // ^I enter Reason for overpayment- Reason: "([^"]*)"$
-  def andIEnterReasonForOverpayment(reason: String): Unit = {
+  def andIEnterReasonForOverpayment(reason: String): Unit =
     aboutGoodsPage.enterReason(reason)
-  }
 
   // ^I enter goods details- Details: "([^"]*)"$
-  def andIEnterGoodsDetails(goodsDetails: String): Unit = {
+  def andIEnterGoodsDetails(goodsDetails: String): Unit =
     aboutGoodsPage.enterGoodsDetails(goodsDetails)
-  }
 
 }

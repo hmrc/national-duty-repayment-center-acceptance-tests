@@ -24,13 +24,13 @@ object LoginPageStepsSteps {
   // ^I am on the start page for trader service and select Apply Now$
   def givenIAmOnTheStartPageForTraderServiceAndSelectApplyNow(): Unit = {
     commonPage.loginNDRCViaAuthStub()
-        loginPage.selectStart()
+    loginPage.selectStart()
   }
 
   // ^I am on the start page for trader service and select Amend Now$
   def givenIAmOnTheStartPageForTraderServiceAndSelectAmendNow(): Unit = {
     commonPage.loginNDRCViaAuthStub()
-        loginPage.selectAmend()
+    loginPage.selectAmend()
   }
 
 }

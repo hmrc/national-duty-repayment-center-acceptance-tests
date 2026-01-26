@@ -20,13 +20,11 @@ import ndrcApplication.pages.vatPage
 object VatStepsSteps {
 
   // ^I enter import vat paid- VatPaid: "([^"]*)"$
-  def andIEnterImportVatPaid(vatPaid: String): Unit = {
+  def andIEnterImportVatPaid(vatPaid: String): Unit =
     vatPage.enterVatPaid(vatPaid)
-  }
 
   // ^I enter import vat been Paid to HMRC- VatBeenPaid: "([^"]*)"$
-  def andIEnterImportVatBeenPaidToHMRC(vatBeenPaid: String): Unit = {
+  def andIEnterImportVatBeenPaidToHMRC(vatBeenPaid: String): Unit =
     vatPage.enterVatBeenPaid(vatBeenPaid)
-  }
 
 }

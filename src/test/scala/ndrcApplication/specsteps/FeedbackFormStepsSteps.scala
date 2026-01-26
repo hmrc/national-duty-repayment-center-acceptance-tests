@@ -21,31 +21,26 @@ import ndrcApplication.pages.feedbackFormPage._
 object FeedbackFormStepsSteps {
 
   // ^I choose \"([^\"]*)\" for you able to do what you needed to do today$
-  def andIChooseXForYouAbleToDoWhatYouNeededToDoToday(yOrN: String): Unit = {
+  def andIChooseXForYouAbleToDoWhatYouNeededToDoToday(yOrN: String): Unit =
     yOrN match {
-          case "Yes" => clickByCSS("#ableToDo-yes")
-          case "No"  => clickByCSS("#ableToDo-no")
-        }
-  }
+      case "Yes" => clickByCSS("#ableToDo-yes")
+      case "No"  => clickByCSS("#ableToDo-no")
+    }
 
   // ^I choose rating for was it for you to do what you needed to do today$
-  def andIChooseRatingForWasItForYouToDoWhatYouNeededToDoToday(): Unit = {
+  def andIChooseRatingForWasItForYouToDoWhatYouNeededToDoToday(): Unit =
     feedbackFormPage.selectEasy()
-  }
 
   // ^I enter \"([^\"]*)\" of the service$
-  def andIEnterXOfTheService(score: String): Unit = {
+  def andIEnterXOfTheService(score: String): Unit =
     feedbackFormPage.enterScoreDetails(score)
-  }
 
   // ^I choose overallRating for the overall service$
-  def andIChooseOverallRatingForTheOverallService(): Unit = {
+  def andIChooseOverallRatingForTheOverallService(): Unit =
     feedbackFormPage.selectVerySatisfied()
-  }
 
   // ^I click on the \"([^\"]*)\" button on feedback form$
-  def whenIClickOnTheXButtonOnFeedbackForm(buttonName: String): Unit = {
+  def whenIClickOnTheXButtonOnFeedbackForm(buttonName: String): Unit =
     feedbackFormPage.clickOnFeedBackContinue()
-  }
 
 }

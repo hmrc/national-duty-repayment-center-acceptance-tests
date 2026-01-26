@@ -20,8 +20,7 @@ import ndrcApplication.pages.regulationsPage._
 object RegulationsStepsSteps {
 
   // ^I choose a regulation repayment Type$
-  def andIChooseARegulationRepaymentType(): Unit = {
+  def andIChooseARegulationRepaymentType(): Unit =
     selectErrorByCust()
-  }
 
 }

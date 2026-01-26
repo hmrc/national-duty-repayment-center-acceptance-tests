@@ -20,8 +20,7 @@ import ndrcApplication.pages.applicationNotFoundPage
 object ApplicationNotFoundStepsSteps {
 
   // ^I click on enter the application number again$
-  def whenIClickOnEnterTheApplicationNumberAgain(): Unit = {
+  def whenIClickOnEnterTheApplicationNumberAgain(): Unit =
     applicationNotFoundPage.clickEnterRefNoAgain()
-  }
 
 }

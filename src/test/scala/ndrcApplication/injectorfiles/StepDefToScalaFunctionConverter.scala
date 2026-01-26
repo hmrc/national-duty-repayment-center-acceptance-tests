@@ -113,7 +113,7 @@ object StepDefToScalaFunctionConverter {
     val topLevelDefs = prefix.linesIterator
       .filter { ln =>
         val t = ln.trim
-        (t.startsWith("val ") || t.startsWith("var ") || t.startsWith("private val") || t.startsWith("private var"))
+        t.startsWith("val ") || t.startsWith("var ") || t.startsWith("private val") || t.startsWith("private var")
       }
       .mkString("\n")
 

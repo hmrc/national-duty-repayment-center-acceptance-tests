@@ -22,55 +22,48 @@ object ImporterPersonalDetailsStepsSteps {
   // ^I enter first \"([^\"]*)\" and last \"([^\"]*)\"$
   def andIEnterFirstAndLastName(fName: String, lName: String): Unit = {
     importerPersonalDetailsPage.enterFName(fName)
-        importerPersonalDetailsPage.enterLName(lName)
+    importerPersonalDetailsPage.enterLName(lName)
   }
 
   // ^I enter \"([^\"]*)\" name in rep journey$
-  def andIEnterImpNameInRepJourney(impName: String): Unit = {
+  def andIEnterImpNameInRepJourney(impName: String): Unit =
     importerPersonalDetailsPage.enterImpName(impName)
-  }
 
   // ^I enter your \"([^\"]*)\" and business \"([^\"]*)\"$
   def andIEnterYourNameAndBusinessName(yourName: String, businessName: String): Unit = {
     importerPersonalDetailsPage.enterYourName(yourName)
-        importerPersonalDetailsPage.enterBusinessName(businessName)
+    importerPersonalDetailsPage.enterBusinessName(businessName)
   }
 
   // ^I select \"([^\"]*)\" option$
-  def andISelectOption(option: String): Unit = {
+  def andISelectOption(option: String): Unit =
     importerPersonalDetailsPage.enterAddManuallyLink()
-  }
 
   // ^I enter address manually Address Line: \"([^\"]*)\", City: \"([^\"]*)\" and PostCode: \"([^\"]*)\"$
   def andIEnterAddressManuallyAddressLine(addLine: String, city: String, postCode: String): Unit = {
     importerPersonalDetailsPage.enterAddLine1(addLine)
-          importerPersonalDetailsPage.enterCity(city)
-          importerPersonalDetailsPage.enterPostCode(postCode)
+    importerPersonalDetailsPage.enterCity(city)
+    importerPersonalDetailsPage.enterPostCode(postCode)
   }
 
   // ^I select email option$
-  def andISelectEmailOption(): Unit = {
+  def andISelectEmailOption(): Unit =
     importerPersonalDetailsPage.selectEmailOption()
-  }
 
   // ^I enter \"([^\"]*)\"$
-  def andIEnterEmail(email: String): Unit = {
+  def andIEnterEmail(email: String): Unit =
     importerPersonalDetailsPage.enterEmail(email)
-  }
 
   // ^I enter country \"([^\"]*)\"$
-  def andIEnterCountry(country: String): Unit = {
+  def andIEnterCountry(country: String): Unit =
     importerPersonalDetailsPage.enterCountry(country)
-  }
 
   // ^I select phone no option$
-  def andISelectPhoneNoOption(): Unit = {
+  def andISelectPhoneNoOption(): Unit =
     importerPersonalDetailsPage.selectPhoneOption()
-  }
 
   // ^I enter \"([^\"]*)\" importers$
-  def andIEnterPhoneNo(phoneNo: String): Unit = {
+  def andIEnterPhoneNo(phoneNo: String): Unit =
     importerPersonalDetailsPage.enterPhoneNo(phoneNo)
-  }
 
 }

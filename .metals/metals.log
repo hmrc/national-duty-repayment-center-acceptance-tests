@@ -7373,3 +7373,52 @@ WARNING: Unmatched cancel notification for request id 8
 2026.01.23 14:02:53 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
 2026.01.23 14:02:56 INFO  time: indexed workspace in 6.55s[0m
 2026.01.23 14:04:13 INFO  skipping build import with status 'Installed'[0m
+2026.01.26 09:46:30 ERROR Bloop 'bsp' command exited with code 1. Something may be wrong with the current configuration.
+Running the [1mclean[0m sub-command to clear the working directory and remove caches might help.
+If the error persists, please report the issue as a bug and attach a log with increased verbosity by passing [1m-v -v -v[0m.[0m
+2026.01.26 09:46:30 ERROR Bloop 'bsp' command exited with code 1. Something may be wrong with the current configuration.
+Running the [1mclean[0m sub-command to clear the working directory and remove caches might help.
+If the error persists, please report the issue as a bug and attach a log with increased verbosity by passing [1m-v -v -v[0m.[0m
+2026.01.26 09:46:30 ERROR Bloop 'bsp' command exited with code 1. Something may be wrong with the current configuration.
+Running the [1mclean[0m sub-command to clear the working directory and remove caches might help.
+If the error persists, please report the issue as a bug and attach a log with increased verbosity by passing [1m-v -v -v[0m.[0m
+2026.01.26 09:46:48 INFO  Started: Metals version 1.6.5 in folders '/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests' for client Visual Studio Code 1.107.1.[0m
+2026.01.26 09:46:48 INFO  Memory monitor started[0m
+2026.01.26 09:46:49 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.26 09:46:50 INFO  no build target found for /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/src/test/scala/ndrcApplication/specs/UKRegulationsSpec.scala. Using presentation compiler with project's scala-library version: 3.3.7[0m
+2026.01.26 09:46:50 INFO  Attempting to connect to the build server...[0m
+2026.01.26 09:46:50 INFO  No running Bloop server found, starting one.[0m
+2026.01.26 09:46:52 INFO  Starting compilation server[0m
+2026.01.26 09:46:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 09:46:56 INFO  Attempting to connect to the build server...[0m
+2026.01.26 09:46:56 INFO  Found a Bloop server running[0m
+2026.01.26 09:46:56 INFO  Attempting to connect to the build server...[0m
+2026.01.26 09:46:56 INFO  Found a Bloop server running[0m
+2026.01.26 09:46:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/project/project/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 09:46:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/project/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 09:46:56 INFO  time: Connected to build server in 6.76s[0m
+2026.01.26 09:46:56 INFO  Connected to Build server: Bloop v2.0.18[0m
+2026.01.26 09:46:57 INFO  time: Imported build in 0.22s[0m
+2026.01.26 09:47:00 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.26 09:47:04 INFO  time: indexed workspace in 9.41s[0m
+2026.01.26 10:58:47 INFO  Started: Metals version 1.6.5 in folders '/home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests' for client Visual Studio Code 1.107.1.[0m
+2026.01.26 10:58:47 INFO  Memory monitor started[0m
+2026.01.26 10:58:47 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.26 10:58:48 INFO  Attempting to connect to the build server...[0m
+2026.01.26 10:58:48 INFO  No running Bloop server found, starting one.[0m
+2026.01.26 10:58:50 INFO  Starting compilation server[0m
+2026.01.26 10:58:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 10:58:53 INFO  Attempting to connect to the build server...[0m
+2026.01.26 10:58:53 INFO  Found a Bloop server running[0m
+2026.01.26 10:58:53 INFO  Attempting to connect to the build server...[0m
+2026.01.26 10:58:53 INFO  Found a Bloop server running[0m
+2026.01.26 10:58:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/project/project/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 10:58:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/abdul_quadri/Testing/Projects/national-duty-repayment-center-acceptance-tests/project/.metals/bsp.trace.json or /home/abdul_quadri/.cache/metals/bsp.trace.json[0m
+2026.01.26 10:58:53 INFO  time: Connected to build server in 5s[0m
+2026.01.26 10:58:53 INFO  Connected to Build server: Bloop v2.0.18[0m
+2026.01.26 10:58:53 INFO  time: Imported build in 0.22s[0m
+2026.01.26 10:58:58 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.26 10:59:01 INFO  time: indexed workspace in 7.68s[0m
+Jan 26, 2026 11:02:32 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.26 11:03:54 INFO  time: code lens generation in 3.48s[0m

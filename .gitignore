@@ -17,8 +17,10 @@ logs
 /.idea_modules
 eclipse
 .scala_dependencies
+/.bloop
 /.metals
 /.vscode
+/project/.bloop
 
 # sbt files
 dist

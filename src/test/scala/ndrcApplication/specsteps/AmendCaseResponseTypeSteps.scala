@@ -22,17 +22,15 @@ object AmendCaseResponseTypeSteps {
   // ^I choose both send more supporting documents and give further information$
   def andIChooseBothSendMoreSupportingDocumentsAndGiveFurtherInformation(): Unit = {
     amendCaseResponseTypePage.selectSendMoreDocs()
-        amendCaseResponseTypePage.selectGiveMoreInfo()
+    amendCaseResponseTypePage.selectGiveMoreInfo()
   }
 
   // ^I choose send more supporting documents$
-  def andIChooseSendMoreSupportingDocuments(): Unit = {
+  def andIChooseSendMoreSupportingDocuments(): Unit =
     amendCaseResponseTypePage.selectSendMoreDocs()
-  }
 
   // ^I choose to provide give further information$
-  def andIChooseToProvideGiveFurtherInformation(): Unit = {
+  def andIChooseToProvideGiveFurtherInformation(): Unit =
     amendCaseResponseTypePage.selectGiveMoreInfo()
-  }
 
 }

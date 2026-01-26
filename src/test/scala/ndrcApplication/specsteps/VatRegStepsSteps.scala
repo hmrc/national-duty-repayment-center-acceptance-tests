@@ -21,21 +21,18 @@ import ndrcApplication.pages.vatRegPage._
 object VatRegStepsSteps {
 
   // ^I choose "([^"]*)" option$
-  def andIChooseOption(yOrNVat: String): Unit = {
+  def andIChooseOption(yOrNVat: String): Unit =
     yOrNVat match {
-          case "Yes" => clickByCSS("#value")
-          case "No"  => clickByCSS("#value-2")
-        }
-  }
+      case "Yes" => clickByCSS("#value")
+      case "No"  => clickByCSS("#value-2")
+    }
 
   // ^I click on Help VAT registration link$
-  def andIClickOnHelpVATRegistrationLink(): Unit = {
+  def andIClickOnHelpVATRegistrationLink(): Unit =
     vatRegPage.vatRegHyperlink()
-  }
 
   // ^I confirm VAT registration is displayed: \"([^\"]*)\"$
-  def andIConfirmVATRegistrationIsDisplayed(vatRegText: String): Unit = {
+  def andIConfirmVATRegistrationIsDisplayed(vatRegText: String): Unit =
     vatRegPage.vatRegText()
-  }
 
 }
