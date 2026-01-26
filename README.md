@@ -1,5 +1,5 @@
 # national-duty-repayment-center-acceptance-tests
-UI test suite for the `NDRC` using UITestRunner and `cucumber`.  
+UI test suite for the `NDRC` using UITestRunner and `scalatest`.  
 
 ## Pre-requisites
 
