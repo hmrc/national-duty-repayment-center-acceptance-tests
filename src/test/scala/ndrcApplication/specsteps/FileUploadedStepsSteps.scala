@@ -15,7 +15,7 @@
  */
 
 import org.openqa.selenium.{By, NoSuchElementException}
-import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
+import org.scalatest.matchers.must.Matchers.mustBe
 import uk.gov.hmrc.selenium.webdriver.Driver
 import ndrcApplication.specpage.commonMethods
 

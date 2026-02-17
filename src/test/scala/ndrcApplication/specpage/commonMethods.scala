@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable
 import org.openqa.selenium.support.ui.{ExpectedCondition, Select, WebDriverWait}
 import org.openqa.selenium.{By, WebElement}
 import org.scalatest.concurrent.Eventually
-import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, message}
+import org.scalatest.matchers.must.Matchers.{message, mustBe}
 import org.scalatestplus.selenium.WebBrowser
 
 import java.time.Duration

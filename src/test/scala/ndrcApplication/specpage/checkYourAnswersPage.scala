@@ -17,7 +17,7 @@
 package ndrcApplication.specpage
 
 import org.openqa.selenium.WebElement
-import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
+import org.scalatest.matchers.must.Matchers.mustEqual
 
 object checkYourAnswersPage extends checkYourAnswersPage
 
