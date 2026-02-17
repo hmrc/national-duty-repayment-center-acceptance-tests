@@ -16,7 +16,7 @@
 
 import ndrcApplication.specpage.uploadFilePage
 import ndrcApplication.specpage.uploadFilePage._
-import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
+import org.scalatest.matchers.must.Matchers.{include, must, mustBe}
 
 object UploadFileStepsSteps {
 

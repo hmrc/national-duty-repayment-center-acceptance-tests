@@ -15,7 +15,7 @@
  */
 
 import ndrcApplication.specpage.{amendCaseRefNoPage, commonPage, customsDutyPage}
-import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
+import org.scalatest.matchers.must.Matchers.mustBe
 
 object CommonStepsSteps {
 
@@ -28,7 +28,7 @@ object CommonStepsSteps {
     commonPage.clickGenericButton()
 
   // ^I click the (.*) link$
-  def andIClickTheXLink(): Unit = { link: String =>
+  def andIClickTheXLink(): Unit = { (link: String) =>
     commonPage.click(link)
   }
 

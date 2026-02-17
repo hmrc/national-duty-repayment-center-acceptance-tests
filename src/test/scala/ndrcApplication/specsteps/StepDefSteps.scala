@@ -47,7 +47,7 @@ import ndrcApplication.specpage.vatPage
 import ndrcApplication.specpage.vatRegPage
 import ndrcApplication.specpage.{amendCaseRefNoPage, commonPage, customsDutyPage}
 import org.openqa.selenium.{By, NoSuchElementException}
-import org.scalatest.matchers.must.Matchers.{convertToAnyMustWrapper, include}
+import org.scalatest.matchers.must.Matchers.{include, must, mustBe}
 import scala.util.Try
 import uk.gov.hmrc.selenium.webdriver.Driver
 
@@ -186,7 +186,7 @@ object StepDefsSteps extends commonMethods {
     commonPage.clickGenericButton()
 
   // ^I click the (.*) link$
-  def andIClickTheXLink(): Unit = { link: String =>
+  def andIClickTheXLink(): Unit = { (link: String) =>
     commonPage.click(link)
   }
 
@@ -470,9 +470,8 @@ object StepDefsSteps extends commonMethods {
   }
 
   // ^I verify changed customs duty paid- CustomDuty: \"([^\"]*)\" is displayed$
-  def andIVerifyChangedCustomsDutyPaidIsDisplayed(changeCDutyPaid: String): Unit = {
+  def andIVerifyChangedCustomsDutyPaidIsDisplayed(changeCDutyPaid: String): Unit =
     assertElementText(changeCDutyPaid, CustomDutyPaidResponse)
-  }
 
   // ^I click on change option on customs duty should have paid$
   def andIClickOnChangeOptionOnCustomsDutyShouldHavePaid(): Unit =
@@ -530,9 +529,8 @@ object StepDefsSteps extends commonMethods {
   }
 
   // ^I verify changed other duty paid- OtherDutyPaid: \"([^\"]*)\" is displayed$
-  def andIVerifyChangedOtherDutyPaidIsDisplayed(changeODutyPaid: String): Unit = {
+  def andIVerifyChangedOtherDutyPaidIsDisplayed(changeODutyPaid: String): Unit =
     assertElementText(changeODutyPaid, OtherDutyPaidResponse)
-  }
 
   // ^I click on change option on other duty should have paid$
   def andIClickOnChangeOptionOnOtherDutyShouldHavePaid(): Unit =
